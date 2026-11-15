@@ -1,0 +1,35 @@
+{
+  "_comment": "Coordination rules. All distances in millimetres. Edit and save, then run the tools again.",
+
+  "ceiling": {
+    "_comment": "Minimum clear height under MEP (bottom of element above the level's floor).",
+    "min_clear_height_mm": 2300
+  },
+
+  "clearance_to_structure_mm": {
+    "_comment": "Minimum gap from the TOP of the element to the nearest slab/beam above it. 0 = do not check.",
+    "Cable Trays": 200,
+    "Pipes": 100,
+    "Ducts": 100,
+    "Conduits": 50
+  },
+
+  "structure_categories": [
+    "OST_Floors",
+    "OST_StructuralFraming"
+  ],
+
+  "gravity": {
+    "_comment": "Pipes treated as gravity (sloped) networks.",
+    "min_slope_percent": 1.0,
+    "system_classifications": ["Sanitary"],
+    "system_name_keywords": [
+      "sewer", "sanitary", "waste", "soil", "storm", "drain", "rain", "condensate",
+      "SAN", "RWL",
+      "ביוב", "ניקוז", "דלוחין", "שופכין", "מי גשם", "עיבוי"
+    ]
+  },
+
+  "skip_vertical_elements": true,
+  "vertical_angle_deg": 45
+}

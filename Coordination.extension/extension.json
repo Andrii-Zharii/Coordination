@@ -1,0 +1,9 @@
+{
+  "type": "extension",
+  "rocket_mode_compatible": true,
+  "name": "Coordination",
+  "description": "MEP coordination tools: rule checks, rerouting helpers, sections and sheets.",
+  "author": "Andrii-Zharii",
+  "url": "https://github.com/Andrii-Zharii/Coordination",
+  "website": "https://github.com/Andrii-Zharii/Coordination"
+}
