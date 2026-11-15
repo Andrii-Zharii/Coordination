@@ -1,0 +1,6 @@
+title: Список
+tooltip: Список колізій останньої перевірки. Обрана колізія відкривається у 3D-виді CLASH Navigator, обидва елементи виділяються.
+author: pyRevit agent
+context: doc-project
+engine:
+  clean: true

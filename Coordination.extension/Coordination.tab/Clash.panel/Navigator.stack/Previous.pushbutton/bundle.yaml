@@ -1,0 +1,6 @@
+title: Попередня
+tooltip: Показує попередню колізію останньої перевірки у 3D-виді CLASH Navigator і виділяє обидва елементи.
+author: pyRevit agent
+context: doc-project
+engine:
+  clean: true

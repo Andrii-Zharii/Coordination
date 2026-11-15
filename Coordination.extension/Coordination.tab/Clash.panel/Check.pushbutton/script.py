@@ -1,0 +1,173 @@
+# -*- coding: utf-8 -*-
+"""Шукає колізії в зоні між чотирма осями і в діапазоні висот від рівня: між елементами обраних воркcетів моделі та з обраними лінками."""
+from datetime import datetime
+
+from pyrevit import revit, DB, forms, script
+
+from coordination.clash import core as gc
+
+doc = revit.doc
+settings = gc.load_settings()
+
+
+def pick(items, title, name_attr, checked_names, multiselect=True, button=u"Далі"):
+    entries = [forms.TemplateListItem(i, checked=getattr(i, name_attr) in checked_names, name_attr=name_attr)
+               for i in items] if multiselect else items
+    return forms.SelectFromList.show(entries, title=title, multiselect=multiselect,
+                                     name_attr=None if multiselect else name_attr, button_name=button)
+
+
+def ask_numbers(default, prompt, count):
+    text = forms.ask_for_string(default=default, prompt=prompt, title=u"Clash у зоні")
+    if text is None:
+        script.exit()
+    try:
+        values = [float(v.replace(u",", u".")) for v in text.split()]
+    except ValueError:
+        values = []
+    if len(values) != count:
+        forms.alert(u"Потрібно ввести %d числа через пробіл." % count, exitscript=True)
+    return values
+
+
+grids = sorted(DB.FilteredElementCollector(doc).OfClass(DB.Grid), key=lambda g: g.Name)
+picked_grids = pick(grids, u"Оберіть 4 осі: 2 в одному напрямку і 2 в іншому", "Name", settings.get("grids", []))
+if not picked_grids:
+    script.exit()
+
+levels = sorted(DB.FilteredElementCollector(doc).OfClass(DB.Level), key=lambda l: l.ProjectElevation)
+last_level = settings.get("level")
+levels.sort(key=lambda l: l.Name != last_level)
+level = pick(levels, u"Рівень", "Name", [], multiselect=False)
+if not level:
+    script.exit()
+
+bottom, top = ask_numbers(settings.get("heights", u"-1500 0"),
+                          u"Діапазон висоти від рівня %s, мм: низ і верх через пробіл" % level.Name, 2)
+if bottom >= top:
+    forms.alert(u"Низ має бути нижче за верх.", exitscript=True)
+
+try:
+    zone = gc.zone_from_grids(picked_grids, level.ProjectElevation + gc.to_ft(bottom),
+                              level.ProjectElevation + gc.to_ft(top))
+except ValueError as error:
+    forms.alert(unicode(error), exitscript=True)
+
+
+class Named(object):
+    def __init__(self, name, value=None):
+        self.name = name
+        self.value = value
+
+
+worksets = sorted(w.Name for w in DB.FilteredWorksetCollector(doc).OfKind(DB.WorksetKind.UserWorkset))
+picked_ws = pick([Named(w) for w in worksets], u"Воркcети моделі", "name",
+                 settings.get("worksets", [u"EL", u"ME", u"PL"]))
+if picked_ws is None:
+    script.exit()
+picked_ws = set(w.name for w in picked_ws)
+
+host = gc.Source(doc)
+host_categories = gc.zone_categories(host, zone)
+picked_focus = pick([Named(c) for c in host_categories], u"Що саме перевіряти у вашій моделі", "name",
+                    settings.get("focus", gc.DEFAULT_FOCUS_CATEGORIES))
+if picked_focus is None:
+    script.exit()
+focus = set(c.name for c in picked_focus)
+if not focus:
+    forms.alert(u"Не обрано жодної категорії.", exitscript=True)
+
+links =[Named(gc.link_display_name(li), li) for li in gc.loaded_links(doc)]
+picked_links = pick(links, u"Лінки для перевірки (можна жодного)", "name", settings.get("links", [])) if links else []
+picked_links = picked_links or []
+
+sources = [gc.Source(doc, l.value) for l in picked_links]
+link_categories = set()
+if sources:
+    available = sorted(set(c for s in sources for c in gc.zone_categories(s, zone)))
+    remembered = settings.get("link_categories")
+    checked = remembered if remembered is not None else [c for c in available if c not in gc.DEFAULT_OFF_CATEGORIES]
+    picked_cats = pick([Named(c) for c in available], u"Категорії елементів у лінках", "name", checked)
+    if picked_cats is None:
+        script.exit()
+    link_categories = set(c.name for c in picked_cats)
+
+if not picked_ws and not sources:
+    forms.alert(u"Не обрано ні воркcетів, ні лінків.", exitscript=True)
+
+min_depth = ask_numbers(unicode(settings.get("min_depth", 10)),
+                        u"Мінімальне заходження, мм. Менші перетини (дотики фітингів) ігноруються", 1)[0]
+
+settings.update({
+    "grids": [g.Name for g in picked_grids],
+    "level": level.Name,
+    "heights": u"%g %g" % (bottom, top),
+    "worksets": sorted(picked_ws),
+    "focus": sorted(focus),
+    "links": [l.name for l in picked_links],
+    "min_depth": min_depth,
+})
+if sources:
+    settings["link_categories"] = sorted(link_categories)
+gc.save_settings(settings)
+
+with forms.ProgressBar(title=u"Пошук колізій... ({value} з {max_value})") as bar:
+    items = gc.collect(host, zone, worksets=picked_ws) if picked_ws else []
+    for source in sources:
+        items += gc.collect(source, zone, categories=link_categories)
+    stats = {}
+    found = gc.find_clashes(items, zone, min_depth_mm=min_depth, progress=bar.update_progress, focus=focus,
+                            openings=gc.opening_boxes(host, zone), stats=stats)
+    clashes = gc.unique_by_element(found)
+
+region_error = None
+placed = deleted = 0
+try:
+    placed, deleted = gc.place_regions(doc, clashes, zone)
+except Exception as error:
+    region_error = unicode(error)
+
+zone_text = u"осі %s, рівень %s %+g..%+g мм" % (u" ".join(sorted(g.Name for g in picked_grids)), level.Name, bottom, top)
+gc.save_results({
+    "document": doc.Title,
+    "created": datetime.now().strftime("%Y-%m-%d %H:%M"),
+    "zone": zone_text,
+    "links": [gc.id_int(l.value.Id) for l in picked_links],
+    "clashes": clashes,
+    "current": -1,
+})
+
+output = script.get_output()
+output.set_title(u"Clash у зоні")
+output.print_md(u"## Колізії: %d" % len(clashes))
+output.print_md(u"**Зона:** %s  \n**Перевіряється:** %s  \n**Воркcети:** %s  \n**Лінки:** %s  \n**Мінімальне заходження:** %g мм  \n**Перевірено елементів:** %d  \n**Усього перетинів:** %d, повтори тих самих елементів приховано  \n**Проходи крізь шрулі й отвори (не колізії):** %d" % (
+    zone_text, u", ".join(sorted(focus)), u", ".join(sorted(picked_ws)) or u"-",
+    u", ".join(l.name for l in picked_links) or u"-", min_depth, len(items), len(found), stats["in_openings"]))
+if region_error:
+    output.print_md(u"**Бокси Clash Region не поставлено:** %s" % region_error)
+else:
+    output.print_md(u"**Бокси Clash Region:** поставлено %d на воркcеті %s, старих у цій зоні видалено %d" % (
+        placed, gc.REGION_WORKSET, deleted))
+
+
+def region_cell(clash):
+    return output.linkify(gc.make_id(clash["region"]), title=u"CLASH-%03d" % (clashes.index(clash) + 1)) if clash.get("region") else u"-"
+
+
+def cell(side):
+    ident = output.linkify(gc.make_id(side["id"])) if side["link_id"] is None else u"#%d" % side["id"]
+    text = u" ".join(p for p in (side["category"], side["type"], side["size"]) if p)
+    return u"%s<br>%s %s" % (side["source"], text, ident)
+
+
+if clashes:
+    output.print_table(
+        [[i + 1, cell(c["a"]), cell(c["b"]), c["depth_mm"], c["volume_cm3"], c["also"], region_cell(c)]
+         for i, c in enumerate(clashes)],
+        columns=[u"№", u"Елемент A", u"Елемент B", u"Заходження, мм", u"Об'єм, см³", u"Ще перетинів", u"Бокс"])
+    output.print_md(u"Кнопки **Наступна / Попередня / Список** на вкладці Clash показують кожну колізію в 3D.")
+    forms.alert(u"Знайдено колізій: %d." % len(clashes),
+                sub_msg=u"Таблиця відкрита у вікні pyRevit. Перейти до колізій можна кнопками Наступна / Попередня / Список.")
+else:
+    output.print_md(u"Колізій не знайдено.")
+    forms.alert(u"Колізій не знайдено.")

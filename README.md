@@ -29,6 +29,15 @@ sections and sheets. Product vision and requirements: [docs/vision.md](docs/visi
 **Clearance to structure** is detected by casting rays upward in the default 3D view `{3D}`:
 linked structural/architectural models must be visible there and its section box must not cut the floor.
 
+### Clash panel
+
+| Button | What it does |
+|---|---|
+| **Clash у зоні** | Asks for 4 grids, a level, a height range (mm), host worksets, the categories to check, links and their categories, and a minimum overlap. Finds clashes of your elements (pipes, cable trays… by default) with each other and with the chosen links. Elements joined into one MEP network, sleeves/openings and link-vs-link pairs are not clashes; each of your elements is listed once. Shows a clickable table and puts a **Clash Region** box (Generic Model family, must be loaded) around each clash on workset **Clash** (created if missing); **ARC clash** is ticked for clashes with linked walls, floors, beams and columns. |
+| **Попередня / Список / Наступна** | Open the previous, chosen or next clash of the last check in your own 3D view `CLASH Navigator - <user>`: section box around the clash, only the checked links visible, scope boxes hidden, your elements selected and painted red. |
+
+Clash settings and the last results are kept in `%APPDATA%\pyRevit\GRHL Clash\`. Code: `lib/coordination/clash/core.py`.
+
 ## Repository layout
 
 ```
