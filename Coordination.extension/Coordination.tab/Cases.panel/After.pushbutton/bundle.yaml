@@ -1,0 +1,6 @@
+title: After
+tooltip: |
+  Record the case AFTER fixing: screenshot + the same data again, a short note
+  (what was wrong and what you did) and the list of changes. Status: resolved.
+author: Coordination
+context: doc-project

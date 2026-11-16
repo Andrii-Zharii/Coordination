@@ -1,0 +1,8 @@
+title: Skip
+tooltip: |
+  Skip the current clash with a reason:
+  - Not a clash (false detection), or
+  - Escalate: cannot be fixed by us, needs discussion with the contractors.
+  Records a screenshot and your note.
+author: Coordination
+context: doc-project

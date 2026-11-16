@@ -29,6 +29,19 @@ sections and sheets. Product vision and requirements: [docs/vision.md](docs/visi
 **Clearance to structure** is detected by casting rays upward in the default 3D view `{3D}`:
 linked structural/architectural models must be visible there and its section box must not cut the floor.
 
+### Cases panel
+
+Records how each clash was handled — the examples the rerouting tools are built from. Details: [docs/cases.md](docs/cases.md).
+
+| Button | What it does |
+|---|---|
+| **Before** | Screenshot of the active view + data of the current clash (from the navigator), the whole straight runs of its elements and the MEP around it. Without a current clash — the selected elements. |
+| **After** | After you fixed it: screenshot + data again, your short note, and the list of changes. Status *resolved*. |
+| **Skip** | *Not a clash* or *Escalate* (needs discussion with the contractors) + your note and a screenshot. |
+
+Cases are saved in `cases/` inside the repository — commit and push them with GitHub Desktop at the end of the day.
+Tip: **Win+H** in a note field = Windows voice typing.
+
 ### Clash panel
 
 | Button | What it does |

@@ -1,0 +1,8 @@
+title: Before
+tooltip: |
+  Record a case BEFORE fixing: screenshot of the active view + data of the current clash
+  (from Next / Previous / List), the whole straight runs of its elements and the MEP around it.
+  Without a current clash, the selected elements are recorded.
+  Then fix the clash and press After (or Skip).
+author: Coordination
+context: doc-project
