@@ -16,7 +16,13 @@ and tools are built on what the team actually does.
 4. Next clash.
 5. End of the day: GitHub Desktop → commit `cases/` → **Push origin**.
 
-Tip: in any note field press **Win+H** for Windows voice typing.
+### Notes: voice or text
+
+After and Skip ask for a note: **Record voice** (any language, Ukrainian included),
+**Type text** or **No note**. Voice is recorded from the default microphone with Windows MCI
+(`lib/coordination/voice.py`) and saved as `note.wav` in the case folder.
+In the cloud session, `tools/transcribe_cases.py` (Whisper large-v3-turbo) writes
+`note.transcript.txt` next to each new recording.
 
 Without a current clash, Before/Skip record the **selected** elements (case name `SEL-hhmmss`).
 
@@ -30,6 +36,8 @@ cases/<model>/<clash check date>/CLASH-007/
   after.jpg     screenshot after the fix                (resolved only)
   after.json    MEP data after + note + diff            (resolved only)
   note.txt      [status] + note
+  note.wav      voice note (if recorded)
+  note.transcript.txt   transcript of the voice note (made in the cloud session)
 ```
 
 Element data: id, category, family/type, size, system, workset, bounding box,

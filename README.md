@@ -40,7 +40,7 @@ Records how each clash was handled — the examples the rerouting tools are buil
 | **Skip** | *Not a clash* or *Escalate* (needs discussion with the contractors) + your note and a screenshot. |
 
 Cases are saved in `cases/` inside the repository — commit and push them with GitHub Desktop at the end of the day.
-Tip: **Win+H** in a note field = Windows voice typing.
+Notes can be recorded by **voice** in any language (button *Record voice*); they are transcribed later.
 
 ### Clash panel
 

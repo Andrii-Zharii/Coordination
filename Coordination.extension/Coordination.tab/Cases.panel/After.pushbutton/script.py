@@ -2,7 +2,7 @@
 """Record the case after fixing the clash: screenshot, data, note and changes."""
 from pyrevit import revit, forms, script
 
-from coordination import cases
+from coordination import cases, note_ui
 
 doc = revit.doc
 view = revit.active_view
@@ -11,18 +11,18 @@ state = cases.pending_case(doc)
 if state is None:
     forms.alert(u"No case started. Press Before first, then fix the clash, then After.", exitscript=True)
 
-note = forms.ask_for_string(
-    prompt=u"{}: what was the problem and what did you do? (Win+H = voice typing)".format(state["case"]),
-    title=u"After")
-if note is None:
+answer = note_ui.ask_note(u"After - {}".format(state["case"]),
+                          u"What was the problem, what did you do and why?")
+if answer is None:
     script.exit()
+note, voice_path = answer
 
-changes, image_ok = cases.finish_case(doc, view, state, note)
+changes, image_ok = cases.finish_case(doc, view, state, note, voice_path)
 
 output = script.get_output()
 output.set_title(u"Case {}".format(state["case"]))
 output.print_md(u"## {} — resolved".format(state["case"]))
-output.print_md(u"**Note:** {}".format(note or u"-"))
+output.print_md(u"**Note:** {}".format(note or (u"voice note recorded" if voice_path else u"-")))
 output.print_md(u"**Folder:** {}".format(state["case_dir"]))
 if not image_ok:
     output.print_md(u"**Screenshot failed.**")

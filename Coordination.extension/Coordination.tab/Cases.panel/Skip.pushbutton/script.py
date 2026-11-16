@@ -2,7 +2,7 @@
 """Skip the current clash: not a clash, or escalate to the contractors."""
 from pyrevit import revit, forms, script
 
-from coordination import cases
+from coordination import cases, note_ui
 from coordination.clash import core as gc
 
 doc = revit.doc
@@ -16,13 +16,14 @@ if not choice:
     script.exit()
 status = cases.STATUS_NOT_A_CLASH if choice == NOT_A_CLASH else cases.STATUS_ESCALATE
 
-note = forms.ask_for_string(prompt=u"{}: why? (Win+H = voice typing)".format(choice), title=u"Skip")
-if note is None:
+answer = note_ui.ask_note(u"Skip - {}".format(choice), u"Why?")
+if answer is None:
     script.exit()
+note, voice_path = answer
 
 selection = [gc.id_int(i) for i in revit.get_selection().element_ids]
 try:
-    name, case_dir, image_ok = cases.skip_case(doc, view, selection, status, note)
+    name, case_dir, image_ok = cases.skip_case(doc, view, selection, status, note, voice_path)
 except ValueError as error:
     forms.alert(u"{}".format(error), exitscript=True)
 

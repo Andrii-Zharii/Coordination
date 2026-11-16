@@ -379,7 +379,7 @@ def pending_case(doc):
     return state
 
 
-def finish_case(doc, view, state, note):
+def finish_case(doc, view, state, note, voice_path=None):
     """After: captures the same region again, stores the note and the diff."""
     case_dir = state["case_dir"]
     region = [_box_from_json(b) for b in state["region"]]
@@ -389,24 +389,35 @@ def finish_case(doc, view, state, note):
     after["note"] = note or u""
     after["diff"] = changes
     _write_json(os.path.join(case_dir, "after.json"), after)
-    set_status(case_dir, STATUS_RESOLVED, note)
+    set_status(case_dir, STATUS_RESOLVED, note, voice_path)
     os.remove(STATE_FILE)
     return changes, image_ok
 
 
-def set_status(case_dir, status, note):
-    """Stores the outcome of the case in case.json and the note in note.txt."""
+def set_status(case_dir, status, note, voice_path=None):
+    """Stores the outcome of the case in case.json and the note in note.txt.
+    voice_path: recorded WAV (temporary file) to move into the case as note.wav."""
+    voice_name = None
+    if voice_path and os.path.isfile(voice_path):
+        voice_name = "note.wav"
+        target = os.path.join(case_dir, voice_name)
+        if os.path.isfile(target):
+            os.remove(target)
+        shutil.move(voice_path, target)
     path = os.path.join(case_dir, "case.json")
     info = _read_json(path) if os.path.isfile(path) else {}
     info["status"] = status
     info["note"] = note or u""
+    info["voice_note"] = voice_name
     info["closed"] = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     _write_json(path, info)
     with io.open(os.path.join(case_dir, "note.txt"), "w", encoding="utf-8") as f:
         f.write(u"[%s]\n%s\n" % (status, note or u""))
+        if voice_name:
+            f.write(u"(voice note: %s)\n" % voice_name)
 
 
-def skip_case(doc, view, selection_ids, status, note):
+def skip_case(doc, view, selection_ids, status, note, voice_path=None):
     """Skip: records the current clash as not_a_clash or escalate.
 
     Uses the case started with Before when it is the same clash; otherwise captures it now.
@@ -419,7 +430,7 @@ def skip_case(doc, view, selection_ids, status, note):
         state = pending_case(doc)
     else:
         case_name, case_dir, image_ok = state["case"], state["case_dir"], True
-    set_status(case_dir, status, note)
+    set_status(case_dir, status, note, voice_path)
     if os.path.isfile(STATE_FILE):
         os.remove(STATE_FILE)
     return case_name, case_dir, image_ok
