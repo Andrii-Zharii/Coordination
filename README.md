@@ -62,6 +62,14 @@ Clash settings and the last results are kept in `%APPDATA%\pyRevit\GRHL Clash\`.
 
 Code: `lib/coordination/trays/tees.py` (logic) and `tee_ui.py` (window).
 
+### Pipes panel
+
+| Button | What it does |
+|---|---|
+| **Match Connection** | Connects loose pipes the same way as a sample. Select the sample connection (its fitting, or both elbows of an offset — the pipe between them may be selected too), click the button, then click pairs of pipes near the ends to connect; **Esc** to finish. Sample → result: one **elbow** → elbow where the axes cross; **two elbows** → offset between parallel pipes with the sample's angle (45°, 90°…); **tee** or **tap** → the branch end is joined to the main (pick the main first); **transition/union** → pipes on one axis. New fittings get the sample's family types. Each pair is one undo step; a pair Revit refuses leaves the model unchanged. |
+
+Code: `lib/coordination/pipes/connect.py`.
+
 ## Repository layout
 
 ```
