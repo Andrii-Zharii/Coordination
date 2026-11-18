@@ -35,6 +35,8 @@ Records how each clash was handled — the examples the rerouting tools are buil
 
 | Button | What it does |
 |---|---|
+| **Start Zone** | Start of a work session in the zone of the last *Clash у зоні*: snapshot of all MEP in the zone and the clash list. Then fix freely, in any order. |
+| **Finish Zone** | Snapshot and clash check again. Changes are found automatically and grouped into nodes; each node is selected and you add one short note (why). Report: per node — changes, resolved and new clashes; remaining clashes. |
 | **Before** | Screenshot of the active view + data of the current clash (from the navigator), the whole straight runs of its elements and the MEP around it. Without a current clash — the selected elements. |
 | **After** | After you fixed it: screenshot + data again, your short note, and the list of changes. Status *resolved*. |
 | **Skip** | *Not a clash* or *Escalate* (needs discussion with the contractors) + your note and a screenshot. |

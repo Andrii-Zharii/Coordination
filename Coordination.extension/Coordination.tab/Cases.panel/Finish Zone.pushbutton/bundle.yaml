@@ -1,0 +1,7 @@
+title: Finish Zone
+tooltip: |
+  Finish the zone session: snapshot and clash check again. The changes are found
+  automatically and grouped into nodes; each node is selected in Revit and you add
+  one short note (why). Shows which clashes were resolved, which are new and which remain.
+author: Coordination
+context: doc-project

@@ -1,0 +1,7 @@
+title: Start Zone
+tooltip: |
+  Start recording a work session in the zone of the last "Clash у зоні" check:
+  snapshot of all MEP in the zone, the clash list and a screenshot of the active view.
+  Then fix as many clashes as you need, in any order, and press Finish Zone.
+author: Coordination
+context: doc-project

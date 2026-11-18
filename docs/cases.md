@@ -3,7 +3,32 @@
 Goal: collect real examples of how clashes are resolved, so the rerouting rules
 and tools are built on what the team actually does.
 
-## Workflow
+## Zone session (several connected fixes)
+
+When one fix leads to another and you cannot go clash by clash:
+
+1. **Clash у зоні** — the zone and settings of this check are used.
+2. **Start Zone** — snapshot of all MEP in the zone + clash list (use the last check, or check now) + screenshot.
+3. Work as usual: any order, any number of fixes. Nothing to press.
+4. **Finish Zone** — snapshot and clash check again. The changes are found automatically and
+   grouped into **nodes** (changed elements that are connected or closer than 0.3 m).
+   Each node is selected in Revit; write one short note: *why* you did it this way (Win+H).
+   Cancel skips the remaining notes. Then an optional note about the zone as a whole.
+5. The report shows per node: what changed, which clashes it resolved, which new ones appeared;
+   plus the clashes that remain. Run **Clash у зоні** again to refresh the list and the boxes.
+
+```
+cases/<model>/sessions/<start time>/
+  session.json  zone, check settings, nodes (changes, resolved/new clashes, note), remaining clashes
+  start.json    data of all MEP in the zone + clashes at the start
+  finish.json   data of the changed elements + clashes at the finish
+  start.jpg / finish.jpg   screenshots of the active view
+  note.txt      notes per node
+```
+
+Press Start Zone **before** the first change: what was changed earlier cannot be reconstructed.
+
+## Workflow (one clash at a time)
 
 1. **Clash у зоні** — run the check (Clash panel).
 2. **Наступна / Список** — open a clash in the *CLASH Navigator* 3D view.
