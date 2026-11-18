@@ -100,6 +100,41 @@ def angle_deg(a, b):
     return math.degrees(math.acos(max(-1.0, min(1.0, a.DotProduct(b)))))
 
 
+# --- one selection: sample + the pipes to connect -----------------------------
+
+def split_selection(doc, ids):
+    """Split one selection into the sample connection and the loose pipes to
+    connect. Loose = selected straight pipes not joined to any selected fitting.
+    Returns (sample ids, [loose pipes])."""
+    els = [doc.GetElement(i) for i in ids]
+    els = [e for e in els if e is not None]
+    fitting_ids = set(idv(e.Id) for e in els if is_fitting(e))
+    sample, loose = [], []
+    for e in els:
+        if is_fitting(e):
+            sample.append(e.Id)
+        elif isinstance(e, DB.MEPCurve):
+            if any(idv(o.Id) in fitting_ids for _, o, _ in neighbours(e)):
+                sample.append(e.Id)
+            elif is_straight_curve(e):
+                loose.append(e)
+    return sample, loose
+
+
+def connect_pair(doc, sample, a, b):
+    """Connect two selected pipes. For a tee/takeoff the main is found
+    automatically: whichever order Revit accepts."""
+    if not needs_main(sample):
+        return connect(doc, sample, a, None, b, None)
+    try:
+        return connect(doc, sample, a, None, b, None)
+    except ConnectError as first_error:
+        try:
+            return connect(doc, sample, b, None, a, None)
+        except ConnectError:
+            raise first_error
+
+
 # --- the sample ---------------------------------------------------------------
 
 def analyse_sample(doc, ids):
@@ -185,9 +220,9 @@ def analyse_sample(doc, ids):
 
 # --- target pipes -------------------------------------------------------------
 
-def end_info(pipe, pick=None):
+def end_info(pipe, pick=None, other=None):
     """Which end of `pipe` to connect: the only free one, otherwise the one
-    nearer to the picked point."""
+    nearer to the picked point, otherwise the one nearer to the `other` pipe."""
     if not is_straight_curve(pipe):
         raise ConnectError(u"Елемент %d не є прямою трубою." % idv(pipe.Id))
     line = pipe.Location.Curve
@@ -200,6 +235,10 @@ def end_info(pipe, pick=None):
     elif pick is not None:
         d = (ends[1] - ends[0]).Normalize()
         k = 0 if (pick - ends[0]).DotProduct(d) < line.Length / 2 else 1
+    elif other is not None and is_straight_curve(other):
+        oc = other.Location.Curve
+        dist = [oc.Project(p).Distance for p in ends]
+        k = 0 if dist[0] <= dist[1] else 1
     else:
         k = 1
     near, far = ends[k], ends[1 - k]
@@ -207,8 +246,8 @@ def end_info(pipe, pick=None):
             "u": (near - far).Normalize()}        # out of the pipe at the near end
 
 
-def free_end_info(pipe, pick=None):
-    info = end_info(pipe, pick)
+def free_end_info(pipe, pick=None, other=None):
+    info = end_info(pipe, pick, other)
     if near_conn(pipe, info["near"]).IsConnected:
         raise ConnectError(u"Цей кінець труби %d уже з'єднаний." % idv(pipe.Id))
     return info
@@ -434,9 +473,9 @@ def connect(doc, sample, first, first_pick, second, second_pick):
     if needs_main(sample):
         if not is_straight_curve(first):
             raise ConnectError(u"Магістраль %d не є прямою трубою." % idv(first.Id))
-        args = (first, free_end_info(second, second_pick))
+        args = (first, free_end_info(second, second_pick, first))
     else:
-        args = (free_end_info(first, first_pick), free_end_info(second, second_pick))
+        args = (free_end_info(first, first_pick, second), free_end_info(second, second_pick, first))
     notes = []
     t = DB.Transaction(doc, "Match Connection")
     t.Start()

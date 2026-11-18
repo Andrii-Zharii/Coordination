@@ -66,7 +66,7 @@ Code: `lib/coordination/trays/tees.py` (logic) and `tee_ui.py` (window).
 
 | Button | What it does |
 |---|---|
-| **Match Connection** | Connects loose pipes the same way as a sample. Select the sample connection (its fitting, or both elbows of an offset — the pipe between them may be selected too), click the button, then click pairs of pipes near the ends to connect; **Esc** to finish. Sample → result: one **elbow** → elbow where the axes cross; **two elbows** → offset between parallel pipes with the sample's angle (45°, 90°…); **tee** or **tap** → the branch end is joined to the main (pick the main first); **transition/union** → pipes on one axis. New fittings get the sample's family types. Each pair is one undo step; a pair Revit refuses leaves the model unchanged. |
+| **Match Connection** | Select together the sample connection (its fitting, or both elbows of an offset) **and the two loose pipes**, click — the pipes are connected the same way: elbow, offset with the sample's angle, tee/tap onto the main, or transition/union. New fittings get the sample's family types. One undo step; if Revit refuses, the model is unchanged. Without loose pipes in the selection, you click pairs of pipes one by one (Esc to finish). |
 
 Code: `lib/coordination/pipes/connect.py`.
 

@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""З'єднує дві нез'єднані труби так само, як з'єднання-зразок. Виділіть зразок (відвід, два відводи зміщення, трійник, врізку або перехід), потім клікайте пари труб біля кінців, які треба з'єднати. Esc — завершити."""
+"""Виділіть разом з'єднання-зразок і дві нез'єднані труби, натисніть кнопку — труби з'єднаються так само, як зразок."""
 from pyrevit import revit, DB, forms, script
 from Autodesk.Revit.UI.Selection import ISelectionFilter, ObjectType
 from Autodesk.Revit.Exceptions import OperationCanceledException
@@ -33,23 +33,34 @@ def pick(test, prompt):
     return doc.GetElement(ref.ElementId), ref.GlobalPoint
 
 
-# 1. The sample connection.
+# 1. One selection: the sample connection + the two loose pipes to connect.
 ids = list(uidoc.Selection.GetElementIds())
 if not ids:
-    try:
-        refs = uidoc.Selection.PickObjects(
-            ObjectType.Element,
-            _Filter(lambda e: C.is_fitting(e) or isinstance(e, DB.MEPCurve)),
-            u"Виділіть з'єднання-зразок (фітинги, можна разом з трубою між ними) і натисніть Finish")
-    except OperationCanceledException:
-        script.exit()
-    ids = [r.ElementId for r in refs]
+    forms.alert(u"Виділіть разом:\n- з'єднання-зразок (його фітинг або обидва відводи),\n"
+                u"- дві нез'єднані труби, які треба з'єднати так само.\nПотім натисніть кнопку ще раз.",
+                exitscript=True)
 
+sample_ids, loose = C.split_selection(doc, ids)
 try:
-    sample = C.analyse_sample(doc, ids)
+    sample = C.analyse_sample(doc, sample_ids)
 except C.ConnectError as ex:
     forms.alert(u"%s" % ex, exitscript=True)
 
+if len(loose) == 2:
+    try:
+        new_ids, notes = C.connect_pair(doc, sample, loose[0], loose[1])
+    except C.ConnectError as ex:
+        forms.alert(u"Не з'єднано, модель не змінено:\n%s" % ex, exitscript=True)
+    revit.get_selection().set_to(new_ids)
+    msg = u"З'єднано так само, як зразок: %s." % sample["text"]
+    if notes:
+        msg += u"\n" + u"\n".join(notes)
+    forms.alert(msg, exitscript=True)
+elif loose:
+    forms.alert(u"Крім зразка виділено %d нез'єднаних труб, а треба рівно дві." % len(loose),
+                exitscript=True)
+
+# No loose pipes selected: pick pairs one by one.
 if C.needs_main(sample):
     prompts = (u"Зразок: %s. Виберіть магістраль (Esc — завершити)" % sample["text"],
                u"Виберіть відгалуження біля кінця, який треба приєднати")
