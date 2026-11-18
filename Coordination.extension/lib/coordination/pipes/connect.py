@@ -56,9 +56,19 @@ def near_conn(e, p):
     return min(conns(e), key=lambda c: c.Origin.DistanceTo(p))
 
 
+FITTING_CATEGORIES = set(int(c) for c in (
+    DB.BuiltInCategory.OST_PipeFitting, DB.BuiltInCategory.OST_DuctFitting,
+    DB.BuiltInCategory.OST_ConduitFitting, DB.BuiltInCategory.OST_CableTrayFitting))
+
+
 def is_fitting(e):
-    return (isinstance(e, DB.FamilyInstance) and e.MEPModel is not None
-            and isinstance(e.MEPModel, DB.MechanicalFitting))
+    """Pipe, duct, conduit or cable tray fitting (elbow, tee, tap, transition...)."""
+    if not isinstance(e, DB.FamilyInstance) or e.Category is None:
+        return False
+    if idv(e.Category.Id) not in FITTING_CATEGORIES:
+        return False
+    model = e.MEPModel
+    return model is not None and getattr(model, "PartType", None) is not None
 
 
 def is_straight_curve(e):
