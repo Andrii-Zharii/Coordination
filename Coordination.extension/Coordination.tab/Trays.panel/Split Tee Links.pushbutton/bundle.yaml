@@ -1,0 +1,6 @@
+title: Split Tee Links
+tooltip: Вибір лінків, з якими Split Tee перевіряє колізії. Хост-модель перевіряється завжди.
+author: Coordination
+context: doc-project
+engine:
+  clean: true

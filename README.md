@@ -53,6 +53,15 @@ Notes can be recorded by **voice** in any language (button *Record voice*); they
 
 Clash settings and the last results are kept in `%APPDATA%\pyRevit\GRHL Clash\`. Code: `lib/coordination/clash/core.py`.
 
+### Trays panel
+
+| Button | What it does |
+|---|---|
+| **Split Tee** | Select the tees or trays of a T-junction of 2–3 parallel cable tray mains whose branches cross each other. Every main gets its own tier around its tee (one stays put); moved branches ramp back to their old height. Shows the variants checked for clashes (✔ ok, ⚠ soft clashes with other services, ✖ concrete) with a section sketch, and applies the one you pick. Rules: not below 2300 mm from the level, not into concrete, all new and changed elements on workset **EL**. |
+| **Split Tee Links** | Choose the links Split Tee checks for clashes (the host model is always checked; concrete is searched only in the chosen links). |
+
+Code: `lib/coordination/trays/tees.py` (logic) and `tee_ui.py` (window).
+
 ## Repository layout
 
 ```

@@ -1,0 +1,6 @@
+title: Split Tee
+tooltip: Розносить паралельні лотки Т-вузла на різні рівні. Виділіть трійки або лотки вузла, виберіть варіант зі списку перевірених на колізії. Не нижче 2300, не в бетон, усе на workset EL.
+author: Coordination
+context: doc-project
+engine:
+  clean: true
