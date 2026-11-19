@@ -1,7 +1,7 @@
 # Networks: what the model consists of
 
 > Draft built from the zone snapshot `cases/GRHL-DC-Kelvin-New/sessions/2026-11-17 16-08/start.json`
-> (grids 1–8 × A–L, level 01, 4200 MEP elements). To be checked by the team and extended to the whole model.
+> (grids 1–8 × A–L, level 01, 4200 MEP elements). Classes 1–5, 7–21 confirmed by the team (2026-11-19); #6 open.
 
 ## Idea
 
@@ -28,9 +28,9 @@ Columns *Gravity / Priority / May move* — to be filled in by the team.
 | 3 | AC condensate | `ניקוז מזגן` (306), `H_Condensate Drainage` (8) | pipes 50–160 | yes | | |
 | 4 | Balcony drainage | `ניקוז מרפסת` (61) | pipes 110–160 | yes | | |
 | 5 | Shaft drainage | `ניקוז פיר` (91) | pipes 110 | yes | | |
-| 6 | Sprinkler drainage | `ניקוז ספרינקלרים` (18) | pipes 110 | ? | | |
+| 6 | Sprinkler drainage | `ניקוז ספרינקלרים` (18) | pipes 110: horizontal runs at slope 0, risers | ? (to check in model) | | |
 | 7 | Pumped drainage | `ניקוז סניקה` (6) | pipes 110 | no (pumped) | | |
-| 8 | Vent | `צינור אוויר` (123) | pipes 110–160 | ? | | |
+| 8 | Vent | `צינור אוויר` (123) | pipes 110–160 (workset PL) | no | | |
 | 9 | Sprinklers | `ספרינקלר` (1358) | pipes 32–110, heads, fittings, valves | no | | |
 | 10 | Fire water | `כיבוי אש` (304), `כיבוי אש הסנקה` (1) | pipes 90–110, valves | no | | |
 | 11 | Cold water | `מים קרים` (251), `מי צריכה מאגר תחתון משאבות` (2) | pipes 63–110, valves | no | | |
