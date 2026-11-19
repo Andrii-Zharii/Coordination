@@ -241,23 +241,38 @@ def _collect_region(doc, boxes):
     return result
 
 
-def export_view_image(doc, view, target_path):
-    """Exports the view as a JPEG to target_path (Revit adds view names to file names,
-    so export into a temporary folder and rename)."""
-    temp_dir = os.path.join(os.path.dirname(target_path), "_export")
-    if os.path.isdir(temp_dir):
-        shutil.rmtree(temp_dir)
-    os.makedirs(temp_dir)
+def _image_options(view, file_path, visible_region):
     options = DB.ImageExportOptions()
-    options.ExportRange = DB.ExportRange.SetOfViews
-    options.SetViewsAndSheets(List[DB.ElementId]([view.Id]))
-    options.FilePath = os.path.join(temp_dir, "img")
+    if visible_region:
+        # Exactly what the user sees on screen (zoom, orbit, section box).
+        options.ExportRange = DB.ExportRange.VisibleRegionOfCurrentView
+    else:
+        options.ExportRange = DB.ExportRange.SetOfViews
+        options.SetViewsAndSheets(List[DB.ElementId]([view.Id]))
+    options.FilePath = file_path
     options.ZoomType = DB.ZoomFitType.FitToPage
     options.PixelSize = IMAGE_PIXELS
     options.FitDirection = DB.FitDirectionType.Horizontal
     options.HLRandWFViewsFileType = DB.ImageFileType.JPEGMedium
     options.ShadowViewsFileType = DB.ImageFileType.JPEGMedium
-    doc.ExportImage(options)
+    return options
+
+
+def export_view_image(doc, view, target_path):
+    """Exports a JPEG to target_path: the visible region of the active view (what is on
+    screen), or the whole view when it is not the active one. Revit adds view names to
+    file names, so export into a temporary folder and rename."""
+    temp_dir = os.path.join(os.path.dirname(target_path), "_export")
+    if os.path.isdir(temp_dir):
+        shutil.rmtree(temp_dir)
+    os.makedirs(temp_dir)
+    visible = doc.ActiveView is not None and doc.ActiveView.Id == view.Id
+    try:
+        doc.ExportImage(_image_options(view, os.path.join(temp_dir, "img"), visible))
+    except Exception:
+        if not visible:
+            raise
+        doc.ExportImage(_image_options(view, os.path.join(temp_dir, "img"), False))
     files = [os.path.join(temp_dir, f) for f in os.listdir(temp_dir)]
     if files:
         if os.path.isfile(target_path):
