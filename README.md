@@ -68,7 +68,9 @@ Code: `lib/coordination/trays/tees.py` (logic) and `tee_ui.py` (window).
 |---|---|
 | **Match Connection** | Select together the sample connection (its fitting, or both elbows of an offset) **and the two loose pipes**, click — the pipes are connected the same way: elbow, offset with the sample's angle, tee/tap onto the main, or transition/union. New fittings get the sample's family types. One undo step; if Revit refuses, the model is unchanged. Without loose pipes in the selection, you click pairs of pipes one by one (Esc to finish). |
 
-Code: `lib/coordination/pipes/connect.py`.
+| **Box Run** | Select a pipe (duct, cable tray, conduit), click and choose the turn: *left / right*, *up / down* or *any*. The section box of the active 3D view (or of `CLASH Navigator - <user>`) is set around the run in both directions up to and including the next such turn, oriented along the run in plan, +0.5 m. Through tees it goes straight on; it also stops at equipment and open ends. The run is selected. |
+
+Code: `lib/coordination/pipes/connect.py`, `run_box.py`.
 
 ## Repository layout
 

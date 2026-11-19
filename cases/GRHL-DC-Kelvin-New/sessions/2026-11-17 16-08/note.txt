@@ -1,0 +1,49 @@
+Zone: grids 1 8 A L, level 01 -5000..+0 mm
+Clashes: 120 -> 43
+
+[session] 
+
+[node 1] resolved 2, new 0, changed 2 elements
+-
+
+[node 2] resolved 1, new 0, changed 2 elements
+-
+
+[node 3] resolved 1, new 0, changed 13 elements
+-
+
+[node 4] resolved 0, new 0, changed 3 elements
+-
+
+[node 5] resolved 1, new 0, changed 22 elements
+-
+
+[node 6] resolved 2, new 0, changed 5 elements
+-
+
+[node 7] resolved 0, new 0, changed 3 elements
+-
+
+[node 8] resolved 1, new 0, changed 4 elements
+-
+
+[node 9] resolved 1, new 0, changed 9 elements
+-
+
+[node 10] resolved 76, new 13, changed 938 elements
+-
+
+[node 11] resolved 1, new 0, changed 1 elements
+-
+
+[node 12] resolved 1, new 0, changed 7 elements
+-
+
+[node 13] resolved 1, new 0, changed 1 elements
+-
+
+[node 14] resolved 1, new 0, changed 3 elements
+-
+
+[node 15] resolved 1, new 0, changed 12 elements
+-
