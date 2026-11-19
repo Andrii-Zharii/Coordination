@@ -51,5 +51,11 @@ Columns *Gravity / Priority / May move* — to be filled in by the team.
 
 ## Observations
 - Same network appears under different names (Hebrew/English, with/without prefix `H_`, `BT_`).
-- Worksets: `PL`, `ME`, `EL` and `PL-DC`, `EL-DC` — meaning of `-DC` to confirm.
-- Pipe sizes come in two labels: `160 mmר` (contractor type) and `160ø` (another type).
+- **Worksets `-DC` (`PL-DC`, `EL-DC`…) are temporary** (confirmed 2026-11-19): elements copied from a
+  contractor model are pasted there first, then copied again into the normal workset (`PL`, `EL`, `ME`).
+  `-DC` content is not coordinated → **exclude `-DC` worksets** from inventories and clash checks.
+  Counts in the table above still include `-DC` elements (e.g. `ביוב` 335 = 196 `PL` + 139 `PL-DC`).
+- Pipe size labels follow the workset: in `PL-DC` all pipes are `…ø` (contractor's pipe types),
+  in `PL` mostly `… mmר` (the team's own pipe types after the second copy).
+- **Cable trays: no split into power / low current** (confirmed 2026-11-19) — for coordination
+  it does not matter. One class "Cable trays"; grouping by bundles (parallel trays) is what counts.
