@@ -285,15 +285,14 @@ def export_view_image(doc, view, target_path):
 # ---------------------------------------------------------------- capture
 
 def current_clash(doc):
-    """(number, clash dict, results) of the clash shown by the navigator, or (None, None, None)."""
+    """(name, clash-or-group, results, label) shown by the navigator, or (None, None, None, None)."""
     results = gc.load_results()
     if not results or results.get("document") != doc.Title:
-        return None, None, None
-    index = results.get("current", -1)
-    clashes = results.get("clashes") or []
-    if not 0 <= index < len(clashes):
-        return None, None, None
-    return index + 1, clashes[index], results
+        return None, None, None, None
+    name, clash, label = gc.current_item(results)
+    if clash is None:
+        return None, None, None, None
+    return name, clash, results, label
 
 
 def capture(doc, view, case_dir, stage, element_ids, region_boxes):
@@ -332,15 +331,15 @@ def capture(doc, view, case_dir, stage, element_ids, region_boxes):
 
 def start_case(doc, view, selection_ids):
     """Before: captures the current clash of the navigator (or the selected elements)."""
-    number, clash, results = current_clash(doc)
+    name, clash, results, label = current_clash(doc)
     levels = sorted(([l.Name, _mm(l.ProjectElevation)] for l in
                      DB.FilteredElementCollector(doc).OfClass(DB.Level)), key=lambda l: l[1])
     if clash is not None:
-        case_name = u"CLASH-%03d" % number
+        case_name = name
         check = _safe_name((results.get("created") or u"").replace(u":", u"-"))
         host_ids = gc.host_ids_of(clash)
         point_box = gc.Box(DB.XYZ(*clash["min"]), DB.XYZ(*clash["max"]))
-        info = {"source": "clash", "number": number, "label": gc.clash_label(number - 1, clash),
+        info = {"source": "clash", "number": name, "label": label,
                 "zone": results.get("zone"), "clash": clash}
         for side in ("a", "b"):
             if clash[side]["link_id"] is not None:
@@ -438,8 +437,8 @@ def skip_case(doc, view, selection_ids, status, note, voice_path=None):
     Uses the case started with Before when it is the same clash; otherwise captures it now.
     """
     state = pending_case(doc)
-    number, clash, results = current_clash(doc)
-    expected = u"CLASH-%03d" % number if clash is not None else None
+    name, clash, results, label = current_clash(doc)
+    expected = name if clash is not None else None
     if state is None or (expected is not None and state.get("case") != expected):
         case_name, case_dir, _, image_ok = start_case(doc, view, selection_ids)
         state = pending_case(doc)

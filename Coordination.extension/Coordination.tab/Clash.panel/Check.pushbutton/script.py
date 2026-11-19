@@ -152,22 +152,8 @@ else:
         placed, gc.REGION_WORKSET, deleted))
 
 
-def region_cell(clash):
-    return output.linkify(gc.make_id(clash["region"]), title=u"CLASH-%03d" % (clashes.index(clash) + 1)) if clash.get("region") else u"-"
-
-
-def members_cell(group):
-    lines = []
-    for member in group["members"][1:8]:
-        lines.append(u"%s x %s" % (side_short(member["a"]), side_short(member["b"])))
-    if group["count"] > 8:
-        lines.append(u"... +%d" % (group["count"] - 8))
-    return u"<br>".join(lines) or u"-"
-
-
-def side_short(side):
-    ident = output.linkify(gc.make_id(side["id"])) if side["link_id"] is None else u"#%d" % side["id"]
-    return u"%s %s" % (side["size"] or side["category"], ident)
+def region_link(clash, name):
+    return output.linkify(gc.make_id(clash["region"]), title=name) if clash.get("region") else name
 
 
 def cell(side):
@@ -176,12 +162,27 @@ def cell(side):
     return u"%s<br>%s %s" % (side["source"], text, ident)
 
 
+def table_rows():
+    """A row per group, then (for groups of several clashes) a row per clash: 1.1, 1.2 ..."""
+    rows = []
+    for i, group in enumerate(clashes):
+        members = group.get("members") or [group]
+        if len(members) == 1:
+            rows.append([u"<b>%d</b>" % (i + 1), group["systems"], 1, cell(group["a"]), cell(group["b"]),
+                         group["depth_mm"], region_link(members[0], gc.clash_name(i))])
+            continue
+        rows.append([u"<b>%d</b>" % (i + 1), u"<b>%s</b>" % group["systems"], u"<b>%d</b>" % group["count"],
+                     u"<i>група</i>", u"", group["depth_mm"], u""])
+        for j, member in enumerate(members):
+            rows.append([u"&nbsp;&nbsp;%d.%d" % (i + 1, j + 1), u"", u"", cell(member["a"]), cell(member["b"]),
+                         member["depth_mm"], region_link(member, gc.clash_name(i, j, group))])
+    return rows
+
+
 if clashes:
-    output.print_table(
-        [[i + 1, c["systems"], c["count"], cell(c["a"]), cell(c["b"]), members_cell(c), c["depth_mm"], region_cell(c)]
-         for i, c in enumerate(clashes)],
-        columns=[u"№", u"Мережі", u"Колізій", u"Елемент A", u"Елемент B", u"Решта колізій групи", u"Заходження, мм", u"Бокс"])
-    output.print_md(u"Кнопки **Наступна / Попередня / Список** на вкладці Clash показують кожну колізію в 3D.")
+    output.print_table(table_rows(),
+                       columns=[u"№", u"Мережі", u"Колізій", u"Елемент A", u"Елемент B", u"Заходження, мм", u"Бокс"])
+    output.print_md(u"**Наступна / Попередня** — по групах. **Список** — оберіть групу, потім усю групу або одну її колізію.")
     forms.alert(u"Знайдено груп: %d (колізій: %d)." % (len(clashes), len(found)),
                 sub_msg=u"Таблиця відкрита у вікні pyRevit. Перейти до колізій можна кнопками Наступна / Попередня / Список.")
 else:

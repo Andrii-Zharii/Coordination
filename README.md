@@ -57,8 +57,10 @@ Clash settings and the last results are kept in `%APPDATA%\pyRevit\GRHL Clash\`.
 they are between the same pair of networks (System Type; insulation counts as its pipe/duct; all cable trays
 are one network; linked elements by category) and their centres are within **1 m** — or within **4 m** when
 one side is the same linked element or the same connected MEP network (a pipe through three trays side by
-side; several sprinkler branches touching the same pipe). Navigator, Clash Region boxes and Cases work on
-groups. Distances: `group_near_mm` / `group_far_mm` in `%APPDATA%\pyRevit\GRHL Clash\settings.json`.
+side; several sprinkler branches touching the same pipe). The report lists each group and, under it, its
+clashes (1.1, 1.2 …). **Clash Region**: one box per clash, Mark `CLASH-001.3` (or `CLASH-002` for a group of one).
+**Next / Previous** step through groups; **List**: pick a group, then the whole group or one of its clashes.
+Cases record what the navigator shows (a group or one clash). Distances: `group_near_mm` / `group_far_mm` in `%APPDATA%\pyRevit\GRHL Clash\settings.json`.
 
 ### Trays panel
 

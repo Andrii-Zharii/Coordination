@@ -617,6 +617,34 @@ def side_label(side):
     return u"[%s] %s #%d" % (side["source"], text, side["id"])
 
 
+def clash_name(group_index, member_index=None, group=None):
+    """CLASH-001 for a group (or a one-clash group's clash), CLASH-001.3 for the 3rd clash of a group."""
+    name = u"CLASH-%03d" % (group_index + 1)
+    if member_index is not None and member_index >= 0 and group is not None and group.get("count", 1) > 1:
+        name += u".%d" % (member_index + 1)
+    return name
+
+
+def member_label(group_index, member_index, member):
+    return u"%d.%d  %s  x  %s  (%d мм)" % (group_index + 1, member_index + 1, side_label(member["a"]),
+                                         side_label(member["b"]), member["depth_mm"])
+
+
+def current_item(results):
+    """(name, clash-or-group, label) shown by the navigator now, or (None, None, None).
+    A group when the whole group is shown, one of its clashes when the user picked it in the list."""
+    clashes = (results or {}).get("clashes") or []
+    index = (results or {}).get("current", -1)
+    if not 0 <= index < len(clashes):
+        return None, None, None
+    group = clashes[index]
+    member = (results or {}).get("current_member", -1)
+    members = group.get("members") or []
+    if members and len(members) > 1 and 0 <= member < len(members):
+        return clash_name(index, member, group), members[member], member_label(index, member, members[member])
+    return clash_name(index), group, clash_label(index, group)
+
+
 def clash_label(index, clash):
     if clash.get("members"):
         return u"%d. [%s] %d колізій: %s  x  %s  (%d мм)" % (
@@ -803,7 +831,12 @@ def place_regions(doc, clashes, zone=None, margin_mm=REGION_MARGIN_MM):
             doc.Delete(old)
         if not symbol.IsActive:
             symbol.Activate()
-        for index, clash in enumerate(clashes):
+        boxes = []
+        for index, group in enumerate(clashes):
+            members = group.get("members") or [group]
+            for member_index, member in enumerate(members):
+                boxes.append((clash_name(index, member_index, group), member, group, index))
+        for name, clash, group, index in boxes:
             box = Box(DB.XYZ(*clash["min"]), DB.XYZ(*clash["max"])).expanded(margin)
             centre = box.center()
             size = box.hi - box.lo
@@ -815,8 +848,8 @@ def place_regions(doc, clashes, zone=None, margin_mm=REGION_MARGIN_MM):
             instance.LookupParameter(u"Width").Set(size.X)
             instance.LookupParameter(u"Length").Set(size.Y)
             instance.LookupParameter(u"Height").Set(size.Z)
-            instance.get_Parameter(DB.BuiltInParameter.ALL_MODEL_MARK).Set(u"CLASH-%03d" % (index + 1))
-            instance.get_Parameter(DB.BuiltInParameter.ALL_MODEL_INSTANCE_COMMENTS).Set(clash_label(index, clash)[:250])
+            instance.get_Parameter(DB.BuiltInParameter.ALL_MODEL_MARK).Set(name)
+            instance.get_Parameter(DB.BuiltInParameter.ALL_MODEL_INSTANCE_COMMENTS).Set(clash_label(index, group)[:250])
             arc = instance.LookupParameter(REGION_ARC_PARAM)
             if arc is not None:
                 arc.Set(1 if is_arc_clash(clash) else 0)
@@ -825,11 +858,12 @@ def place_regions(doc, clashes, zone=None, margin_mm=REGION_MARGIN_MM):
     except Exception:
         transaction.RollBack()
         raise
-    return len(clashes), old.Count
+    return len(boxes), old.Count
 
 
-def navigate(uidoc, step=None, index=None):
-    """Shows the next (step=1), previous (step=-1) or given clash of the last check and returns its label.
+def navigate(uidoc, step=None, index=None, member=None):
+    """Shows the next (step=1) / previous (step=-1) group of the last check, or the given group
+    (index), or one clash of it (member). Returns (header, label).
 
     Raises ValueError when there is no check for the active document.
     """
@@ -841,10 +875,12 @@ def navigate(uidoc, step=None, index=None):
     clashes = results["clashes"]
     if index is None:
         index = (results.get("current", -1) + (step or 1)) % len(clashes)
+    results["current"] = index
+    results["current_member"] = member if member is not None else -1
+    name, target, label = current_item(results)
     link_ids = results.get("links")
     if link_ids is None:
         link_ids = set(side["link_id"] for c in clashes for side in (c["a"], c["b"]) if side["link_id"] is not None)
-    results["highlighted"] = show_clash(uidoc, clashes[index], results.get("highlighted", []), link_ids)
-    results["current"] = index
+    results["highlighted"] = show_clash(uidoc, target, results.get("highlighted", []), link_ids)
     save_results(results)
-    return u"Колізія %d з %d" % (index + 1, len(clashes)), clash_label(index, clashes[index])
+    return u"%s  (група %d з %d)" % (name, index + 1, len(clashes)), label
