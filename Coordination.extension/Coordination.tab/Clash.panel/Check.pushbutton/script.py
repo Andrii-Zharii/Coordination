@@ -118,7 +118,8 @@ with forms.ProgressBar(title=u"Пошук колізій... ({value} з {max_val
     stats = {}
     found = gc.find_clashes(items, zone, min_depth_mm=min_depth, progress=bar.update_progress, focus=focus,
                             openings=gc.opening_boxes(host, zone), stats=stats)
-    clashes = gc.unique_by_element(found)
+    clashes = gc.group_clashes(found, settings.get("group_near_mm", gc.GROUP_NEAR_MM),
+                               settings.get("group_far_mm", gc.GROUP_FAR_MM))
 
 region_error = None
 placed = deleted = 0
@@ -139,10 +140,11 @@ gc.save_results({
 
 output = script.get_output()
 output.set_title(u"Clash у зоні")
-output.print_md(u"## Колізії: %d" % len(clashes))
-output.print_md(u"**Зона:** %s  \n**Перевіряється:** %s  \n**Воркcети:** %s  \n**Лінки:** %s  \n**Мінімальне заходження:** %g мм  \n**Перевірено елементів:** %d  \n**Усього перетинів:** %d, повтори тих самих елементів приховано  \n**Проходи крізь шрулі й отвори (не колізії):** %d" % (
+output.print_md(u"## Групи колізій: %d (колізій усього: %d)" % (len(clashes), len(found)))
+output.print_md(u"**Зона:** %s  \n**Перевіряється:** %s  \n**Воркcети:** %s  \n**Лінки:** %s  \n**Мінімальне заходження:** %g мм  \n**Перевірено елементів:** %d  \n**Усього перетинів:** %d, зібрано в групи: та сама пара мереж поруч (до %g мм, або до %g мм уздовж тієї самої мережі)  \n**Проходи крізь шрулі й отвори (не колізії):** %d" % (
     zone_text, u", ".join(sorted(focus)), u", ".join(sorted(picked_ws)) or u"-",
-    u", ".join(l.name for l in picked_links) or u"-", min_depth, len(items), len(found), stats["in_openings"]))
+    u", ".join(l.name for l in picked_links) or u"-", min_depth, len(items), len(found),
+    settings.get("group_near_mm", gc.GROUP_NEAR_MM), settings.get("group_far_mm", gc.GROUP_FAR_MM), stats["in_openings"]))
 if region_error:
     output.print_md(u"**Бокси Clash Region не поставлено:** %s" % region_error)
 else:
@@ -154,6 +156,20 @@ def region_cell(clash):
     return output.linkify(gc.make_id(clash["region"]), title=u"CLASH-%03d" % (clashes.index(clash) + 1)) if clash.get("region") else u"-"
 
 
+def members_cell(group):
+    lines = []
+    for member in group["members"][1:8]:
+        lines.append(u"%s x %s" % (side_short(member["a"]), side_short(member["b"])))
+    if group["count"] > 8:
+        lines.append(u"... +%d" % (group["count"] - 8))
+    return u"<br>".join(lines) or u"-"
+
+
+def side_short(side):
+    ident = output.linkify(gc.make_id(side["id"])) if side["link_id"] is None else u"#%d" % side["id"]
+    return u"%s %s" % (side["size"] or side["category"], ident)
+
+
 def cell(side):
     ident = output.linkify(gc.make_id(side["id"])) if side["link_id"] is None else u"#%d" % side["id"]
     text = u" ".join(p for p in (side["category"], side["type"], side["size"]) if p)
@@ -162,11 +178,11 @@ def cell(side):
 
 if clashes:
     output.print_table(
-        [[i + 1, cell(c["a"]), cell(c["b"]), c["depth_mm"], c["volume_cm3"], c["also"], region_cell(c)]
+        [[i + 1, c["systems"], c["count"], cell(c["a"]), cell(c["b"]), members_cell(c), c["depth_mm"], region_cell(c)]
          for i, c in enumerate(clashes)],
-        columns=[u"№", u"Елемент A", u"Елемент B", u"Заходження, мм", u"Об'єм, см³", u"Ще перетинів", u"Бокс"])
+        columns=[u"№", u"Мережі", u"Колізій", u"Елемент A", u"Елемент B", u"Решта колізій групи", u"Заходження, мм", u"Бокс"])
     output.print_md(u"Кнопки **Наступна / Попередня / Список** на вкладці Clash показують кожну колізію в 3D.")
-    forms.alert(u"Знайдено колізій: %d." % len(clashes),
+    forms.alert(u"Знайдено груп: %d (колізій: %d)." % (len(clashes), len(found)),
                 sub_msg=u"Таблиця відкрита у вікні pyRevit. Перейти до колізій можна кнопками Наступна / Попередня / Список.")
 else:
     output.print_md(u"Колізій не знайдено.")

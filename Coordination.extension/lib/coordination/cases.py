@@ -338,7 +338,7 @@ def start_case(doc, view, selection_ids):
     if clash is not None:
         case_name = u"CLASH-%03d" % number
         check = _safe_name((results.get("created") or u"").replace(u":", u"-"))
-        host_ids = [s["id"] for s in (clash["a"], clash["b"]) if s["link_id"] is None]
+        host_ids = gc.host_ids_of(clash)
         point_box = gc.Box(DB.XYZ(*clash["min"]), DB.XYZ(*clash["max"]))
         info = {"source": "clash", "number": number, "label": gc.clash_label(number - 1, clash),
                 "zone": results.get("zone"), "clash": clash}

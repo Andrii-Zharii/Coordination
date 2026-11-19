@@ -43,6 +43,9 @@ REGION_WORKSET = u"Clash"
 REGION_MARGIN_MM = 100.0
 REGION_ARC_PARAM = u"ARC clash"
 ARC_CATEGORIES = (u"Walls", u"Floors", u"Structural Framing", u"Structural Columns", u"Columns")
+TRAY_CATEGORIES = (u"Cable Trays", u"Cable Tray Fittings")
+GROUP_NEAR_MM = 1000.0   # same pair of networks this close -> one group
+GROUP_FAR_MM = 4000.0    # ... up to this far when one side is the same element / MEP network
 
 
 def to_ft(mm):
@@ -295,6 +298,39 @@ def is_ignored(element):
     return any(marker in text for marker in IGNORED_MARKERS + (REGION_FAMILY.upper(),))
 
 
+def _host_of(source, element):
+    """The pipe/duct of an insulation or lining element; the element itself otherwise."""
+    if isinstance(element, DB.InsulationLiningBase):
+        host = source.doc.GetElement(element.HostElementId)
+        if host is not None:
+            return host
+    return element
+
+
+def _system_type_name(element):
+    for bip in (DB.BuiltInParameter.RBS_PIPING_SYSTEM_TYPE_PARAM,
+                DB.BuiltInParameter.RBS_DUCT_SYSTEM_TYPE_PARAM):
+        param = element.get_Parameter(bip)
+        if param is not None and param.HasValue:
+            text = param.AsValueString()
+            if text and text != u"Undefined":
+                return text
+    return u""
+
+
+def class_key(source, element):
+    """Which network an element belongs to, for grouping: the System Type of pipes and ducts
+    (insulation counts as its pipe/duct), "Cable Trays" for trays, the category otherwise;
+    linked elements: "LINK:<category>"."""
+    if source.key != HOST_KEY:
+        return u"LINK:" + element.Category.Name
+    element = _host_of(source, element)
+    category = element.Category.Name if element.Category is not None else u""
+    if category in TRAY_CATEGORIES:
+        return u"Cable Trays"
+    return _system_type_name(element) or category
+
+
 class Item(object):
     def __init__(self, source, element, solids, box, network, workset):
         self.source = source
@@ -304,6 +340,7 @@ class Item(object):
         self.network = network
         self.workset = workset
         self.is_opening = is_opening(element)
+        self.class_key = class_key(source, element)
 
 
 def _zone_elements(source, zone):
@@ -365,7 +402,7 @@ def collect(source, zone, worksets=None, categories=None):
             box = box.union(solid_box(s))
         if not box.overlaps(zone):
             continue
-        items.append(Item(source, element, solids, box, networks.of(element), workset))
+        items.append(Item(source, element, solids, box, networks.of(_host_of(source, element)), workset))
     return items
 
 
@@ -409,6 +446,8 @@ def _describe(item):
         "type": type_name or u"",
         "size": (size.AsString() if size is not None and size.HasValue else u"") or u"",
         "workset": item.workset,
+        "system": item.class_key,
+        "network": item.network if item.source.key == HOST_KEY else None,
     }
 
 
@@ -491,6 +530,87 @@ def unique_by_element(clashes):
     return kept
 
 
+def _side_identity(side):
+    """Same element (linked) or same MEP network (host) -> same identity."""
+    if side.get("link_id") is not None:
+        return (u"link", side["link_id"], side["id"])
+    return (u"net", side.get("network", side["id"]))
+
+
+def _pair_key(clash):
+    return tuple(sorted([clash["a"].get("system") or clash["a"]["category"],
+                         clash["b"].get("system") or clash["b"]["category"]]))
+
+
+def _center(clash):
+    return [(clash["min"][i] + clash["max"][i]) * 0.5 for i in range(3)]
+
+
+def group_clashes(clashes, near_mm=GROUP_NEAR_MM, far_mm=GROUP_FAR_MM):
+    """Groups clashes that are one problem in one place.
+
+    Two clashes join when they are between the same pair of networks (e.g. sprinkler x cable trays) and
+    - their centres are within near_mm, or
+    - one side is the same linked element / the same MEP network and centres are within far_mm
+      (one pipe through three trays side by side; several branches touching the same pipe).
+    Joining is transitive. Returns groups as clash-like dicts, biggest first: "a"/"b" of the deepest
+    member, "min"/"max" around all members, "count", "systems", "members" (the clashes).
+    """
+    near, far = to_ft(near_mm), to_ft(far_mm)
+    count = len(clashes)
+    parent = list(range(count))
+
+    def root(i):
+        while parent[i] != i:
+            parent[i] = parent[parent[i]]
+            i = parent[i]
+        return i
+
+    keys = [_pair_key(c) for c in clashes]
+    centers = [_center(c) for c in clashes]
+    ids = [set([_side_identity(c["a"]), _side_identity(c["b"])]) for c in clashes]
+    for i in range(count):
+        for j in range(i + 1, count):
+            if keys[i] != keys[j]:
+                continue
+            d = sum((centers[i][k] - centers[j][k]) ** 2 for k in range(3)) ** 0.5
+            if d <= near or (d <= far and ids[i] & ids[j]):
+                parent[root(i)] = root(j)
+
+    buckets = {}
+    for i in range(count):
+        buckets.setdefault(root(i), []).append(clashes[i])
+    groups = []
+    for members in buckets.values():
+        members.sort(key=lambda c: -c["volume_cm3"])
+        top = members[0]
+        groups.append({
+            "a": top["a"],
+            "b": top["b"],
+            "min": [min(c["min"][k] for c in members) for k in range(3)],
+            "max": [max(c["max"][k] for c in members) for k in range(3)],
+            "depth_mm": max(c["depth_mm"] for c in members),
+            "volume_cm3": round(sum(c["volume_cm3"] for c in members), 1),
+            "count": len(members),
+            "also": len(members) - 1,
+            "systems": u" x ".join(_pair_key(top)),
+            "members": members,
+        })
+    groups.sort(key=lambda g: (-g["count"], -g["volume_cm3"]))
+    return groups
+
+
+def host_ids_of(clash):
+    """Host element ids of a clash or of all members of a group."""
+    members = clash.get("members") or [clash]
+    result = []
+    for member in members:
+        for side in (member["a"], member["b"]):
+            if side["link_id"] is None and side["id"] not in result:
+                result.append(side["id"])
+    return result
+
+
 def side_label(side):
     parts = [side["category"], side["type"], side["size"]]
     text = u" ".join(p for p in parts if p)
@@ -498,6 +618,9 @@ def side_label(side):
 
 
 def clash_label(index, clash):
+    if clash.get("members"):
+        return u"%d. [%s] %d колізій: %s  x  %s  (%d мм)" % (
+            index + 1, clash["systems"], clash["count"], side_label(clash["a"]), side_label(clash["b"]), clash["depth_mm"])
     also = clash.get("also", 0)
     return u"%d. %s  x  %s  (%d мм)%s" % (index + 1, side_label(clash["a"]), side_label(clash["b"]), clash["depth_mm"],
                                           u"  +ще %d" % also if also else u"")
@@ -587,8 +710,7 @@ def show_clash(uidoc, clash, previous_ids=(), link_ids=(), margin_mm=1000.0):
     """
     doc = uidoc.Document
     box = Box(DB.XYZ(*clash["min"]), DB.XYZ(*clash["max"])).expanded(to_ft(margin_mm))
-    host_ids = [make_id(side["id"]) for side in (clash["a"], clash["b"])
-                if side["link_id"] is None and doc.GetElement(make_id(side["id"])) is not None]
+    host_ids = [make_id(value) for value in host_ids_of(clash) if doc.GetElement(make_id(value)) is not None]
     transaction = DB.Transaction(doc, u"Clash Navigator")
     transaction.Start()
     try:
