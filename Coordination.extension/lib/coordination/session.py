@@ -315,7 +315,7 @@ def analyse_session(doc, view, state, progress=None):
     finish["elements"] = [e for e in finish["elements"] if e["id"] in changed_ids]  # unchanged ones are in start.json
     cases._write_json(os.path.join(folder, "finish.json"), finish)
 
-    before = dict((clash_key(c), c) for c in start["clashes"])
+    before = dict((clash_key(c), c) for c in flatten(start["clashes"]))
     after = dict((clash_key(c), c) for c in clashes)
     for node in nodes:
         node["resolved"] = []
