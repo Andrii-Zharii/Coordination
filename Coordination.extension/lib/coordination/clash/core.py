@@ -53,6 +53,31 @@ GROUP_NEAR_MM = 1000.0   # same pair of networks this close -> one group
 GROUP_FAR_MM = 4000.0    # ... up to this far when one side is the same element / MEP network
 
 
+def code_version():
+    """Short git commit of the extension's repository (what pyRevit runs now), or "?"."""
+    try:
+        repo = os.path.dirname(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
+        git = os.path.join(os.path.dirname(repo), ".git")
+        with io.open(os.path.join(git, "HEAD"), "r", encoding="utf-8") as f:
+            head = f.read().strip()
+        if not head.startswith(u"ref:"):
+            return head[:7]
+        ref = head[4:].strip()
+        path = os.path.join(git, *ref.split(u"/"))
+        if os.path.isfile(path):
+            with io.open(path, "r", encoding="utf-8") as f:
+                return f.read().strip()[:7]
+        packed = os.path.join(git, "packed-refs")
+        if os.path.isfile(packed):
+            with io.open(packed, "r", encoding="utf-8") as f:
+                for line in f:
+                    if line.strip().endswith(ref):
+                        return line.split()[0][:7]
+    except Exception:
+        pass
+    return u"?"
+
+
 def to_ft(mm):
     return DB.UnitUtils.ConvertToInternalUnits(float(mm), DB.UnitTypeId.Millimeters)
 
