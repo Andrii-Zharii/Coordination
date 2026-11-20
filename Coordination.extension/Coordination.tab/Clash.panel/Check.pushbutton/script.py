@@ -86,7 +86,7 @@ link_categories = set()
 if sources:
     available = sorted(set(c for s in sources for c in gc.zone_categories(s, zone)))
     remembered = settings.get("link_categories")
-    checked = remembered if remembered is not None else [c for c in available if c not in gc.DEFAULT_OFF_CATEGORIES]
+    checked = remembered if remembered is not None else [c for c in available if c in gc.DEFAULT_LINK_CATEGORIES]
     picked_cats = pick([Named(c) for c in available], u"Категорії елементів у лінках", "name", checked)
     if picked_cats is None:
         script.exit()

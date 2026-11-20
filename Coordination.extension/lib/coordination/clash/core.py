@@ -33,6 +33,9 @@ SKIP_CATEGORIES = set(int(c) for c in (
     DB.BuiltInCategory.OST_SketchLines,
 ))
 DEFAULT_OFF_CATEGORIES = (u"Parking", u"Structural opening cut", u"Center Line", u"Center line")
+# Linked categories checked when nothing is remembered yet: building structure only, no MEP inside links.
+DEFAULT_LINK_CATEGORIES = (u"Walls", u"Floors", u"Structural Framing", u"Structural Columns", u"Columns",
+                           u"Structural Foundations")
 DEFAULT_FOCUS_CATEGORIES = (u"Pipes", u"Pipe Fittings", u"Cable Trays", u"Cable Tray Fittings")
 OPENING_MARKERS = (u"שרוול", u"פתח", u"-OP")
 IGNORED_MARKERS = (u"CHANNEL DRAIN", u"EBL_LIGHT_FIX_CEIL_LED")

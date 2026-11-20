@@ -59,7 +59,7 @@ def run_check(doc, settings, zone, progress=None):
     focus = set(settings.get("focus", gc.DEFAULT_FOCUS_CATEGORIES))
     link_names = set(settings.get("links", []))
     link_categories = settings.get("link_categories")
-    link_categories = set(link_categories) if link_categories is not None else None
+    link_categories = set(link_categories if link_categories is not None else gc.DEFAULT_LINK_CATEGORIES)
     host = gc.Source(doc)
     items = gc.collect(host, zone, worksets=worksets) if worksets else []
     for link in gc.loaded_links(doc):
