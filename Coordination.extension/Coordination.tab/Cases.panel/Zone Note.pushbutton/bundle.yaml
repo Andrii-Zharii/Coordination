@@ -1,0 +1,7 @@
+title: Zone Note
+tooltip: |
+  Write a short note during a zone session (between Start Zone and Finish Zone):
+  what you just did and why. Saved at once with the time, the clash open in the navigator,
+  the selected elements and a screenshot. All notes are added to the zone at Finish Zone.
+author: Coordination
+context: doc-project

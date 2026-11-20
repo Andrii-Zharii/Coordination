@@ -67,7 +67,7 @@ def run_check(doc, settings, zone, progress=None):
             items += gc.collect(gc.Source(doc, link), zone, categories=link_categories)
     found = gc.find_clashes(items, zone, min_depth_mm=settings.get("min_depth", 10), progress=progress,
                             focus=focus, openings=gc.opening_boxes(host, zone), stats={})
-    return gc.unique_by_element(found)
+    return found
 
 
 def clash_key(clash):
@@ -111,6 +111,54 @@ def _snapshot(doc, view, folder, stage, region, extra_ids, clashes):
     return data, image_ok
 
 
+def flatten(clashes):
+    """Single clashes of a list that may hold groups (results of 'Clash у зоні')."""
+    result = []
+    for clash in clashes:
+        result.extend(clash.get("members") or [clash])
+    return result
+
+
+JOURNAL_FILE = "journal.json"
+
+
+def add_note(doc, view, state, text, selection_ids):
+    """Zone Note: a note written during the session, stored at once in the session folder
+    (journal.json + journal.txt) with the time, the clash shown by the navigator, the selected
+    elements and a screenshot. Returns (number, image_ok)."""
+    folder = state["folder"]
+    path = os.path.join(folder, JOURNAL_FILE)
+    journal = cases._read_json(path) if os.path.isfile(path) else []
+    number = len(journal) + 1
+    entry = {"n": number, "time": datetime.now().strftime("%Y-%m-%d %H:%M:%S"), "text": text,
+             "selected": list(selection_ids), "view": view.Name}
+    results = gc.load_results()
+    if results and results.get("document") == doc.Title:
+        name, clash, label = gc.current_item(results)
+        if clash is not None:
+            entry["clash"] = name
+            entry["clash_label"] = label
+    image = u"note_%02d.jpg" % number
+    image_ok = False
+    try:
+        image_ok = cases.export_view_image(doc, view, os.path.join(folder, image))
+    except Exception as error:
+        entry["image_error"] = u"%s" % error
+        shutil.rmtree(os.path.join(folder, "_export"), ignore_errors=True)
+    if image_ok:
+        entry["image"] = image
+    journal.append(entry)
+    cases._write_json(path, journal)
+    with io.open(os.path.join(folder, "journal.txt"), "a", encoding="utf-8") as f:
+        f.write(u"[%d] %s  %s\n%s\n\n" % (number, entry["time"], entry.get("clash", u""), text))
+    return number, image_ok
+
+
+def journal(state):
+    path = os.path.join(state["folder"], JOURNAL_FILE)
+    return cases._read_json(path) if os.path.isfile(path) else []
+
+
 def pending_session(doc):
     if not os.path.isfile(STATE_FILE):
         return None
@@ -137,6 +185,8 @@ def start_session(doc, view, progress=None, clashes=None):
     zone, zone_text = zone_from_settings(doc, settings)
     if clashes is None:
         clashes = run_check(doc, settings, zone, progress)
+    else:
+        clashes = flatten(clashes)
     started = datetime.now()
     folder = os.path.join(cases.CASES_DIR, cases._safe_name(doc.Title), "sessions",
                           started.strftime("%Y-%m-%d %H-%M"))
@@ -317,10 +367,13 @@ def save_session(state, result, notes, general_note):
         "new_clashes_elsewhere": summary["created_elsewhere"],
         "remaining_clashes": summary["remaining"],
         "note": general_note or u"",
+        "journal": journal(state),
     })
     cases._write_json(os.path.join(folder, "session.json"), info)
     lines = [u"Zone: %s" % info["zone"], u"Clashes: %d -> %d" % (result["before_count"], result["after_count"]),
              u"", u"[session] %s" % (general_note or u"")]
+    for entry in info["journal"]:
+        lines.append(u"[journal %d] %s %s: %s" % (entry["n"], entry["time"], entry.get("clash", u""), entry["text"]))
     for node in nodes_json:
         lines.append(u"")
         lines.append(u"[node %d] resolved %d, new %d, changed %d elements" % (

@@ -42,10 +42,11 @@ for index, node in enumerate(nodes):
     else:
         notes[index] = note
 
+journal = session.journal(state)
 general = forms.ask_for_string(
-    prompt=u"Session: {} changed elements in {} nodes, clashes {} -> {}.\n"
+    prompt=u"Session: {} changed elements in {} nodes, clashes {} -> {}. Zone notes written: {}.\n"
            u"Anything about the zone as a whole? (optional)".format(
-               len(result["changes"]), len(nodes), result["before_count"], result["after_count"]),
+               len(result["changes"]), len(nodes), result["before_count"], result["after_count"], len(journal)),
     title=u"Finish Zone")
 folder = session.save_session(state, result, notes, general)
 
@@ -56,6 +57,10 @@ output.print_md(u"**Clashes:** {} → {}  \n**Changed elements:** {} in {} nodes
     result["before_count"], result["after_count"], len(result["changes"]), len(nodes), folder))
 if not result["image_ok"]:
     output.print_md(u"**Screenshot failed.**")
+if journal:
+    output.print_md(u"### Zone notes")
+    for entry in journal:
+        output.print_md(u"- **{}** {} {}".format(entry["time"][11:16], entry.get("clash", u""), entry["text"]))
 
 
 def element_link(change):

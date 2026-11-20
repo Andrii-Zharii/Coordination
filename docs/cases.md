@@ -9,7 +9,10 @@ When one fix leads to another and you cannot go clash by clash:
 
 1. **Clash у зоні** — the zone and settings of this check are used.
 2. **Start Zone** — snapshot of all MEP in the zone + clash list (use the last check, or check now) + screenshot.
-3. Work as usual: any order, any number of fixes. Nothing to press.
+3. Work as usual: any order, any number of fixes. After a fix, press **Zone Note** and write in a few
+   words what you did and why — so nothing is forgotten by the end. Each note is saved at once with the time,
+   the clash open in the navigator, the selected elements and a screenshot (`journal.json`, `journal.txt`,
+   `note_NN.jpg`), and goes into `session.json` at Finish Zone.
 4. **Finish Zone** — snapshot and clash check again. The changes are found automatically and
    grouped into **nodes** (changed elements that are connected or closer than 0.3 m).
    Each node is selected in Revit; write one short note: *why* you did it this way (Win+H).
@@ -23,7 +26,8 @@ cases/<model>/sessions/<start time>/
   start.json    data of all MEP in the zone + clashes at the start
   finish.json   data of the changed elements + clashes at the finish
   start.jpg / finish.jpg   screenshots of the active view
-  note.txt      notes per node
+  note.txt      notes per node + zone notes
+  journal.json / journal.txt / note_NN.jpg   notes written with Zone Note during the session
 ```
 
 Press Start Zone **before** the first change: what was changed earlier cannot be reconstructed.
