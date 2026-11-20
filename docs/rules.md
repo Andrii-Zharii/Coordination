@@ -69,6 +69,14 @@ tray through `INT-25 (Cn25)`: tray split by height + "opening needed in the wall
 - "Not a clash, a bad connection" (11-58 #6: condensate 50 × kitchen hood duct bend) — a modelling defect.
 - Just move it out of the wall (11-58 #7: sprinkler 32 × column 100/100).
 
+## Next tools (paused 2026-11-20, back to them later)
+Proposed from R6–R9, order to be decided:
+1. **Openings list (R9)** — all places where MEP passes a concrete wall/floor without an opening:
+   table for the architect/structure (wall, network, size, elevation).
+2. **Split crossing trays (R7)** — for a "Cable Trays x Cable Trays" group, raise/lower one tray ±100 mm at the crossing.
+3. **Move a sprinkler branch (R8)** — find the branch between its height-change points and move it with the heads.
+4. **Less noise (R6)** — do not report trays only touching side by side (minimum overlap > 0 mm).
+
 ## Notes on the tools
 - Zone session grouping: changes closer than 0.3 m are merged, so in a dense corridor
   ~940 changed elements ended up in one node (node 10, 76 clashes). Grouping should also
