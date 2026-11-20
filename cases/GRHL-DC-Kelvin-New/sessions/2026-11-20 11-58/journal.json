@@ -1,0 +1,131 @@
+[
+ {
+  "view": "CLASH Navigator - coordinator89T4H", 
+  "text": "Простий випадок кабел треї находили один на одного, а також їх необхідно розвести на різні відмітки у місці перехрестя", 
+  "clash": "CLASH-001", 
+  "n": 1, 
+  "image": "note_01.jpg", 
+  "time": "2026-11-20 11:59:40", 
+  "clash_label": "1. [Cable Trays x Cable Trays] 7 колізій: [Модель] Cable Trays תעלת פח מחורץ 15x8 #9556278  x  [Модель] Cable Trays תעלת פח מחורץ 10x8 #9556302  (50 мм)", 
+  "selected": []
+ }, 
+ {
+  "view": "00", 
+  "text": "Бракує отвору у стіні", 
+  "clash": "CLASH-002", 
+  "n": 2, 
+  "image": "note_02.jpg", 
+  "time": "2026-11-20 12:01:06", 
+  "clash_label": "2. [LINK:Walls x ביוב] 6 колізій: [Модель] Pipes Plastic 160 mmר #9311995  x  [GRHL-A-MAIN.rvt] Walls INT-35 (Cn35) #8066733  (118 мм)", 
+  "selected": [
+   9311995
+  ]
+ }, 
+ {
+  "view": "CLASH Navigator - coordinator89T4H", 
+  "text": "ззміна способу зєднання щоб труби не заходили у стіну та дакт", 
+  "clash": "CLASH-003", 
+  "n": 3, 
+  "image": "note_03.jpg", 
+  "time": "2026-11-20 12:40:29", 
+  "clash_label": "3. [Kitchen Hood Exhaust x ביוב] 6 колізій: [Модель] Duct Insulations Fire Insulation #9207290  x  [Модель] Pipes Plastic 160 mmר #9311819  (54 мм)", 
+  "selected": []
+ }, 
+ {
+  "view": "CLASH Navigator - coordinator89T4H", 
+  "text": "аналогічний клеш як із попередніми кабел треями", 
+  "clash": "CLASH-004", 
+  "n": 4, 
+  "image": "note_04.jpg", 
+  "time": "2026-11-20 12:44:02", 
+  "clash_label": "4. [Cable Trays x Cable Trays] 6 колізій: [Модель] Cable Trays תעלת פח מחורץ 15x8 #9556282  x  [Модель] Cable Trays תעלת פח מחורץ 10x8 #9556294  (50 мм)", 
+  "selected": [
+   11306087
+  ]
+ }, 
+ {
+  "view": "CLASH Navigator - coordinator89T4H", 
+  "text": "розвів один лоток по висоті, необхіднйи отвір в стіні", 
+  "clash": "CLASH-005", 
+  "n": 5, 
+  "image": "note_05.jpg", 
+  "time": "2026-11-20 12:55:45", 
+  "clash_label": "5. [Cable Trays x LINK:Walls] 4 колізій: [Модель] Cable Trays תעלת פח מחורץ 10x10 #9562225  x  [GRHL-A-MAIN.rvt] Walls INT-25 (Cn25) #8066741  (100 мм)", 
+  "selected": []
+ }, 
+ {
+  "view": "CLASH Navigator - coordinator89T4H", 
+  "text": "це нет клеш а погане зєднання", 
+  "clash": "CLASH-009", 
+  "n": 6, 
+  "image": "note_06.jpg", 
+  "time": "2026-11-20 12:59:23", 
+  "clash_label": "9. [H_Condensate Drainage x Kitchen Hood Exhaust] 3 колізій: [Модель] Pipes Carbon Steel 50ø #9207319  x  [Модель] Ducts Round Bend 70x70 #9209752  (37 мм)", 
+  "selected": [
+   9207319, 
+   9207321, 
+   9209750, 
+   9209752, 
+   9209753, 
+   9209754
+  ]
+ }, 
+ {
+  "view": "CLASH Navigator - coordinator89T4H", 
+  "text": "ПРОСТО ПЕРЕМІСТИТИ ЩОБ НЕ заходило в стіну", 
+  "clash": "CLASH-010", 
+  "n": 7, 
+  "image": "note_07.jpg", 
+  "time": "2026-11-20 12:59:58", 
+  "clash_label": "10. [LINK:Structural Columns x ספרינקלר] 3 колізій: [Модель] Pipes Plastic 32 mmר #9322522  x  [GRHL-A-MAIN.rvt] Structural Columns 100/100 #8078149  (23 мм)", 
+  "selected": []
+ }, 
+ {
+  "view": "CLASH Navigator - coordinator89T4H", 
+  "text": "провести в обхід duct", 
+  "clash": "CLASH-011", 
+  "n": 8, 
+  "image": "note_08.jpg", 
+  "time": "2026-11-20 13:07:17", 
+  "clash_label": "11. [Fresh Air x כיבוי אש] 2 колізій: [Модель] Ducts Round Bend 170x60 #9205786  x  [Модель] Pipes Plastic 90 mmר #9328696  (68 мм)", 
+  "selected": [
+   9205786
+  ]
+ }, 
+ {
+  "view": "CLASH Navigator - coordinator89T4H", 
+  "text": "Не клеш бо має бути усередині стін", 
+  "clash": "CLASH-016", 
+  "n": 9, 
+  "clash_label": "16. [LINK:Floors x ניקוז גג] 2 колізій: [Модель] Pipes Plastic 160ø #9316251  x  [GRHL-A-T2.rvt] Floors Str-25 (Cn) #5559534  (123 мм)", 
+  "time": "2026-11-20 13:16:32", 
+  "image": "note_09.jpg", 
+  "selected": [
+   9316251
+  ]
+ }, 
+ {
+  "view": "CLASH Navigator - coordinator89T4H", 
+  "text": "Розвів лотки на різні відмітки", 
+  "clash": "CLASH-031", 
+  "n": 10, 
+  "clash_label": "31. [Cable Trays x Cable Trays] 2 колізій: [Модель] Cable Trays תעלת פח מחורץ 10x8 #9562196  x  [Модель] Cable Trays תעלת פח מחורץ 15x8 #9562220  (80 мм)", 
+  "time": "2026-11-20 16:26:51", 
+  "image": "note_10.jpg", 
+  "selected": []
+ }, 
+ {
+  "clash_label": "35. [כיבוי אש x ספרינקלר] 2 колізій: [Модель] Pipes Plastic 32 mmר #9321788  x  [Модель] Pipes Plastic 90 mmר #9328694  (20 мм)", 
+  "selected": [
+   9321704, 
+   9321788, 
+   9321790
+  ], 
+  "image": "note_11.jpg", 
+  "time": "2026-11-20 16:29:09", 
+  "view": "CLASH Navigator - coordinator89T4H", 
+  "n": 11, 
+  "text": "Перемістити щілку спринклера ", 
+  "clash": "CLASH-035"
+ }
+]

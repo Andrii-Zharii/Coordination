@@ -1,0 +1,39 @@
+Zone: grids 12 8 A L, level 01 -5000..+0 mm
+Clashes: 131 -> 100
+
+[session] 
+[journal 1] 2026-11-20 11:59:40 CLASH-001: Простий випадок кабел треї находили один на одного, а також їх необхідно розвести на різні відмітки у місці перехрестя
+[journal 2] 2026-11-20 12:01:06 CLASH-002: Бракує отвору у стіні
+[journal 3] 2026-11-20 12:40:29 CLASH-003: ззміна способу зєднання щоб труби не заходили у стіну та дакт
+[journal 4] 2026-11-20 12:44:02 CLASH-004: аналогічний клеш як із попередніми кабел треями
+[journal 5] 2026-11-20 12:55:45 CLASH-005: розвів один лоток по висоті, необхіднйи отвір в стіні
+[journal 6] 2026-11-20 12:59:23 CLASH-009: це нет клеш а погане зєднання
+[journal 7] 2026-11-20 12:59:58 CLASH-010: ПРОСТО ПЕРЕМІСТИТИ ЩОБ НЕ заходило в стіну
+[journal 8] 2026-11-20 13:07:17 CLASH-011: провести в обхід duct
+[journal 9] 2026-11-20 13:16:32 CLASH-016: Не клеш бо має бути усередині стін
+[journal 10] 2026-11-20 16:26:51 CLASH-031: Розвів лотки на різні відмітки
+[journal 11] 2026-11-20 16:29:09 CLASH-035: Перемістити щілку спринклера 
+
+[node 1] resolved 3, new 0, changed 4 elements
+-
+
+[node 2] resolved 2, new 0, changed 16 elements
+-
+
+[node 3] resolved 9, new 0, changed 16 elements
+-
+
+[node 4] resolved 1, new 0, changed 20 elements
+-
+
+[node 5] resolved 2, new 0, changed 18 elements
+-
+
+[node 6] resolved 3, new 0, changed 48 elements
+-
+
+[node 7] resolved 2, new 0, changed 9 elements
+-
+
+[node 8] resolved 4, new 0, changed 12 elements
+-

@@ -1,0 +1,67 @@
+{
+ "user": "coordinator89T4H", 
+ "status": "open", 
+ "model": "GRHL-DC-Kelvin-New", 
+ "started": "2026-11-20 10:28:07", 
+ "zone_box": {
+  "max": [
+   113.60054468043217, 
+   65.326188642977442, 
+   68.897637795275074
+  ], 
+  "min": [
+   9.7455776758274197, 
+   -145.79593280537381, 
+   52.493438320209457
+  ]
+ }, 
+ "check_settings": {
+  "worksets": [
+   "EL", 
+   "ME", 
+   "PL"
+  ], 
+  "link_categories": [
+   "<Room Separation>", 
+   "<Stair/Ramp Sketch: Boundary>", 
+   "<Stair/Ramp Sketch: Stair Path>", 
+   "Doors", 
+   "Floors", 
+   "Generic Models", 
+   "Landings", 
+   "Mechanical Equipment", 
+   "Plumbing Fixtures", 
+   "Railing Rail Path Extension Lines", 
+   "Railings", 
+   "Runs", 
+   "Shaft Openings", 
+   "Stairs", 
+   "Structural Columns", 
+   "Structural Framing", 
+   "Top Rails", 
+   "Walls", 
+   "Windows"
+  ], 
+  "level": "B1", 
+  "focus": [
+   "Cable Tray Fittings", 
+   "Cable Trays", 
+   "Pipe Fittings", 
+   "Pipes"
+  ], 
+  "links": [
+   "GRHL-A-MAIN.rvt", 
+   "GRHL-A-T1.rvt", 
+   "GRHL-A-T2.rvt"
+  ], 
+  "grids": [
+   "12", 
+   "8", 
+   "A", 
+   "L"
+  ], 
+  "min_depth": 0.0, 
+  "heights": "-5000 0"
+ }, 
+ "zone": "grids 12 8 A L, level B1 -5000..+0 mm"
+}
