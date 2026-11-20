@@ -141,6 +141,7 @@ gc.save_results({
 output = script.get_output()
 output.set_title(u"Clash у зоні")
 output.print_md(u"## Групи колізій: %d (колізій усього: %d)" % (len(clashes), len(found)))
+output.print_md(u"*Версія коду: %s*" % gc.code_version())
 output.print_md(u"**Зона:** %s  \n**Перевіряється:** %s  \n**Воркcети:** %s  \n**Лінки:** %s  \n**Мінімальне заходження:** %g мм  \n**Перевірено елементів:** %d  \n**Усього перетинів:** %d, зібрано в групи: та сама пара мереж поруч (до %g мм, або до %g мм уздовж тієї самої мережі)  \n**Проходи крізь шрулі й отвори (не колізії):** %d" % (
     zone_text, u", ".join(sorted(focus)), u", ".join(sorted(picked_ws)) or u"-",
     u", ".join(l.name for l in picked_links) or u"-", min_depth, len(items), len(found),
