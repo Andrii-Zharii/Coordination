@@ -40,6 +40,8 @@ DEFAULT_FOCUS_CATEGORIES = (u"Pipes", u"Pipe Fittings", u"Cable Trays", u"Cable 
 OPENING_MARKERS = (u"שרוול", u"פתח", u"-OP")
 IGNORED_MARKERS = (u"CHANNEL DRAIN", u"EBL_LIGHT_FIX_CEIL_LED")
 IGNORED_WALL_PREFIXES = (u"INT",)
+# Type names of floors that are placeholders, not structure (Revit's default "Wood Joist..." type in a concrete building).
+IGNORED_FLOOR_TYPE_MARKERS = (u"WOOD JOIST",)
 KEPT_WALL_MARKERS = (u"(CN",)
 REGION_FAMILY = u"Clash Region"
 REGION_WORKSET = u"Clash"
@@ -334,6 +336,23 @@ def class_key(source, element):
     return _system_type_name(element) or category
 
 
+def is_real(element):
+    """False for elements that exist in the model but are not part of the built design:
+    secondary design options, demolished elements, placeholder floor types."""
+    option = element.DesignOption
+    if option is not None and not option.IsPrimary:
+        return False
+    demolished = element.get_Parameter(DB.BuiltInParameter.PHASE_DEMOLISHED)
+    if demolished is not None and demolished.HasValue and demolished.AsElementId() != DB.ElementId.InvalidElementId:
+        return False
+    if isinstance(element, DB.Floor):
+        name = element.FloorType.get_Parameter(DB.BuiltInParameter.SYMBOL_NAME_PARAM)
+        text = (name.AsString() if name is not None else u"") or u""
+        if any(marker in text.upper() for marker in IGNORED_FLOOR_TYPE_MARKERS):
+            return False
+    return True
+
+
 class Item(object):
     def __init__(self, source, element, solids, box, network, workset):
         self.source = source
@@ -357,7 +376,7 @@ def _zone_elements(source, zone):
             continue
         if isinstance(element, (DB.ImportInstance, DB.RevitLinkInstance)):
             continue
-        if is_ignored(element):
+        if is_ignored(element) or not is_real(element):
             continue
         yield element
 
