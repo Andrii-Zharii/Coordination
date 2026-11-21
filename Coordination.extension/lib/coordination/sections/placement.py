@@ -8,7 +8,10 @@
    Runs at up to 45 deg to the line still count as cut.
    Stations keep away from the run's fittings.
 2. Extent of each line (wall to wall, the room or corridor the networks run in): on each
-   side the line goes to the first wall of any kind, or concrete column / beam, if it is
+   side the line goes to the first room wall of any kind (standing on the floor, with the
+   networks near the seed not passing over it: not a partition up to a suspended ceiling,
+   not a box or lining hanging among the networks), or concrete column / beam (a concrete
+   wall hanging from the slab counts as a beam), if it is
    not farther than max_reach_to_structure_mm from the last network before it, and ends
    margin_past_structure_mm past it (touching walls, e.g. cladding on concrete, are one).
    Otherwise that side ends margin_no_structure_mm after the networks (bundle_gap_mm
@@ -273,12 +276,18 @@ def _side_extent(sign, crossings, hits, cfg):
 class Floor(object):
     """Runs, concrete and small segments of the floor with their strip indexes."""
 
-    def __init__(self, runs, events, obstacles, segments, walls=None):
+    def __init__(self, runs, events, obstacles, segments, walls=None, z0=None, settings=None):
         self.runs = runs
         self.events = events
         self.obstacles = obstacles
         self.segments = segments
-        self.walls = walls or []
+        self.z0 = z0
+        self.settings = settings
+        walls = walls or []
+        self.boundary_walls = walls                    # where a section may end (if a room wall)
+        self.boundary_index = StripIndex(walls, _obstacle_points)
+        # never cut along: every wall and every concrete beam
+        self.walls = walls + [ob for ob in obstacles if ob.kind == "beam"]
         self.wall_index = StripIndex(self.walls, _obstacle_points)
         self.ends = run_ends(runs, events)
         self.small = [s for s in segments if not s.main]
@@ -295,10 +304,20 @@ def make_line(origin, look, fl, cfg, use_concrete=True):
     small = fl.small_index.near(look, origin)
     hits = []
     if use_concrete:
+        # a wall ends the section only if it stands on the floor and the networks near the
+        # seed do not pass over it (room wall); columns and beams always do
+        tops = [c[4].z + c[4].height / 2.0 for c in crossings if abs(c[1]) <= mm_to_ft(3000)]
+        networks_top = max(tops) if tops else None
+
+        def bounds(ob):
+            if networks_top is None or fl.z0 is None:
+                return True
+            return C.is_room_wall(ob, fl.z0, networks_top, fl.settings)
+
         hits = [(iv, ob, True) for iv, ob in
-                _obstacle_hits(line, fl.obstacle_index.near(look, origin), max_half)]
-        hits += [(iv, ob, False) for iv, ob in
-                 _obstacle_hits(line, fl.wall_index.near(look, origin), max_half)]
+                _obstacle_hits(line, fl.obstacle_index.near(look, origin), max_half) if bounds(ob)]
+        hits += [(iv, ob, ob.kind == "beam") for iv, ob in
+                 _obstacle_hits(line, fl.boundary_index.near(look, origin), max_half) if bounds(ob)]
     right, ob_r, kind_r = _side_extent(1, crossings, hits, cfg)
     left, ob_l, kind_l = _side_extent(-1, crossings, hits, cfg)
     line.t_min, line.t_max = -left, right
@@ -540,8 +559,8 @@ def plan(doc, level, settings, plan_up, plan_right, count, existing_lines=None):
     runs = floor.build_runs(segments, settings)
     events = floor.find_height_changes(runs, settings)
     obstacles = C.collect(doc, z0, z1, settings)
-    walls = C.collect_all_walls(doc, z0, z1)
-    fl = Floor(runs, events, obstacles, segments, walls)
+    walls = C.collect_all_walls(doc, z0, z1, settings)
+    fl = Floor(runs, events, obstacles, segments, walls, z0, settings)
     covered = {"runs": set(), "events": set(), "ends": set()}
     for origin, look, t_min, t_max in (existing_lines or []):
         line = existing_line(origin, look, t_min, t_max, fl, cfg)

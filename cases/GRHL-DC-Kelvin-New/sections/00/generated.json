@@ -1,0 +1,849 @@
+{
+ "note": "Exactly what the tool created, before the team edited it. Lines from the tool, depth from the creation log.", 
+ "level": "00", 
+ "model": "GRHL-DC-Kelvin-New", 
+ "coordinates": "mm, Revit internal origin; heights from level 00", 
+ "sections": [
+  {
+   "length_mm": 2800, 
+   "name": "00-01", 
+   "look": [
+    0.0, 
+    1.0
+   ], 
+   "template": "Electra_Section KN", 
+   "ends": [
+    "concrete", 
+    "concrete"
+   ], 
+   "type": "חתך לגיליון", 
+   "end_mm": [
+    -18350, 
+    3913
+   ], 
+   "depth_mm": 10, 
+   "id": 11419532, 
+   "start_mm": [
+    -21150, 
+    3913
+   ], 
+   "bottom_mm": -150, 
+   "top_mm": 6170, 
+   "networks_cut": 7, 
+   "scale": 25
+  }, 
+  {
+   "length_mm": 23000, 
+   "name": "00-02", 
+   "look": [
+    0.0, 
+    1.0
+   ], 
+   "template": "Electra_Section KN", 
+   "ends": [
+    "wall", 
+    "concrete"
+   ], 
+   "type": "חתך לגיליון", 
+   "end_mm": [
+    -13125, 
+    9161
+   ], 
+   "depth_mm": 73, 
+   "id": 11419541, 
+   "start_mm": [
+    -36125, 
+    9161
+   ], 
+   "bottom_mm": -150, 
+   "top_mm": 6150, 
+   "networks_cut": 8, 
+   "scale": 25
+  }, 
+  {
+   "length_mm": 15950, 
+   "name": "00-03", 
+   "look": [
+    0.0, 
+    1.0
+   ], 
+   "template": "Electra_Section KN", 
+   "ends": [
+    "wall", 
+    "concrete"
+   ], 
+   "type": "חתך לגיליון", 
+   "end_mm": [
+    -20175, 
+    5501
+   ], 
+   "depth_mm": 279, 
+   "id": 11419550, 
+   "start_mm": [
+    -36125, 
+    5501
+   ], 
+   "bottom_mm": -150, 
+   "top_mm": 6150, 
+   "networks_cut": 6, 
+   "scale": 25
+  }, 
+  {
+   "length_mm": 10510, 
+   "name": "00-04", 
+   "look": [
+    1.0, 
+    0.0
+   ], 
+   "template": "Electra_Section KN", 
+   "ends": [
+    "concrete", 
+    "concrete"
+   ], 
+   "type": "חתך לגיליון", 
+   "end_mm": [
+    -30349, 
+    3664
+   ], 
+   "depth_mm": 17, 
+   "id": 11419559, 
+   "start_mm": [
+    -30349, 
+    14173
+   ], 
+   "bottom_mm": -150, 
+   "top_mm": 6150, 
+   "networks_cut": 4, 
+   "scale": 25
+  }, 
+  {
+   "length_mm": 9775, 
+   "name": "00-05", 
+   "look": [
+    0.0, 
+    1.0
+   ], 
+   "template": "Electra_Section KN", 
+   "ends": [
+    "concrete", 
+    "concrete"
+   ], 
+   "type": "חתך לגיליון", 
+   "end_mm": [
+    -43250, 
+    1356
+   ], 
+   "depth_mm": 83, 
+   "id": 11419568, 
+   "start_mm": [
+    -53025, 
+    1356
+   ], 
+   "bottom_mm": -150, 
+   "top_mm": 6170, 
+   "networks_cut": 6, 
+   "scale": 25
+  }, 
+  {
+   "length_mm": 2575, 
+   "name": "00-06", 
+   "look": [
+    0.0, 
+    1.0
+   ], 
+   "template": "Electra_Section KN", 
+   "ends": [
+    "wall", 
+    "concrete"
+   ], 
+   "type": "חתך לגיליון", 
+   "end_mm": [
+    -51750, 
+    2400
+   ], 
+   "depth_mm": 279, 
+   "id": 11419577, 
+   "start_mm": [
+    -54325, 
+    2400
+   ], 
+   "bottom_mm": -150, 
+   "top_mm": 6170, 
+   "networks_cut": 6, 
+   "scale": 25
+  }, 
+  {
+   "length_mm": 2375, 
+   "name": "00-07", 
+   "look": [
+    0.0, 
+    1.0
+   ], 
+   "template": "Electra_Section KN", 
+   "ends": [
+    "concrete", 
+    "wall"
+   ], 
+   "type": "חתך לגיליון", 
+   "end_mm": [
+    28625, 
+    -9537
+   ], 
+   "depth_mm": 753, 
+   "id": 11419586, 
+   "start_mm": [
+    26250, 
+    -9537
+   ], 
+   "bottom_mm": -150, 
+   "top_mm": 6150, 
+   "networks_cut": 3, 
+   "scale": 25
+  }, 
+  {
+   "length_mm": 2550, 
+   "name": "00-08", 
+   "look": [
+    0.0, 
+    1.0
+   ], 
+   "template": "Electra_Section KN", 
+   "ends": [
+    "concrete", 
+    "wall"
+   ], 
+   "type": "חתך לגיליון", 
+   "end_mm": [
+    -18350, 
+    -2758
+   ], 
+   "depth_mm": 10, 
+   "id": 11419595, 
+   "start_mm": [
+    -20900, 
+    -2758
+   ], 
+   "bottom_mm": -150, 
+   "top_mm": 6150, 
+   "networks_cut": 9, 
+   "scale": 25
+  }, 
+  {
+   "length_mm": 1758, 
+   "name": "00-09", 
+   "look": [
+    1.0, 
+    0.0
+   ], 
+   "template": "Electra_Section KN", 
+   "ends": [
+    "wall", 
+    "concrete"
+   ], 
+   "type": "חתך לגיליון", 
+   "end_mm": [
+    -22862, 
+    -7502
+   ], 
+   "depth_mm": 113, 
+   "id": 11419604, 
+   "start_mm": [
+    -22862, 
+    -5744
+   ], 
+   "bottom_mm": -150, 
+   "top_mm": 6150, 
+   "networks_cut": 6, 
+   "scale": 25
+  }, 
+  {
+   "length_mm": 6195, 
+   "name": "00-10", 
+   "look": [
+    0.0, 
+    1.0
+   ], 
+   "template": "Electra_Section KN", 
+   "ends": [
+    "concrete", 
+    "wall"
+   ], 
+   "type": "חתך לגיליון", 
+   "end_mm": [
+    -20405, 
+    -4505
+   ], 
+   "depth_mm": 15, 
+   "id": 11419613, 
+   "start_mm": [
+    -26600, 
+    -4505
+   ], 
+   "bottom_mm": -150, 
+   "top_mm": 6150, 
+   "networks_cut": 3, 
+   "scale": 25
+  }, 
+  {
+   "length_mm": 2372, 
+   "name": "00-11", 
+   "look": [
+    1.0, 
+    0.0
+   ], 
+   "template": "Electra_Section KN", 
+   "ends": [
+    "concrete", 
+    "wall"
+   ], 
+   "type": "חתך לגיליון", 
+   "end_mm": [
+    -27001, 
+    -8924
+   ], 
+   "depth_mm": 254, 
+   "id": 11419622, 
+   "start_mm": [
+    -27001, 
+    -6552
+   ], 
+   "bottom_mm": -150, 
+   "top_mm": 6150, 
+   "networks_cut": 9, 
+   "scale": 25
+  }, 
+  {
+   "length_mm": 8960, 
+   "name": "00-12", 
+   "look": [
+    0.0, 
+    1.0
+   ], 
+   "template": "Electra_Section KN", 
+   "ends": [
+    "wall", 
+    "wall"
+   ], 
+   "type": "חתך לגיליון", 
+   "end_mm": [
+    -28885, 
+    -68
+   ], 
+   "depth_mm": 10, 
+   "id": 11419631, 
+   "start_mm": [
+    -37845, 
+    -68
+   ], 
+   "bottom_mm": -150, 
+   "top_mm": 6150, 
+   "networks_cut": 7, 
+   "scale": 25
+  }, 
+  {
+   "length_mm": 2985, 
+   "name": "00-13", 
+   "look": [
+    1.0, 
+    0.0
+   ], 
+   "template": "Electra_Section KN", 
+   "ends": [
+    "wall", 
+    "concrete"
+   ], 
+   "type": "חתך לגיליון", 
+   "end_mm": [
+    -38214, 
+    -8894
+   ], 
+   "depth_mm": 205, 
+   "id": 11419640, 
+   "start_mm": [
+    -38214, 
+    -5909
+   ], 
+   "bottom_mm": -150, 
+   "top_mm": 6150, 
+   "networks_cut": 11, 
+   "scale": 25
+  }, 
+  {
+   "length_mm": 5670, 
+   "name": "00-14", 
+   "look": [
+    1.0, 
+    0.0
+   ], 
+   "template": "Electra_Section KN", 
+   "ends": [
+    "concrete", 
+    "concrete"
+   ], 
+   "type": "חתך לגיליון", 
+   "end_mm": [
+    -39518, 
+    -3344
+   ], 
+   "depth_mm": 641, 
+   "id": 11419649, 
+   "start_mm": [
+    -39518, 
+    2326
+   ], 
+   "bottom_mm": -150, 
+   "top_mm": 6150, 
+   "networks_cut": 3, 
+   "scale": 25
+  }, 
+  {
+   "length_mm": 2755, 
+   "name": "00-15", 
+   "look": [
+    0.0, 
+    1.0
+   ], 
+   "template": "Electra_Section KN", 
+   "ends": [
+    "wall", 
+    "concrete"
+   ], 
+   "type": "חתך לגיליון", 
+   "end_mm": [
+    -43250, 
+    -8876
+   ], 
+   "depth_mm": 10, 
+   "id": 11419658, 
+   "start_mm": [
+    -46005, 
+    -8876
+   ], 
+   "bottom_mm": -150, 
+   "top_mm": 6150, 
+   "networks_cut": 12, 
+   "scale": 25
+  }, 
+  {
+   "length_mm": 1515, 
+   "name": "00-16", 
+   "look": [
+    1.0, 
+    0.0
+   ], 
+   "template": "Electra_Section KN", 
+   "ends": [
+    "concrete", 
+    "wall"
+   ], 
+   "type": "חתך לגיליון", 
+   "end_mm": [
+    -49327, 
+    -6609
+   ], 
+   "depth_mm": 107, 
+   "id": 11419667, 
+   "start_mm": [
+    -49327, 
+    -5094
+   ], 
+   "bottom_mm": -150, 
+   "top_mm": 6150, 
+   "networks_cut": 6, 
+   "scale": 25
+  }, 
+  {
+   "length_mm": 2575, 
+   "name": "00-17", 
+   "look": [
+    0.0, 
+    1.0
+   ], 
+   "template": "Electra_Section KN", 
+   "ends": [
+    "wall", 
+    "concrete"
+   ], 
+   "type": "חתך לגיליון", 
+   "end_mm": [
+    -51750, 
+    -5209
+   ], 
+   "depth_mm": 237, 
+   "id": 11419676, 
+   "start_mm": [
+    -54325, 
+    -5209
+   ], 
+   "bottom_mm": -150, 
+   "top_mm": 6150, 
+   "networks_cut": 10, 
+   "scale": 25
+  }, 
+  {
+   "length_mm": 15660, 
+   "name": "00-18", 
+   "look": [
+    0.0, 
+    1.0
+   ], 
+   "template": "Electra_Section KN", 
+   "ends": [
+    "concrete", 
+    "concrete"
+   ], 
+   "type": "חתך לגיליון", 
+   "end_mm": [
+    27175, 
+    -19581
+   ], 
+   "depth_mm": 261, 
+   "id": 11419685, 
+   "start_mm": [
+    11515, 
+    -19581
+   ], 
+   "bottom_mm": -150, 
+   "top_mm": 6150, 
+   "networks_cut": 9, 
+   "scale": 25
+  }, 
+  {
+   "length_mm": 3025, 
+   "name": "00-19", 
+   "look": [
+    0.0, 
+    1.0
+   ], 
+   "template": "Electra_Section KN", 
+   "ends": [
+    "concrete", 
+    "wall"
+   ], 
+   "type": "חתך לגיליון", 
+   "end_mm": [
+    20425, 
+    -13656
+   ], 
+   "depth_mm": 10, 
+   "id": 11419694, 
+   "start_mm": [
+    17400, 
+    -13656
+   ], 
+   "bottom_mm": -150, 
+   "top_mm": 6150, 
+   "networks_cut": 5, 
+   "scale": 25
+  }, 
+  {
+   "length_mm": 22948, 
+   "name": "00-20", 
+   "look": [
+    1.0, 
+    0.0
+   ], 
+   "template": "Electra_Section KN", 
+   "ends": [
+    "wall", 
+    "concrete"
+   ], 
+   "type": "חתך לגיליון", 
+   "end_mm": [
+    -29841, 
+    -28227
+   ], 
+   "depth_mm": 10, 
+   "id": 11419703, 
+   "start_mm": [
+    -29841, 
+    -5279
+   ], 
+   "bottom_mm": -150, 
+   "top_mm": 6150, 
+   "networks_cut": 9, 
+   "scale": 25
+  }, 
+  {
+   "length_mm": 8720, 
+   "name": "00-21", 
+   "look": [
+    0.0, 
+    1.0
+   ], 
+   "template": "Electra_Section KN", 
+   "ends": [
+    "wall", 
+    "concrete"
+   ], 
+   "type": "חתך לגיליון", 
+   "end_mm": [
+    -29125, 
+    -11060
+   ], 
+   "depth_mm": 10, 
+   "id": 11419712, 
+   "start_mm": [
+    -37845, 
+    -11060
+   ], 
+   "bottom_mm": -150, 
+   "top_mm": 6150, 
+   "networks_cut": 7, 
+   "scale": 25
+  }, 
+  {
+   "length_mm": 8720, 
+   "name": "00-22", 
+   "look": [
+    0.0, 
+    1.0
+   ], 
+   "template": "Electra_Section KN", 
+   "ends": [
+    "wall", 
+    "concrete"
+   ], 
+   "type": "חתך לגיליון", 
+   "end_mm": [
+    -29125, 
+    -14319
+   ], 
+   "depth_mm": 10, 
+   "id": 11419721, 
+   "start_mm": [
+    -37845, 
+    -14319
+   ], 
+   "bottom_mm": -150, 
+   "top_mm": 6150, 
+   "networks_cut": 5, 
+   "scale": 25
+  }, 
+  {
+   "length_mm": 1875, 
+   "name": "00-23", 
+   "look": [
+    1.0, 
+    0.0
+   ], 
+   "template": "Electra_Section KN", 
+   "ends": [
+    "concrete", 
+    "concrete"
+   ], 
+   "type": "חתך לגיליון", 
+   "end_mm": [
+    -40519, 
+    -20249
+   ], 
+   "depth_mm": 386, 
+   "id": 11419730, 
+   "start_mm": [
+    -40519, 
+    -18374
+   ], 
+   "bottom_mm": -150, 
+   "top_mm": 6150, 
+   "networks_cut": 6, 
+   "scale": 25
+  }, 
+  {
+   "length_mm": 3950, 
+   "name": "00-24", 
+   "look": [
+    0.0, 
+    1.0
+   ], 
+   "template": "Electra_Section KN", 
+   "ends": [
+    "concrete", 
+    "concrete"
+   ], 
+   "type": "חתך לגיליון", 
+   "end_mm": [
+    -43250, 
+    -13076
+   ], 
+   "depth_mm": 88, 
+   "id": 11419739, 
+   "start_mm": [
+    -47200, 
+    -13076
+   ], 
+   "bottom_mm": -150, 
+   "top_mm": 6150, 
+   "networks_cut": 13, 
+   "scale": 25
+  }, 
+  {
+   "length_mm": 3725, 
+   "name": "00-25", 
+   "look": [
+    0.0, 
+    1.0
+   ], 
+   "template": "Electra_Section KN", 
+   "ends": [
+    "concrete", 
+    "wall"
+   ], 
+   "type": "חתך לגיליון", 
+   "end_mm": [
+    -43475, 
+    -17956
+   ], 
+   "depth_mm": 439, 
+   "id": 11419748, 
+   "start_mm": [
+    -47200, 
+    -17956
+   ], 
+   "bottom_mm": -150, 
+   "top_mm": 6150, 
+   "networks_cut": 8, 
+   "scale": 25
+  }, 
+  {
+   "length_mm": 1875, 
+   "name": "00-26", 
+   "look": [
+    1.0, 
+    0.0
+   ], 
+   "template": "Electra_Section KN", 
+   "ends": [
+    "concrete", 
+    "concrete"
+   ], 
+   "type": "חתך לגיליון", 
+   "end_mm": [
+    -50683, 
+    -20249
+   ], 
+   "depth_mm": 556, 
+   "id": 11419757, 
+   "start_mm": [
+    -50683, 
+    -18374
+   ], 
+   "bottom_mm": -150, 
+   "top_mm": 6150, 
+   "networks_cut": 10, 
+   "scale": 25
+  }, 
+  {
+   "length_mm": 2225, 
+   "name": "00-27", 
+   "look": [
+    0.0, 
+    1.0
+   ], 
+   "template": "Electra_Section KN", 
+   "ends": [
+    "wall", 
+    "concrete"
+   ], 
+   "type": "חתך לגיליון", 
+   "end_mm": [
+    -52100, 
+    -16853
+   ], 
+   "depth_mm": 517, 
+   "id": 11419766, 
+   "start_mm": [
+    -54325, 
+    -16853
+   ], 
+   "bottom_mm": -150, 
+   "top_mm": 6150, 
+   "networks_cut": 6, 
+   "scale": 25
+  }, 
+  {
+   "length_mm": 9300, 
+   "name": "00-28", 
+   "look": [
+    0.0, 
+    1.0
+   ], 
+   "template": "Electra_Section KN", 
+   "ends": [
+    "concrete", 
+    "concrete"
+   ], 
+   "type": "חתך לגיליון", 
+   "end_mm": [
+    -51925, 
+    -18569
+   ], 
+   "depth_mm": 24, 
+   "id": 11419775, 
+   "start_mm": [
+    -61225, 
+    -18569
+   ], 
+   "bottom_mm": -150, 
+   "top_mm": 6150, 
+   "networks_cut": 5, 
+   "scale": 25
+  }, 
+  {
+   "length_mm": 3925, 
+   "name": "00-29", 
+   "look": [
+    0.0, 
+    1.0
+   ], 
+   "template": "Electra_Section KN", 
+   "ends": [
+    "concrete", 
+    "concrete"
+   ], 
+   "type": "חתך לגיליון", 
+   "end_mm": [
+    21325, 
+    -28559
+   ], 
+   "depth_mm": 511, 
+   "id": 11419784, 
+   "start_mm": [
+    17400, 
+    -28559
+   ], 
+   "bottom_mm": -150, 
+   "top_mm": 6150, 
+   "networks_cut": 4, 
+   "scale": 25
+  }, 
+  {
+   "length_mm": 7025, 
+   "name": "00-30", 
+   "look": [
+    1.0, 
+    0.0
+   ], 
+   "template": "Electra_Section KN", 
+   "ends": [
+    "wall", 
+    "concrete"
+   ], 
+   "type": "חתך לגיליון", 
+   "end_mm": [
+    -40746, 
+    -26974
+   ], 
+   "depth_mm": 10, 
+   "id": 11419793, 
+   "start_mm": [
+    -40746, 
+    -19949
+   ], 
+   "bottom_mm": -150, 
+   "top_mm": 6150, 
+   "networks_cut": 4, 
+   "scale": 25
+  }
+ ], 
+ "created": "2026-11-21 11:14 by Place Sections (agent run 569a6e0f72be)"
+}

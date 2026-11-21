@@ -23,10 +23,12 @@ NAME = DB.Element.Name.GetValue
 
 
 class Obstacle(object):
-    def __init__(self, polygon, kind, name):
+    def __init__(self, polygon, kind, name, zmin=None, zmax=None):
         self.polygon = polygon
         self.kind = kind
         self.name = name
+        self.zmin = zmin
+        self.zmax = zmax
         xs = [p[0] for p in polygon]
         ys = [p[1] for p in polygon]
         self.center = ((min(xs) + max(xs)) / 2.0, (min(ys) + max(ys)) / 2.0)
@@ -89,7 +91,7 @@ def _walls(link_doc, transform, z_test, cfg, out):
         for a, b in zip(points[:-1], points[1:]):
             polygon = _rectangle((a.X, a.Y), (b.X, b.Y), wall.Width)
             if polygon:
-                out.append(Obstacle(polygon, "wall", name))
+                out.append(Obstacle(polygon, "wall", name, z[0], z[1]))
 
 
 def _bbox_footprint(bbox, transform):
@@ -153,16 +155,16 @@ def _beams(link_doc, transform, z0, z1, cfg, out):
             continue
         a = transform.OfPoint(location.Curve.GetEndPoint(0))
         b = transform.OfPoint(location.Curve.GetEndPoint(1))
-        polygon = _rectangle((a.X, a.Y), (b.X, b.Y), _beam_width(beam, name))
-        if polygon:
-            out.append(Obstacle(polygon, "beam", name))
+        if math.hypot(b.X - a.X, b.Y - a.Y) > mm_to_ft(50):
+            out.append(WallPiece((a.X, a.Y), (b.X, b.Y), _beam_width(beam, name), name,
+                                 bottom, top, kind="beam"))
 
 
 class WallPiece(Obstacle):
-    """A straight piece of any wall (concrete, block, gypsum, curtain...)."""
+    """A straight piece of any wall (concrete, block, gypsum, curtain...) or of a beam."""
 
-    def __init__(self, a, b, width, name):
-        Obstacle.__init__(self, _rectangle(a, b, width), "wall", name)
+    def __init__(self, a, b, width, name, zmin=None, zmax=None, kind="wall"):
+        Obstacle.__init__(self, _rectangle(a, b, width), kind, name, zmin, zmax)
         length = math.hypot(b[0] - a[0], b[1] - a[1])
         self.a = a
         self.b = b
@@ -171,7 +173,7 @@ class WallPiece(Obstacle):
         self.mid = ((a[0] + b[0]) / 2.0, (a[1] + b[1]) / 2.0)
 
 
-def collect_all_walls(doc, z0, z1):
+def collect_all_walls(doc, z0, z1, settings=None):
     """Every wall of the floor, of any type, from this model and the loaded links:
     a section line must never run inside a wall or along its face."""
     lo, hi = z0 + mm_to_ft(300), z1 - mm_to_ft(300)
@@ -202,8 +204,30 @@ def collect_all_walls(doc, z0, z1):
             for a, b in zip(points[:-1], points[1:]):
                 if math.hypot(b.X - a.X, b.Y - a.Y) < mm_to_ft(50):
                     continue
-                out.append(WallPiece((a.X, a.Y), (b.X, b.Y), width, NAME(wall.WallType)))
+                name = NAME(wall.WallType)
+                kind = "wall"
+                if (settings is not None and z[0] > z0 + mm_to_ft(500) and z[1] >= z1 - mm_to_ft(300)
+                        and _is_concrete_wall_name(name, settings)):
+                    kind = "beam"   # concrete wall hanging from the slab above: like a deep beam
+                out.append(WallPiece((a.X, a.Y), (b.X, b.Y), width, name, z[0], z[1], kind=kind))
     return out
+
+
+def _is_concrete_wall_name(name, settings):
+    cfg = settings["sections"]["concrete"]
+    return _has(name, cfg["wall_keywords"]) and not _has(name, cfg["wall_exclude_keywords"])
+
+
+def is_room_wall(wall, z0, networks_top, settings):
+    """A wall that bounds the space the networks run in: it stands on the floor and the
+    networks of the section do not pass over it (its top is not below their top).
+    Partitions up to a suspended ceiling, boxes and linings hanging among the networks
+    are not room walls: a section goes on past them. Columns and beams always count."""
+    if wall.kind != "wall" or wall.zmin is None:
+        return True
+    cfg = settings["sections"]
+    return (wall.zmin <= z0 + mm_to_ft(cfg.get("room_wall_max_bottom_mm", 500))
+            and wall.zmax >= networks_top - mm_to_ft(50))
 
 
 def collect(doc, z0, z1, settings):

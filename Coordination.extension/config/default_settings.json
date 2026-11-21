@@ -46,16 +46,17 @@
     "below_level_mm": 150,
     "above_slab_mm": 150,
 
-    "_width": "From vertical concrete to vertical concrete: the line ends past the first concrete wall / column / beam on each side if it is not farther than max_reach_to_structure_mm from the last network; otherwise it ends margin_no_structure_mm after the networks.",
+    "_width": "Wall to wall: the line ends past the first room wall (standing on the floor, the networks do not pass over it; any type) or concrete column / beam on each side if it is not farther than max_reach_to_structure_mm from the last network; otherwise it ends margin_no_structure_mm after the networks.",
     "max_reach_to_structure_mm": 7000,
     "margin_past_structure_mm": 300,
     "margin_no_structure_mm": 500,
     "bundle_gap_mm": 3000,
+    "room_wall_max_bottom_mm": 500,
     "wall_clearance_mm": 100,
     "wall_overlap_mm": 100,
     "max_half_length_mm": 40000,
 
-    "_depth": "Far clip: stops just before the first pipe / duct / tray that runs along the section line in front of it.",
+    "_depth": "Far clip: stops just before the first MEP element in front of the cut that the cut does not go through.",
     "depth_min_mm": 10,
     "depth_max_mm": 1500,
 
