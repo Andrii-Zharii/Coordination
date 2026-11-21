@@ -104,7 +104,9 @@ How it chooses (rules: [docs/vision.md](docs/vision.md) section 4.0; settings: s
    structural columns; beams of 400 mm+ hanging under the slab above.
 4. **Choice.** One by one, the line that adds the most not shown yet: each run (weight: gravity 3 > ducts, trays 2 > pressure pipes 1.5 >
    sprinklers 0.6, × size × length) and each height change near the line (within 3 m). Lines with concrete on one side count 0.75,
-   none 0.3; small pipes and fittings in the cut lower the score; a line cutting a main network lengthwise is never taken.
+   none 0.3; small pipes and fittings in the cut lower the score; a line cutting a main network lengthwise is never taken,
+   nor a line running inside **any** wall (concrete, block, gypsum, cladding — every wall of the links) or along its face
+   (closer than 100 mm for more than 100 mm). Crossing a wall or ending at its edge is fine.
 5. **View.** Type `חתך לגיליון`, template `Electra_Section KN`, 1:25, names `00-01…` from top right (Hebrew order).
    Height: level −150 mm to the top of the slab above (top faces of the linked floors at the section) +150 mm.
    Depth: stops just before the first pipe/duct/tray running along the section in front of it, 10…1500 mm.

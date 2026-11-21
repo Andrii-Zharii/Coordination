@@ -51,6 +51,8 @@
     "margin_past_structure_mm": 300,
     "margin_no_structure_mm": 500,
     "bundle_gap_mm": 3000,
+    "wall_clearance_mm": 100,
+    "wall_overlap_mm": 100,
     "max_half_length_mm": 40000,
 
     "_depth": "Far clip: stops just before the first pipe / duct / tray that runs along the section line in front of it.",

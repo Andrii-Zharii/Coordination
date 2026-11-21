@@ -20,7 +20,9 @@
    x size x length; each height change = height_change_weight x the run's weight x size of the change.
    Multiplied by concrete_factor (concrete on both sides / one / none) and lowered for
    small pipes and fittings in the cut. A line whose plane runs lengthwise through a main
-   pipe / duct / tray is never chosen (small ones lengthwise: a bigger penalty).
+   pipe / duct / tray is never chosen (small ones lengthwise: a bigger penalty), nor a line
+   that runs inside any wall (concrete, block, gypsum...) or along its face, closer than
+   wall_clearance_mm, over more than wall_overlap_mm. Crossing a wall or ending at it is fine.
    Stops at count sections or when nothing is left.
 """
 import math
@@ -65,6 +67,7 @@ class Line(object):
         self.small_cuts = 0
         self.fitting_cuts = 0
         self.lengthwise_main = 0       # main segments the plane cuts along their length
+        self.in_wall = []              # walls the plane runs inside / along the face of
         self.runs = set()
         self.events = set()
         self.seed = None
@@ -248,11 +251,13 @@ def _side_extent(sign, crossings, hits, cfg):
 class Floor(object):
     """Runs, concrete and small segments of the floor with their strip indexes."""
 
-    def __init__(self, runs, events, obstacles, segments):
+    def __init__(self, runs, events, obstacles, segments, walls=None):
         self.runs = runs
         self.events = events
         self.obstacles = obstacles
         self.segments = segments
+        self.walls = walls or []
+        self.wall_index = StripIndex(self.walls, _obstacle_points)
         self.small = [s for s in segments if not s.main]
         self.run_index = StripIndex(runs, _run_points)
         self.obstacle_index = StripIndex(obstacles, _obstacle_points)
@@ -278,6 +283,9 @@ def make_line(origin, look, fl, cfg, use_concrete=True):
             if near_end:
                 line.fitting_cuts += 1
     o = line.origin
+    for wall in fl.wall_index.near(look, origin):
+        if _along_wall(line, wall, cfg):
+            line.in_wall.append(wall)
     for run in fl.run_index.near(look, origin):
         for seg in run.segments:
             if _lengthwise(line, seg):
@@ -292,6 +300,22 @@ def make_line(origin, look, fl, cfg, use_concrete=True):
         if ip is not None and line.t_min <= ip[0] <= line.t_max:
             line.small_cuts += 1
     return line
+
+
+def _along_wall(line, wall, cfg):
+    """True if the cut plane runs inside the wall or along its face (closer than
+    wall_clearance_mm to it) over more than wall_overlap_mm of the section's length.
+    Crossing a wall, or ending at its edge, is fine."""
+    if abs(dot(wall.u, line.along)) < math.cos(math.radians(15)):
+        return False
+    o = line.origin
+    distance = abs(dot((wall.mid[0] - o[0], wall.mid[1] - o[1]), line.look))
+    if distance > wall.width / 2.0 + mm_to_ft(cfg.get("wall_clearance_mm", 100)):
+        return False
+    ta = dot((wall.a[0] - o[0], wall.a[1] - o[1]), line.along)
+    tb = dot((wall.b[0] - o[0], wall.b[1] - o[1]), line.along)
+    overlap = min(max(ta, tb), line.t_max) - max(min(ta, tb), line.t_min)
+    return overlap > mm_to_ft(cfg.get("wall_overlap_mm", 100))
 
 
 def _lengthwise(line, seg):
@@ -376,7 +400,7 @@ def choose(lines, runs, events, cfg, count, covered_runs=None, covered_events=No
     while pool and len(chosen) < count:
         best, best_score = None, 0.0
         for line in pool:
-            if line.lengthwise_main:
+            if line.lengthwise_main or line.in_wall:
                 continue
             gain = sum(run_w[i] for i in line.runs - covered_runs)
             gain += sum(ev_w[i] for i in line.events - covered_events)
@@ -433,7 +457,8 @@ def plan(doc, level, settings, plan_up, plan_right, count, existing_lines=None):
     runs = floor.build_runs(segments, settings)
     events = floor.find_height_changes(runs, settings)
     obstacles = C.collect(doc, z0, z1, settings)
-    fl = Floor(runs, events, obstacles, segments)
+    walls = C.collect_all_walls(doc, z0, z1)
+    fl = Floor(runs, events, obstacles, segments, walls)
     covered_runs, covered_events = set(), set()
     for origin, look, t_min, t_max in (existing_lines or []):
         line = existing_line(origin, look, t_min, t_max, fl, cfg)

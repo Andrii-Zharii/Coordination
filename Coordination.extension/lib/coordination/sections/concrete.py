@@ -158,6 +158,54 @@ def _beams(link_doc, transform, z0, z1, cfg, out):
             out.append(Obstacle(polygon, "beam", name))
 
 
+class WallPiece(Obstacle):
+    """A straight piece of any wall (concrete, block, gypsum, curtain...)."""
+
+    def __init__(self, a, b, width, name):
+        Obstacle.__init__(self, _rectangle(a, b, width), "wall", name)
+        length = math.hypot(b[0] - a[0], b[1] - a[1])
+        self.a = a
+        self.b = b
+        self.u = ((b[0] - a[0]) / length, (b[1] - a[1]) / length)
+        self.width = width
+        self.mid = ((a[0] + b[0]) / 2.0, (a[1] + b[1]) / 2.0)
+
+
+def collect_all_walls(doc, z0, z1):
+    """Every wall of the floor, of any type, from this model and the loaded links:
+    a section line must never run inside a wall or along its face."""
+    lo, hi = z0 + mm_to_ft(300), z1 - mm_to_ft(300)
+    sources = [(doc, DB.Transform.Identity)]
+    for link in DB.FilteredElementCollector(doc).OfClass(DB.RevitLinkInstance):
+        if link.GetLinkDocument() is not None:
+            sources.append((link.GetLinkDocument(), link.GetTotalTransform()))
+    out = []
+    for source, transform in sources:
+        collector = (DB.FilteredElementCollector(source)
+                     .OfCategory(DB.BuiltInCategory.OST_Walls).WhereElementIsNotElementType())
+        for wall in collector:
+            if not isinstance(wall, DB.Wall):
+                continue
+            z = _bbox_z(wall, transform)
+            if z is None or z[1] < lo or z[0] > hi:
+                continue
+            location = wall.Location
+            if not isinstance(location, DB.LocationCurve):
+                continue
+            try:
+                width = wall.Width
+            except Exception:
+                width = 0.0
+            width = max(width, mm_to_ft(10))
+            shift = wall.Orientation * _wall_centre_offset(wall) if width > mm_to_ft(10) else DB.XYZ.Zero
+            points = [transform.OfPoint(p + shift) for p in location.Curve.Tessellate()]
+            for a, b in zip(points[:-1], points[1:]):
+                if math.hypot(b.X - a.X, b.Y - a.Y) < mm_to_ft(50):
+                    continue
+                out.append(WallPiece((a.X, a.Y), (b.X, b.Y), width, NAME(wall.WallType)))
+    return out
+
+
 def collect(doc, z0, z1, settings):
     """Concrete footprints of the floor between levels z0 and z1 from all loaded links."""
     cfg = settings["sections"]["concrete"]
