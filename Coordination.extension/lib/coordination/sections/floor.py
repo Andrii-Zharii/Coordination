@@ -172,6 +172,70 @@ def collect_segments(doc, level, settings):
     return result
 
 
+DEPTH_CATEGORIES = [
+    DB.BuiltInCategory.OST_PipeCurves, DB.BuiltInCategory.OST_DuctCurves,
+    DB.BuiltInCategory.OST_CableTray, DB.BuiltInCategory.OST_Conduit,
+    DB.BuiltInCategory.OST_FlexPipeCurves, DB.BuiltInCategory.OST_FlexDuctCurves,
+    DB.BuiltInCategory.OST_PipeFitting, DB.BuiltInCategory.OST_DuctFitting,
+    DB.BuiltInCategory.OST_CableTrayFitting, DB.BuiltInCategory.OST_ConduitFitting,
+    DB.BuiltInCategory.OST_PipeAccessory, DB.BuiltInCategory.OST_DuctAccessory,
+    DB.BuiltInCategory.OST_Sprinklers, DB.BuiltInCategory.OST_DuctTerminal,
+    DB.BuiltInCategory.OST_MechanicalEquipment, DB.BuiltInCategory.OST_PlumbingFixtures,
+]
+
+
+class DepthItem(object):
+    """Any MEP element of the floor, for the far clip: plan points, radius, z range."""
+
+    def __init__(self, points, radius, zmin, zmax, element_id):
+        self.points = points
+        self.radius = radius
+        self.zmin = zmin
+        self.zmax = zmax
+        self.id = element_id
+
+
+def collect_depth_items(doc, level, settings):
+    """Every MEP element of the floor (pipes, risers, fittings, accessories, sprinklers,
+    terminals, equipment), -DC worksets left out. A section's far clip stops before the
+    first of them in front of the cut that the cut itself does not go through."""
+    cfg = settings["sections"]
+    z0, z1 = floor_band(doc, level, settings)
+    zlo = z0 - mm_to_ft(cfg["below_level_mm"])
+    zhi = z1 + mm_to_ft(1000)
+    suffix = cfg.get("exclude_workset_suffix") or ""
+    table = doc.GetWorksetTable() if doc.IsWorkshared else None
+    excluded = {}
+    items = []
+    for bic in DEPTH_CATEGORIES:
+        collector = DB.FilteredElementCollector(doc).OfCategory(bic).WhereElementIsNotElementType()
+        for element in collector:
+            if table is not None and suffix:
+                key = element.WorksetId.IntegerValue
+                if key not in excluded:
+                    excluded[key] = table.GetWorkset(element.WorksetId).Name.endswith(suffix)
+                if excluded[key]:
+                    continue
+            bbox = element.get_BoundingBox(None)
+            if bbox is None or bbox.Max.Z < zlo or bbox.Min.Z > zhi:
+                continue
+            eid = mep.element_id_value(element.Id)
+            line = None
+            if isinstance(element, DB.MEPCurve):
+                line = mep.location_line(element)
+            if isinstance(line, DB.Line):
+                p, q = line.GetEndPoint(0), line.GetEndPoint(1)
+                width, height = cross_size(element)
+                r = max(width, height) / 2.0
+                items.append(DepthItem([(p.X, p.Y), (q.X, q.Y)], r,
+                                       min(p.Z, q.Z) - r, max(p.Z, q.Z) + r, eid))
+            else:
+                corners = [(bbox.Min.X, bbox.Min.Y), (bbox.Max.X, bbox.Min.Y),
+                           (bbox.Max.X, bbox.Max.Y), (bbox.Min.X, bbox.Max.Y)]
+                items.append(DepthItem(corners, 0.0, bbox.Min.Z, bbox.Max.Z, eid))
+    return items
+
+
 class Run(object):
     def __init__(self, index, segments):
         self.index = index

@@ -99,17 +99,22 @@ How it chooses (rules: [docs/vision.md](docs/vision.md) section 4.0; settings: s
 3. **Candidates.** Along every run every 1.5 m, away from its fittings: a line **across** the run, looking up or right on the plan.
    The line always follows the grid axes exactly (the axis closest to the run), never the pipe's own direction —
    a pipe drawn 0.1° off the grid does not give a skewed section.
-   On each side it goes to the first **concrete** wall / column / beam (from the links) if that is within 7 m of the last network,
-   and ends 300 mm past it; otherwise 500 mm after the networks. Concrete: wall types with `(Cn` / `Concrete` (not `(Bb`), ≥ 150 mm;
-   structural columns; beams of 400 mm+ hanging under the slab above.
+   **Wall to wall:** on each side the line goes to the first wall of **any** kind (or concrete column / beam) if it is within 7 m
+   of the last network, and ends 300 mm past it (touching walls, e.g. cladding on concrete, count as one; a wall the pipe itself
+   runs in bounds the side where the wall is). So a section covers the room or corridor its networks run in.
+   No wall within 7 m: it ends 500 mm after the networks. Concrete (preferred at least on one side): wall types with
+   `(Cn` / `Concrete` (not `(Bb`), ≥ 150 mm; structural columns; beams of 400 mm+ hanging under the slab above.
 4. **Choice.** One by one, the line that adds the most not shown yet: each run (weight: gravity 3 > ducts, trays 2 > pressure pipes 1.5 >
-   sprinklers 0.6, × size × length) and each height change near the line (within 3 m). Lines with concrete on one side count 0.75,
-   none 0.3; small pipes and fittings in the cut lower the score; a line cutting a main network lengthwise is never taken,
-   nor a line running inside **any** wall (concrete, block, gypsum, cladding — every wall of the links) or along its face
-   (closer than 100 mm for more than 100 mm). Crossing a wall or ending at its edge is fine.
+   sprinklers 0.6, × size (at most ×1.5) × length), each height change near the line (within 3 m) and each place where a network
+   **appears** in the bundle or leaves it (a run end that is not a height change: tee, riser, turn) near the line (0.5 × the run),
+   plus 0.3 for every main network in the cut — sections that show many networks together win.
+   Concrete at both ends ×1, one ×0.75, none ×0.3; small pipes and fittings in the cut lower the score; a line cutting a main network
+   lengthwise is never taken, nor a line running inside **any** wall or along its face (closer than 100 mm for more than 100 mm).
+   Crossing a wall or ending at its edge is fine. Two sections closer than 1.5 m that overlap by more than half are duplicates.
 5. **View.** Type `חתך לגיליון`, template `Electra_Section KN`, 1:25, names `00-01…` from top right (Hebrew order).
    Height: level −150 mm to the top of the slab above (top faces of the linked floors at the section) +150 mm.
-   Depth: stops just before the first pipe/duct/tray running along the section in front of it, 10…1500 mm.
+   Depth: stops just before the first MEP element in front of the cut that the cut does not go through (a turned piece, riser,
+   fitting, accessory, sprinkler, terminal, equipment), 10…1500 mm — no fragments of other networks in the view.
 
 Code: `lib/coordination/sections/` (`floor.py` runs and height changes, `concrete.py`, `placement.py`, `views.py`).
 

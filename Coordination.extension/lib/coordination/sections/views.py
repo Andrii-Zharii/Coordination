@@ -6,8 +6,8 @@ Height  from the slab of the level to the slab above, included:
         top    = top of the slab above at the section (highest top face of the floors of the
                  linked models over three points of the line) + above_slab_mm.
 Width   the line's extent (concrete to concrete, see placement).
-Depth   far clip just before the first pipe / duct / tray that runs along the section line
-        in front of it (so it does not cover the cut), between depth_min_mm and depth_max_mm.
+Depth   far clip just before the first MEP element in front of the cut that the cut does not
+        go through (turned piece, riser, fitting, sprinkler...), depth_min_mm..depth_max_mm.
 View    type view_type, template view_template, scale, name name_format ("00-01"),
         numbered right to left, top to bottom on the plan (Hebrew reading order).
 """
@@ -16,6 +16,7 @@ import re
 from Autodesk.Revit import DB
 
 from coordination.units import mm_to_ft
+from coordination.sections import floor
 from coordination.sections.floor import dot
 
 NAME = DB.Element.Name.GetValue
@@ -117,26 +118,29 @@ def section_height(line, finder, z0, z1, cfg):
     return bottom, top + mm_to_ft(cfg["above_slab_mm"]), slab_found
 
 
-def section_depth(line, segments, bottom, top, cfg):
-    """Distance to the first segment in front of the cut that runs along the line."""
+def section_depth(line, items, bottom, top, cfg):
+    """Far clip: just before the first MEP element in front of the cut that the cut does
+    not go through (a turned piece, riser, fitting, sprinkler...). Elements the cut goes
+    through are in the section anyway. Returns (depth, id of the element that limits it)."""
     o = line.origin
     best = mm_to_ft(cfg["depth_max_mm"])
-    for seg in segments:
-        if abs(dot(seg.u, line.along)) < 0.7:     # not along the line (within 45 deg)
+    limiting = None
+    for item in items:
+        if item.zmax < bottom or item.zmin > top:
             continue
-        if seg.z + seg.height / 2.0 < bottom or seg.z - seg.height / 2.0 > top:
+        rel = [(p[0] - o[0], p[1] - o[1]) for p in item.points]
+        ahead = [dot(p, line.look) for p in rel]
+        near = min(ahead) - item.radius
+        if near <= 0.0 or near >= best:
+            continue   # cut by the plane, behind it, or farther than what we have
+        ts = [dot(p, line.along) for p in rel]
+        if max(ts) + item.radius < line.t_min or min(ts) - item.radius > line.t_max:
             continue
-        pts = [(seg.p.X - o[0], seg.p.Y - o[1]), (seg.q.X - o[0], seg.q.Y - o[1])]
-        ts = [dot(p, line.along) for p in pts]
-        if max(ts) < line.t_min or min(ts) > line.t_max:
-            continue
-        ahead = min(dot(p, line.look) for p in pts) - seg.width / 2.0
-        if ahead <= 0:
-            continue
-        if ahead < best:
-            best = ahead
+        best = near
+        limiting = item.id
     depth = best - mm_to_ft(20)
-    return max(mm_to_ft(cfg["depth_min_mm"]), min(mm_to_ft(cfg["depth_max_mm"]), depth))
+    depth = max(mm_to_ft(cfg["depth_min_mm"]), min(mm_to_ft(cfg["depth_max_mm"]), depth))
+    return depth, limiting
 
 
 def create_section(doc, vtype, line, bottom, top, depth):
@@ -203,13 +207,13 @@ def make_views(doc, level, chosen, floor_data, settings, plan_up, plan_right, st
     template = view_template(doc, cfg.get("view_template"))
     z0, z1 = floor_data["z0"], floor_data["z1"]
     finder = SlabFinder(doc, z1)
-    segments = floor_data["segments"]
+    items = floor.collect_depth_items(doc, level, settings)
     taken = set(v.Name for v in DB.FilteredElementCollector(doc).OfClass(DB.View))
     rows = []
     number = start_number
     for line in order_lines(chosen, plan_up, plan_right):
         bottom, top, slab_found = section_height(line, finder, z0, z1, cfg)
-        depth = section_depth(line, segments, bottom, top, cfg)
+        depth, limiting = section_depth(line, items, bottom, top, cfg)
         view = create_section(doc, vtype, line, bottom, top, depth)
         name = cfg["name_format"].format(level=level.Name, num=number)
         while name in taken:
@@ -225,5 +229,5 @@ def make_views(doc, level, chosen, floor_data, settings, plan_up, plan_right, st
         except Exception:
             pass   # the template controls the scale
         rows.append({"view": view, "line": line, "depth": depth, "bottom": bottom, "top": top,
-                     "slab_found": slab_found})
+                     "slab_found": slab_found, "depth_limited_by": limiting})
     return rows

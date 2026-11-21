@@ -69,12 +69,13 @@ shown = sum(weights[i] for i in result["covered_runs"])
 output.print_md(
     "**{}** sections created in {:.0f} s. Main runs: **{}**, shown **{}** "
     "({:.0f} % by importance). Height changes: **{}**, shown **{}**. "
+    "Places where a network appears: **{}**, shown **{}**. "
     "Concrete elements found in the links: {}.".format(
         len(rows), time.time() - started, len(runs), len(result["covered_runs"]),
         100.0 * shown / total, len(events), len(result["covered_events"]),
-        len(result["obstacles"])))
+        len(result["ends"]), len(result["covered_ends"]), len(result["obstacles"])))
 
-SIDES = {2: "both sides", 1: "one side", 0: "none"}
+END_NAMES = {"concrete": "concrete", "wall": "wall", None: "open"}
 table = []
 for row in rows:
     line = row["line"]
@@ -83,12 +84,12 @@ for row in rows:
         output.linkify(view.Id, view.Name),
         "{:.1f}".format((line.t_max - line.t_min) * 0.3048),
         "{:.0f}".format(row["depth"] * 304.8),
-        SIDES[line.concrete_sides],
+        " / ".join(END_NAMES[k] for k in line.ends),
         str(len(line.cuts)),
         u"; ".join(line.reasons[:3]) + (u" ..." if len(line.reasons) > 3 else u""),
     ])
 output.print_table(table_data=table,
-                   columns=["Section", "Length, m", "Depth, mm", "Concrete", "Networks cut", "Why"])
+                   columns=["Section", "Length, m", "Depth, mm", "Ends (left / right)", "Networks cut", "Why"])
 
 missing = [r for r in runs if r.index not in result["covered_runs"]]
 missing.sort(key=lambda r: -weights[r.index])
