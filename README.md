@@ -82,6 +82,33 @@ Code: `lib/coordination/trays/tees.py` (logic) and `tee_ui.py` (window).
 
 Code: `lib/coordination/pipes/connect.py`, `run_box.py`.
 
+### Sections panel
+
+| Button | What it does |
+|---|---|
+| **Place Sections** | Open a floor plan of the level, click, type how many sections (default 30). Creates cross sections of the main networks, most important first, and reports what each one shows and which runs are left without a section. If the level already has sections `00-NN`, new ones get the next numbers and what the old ones show is not repeated. |
+
+How it chooses (rules: [docs/vision.md](docs/vision.md) section 4.0; settings: section `sections` of the rules file):
+
+1. **Networks.** Horizontal pipes, ducts, cable trays of the floor (between the level and the next level, `-DC` worksets left out).
+   *Main* networks only: pipes from 50 mm, sprinkler pipes from 80 mm (mains, not branches), ducts from 200 mm, all cable trays.
+   Main pieces that continue each other in a straight line at the same height (through couplings, tees) form a **run**.
+2. **Height changes.** From each run end the connected network (through fittings and short or sloped pieces) is followed;
+   if it goes on in another run of the same system at another height (≥ 50 mm, sprinklers ≥ 300 mm), that is a height change.
+   Neighbouring changes of the same system (parallel trays dropping together) count as one. A slope is not a change.
+3. **Candidates.** Along every run every 1.5 m, away from its fittings: a line **across** the run, looking up or right on the plan.
+   On each side it goes to the first **concrete** wall / column / beam (from the links) if that is within 7 m of the last network,
+   and ends 300 mm past it; otherwise 500 mm after the networks. Concrete: wall types with `(Cn` / `Concrete` (not `(Bb`), ≥ 150 mm;
+   structural columns; beams of 400 mm+ hanging under the slab above.
+4. **Choice.** One by one, the line that adds the most not shown yet: each run (weight: gravity 3 > ducts, trays 2 > pressure pipes 1.5 >
+   sprinklers 0.6, × size × length) and each height change near the line (within 3 m). Lines with concrete on one side count 0.75,
+   none 0.3; small pipes and fittings in the cut lower the score; a line cutting a main network lengthwise is never taken.
+5. **View.** Type `חתך לגיליון`, template `Electra_Section KN`, 1:25, names `00-01…` from top right (Hebrew order).
+   Height: level −150 mm to the top of the slab above (top faces of the linked floors at the section) +150 mm.
+   Depth: stops just before the first pipe/duct/tray running along the section in front of it, 10…1500 mm.
+
+Code: `lib/coordination/sections/` (`floor.py` runs and height changes, `concrete.py`, `placement.py`, `views.py`).
+
 ## Repository layout
 
 ```

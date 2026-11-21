@@ -1,0 +1,6 @@
+title: Place Sections
+tooltip: "Open a floor plan of the level and click. Creates up to 30 sections (asks how many) across the main networks: where heights change and where networks appear, most important first. Each runs from concrete wall / column / beam to concrete (max 7 m from the networks), from the slab of the level to the slab above. Type, template, scale and names (00-01...) from the rules file, section 'sections'."
+author: Coordination
+context: doc-project
+engine:
+  clean: true
