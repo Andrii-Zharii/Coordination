@@ -140,16 +140,23 @@ def section_depth(line, segments, bottom, top, cfg):
 
 
 def create_section(doc, vtype, line, bottom, top, depth):
-    look = DB.XYZ(line.look[0], line.look[1], 0)
+    """Section looking line.look, cut plane through line.origin, far clip `depth` beyond it.
+
+    ViewSection.CreateSection reads the box differently from the stored crop box:
+    the view looks along the box's BasisZ, the cut plane is at Min.Z and the far clip
+    at Max.Z (checked in Revit 2025). Revit then stores it turned by 180 degrees
+    (BasisZ towards the viewer, cut plane at Max.Z = 0). So BasisZ = look and
+    BasisX = -along, which makes the stored right direction = along.
+    """
     transform = DB.Transform.Identity
     transform.Origin = DB.XYZ(line.origin[0], line.origin[1], bottom)
-    transform.BasisX = DB.XYZ(line.along[0], line.along[1], 0)
+    transform.BasisX = DB.XYZ(-line.along[0], -line.along[1], 0)
     transform.BasisY = DB.XYZ.BasisZ
-    transform.BasisZ = look.Negate()
+    transform.BasisZ = DB.XYZ(line.look[0], line.look[1], 0)
     box = DB.BoundingBoxXYZ()
     box.Transform = transform
-    box.Min = DB.XYZ(line.t_min, 0.0, -depth)
-    box.Max = DB.XYZ(line.t_max, top - bottom, 0.0)
+    box.Min = DB.XYZ(-line.t_max, 0.0, 0.0)
+    box.Max = DB.XYZ(-line.t_min, top - bottom, depth)
     return DB.ViewSection.CreateSection(doc, vtype.Id, box)
 
 

@@ -97,6 +97,8 @@ How it chooses (rules: [docs/vision.md](docs/vision.md) section 4.0; settings: s
    if it goes on in another run of the same system at another height (≥ 50 mm, sprinklers ≥ 300 mm), that is a height change.
    Neighbouring changes of the same system (parallel trays dropping together) count as one. A slope is not a change.
 3. **Candidates.** Along every run every 1.5 m, away from its fittings: a line **across** the run, looking up or right on the plan.
+   The line always follows the grid axes exactly (the axis closest to the run), never the pipe's own direction —
+   a pipe drawn 0.1° off the grid does not give a skewed section.
    On each side it goes to the first **concrete** wall / column / beam (from the links) if that is within 7 m of the last network,
    and ends 300 mm past it; otherwise 500 mm after the networks. Concrete: wall types with `(Cn` / `Concrete` (not `(Bb`), ≥ 150 mm;
    structural columns; beams of 400 mm+ hanging under the slab above.

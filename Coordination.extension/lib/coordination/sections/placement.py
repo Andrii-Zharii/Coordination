@@ -3,6 +3,9 @@
 
 1. Candidates. Along every main run, every station_step_mm (and near its ends), a section
    line across the run: a cross section of the run and of everything parallel to it.
+   The line always follows a model axis (grid directions and their perpendiculars), the
+   one closest to the run: a pipe drawn 0.1 deg off the grid never makes a skewed section.
+   Runs at up to 45 deg to the line still count as cut.
    Stations keep away from the run's fittings.
 2. Extent of each line (from vertical concrete to vertical concrete): on each side the
    line goes to the first concrete wall / column / beam if it is not farther than
@@ -76,9 +79,41 @@ class Line(object):
         return (self.origin[0] + self.along[0] * t, self.origin[1] + self.along[1] * t)
 
 
-def view_direction(run_u, plan_up, plan_right):
-    """Sections look up or right on the plan (whichever is closer to the run)."""
-    u = run_u
+def model_axes(doc, plan_up):
+    """Directions sections may have: the directions of the straight grids and the
+    perpendiculars to them (angles mod 90 deg, grids within 0.5 deg are one family).
+    Without grids: the plan view's up direction. Sections are never skewed to the model,
+    whatever the direction of the pipe they are placed on."""
+    from Autodesk.Revit import DB
+    angles = []
+    for grid in DB.FilteredElementCollector(doc).OfClass(DB.Grid):
+        curve = grid.Curve
+        if not isinstance(curve, DB.Line):
+            continue
+        d = curve.Direction
+        angles.append(math.degrees(math.atan2(d.Y, d.X)) % 90.0)
+    if not angles:
+        angles = [math.degrees(math.atan2(plan_up[1], plan_up[0])) % 90.0]
+    families = []
+    for a in sorted(angles):
+        if not any(min(abs(a - f), 90.0 - abs(a - f)) < 0.5 for f in families):
+            families.append(a)
+    axes = []
+    for a in families:
+        for k in range(4):
+            r = math.radians(a + 90.0 * k)
+            axes.append((math.cos(r), math.sin(r)))
+    return axes
+
+
+def snap_to_axes(u, axes):
+    """The model axis closest to direction u."""
+    return max(axes, key=lambda a: dot(a, u))
+
+
+def view_direction(run_u, plan_up, plan_right, axes=None):
+    """Along a model axis (the one closest to the run), looking up or right on the plan."""
+    u = snap_to_axes(run_u, axes) if axes else run_u
     if abs(dot(u, plan_up)) >= abs(dot(u, plan_right)):
         ref = plan_up
     else:
@@ -137,7 +172,7 @@ def _line_crossings(line, runs, max_half):
     o = line.origin
     result = []
     for run in runs:
-        if abs(dot(run.u, line.along)) > 0.5:   # run within 60 deg of the line: not a cross section
+        if abs(dot(run.u, line.along)) > 0.72:   # run within 44 deg of the line: not a cross section
             continue
         for seg in run.segments:
             ip = _intersect(o, line.along, (seg.p.X, seg.p.Y), (seg.q.X, seg.q.Y))
@@ -312,10 +347,10 @@ def stations(run, cfg):
     return result
 
 
-def candidates(fl, plan_up, plan_right, cfg):
+def candidates(fl, plan_up, plan_right, cfg, axes=None):
     result = []
     for run in fl.runs:
-        look = view_direction(run.u, plan_up, plan_right)
+        look = view_direction(run.u, plan_up, plan_right, axes)
         for s in stations(run, cfg):
             point = run.point_at(s)
             if point is None:
@@ -404,7 +439,8 @@ def plan(doc, level, settings, plan_up, plan_right, count, existing_lines=None):
         line = existing_line(origin, look, t_min, t_max, fl, cfg)
         covered_runs |= line.runs
         covered_events |= line.events
-    lines = candidates(fl, plan_up, plan_right, cfg)
+    axes = model_axes(doc, plan_up)
+    lines = candidates(fl, plan_up, plan_right, cfg, axes)
     chosen, covered_runs, covered_events = choose(
         lines, runs, events, cfg, count, covered_runs, covered_events)
     return {
