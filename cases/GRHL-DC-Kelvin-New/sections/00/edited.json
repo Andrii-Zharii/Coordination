@@ -1,0 +1,603 @@
+{
+ "coordinates": "mm, Revit internal origin; heights from level 00", 
+ "model": "GRHL-DC-Kelvin-New", 
+ "taken": "2026-11-22 11:47", 
+ "source": "team review of the generated sections (manual edits in Revit)", 
+ "sections": [
+  {
+   "end_mm": [
+    -18350, 
+    1553
+   ], 
+   "length_mm": 2428, 
+   "top_mm": 6170, 
+   "depth_mm": 250, 
+   "name": "00-01", 
+   "id": 11419532, 
+   "look": [
+    0.0, 
+    1.0
+   ], 
+   "bottom_mm": -150, 
+   "template": "Electra_Section KN", 
+   "scale": 25, 
+   "start_mm": [
+    -20778, 
+    1553
+   ]
+  }, 
+  {
+   "end_mm": [
+    -13125, 
+    9041
+   ], 
+   "length_mm": 23000, 
+   "top_mm": 6150, 
+   "depth_mm": 73, 
+   "name": "00-02", 
+   "id": 11419541, 
+   "look": [
+    0.0, 
+    1.0
+   ], 
+   "bottom_mm": -150, 
+   "template": "Electra_Section KN", 
+   "scale": 25, 
+   "start_mm": [
+    -36125, 
+    9041
+   ]
+  }, 
+  {
+   "end_mm": [
+    -20175, 
+    5420
+   ], 
+   "length_mm": 15950, 
+   "top_mm": 6150, 
+   "depth_mm": 280, 
+   "name": "00-03", 
+   "id": 11419550, 
+   "look": [
+    0.0, 
+    1.0
+   ], 
+   "bottom_mm": -150, 
+   "template": "Electra_Section KN", 
+   "scale": 25, 
+   "start_mm": [
+    -36125, 
+    5420
+   ]
+  }, 
+  {
+   "end_mm": [
+    -30349, 
+    3664
+   ], 
+   "length_mm": 10510, 
+   "top_mm": 6150, 
+   "depth_mm": 18, 
+   "name": "00-04", 
+   "id": 11419559, 
+   "look": [
+    1.0, 
+    0.0
+   ], 
+   "bottom_mm": -150, 
+   "template": "Electra_Section KN", 
+   "scale": 25, 
+   "start_mm": [
+    -30349, 
+    14173
+   ]
+  }, 
+  {
+   "end_mm": [
+    -43557, 
+    1656
+   ], 
+   "length_mm": 3476, 
+   "top_mm": 6170, 
+   "depth_mm": 311, 
+   "name": "00-05", 
+   "id": 11419568, 
+   "look": [
+    0.0, 
+    1.0
+   ], 
+   "bottom_mm": -150, 
+   "template": "Electra_Section KN", 
+   "scale": 25, 
+   "start_mm": [
+    -47033, 
+    1656
+   ]
+  }, 
+  {
+   "end_mm": [
+    -51750, 
+    2040
+   ], 
+   "length_mm": 10723, 
+   "top_mm": 6170, 
+   "depth_mm": 428, 
+   "name": "00-06", 
+   "id": 11419577, 
+   "look": [
+    0.0, 
+    1.0
+   ], 
+   "bottom_mm": -150, 
+   "template": "Electra_Section KN", 
+   "scale": 25, 
+   "start_mm": [
+    -62472, 
+    2040
+   ]
+  }, 
+  {
+   "end_mm": [
+    28625, 
+    -12037
+   ], 
+   "length_mm": 2375, 
+   "top_mm": 6150, 
+   "depth_mm": 934, 
+   "name": "00-07", 
+   "id": 11419586, 
+   "look": [
+    0.0, 
+    1.0
+   ], 
+   "bottom_mm": -150, 
+   "template": "Electra_Section KN", 
+   "scale": 25, 
+   "start_mm": [
+    26250, 
+    -12037
+   ]
+  }, 
+  {
+   "end_mm": [
+    -18350, 
+    -3053
+   ], 
+   "length_mm": 2550, 
+   "top_mm": 6150, 
+   "depth_mm": 275, 
+   "name": "00-08", 
+   "id": 11419595, 
+   "look": [
+    0.0, 
+    1.0
+   ], 
+   "bottom_mm": -150, 
+   "template": "Electra_Section KN", 
+   "scale": 25, 
+   "start_mm": [
+    -20900, 
+    -3053
+   ]
+  }, 
+  {
+   "end_mm": [
+    -26401, 
+    -9391
+   ], 
+   "length_mm": 3169, 
+   "top_mm": 6150, 
+   "depth_mm": 213, 
+   "name": "00-11", 
+   "id": 11419622, 
+   "look": [
+    1.0, 
+    0.0
+   ], 
+   "bottom_mm": -150, 
+   "template": "Electra_Section KN", 
+   "scale": 25, 
+   "start_mm": [
+    -26401, 
+    -6223
+   ]
+  }, 
+  {
+   "end_mm": [
+    -28158, 
+    -548
+   ], 
+   "length_mm": 10377, 
+   "top_mm": 6150, 
+   "depth_mm": 390, 
+   "name": "00-12", 
+   "id": 11419631, 
+   "look": [
+    0.0, 
+    1.0
+   ], 
+   "bottom_mm": -150, 
+   "template": "Electra_Section KN", 
+   "scale": 25, 
+   "start_mm": [
+    -38535, 
+    -548
+   ]
+  }, 
+  {
+   "end_mm": [
+    -43114, 
+    -8894
+   ], 
+   "length_mm": 3500, 
+   "top_mm": 6150, 
+   "depth_mm": 399, 
+   "name": "00-13", 
+   "id": 11419640, 
+   "look": [
+    1.0, 
+    0.0
+   ], 
+   "bottom_mm": -150, 
+   "template": "Electra_Section KN", 
+   "scale": 25, 
+   "start_mm": [
+    -43114, 
+    -5394
+   ]
+  }, 
+  {
+   "end_mm": [
+    -39210, 
+    -3078
+   ], 
+   "length_mm": 5201, 
+   "top_mm": 6150, 
+   "depth_mm": 314, 
+   "name": "00-14", 
+   "id": 11419649, 
+   "look": [
+    1.0, 
+    0.0
+   ], 
+   "bottom_mm": -150, 
+   "template": "Electra_Section KN", 
+   "scale": 25, 
+   "start_mm": [
+    -39210, 
+    2123
+   ]
+  }, 
+  {
+   "end_mm": [
+    -43250, 
+    -9034
+   ], 
+   "length_mm": 3682, 
+   "top_mm": 6150, 
+   "depth_mm": 300, 
+   "name": "00-15", 
+   "id": 11419658, 
+   "look": [
+    0.0, 
+    1.0
+   ], 
+   "bottom_mm": -150, 
+   "template": "Electra_Section KN", 
+   "scale": 25, 
+   "start_mm": [
+    -46931, 
+    -9034
+   ]
+  }, 
+  {
+   "end_mm": [
+    -50047, 
+    -9061
+   ], 
+   "length_mm": 3724, 
+   "top_mm": 6150, 
+   "depth_mm": 490, 
+   "name": "00-16", 
+   "id": 11419667, 
+   "look": [
+    1.0, 
+    0.0
+   ], 
+   "bottom_mm": -150, 
+   "template": "Electra_Section KN", 
+   "scale": 25, 
+   "start_mm": [
+    -50047, 
+    -5337
+   ]
+  }, 
+  {
+   "end_mm": [
+    -51750, 
+    -5624
+   ], 
+   "length_mm": 2575, 
+   "top_mm": 6150, 
+   "depth_mm": 174, 
+   "name": "00-17", 
+   "id": 11419676, 
+   "look": [
+    0.0, 
+    1.0
+   ], 
+   "bottom_mm": -150, 
+   "template": "Electra_Section KN", 
+   "scale": 25, 
+   "start_mm": [
+    -54325, 
+    -5624
+   ]
+  }, 
+  {
+   "end_mm": [
+    17377, 
+    -20738
+   ], 
+   "length_mm": 3537, 
+   "top_mm": 6150, 
+   "depth_mm": 261, 
+   "name": "00-18", 
+   "id": 11419685, 
+   "look": [
+    1.0, 
+    0.0
+   ], 
+   "bottom_mm": -150, 
+   "template": "Electra_Section KN", 
+   "scale": 25, 
+   "start_mm": [
+    17377, 
+    -17201
+   ]
+  }, 
+  {
+   "end_mm": [
+    20820, 
+    -14405
+   ], 
+   "length_mm": 3419, 
+   "top_mm": 6150, 
+   "depth_mm": 300, 
+   "name": "00-19", 
+   "id": 11419694, 
+   "look": [
+    0.0, 
+    1.0
+   ], 
+   "bottom_mm": -150, 
+   "template": "Electra_Section KN", 
+   "scale": 25, 
+   "start_mm": [
+    17400, 
+    -14405
+   ]
+  }, 
+  {
+   "end_mm": [
+    -34941, 
+    -22877
+   ], 
+   "length_mm": 28213, 
+   "top_mm": 6150, 
+   "depth_mm": 10, 
+   "name": "00-20", 
+   "id": 11419703, 
+   "look": [
+    1.0, 
+    0.0
+   ], 
+   "bottom_mm": -150, 
+   "template": "Electra_Section KN", 
+   "scale": 25, 
+   "start_mm": [
+    -34941, 
+    5337
+   ]
+  }, 
+  {
+   "end_mm": [
+    -37669, 
+    -7928
+   ], 
+   "length_mm": 8953, 
+   "top_mm": 6150, 
+   "depth_mm": 531, 
+   "name": "00-21", 
+   "id": 11419712, 
+   "look": [
+    -1.0, 
+    0.0
+   ], 
+   "bottom_mm": -150, 
+   "template": "Electra_Section KN", 
+   "scale": 25, 
+   "start_mm": [
+    -37669, 
+    -16881
+   ]
+  }, 
+  {
+   "end_mm": [
+    -40519, 
+    -26875
+   ], 
+   "length_mm": 8501, 
+   "top_mm": 6150, 
+   "depth_mm": 386, 
+   "name": "00-23", 
+   "id": 11419730, 
+   "look": [
+    1.0, 
+    0.0
+   ], 
+   "bottom_mm": -150, 
+   "template": "Electra_Section KN", 
+   "scale": 25, 
+   "start_mm": [
+    -40519, 
+    -18374
+   ]
+  }, 
+  {
+   "end_mm": [
+    -43250, 
+    -13181
+   ], 
+   "length_mm": 3758, 
+   "top_mm": 6150, 
+   "depth_mm": 235, 
+   "name": "00-24", 
+   "id": 11419739, 
+   "look": [
+    0.0, 
+    1.0
+   ], 
+   "bottom_mm": -150, 
+   "template": "Electra_Section KN", 
+   "scale": 25, 
+   "start_mm": [
+    -47008, 
+    -13181
+   ]
+  }, 
+  {
+   "end_mm": [
+    -43475, 
+    -19149
+   ], 
+   "length_mm": 3725, 
+   "top_mm": 6150, 
+   "depth_mm": 460, 
+   "name": "00-25", 
+   "id": 11419748, 
+   "look": [
+    0.0, 
+    1.0
+   ], 
+   "bottom_mm": -150, 
+   "template": "Electra_Section KN", 
+   "scale": 25, 
+   "start_mm": [
+    -47200, 
+    -19149
+   ]
+  }, 
+  {
+   "end_mm": [
+    -50683, 
+    -20502
+   ], 
+   "length_mm": 2128, 
+   "top_mm": 6150, 
+   "depth_mm": 557, 
+   "name": "00-26", 
+   "id": 11419757, 
+   "look": [
+    1.0, 
+    0.0
+   ], 
+   "bottom_mm": -150, 
+   "template": "Electra_Section KN", 
+   "scale": 25, 
+   "start_mm": [
+    -50683, 
+    -18374
+   ]
+  }, 
+  {
+   "end_mm": [
+    -52100, 
+    -16872
+   ], 
+   "length_mm": 2225, 
+   "top_mm": 6150, 
+   "depth_mm": 517, 
+   "name": "00-27", 
+   "id": 11419766, 
+   "look": [
+    0.0, 
+    1.0
+   ], 
+   "bottom_mm": -150, 
+   "template": "Electra_Section KN", 
+   "scale": 25, 
+   "start_mm": [
+    -54325, 
+    -16872
+   ]
+  }, 
+  {
+   "end_mm": [
+    21325, 
+    -28512
+   ], 
+   "length_mm": 3925, 
+   "top_mm": 6150, 
+   "depth_mm": 511, 
+   "name": "00-29", 
+   "id": 11419784, 
+   "look": [
+    0.0, 
+    1.0
+   ], 
+   "bottom_mm": -150, 
+   "template": "Electra_Section KN", 
+   "scale": 25, 
+   "start_mm": [
+    17400, 
+    -28512
+   ]
+  }, 
+  {
+   "end_mm": [
+    36135, 
+    -22452
+   ], 
+   "length_mm": 10028, 
+   "top_mm": 6150, 
+   "depth_mm": 383, 
+   "name": "00-30", 
+   "id": 11423659, 
+   "look": [
+    0.0, 
+    1.0
+   ], 
+   "bottom_mm": -150, 
+   "template": null, 
+   "scale": 25, 
+   "start_mm": [
+    26107, 
+    -22452
+   ]
+  }, 
+  {
+   "end_mm": [
+    12880, 
+    -10602
+   ], 
+   "length_mm": 10028, 
+   "top_mm": 6150, 
+   "depth_mm": 835, 
+   "name": "00-31", 
+   "id": 11423745, 
+   "look": [
+    0.0, 
+    1.0
+   ], 
+   "bottom_mm": -150, 
+   "template": "Electra_Section KN", 
+   "scale": 25, 
+   "start_mm": [
+    2852, 
+    -10602
+   ]
+  }
+ ], 
+ "level": "00"
+}

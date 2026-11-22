@@ -6,8 +6,8 @@ Height  from the slab of the level to the slab above, included:
         top    = top of the slab above at the section (highest top face of the floors of the
                  linked models over three points of the line) + above_slab_mm.
 Width   the line's extent (concrete to concrete, see placement).
-Depth   far clip just before the first MEP element in front of the cut that the cut does not
-        go through (turned piece, riser, fitting, sprinkler...), depth_min_mm..depth_max_mm.
+Depth   depth_default_mm (300); shorter only before a piece of a main network in front of the
+        cut that the cut does not go through (turned piece, riser, main fitting), >= depth_min_mm.
 View    type view_type, template view_template, scale, name name_format ("00-01"),
         numbered right to left, top to bottom on the plan (Hebrew reading order).
 """
@@ -119,23 +119,31 @@ def section_height(line, finder, z0, z1, cfg):
 
 
 def section_depth(line, items, bottom, top, cfg):
-    """Far clip: just before the first MEP element in front of the cut that the cut does
-    not go through (a turned piece, riser, fitting, sprinkler...). Elements the cut goes
-    through are in the section anyway. Returns (depth, id of the element that limits it)."""
+    """Far clip: depth_default_mm (300, what the team sets), shorter only before a fragment
+    of a main network in front of the cut: a horizontal main pipe / duct / tray running along
+    the section, visible over more than depth_fragment_min_mm but less than half of the
+    section (a piece after a turn). Fittings, takeoffs, accessories, risers, equipment,
+    sprinkler heads and a main running along the whole section may appear (team review of
+    level 00). Returns (depth, id of the element that limits it, or None)."""
     o = line.origin
-    best = mm_to_ft(cfg["depth_max_mm"])
+    best = mm_to_ft(cfg.get("depth_default_mm", 300)) + mm_to_ft(20)
     limiting = None
+    length = line.t_max - line.t_min
+    fragment_min = mm_to_ft(cfg.get("depth_fragment_min_mm", 500))
     for item in items:
-        if item.zmax < bottom or item.zmin > top:
+        if not item.horizontal or item.zmax < bottom or item.zmin > top:
             continue
         rel = [(p[0] - o[0], p[1] - o[1]) for p in item.points]
+        ts = [dot(p, line.along) for p in rel]
         ahead = [dot(p, line.look) for p in rel]
+        if abs(ts[1] - ts[0]) < 0.7 * (abs(ts[1] - ts[0]) + abs(ahead[1] - ahead[0])):
+            continue   # not running along the section
         near = min(ahead) - item.radius
         if near <= 0.0 or near >= best:
             continue   # cut by the plane, behind it, or farther than what we have
-        ts = [dot(p, line.along) for p in rel]
-        if max(ts) + item.radius < line.t_min or min(ts) - item.radius > line.t_max:
-            continue
+        visible = min(max(ts), line.t_max) - max(min(ts), line.t_min)
+        if visible < fragment_min or visible > 0.5 * length:
+            continue   # too small to matter, or a main along the whole section
         best = near
         limiting = item.id
     depth = best - mm_to_ft(20)

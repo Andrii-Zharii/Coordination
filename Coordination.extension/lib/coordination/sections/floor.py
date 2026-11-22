@@ -175,30 +175,25 @@ def collect_segments(doc, level, settings):
 DEPTH_CATEGORIES = [
     DB.BuiltInCategory.OST_PipeCurves, DB.BuiltInCategory.OST_DuctCurves,
     DB.BuiltInCategory.OST_CableTray, DB.BuiltInCategory.OST_Conduit,
-    DB.BuiltInCategory.OST_FlexPipeCurves, DB.BuiltInCategory.OST_FlexDuctCurves,
-    DB.BuiltInCategory.OST_PipeFitting, DB.BuiltInCategory.OST_DuctFitting,
-    DB.BuiltInCategory.OST_CableTrayFitting, DB.BuiltInCategory.OST_ConduitFitting,
-    DB.BuiltInCategory.OST_PipeAccessory, DB.BuiltInCategory.OST_DuctAccessory,
-    DB.BuiltInCategory.OST_Sprinklers, DB.BuiltInCategory.OST_DuctTerminal,
-    DB.BuiltInCategory.OST_MechanicalEquipment, DB.BuiltInCategory.OST_PlumbingFixtures,
 ]
 
 
 class DepthItem(object):
     """Any MEP element of the floor, for the far clip: plan points, radius, z range."""
 
-    def __init__(self, points, radius, zmin, zmax, element_id):
+    def __init__(self, points, radius, zmin, zmax, element_id, horizontal=False):
         self.points = points
         self.radius = radius
         self.zmin = zmin
         self.zmax = zmax
         self.id = element_id
+        self.horizontal = horizontal   # a straight main piece that is not a riser
 
 
 def collect_depth_items(doc, level, settings):
-    """Every MEP element of the floor (pipes, risers, fittings, accessories, sprinklers,
-    terminals, equipment), -DC worksets left out. A section's far clip stops before the
-    first of them in front of the cut that the cut itself does not go through."""
+    """Straight pieces of the main networks of the floor (main pipes / ducts / trays /
+    conduits, horizontal or not), -DC worksets left out: candidates to limit a section's
+    far clip (see views.section_depth: only horizontal fragments along the section do)."""
     cfg = settings["sections"]
     z0, z1 = floor_band(doc, level, settings)
     zlo = z0 - mm_to_ft(cfg["below_level_mm"])
@@ -220,19 +215,23 @@ def collect_depth_items(doc, level, settings):
             if bbox is None or bbox.Max.Z < zlo or bbox.Min.Z > zhi:
                 continue
             eid = mep.element_id_value(element.Id)
-            line = None
-            if isinstance(element, DB.MEPCurve):
-                line = mep.location_line(element)
-            if isinstance(line, DB.Line):
-                p, q = line.GetEndPoint(0), line.GetEndPoint(1)
-                width, height = cross_size(element)
-                r = max(width, height) / 2.0
-                items.append(DepthItem([(p.X, p.Y), (q.X, q.Y)], r,
-                                       min(p.Z, q.Z) - r, max(p.Z, q.Z) + r, eid))
-            else:
-                corners = [(bbox.Min.X, bbox.Min.Y), (bbox.Max.X, bbox.Min.Y),
-                           (bbox.Max.X, bbox.Max.Y), (bbox.Min.X, bbox.Max.Y)]
-                items.append(DepthItem(corners, 0.0, bbox.Min.Z, bbox.Max.Z, eid))
+            line = mep.location_line(element) if isinstance(element, DB.MEPCurve) else None
+            if not isinstance(line, DB.Line):
+                continue
+            category = mep.category_name(element)
+            system = mep.system_name(element) or category
+            if category in ("Cable Trays", "Conduits"):
+                system = category
+            width, height = cross_size(element)
+            if not _is_main(_kind(element, category, system, settings), width, height,
+                            cfg["main_network"]):
+                continue
+            p, q = line.GetEndPoint(0), line.GetEndPoint(1)
+            r = max(width, height) / 2.0
+            flat = math.hypot(q.X - p.X, q.Y - p.Y)
+            horizontal = flat > 1e-6 and abs(q.Z - p.Z) <= flat   # under 45 deg
+            items.append(DepthItem([(p.X, p.Y), (q.X, q.Y)], r,
+                                   min(p.Z, q.Z) - r, max(p.Z, q.Z) + r, eid, horizontal))
     return items
 
 

@@ -100,7 +100,7 @@ How it chooses (rules: [docs/vision.md](docs/vision.md) section 4.0; settings: s
    The line always follows the grid axes exactly (the axis closest to the run), never the pipe's own direction —
    a pipe drawn 0.1° off the grid does not give a skewed section.
    **Wall to wall:** on each side the line goes to the first **room wall** of any kind (or concrete column / beam) if it is within 7 m
-   of the last network, and ends 300 mm past it (touching walls, e.g. cladding on concrete, count as one; a wall the pipe itself
+   of the last network, and ends 50 mm past its outer face (touching walls, e.g. cladding on concrete, count as one; a wall the pipe itself
    runs in bounds the side where the wall is). So a section covers the room or corridor its networks run in.
    A room wall stands on the floor and the networks do not pass over it: partitions up to a suspended ceiling, gypsum boxes and
    linings hanging among the networks (e.g. `AR_01_Int_GypsBrd` at 3.2–5.7 m in GRHL-INT-MAIN) do not end a section.
@@ -117,8 +117,9 @@ How it chooses (rules: [docs/vision.md](docs/vision.md) section 4.0; settings: s
    Crossing a wall or ending at its edge is fine. Two sections closer than 1.5 m that overlap by more than half are duplicates.
 5. **View.** Type `חתך לגיליון`, template `Electra_Section KN`, 1:25, names `00-01…` from top right (Hebrew order).
    Height: level −150 mm to the top of the slab above (top faces of the linked floors at the section) +150 mm.
-   Depth: stops just before the first MEP element in front of the cut that the cut does not go through (a turned piece, riser,
-   fitting, accessory, sprinkler, terminal, equipment), 10…1500 mm — no fragments of other networks in the view.
+   Depth: **300 mm** (what the team sets), shorter only before a **fragment** of a main network in front of the cut —
+   a horizontal main pipe / duct / tray running along the section, visible over 0.5 m but less than half of the section
+   (a piece after a turn). Fittings, takeoffs, valves, risers, sprinkler heads and a main running along the whole section may appear.
 
 Code: `lib/coordination/sections/` (`floor.py` runs and height changes, `concrete.py`, `placement.py`, `views.py`).
 

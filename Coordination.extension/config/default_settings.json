@@ -48,7 +48,7 @@
 
     "_width": "Wall to wall: the line ends past the first room wall (standing on the floor, the networks do not pass over it; any type) or concrete column / beam on each side if it is not farther than max_reach_to_structure_mm from the last network; otherwise it ends margin_no_structure_mm after the networks.",
     "max_reach_to_structure_mm": 7000,
-    "margin_past_structure_mm": 300,
+    "margin_past_structure_mm": 50,
     "margin_no_structure_mm": 500,
     "bundle_gap_mm": 3000,
     "room_wall_max_bottom_mm": 500,
@@ -56,7 +56,9 @@
     "wall_overlap_mm": 100,
     "max_half_length_mm": 40000,
 
-    "_depth": "Far clip: stops just before the first MEP element in front of the cut that the cut does not go through.",
+    "_depth": "Far clip: depth_default_mm; shorter only before a fragment of a main network in front of the cut: a horizontal main pipe / duct / tray running along the section, visible over more than depth_fragment_min_mm but less than half of the section (a piece after a turn). Fittings, risers, sprinkler heads and mains along the whole section may appear.",
+    "depth_default_mm": 300,
+    "depth_fragment_min_mm": 500,
     "depth_min_mm": 10,
     "depth_max_mm": 1500,
 
