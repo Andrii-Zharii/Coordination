@@ -40,17 +40,8 @@ def _by_name(doc, cls, names):
 
 
 def zone_from_settings(doc, settings):
-    """(zone box, text) from the settings saved by the last 'Clash у зоні' run."""
-    grids = _by_name(doc, DB.Grid, settings.get("grids", []))
-    levels = _by_name(doc, DB.Level, [settings.get("level")])
-    if len(grids) != 4 or not levels:
-        raise ValueError(u"Run 'Clash у зоні' first: the zone (4 grids and a level) is taken from its last settings.")
-    bottom, top = [float(v) for v in settings.get("heights", u"-1500 0").split()]
-    level = levels[0]
-    zone = gc.zone_from_grids(grids, level.ProjectElevation + gc.to_ft(bottom),
-                              level.ProjectElevation + gc.to_ft(top))
-    text = u"grids %s, level %s %+g..%+g mm" % (u" ".join(sorted(g.Name for g in grids)), level.Name, bottom, top)
-    return zone, text
+    """(zone box, text) from the settings saved by the last 'Clash у зоні' run (grids, rectangle or whole level)."""
+    return gc.zone_from_settings(doc, settings)
 
 
 def run_check(doc, settings, zone, progress=None):

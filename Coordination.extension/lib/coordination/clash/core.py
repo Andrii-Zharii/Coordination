@@ -184,6 +184,38 @@ def zone_from_grids(grids, z_min, z_max):
     return Box(DB.XYZ(min(xs), min(ys), z_min), DB.XYZ(max(xs), max(ys), z_max))
 
 
+WHOLE_LEVEL_HALF_FT = 30000.0   # ~9 km: "whole level" = everything in the height range
+
+
+def zone_from_settings(doc, settings):
+    """(zone box, text) from the settings of the last 'Clash у зоні' run.
+
+    settings["zone_mode"]: "grids" (4 grids, default for old settings), "rect" (settings["zone_rect"] =
+    [x_min, y_min, x_max, y_max] in feet, picked on a plan) or "level" (the whole level).
+    Height: settings["level"] + settings["heights"] (mm from the level). Raises ValueError.
+    """
+    levels = [l for l in DB.FilteredElementCollector(doc).OfClass(DB.Level) if l.Name == settings.get("level")]
+    if not levels:
+        raise ValueError(u"Run 'Clash у зоні' first: the zone and the level are taken from its last settings.")
+    level = levels[0]
+    bottom, top = [float(v) for v in settings.get("heights", u"-1500 0").split()]
+    z_min, z_max = level.ProjectElevation + to_ft(bottom), level.ProjectElevation + to_ft(top)
+    height_text = u"рівень %s %+g..%+g мм" % (level.Name, bottom, top)
+    mode = settings.get("zone_mode", u"grids")
+    if mode == u"level":
+        h = WHOLE_LEVEL_HALF_FT
+        return Box(DB.XYZ(-h, -h, z_min), DB.XYZ(h, h, z_max)), u"весь поверх, " + height_text
+    if mode == u"rect":
+        x0, y0, x1, y1 = settings["zone_rect"]
+        text = u"прямокутник %.1f x %.1f м, %s" % (to_mm(x1 - x0) / 1000.0, to_mm(y1 - y0) / 1000.0, height_text)
+        return Box(DB.XYZ(x0, y0, z_min), DB.XYZ(x1, y1, z_max)), text
+    grids = [g for g in DB.FilteredElementCollector(doc).OfClass(DB.Grid) if g.Name in set(settings.get("grids", []))]
+    if len(grids) != 4:
+        raise ValueError(u"Осі зони з останньої перевірки не знайдено. Запустіть 'Clash у зоні' ще раз.")
+    zone = zone_from_grids(grids, z_min, z_max)
+    return zone, u"осі %s, %s" % (u" ".join(sorted(g.Name for g in grids)), height_text)
+
+
 class Source(object):
     """The host document or one loaded link instance."""
 

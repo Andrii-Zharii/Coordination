@@ -30,10 +30,42 @@ def ask_numbers(default, prompt, count):
     return values
 
 
-grids = sorted(DB.FilteredElementCollector(doc).OfClass(DB.Grid), key=lambda g: g.Name)
-picked_grids = pick(grids, u"Оберіть 4 осі: 2 в одному напрямку і 2 в іншому", "Name", settings.get("grids", []))
-if not picked_grids:
+RECT = u"Прямокутник на плані (як рамка виділення)"
+GRIDS = u"4 осі"
+WHOLE = u"Весь поверх"
+modes = {RECT: u"rect", GRIDS: u"grids", WHOLE: u"level"}
+last_mode = settings.get("zone_mode", u"grids")
+options = sorted(modes, key=lambda k: modes[k] != last_mode)
+mode_name = forms.CommandSwitchWindow.show(options, message=u"Зона перевірки:")
+if not mode_name:
     script.exit()
+zone_mode = modes[mode_name]
+
+zone_rect = None
+picked_grids = []
+if zone_mode == u"rect":
+    view = revit.active_view
+    if not isinstance(view, DB.ViewPlan):
+        forms.alert(u"Відкрийте план поверху: прямокутник вказується на плані.", exitscript=True)
+    from Autodesk.Revit.UI.Selection import PickBoxStyle
+    try:
+        box = revit.uidoc.Selection.PickBox(PickBoxStyle.Directional,
+                                            u"Вкажіть зону перевірки: два протилежні кути прямокутника")
+    except Exception:
+        script.exit()
+    zone_rect = [min(box.Min.X, box.Max.X), min(box.Min.Y, box.Max.Y),
+                 max(box.Min.X, box.Max.X), max(box.Min.Y, box.Max.Y)]
+    if zone_rect[2] - zone_rect[0] < gc.to_ft(500) or zone_rect[3] - zone_rect[1] < gc.to_ft(500):
+        forms.alert(u"Прямокутник замалий.", exitscript=True)
+    if view.GenLevel is not None:
+        settings["level"] = view.GenLevel.Name
+elif zone_mode == u"grids":
+    grids = sorted(DB.FilteredElementCollector(doc).OfClass(DB.Grid), key=lambda g: g.Name)
+    picked_grids = pick(grids, u"Оберіть 4 осі: 2 в одному напрямку і 2 в іншому", "Name", settings.get("grids", []))
+    if not picked_grids:
+        script.exit()
+    if len(picked_grids) != 4:
+        forms.alert(u"Потрібно рівно 4 осі.", exitscript=True)
 
 levels = sorted(DB.FilteredElementCollector(doc).OfClass(DB.Level), key=lambda l: l.ProjectElevation)
 last_level = settings.get("level")
@@ -47,10 +79,16 @@ bottom, top = ask_numbers(settings.get("heights", u"-1500 0"),
 if bottom >= top:
     forms.alert(u"Низ має бути нижче за верх.", exitscript=True)
 
+zone_settings = {"zone_mode": zone_mode, "level": level.Name, "heights": u"%g %g" % (bottom, top)}
+if zone_rect is not None:
+    zone_settings["zone_rect"] = zone_rect
+if picked_grids:
+    zone_settings["grids"] = [g.Name for g in picked_grids]
 try:
-    zone = gc.zone_from_grids(picked_grids, level.ProjectElevation + gc.to_ft(bottom),
-                              level.ProjectElevation + gc.to_ft(top))
-except ValueError as error:
+    merged = dict(settings)
+    merged.update(zone_settings)
+    zone, zone_text = gc.zone_from_settings(doc, merged)
+except (ValueError, KeyError) as error:
     forms.alert(unicode(error), exitscript=True)
 
 
@@ -98,8 +136,8 @@ if not picked_ws and not sources:
 min_depth = ask_numbers(unicode(settings.get("min_depth", 10)),
                         u"Мінімальне заходження, мм. Менші перетини (дотики фітингів) ігноруються", 1)[0]
 
+settings.update(zone_settings)
 settings.update({
-    "grids": [g.Name for g in picked_grids],
     "level": level.Name,
     "heights": u"%g %g" % (bottom, top),
     "worksets": sorted(picked_ws),
@@ -128,7 +166,6 @@ try:
 except Exception as error:
     region_error = unicode(error)
 
-zone_text = u"осі %s, рівень %s %+g..%+g мм" % (u" ".join(sorted(g.Name for g in picked_grids)), level.Name, bottom, top)
 gc.save_results({
     "document": doc.Title,
     "created": datetime.now().strftime("%Y-%m-%d %H:%M"),
