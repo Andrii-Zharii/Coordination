@@ -128,6 +128,23 @@ How it chooses (rules: [docs/vision.md](docs/vision.md) section 4.0; settings: s
 
 Code: `lib/coordination/sections/` (`floor.py` runs and height changes, `concrete.py`, `placement.py`, `views.py`).
 
+**Annotate Sections** — select section views in the Project Browser (or open one) and click. Annotates only what the
+section **cuts** (pipes, ducts, cable trays, conduits through the cut plane), not what is seen beyond (team rules 2026-11-22):
+
+| Dimension | From → through → to |
+|---|---|
+| Floor to ceiling (vertical) | level of the floor → bottom of a concrete beam cut by the section (if any) → underside of the slab above (linked) |
+| Pipes (horizontal) | extreme concrete on the left → centres of all cut round objects (pipes, round ducts, conduits) → extreme concrete on the right; a block wall only if it is the outermost and there is no concrete on that side |
+| Trays and rectangular ducts (horizontal) | concrete → left and right edges of each object (shows widths) → concrete |
+| Trays and rectangular ducts (vertical) | floor → bottom and top of each object (objects at one height once) → ceiling |
+| Pipes (vertical) | floor → centres → ceiling, one chain per group of pipes along the section (up to 3) |
+
+A sloped pipe (cut at an angle) gets a cross of detail lines (`<Thin Lines>`, arms 1.2 × diameter) at its centre and the
+dimensions use it; cable trays and rectangular ducts get an outline of detail lines. Dimension type `Diagonal - 2.5mm Arial RED`.
+Tags (1:50): pipes `M_Pipe Size Inch_Type : 1.5 1 decimal`, trays `M_Cable Tray Size+Type Tag : 1.5+Service Type`,
+ducts `M_Duct Size_Type Tag : 1.5`; free leader end at the centre of the object, text straight below it.
+Placing dimensions and tags neatly (no overlaps) is the next step. Code: `lib/coordination/sections/annotate.py`.
+
 ## Repository layout
 
 ```

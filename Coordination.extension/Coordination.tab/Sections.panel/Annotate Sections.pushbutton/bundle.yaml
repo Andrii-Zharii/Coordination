@@ -1,0 +1,6 @@
+title: Annotate Sections
+tooltip: "Select section views (or open one) and click. Adds dimensions (floor to ceiling, pipes and trays horizontal and vertical chains), crosses at sloped pipes, outlines around cable trays, and tags of everything the section cuts. Layout of the annotations is not done yet."
+author: Coordination
+context: doc-project
+engine:
+  clean: true

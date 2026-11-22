@@ -97,6 +97,24 @@
     "trim_max_networks": 1,
     "trim_max_share": 0.2,
 
+    "annotation": {
+      "_comment": "Annotate Sections: dimensions and tags of what the section cuts (team rules 2026-11-22).",
+      "dimension_type": "Diagonal - 2.5mm Arial RED",
+      "line_style": "<Thin Lines>",
+      "cross_factor": 1.2,
+      "oblique_deg": 0.5,
+      "pipe_group_gap_mm": 1500,
+      "max_pipe_chains": 3,
+      "dimension_gap_mm": 400,
+      "tag_offset_mm": 400,
+      "tag_types": {
+        "Pipes": ["Pipe Tags", "M_Pipe Size Inch_Type", "1.5 1 decimal"],
+        "Cable Trays": ["Cable Tray Tags", "M_Cable Tray Size+Type Tag", "1.5+Service Type"],
+        "Ducts": ["Duct Tags", "M_Duct Size_Type Tag", "1.5"],
+        "Conduits": ["Conduit Tags", "M_Conduit Size Tag", "M_Conduit Size Tag"]
+      }
+    },
+
     "concrete": {
       "_comment": "Vertical structure for orientation: concrete walls (by type name), structural columns and beams. Block walls do not count.",
       "wall_keywords": ["(cn", "(con", "concrete", "בטון"],
