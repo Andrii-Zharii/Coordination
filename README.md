@@ -105,7 +105,10 @@ How it chooses (rules: [docs/vision.md](docs/vision.md) section 4.0; settings: s
    A room wall stands on the floor and the networks do not pass over it: partitions up to a suspended ceiling, gypsum boxes and
    linings hanging among the networks (e.g. `AR_01_Int_GypsBrd` at 3.2–5.7 m in GRHL-INT-MAIN) do not end a section.
    A concrete wall hanging from the slab above counts as a beam.
-   No wall within 7 m: it ends 500 mm after the networks. Concrete (preferred at least on one side): wall types with
+   No wall within 7 m: it ends 600 mm after the networks. If both ends reach a wall but one side is empty for more
+   than 2 m, that side ends 600 mm after the networks instead (no long empty stretch just to reach a second wall).
+   **Width economy:** a side also ends at a wall crossed inside the section if beyond it there is at most one network
+   weighing ≤ 20 % of the section (not twice as wide for one more small pipe). Concrete (preferred at least on one side): wall types with
    `(Cn` / `Concrete` (not `(Bb`), ≥ 150 mm; structural columns; beams of 400 mm+ hanging under the slab above.
 4. **Choice.** One by one, the line that adds the most not shown yet: each run (weight: gravity 3 > ducts, trays 2 > pressure pipes 1.5 >
    sprinklers 0.6, × size (at most ×1.5) × length), each height change near the line (within 3 m) and each place where a network
@@ -115,6 +118,8 @@ How it chooses (rules: [docs/vision.md](docs/vision.md) section 4.0; settings: s
    lengthwise is never taken, nor a line running inside **any** wall or concrete beam or along its face
    (closer than 100 mm for more than 100 mm).
    Crossing a wall or ending at its edge is fine. Two sections closer than 1.5 m that overlap by more than half are duplicates.
+   A section must cut at least 3 main networks. **Spread:** each section already chosen within 8 m divides the value of
+   one more there by (1 + 0.3 × count), so sections are spread over the floor instead of piling up in one part.
 5. **View.** Type `חתך לגיליון`, template `Electra_Section KN`, 1:25, names `00-01…` from top right (Hebrew order).
    Height: level −150 mm to the top of the slab above (top faces of the linked floors at the section) +150 mm.
    Depth: **300 mm** (what the team sets), shorter only before a **fragment** of a main network in front of the cut —

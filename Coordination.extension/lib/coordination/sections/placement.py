@@ -263,14 +263,14 @@ def _side_extent(sign, crossings, hits, cfg):
         outer = max(before) if before else 0.0
         if near - outer <= reach:
             kind = "concrete" if group_concrete is not None else "wall"
-            return far + mm_to_ft(cfg["margin_past_structure_mm"]), group_concrete, kind
+            return far + mm_to_ft(cfg["margin_past_structure_mm"]), group_concrete, kind, outer
         limit = near
     outer = 0.0
     for d in nets:
         if d >= limit or d - outer > gap_max:
             break
         outer = d
-    return outer + mm_to_ft(cfg["margin_no_structure_mm"]), None, None
+    return outer + mm_to_ft(cfg["margin_no_structure_mm"]), None, None, outer
 
 
 class Floor(object):
@@ -318,8 +318,30 @@ def make_line(origin, look, fl, cfg, use_concrete=True):
                 _obstacle_hits(line, fl.obstacle_index.near(look, origin), max_half) if bounds(ob)]
         hits += [(iv, ob, ob.kind == "beam") for iv, ob in
                  _obstacle_hits(line, fl.boundary_index.near(look, origin), max_half) if bounds(ob)]
-    right, ob_r, kind_r = _side_extent(1, crossings, hits, cfg)
-    left, ob_l, kind_l = _side_extent(-1, crossings, hits, cfg)
+    right, ob_r, kind_r, outer_r = _side_extent(1, crossings, hits, cfg)
+    left, ob_l, kind_l, outer_l = _side_extent(-1, crossings, hits, cfg)
+    # both ends at a wall, but a long empty stretch on one side: do not show it, end that side
+    # after the networks (team review of level 00: 00-05); keep the wall on the other side
+    if kind_l and kind_r:
+        short = mm_to_ft(cfg.get("empty_stretch_max_mm", 2000))
+        margin_no = mm_to_ft(cfg["margin_no_structure_mm"])
+        empty_r = right - outer_r
+        empty_l = left - outer_l
+        if max(empty_r, empty_l) > short + mm_to_ft(cfg["margin_past_structure_mm"]):
+            if empty_r >= empty_l:
+                right, ob_r, kind_r = outer_r + margin_no, None, None
+            else:
+                left, ob_l, kind_l = outer_l + margin_no, None, None
+    if use_concrete:
+        walls_crossed = [(iv, ob) for iv, ob in
+                         _obstacle_hits(line, fl.obstacle_index.near(look, origin), max_half)]
+        walls_crossed += _obstacle_hits(line, fl.boundary_index.near(look, origin), max_half)
+        trimmed = _trim_side(1, right, left, crossings, walls_crossed, cfg)
+        if trimmed is not None:
+            right, ob_r, kind_r = trimmed
+        trimmed = _trim_side(-1, left, right, crossings, walls_crossed, cfg)
+        if trimmed is not None:
+            left, ob_l, kind_l = trimmed
     line.t_min, line.t_max = -left, right
     line.concrete = [ob_l, ob_r]
     line.ends = [kind_l, kind_r]
@@ -347,6 +369,54 @@ def make_line(origin, look, fl, cfg, use_concrete=True):
         if ip is not None and line.t_min <= ip[0] <= line.t_max:
             line.small_cuts += 1
     return line
+
+
+def _trim_side(sign, end, other_end, crossings, walls_crossed, cfg):
+    """Width economy (team review of level 00): a section is not made wider only to show one
+    more small network. If the part of the line beyond a wall (any kind) or concrete element
+    crossed on this side holds at most trim_max_networks networks weighing at most
+    trim_max_share of what the section shows, the side ends at that wall instead.
+    Returns (new end, concrete obstacle or None, end kind) or None."""
+    margin = mm_to_ft(cfg["margin_past_structure_mm"])
+    inside_total = sum(run_weight(c[0], cfg) for c in crossings
+                       if -other_end <= c[1] * sign <= end)
+    if inside_total <= 0:
+        return None
+    side_nets = sorted((abs(c[1]), run_weight(c[0], cfg)) for c in crossings
+                       if c[1] * sign > 0 and abs(c[1]) <= end)
+    groups = []
+    for (a, b), ob in walls_crossed:
+        if sign > 0 and a > 0:
+            near, far = a, b
+        elif sign < 0 and b < 0:
+            near, far = -b, -a
+        else:
+            continue
+        if far + margin >= end:
+            continue   # this is the end wall itself (or beyond it)
+        groups.append((near, far, ob))
+    groups.sort(key=lambda g: g[0])
+    max_n = cfg.get("trim_max_networks", 1)
+    max_share = cfg.get("trim_max_share", 0.2)
+    for near, far, ob in groups:
+        if any(near <= d <= far for d, w in side_nets):
+            continue   # a network runs inside this wall: not a place to end
+        beyond = [(d, w) for d, w in side_nets if d > far]
+        if not beyond or len(beyond) > max_n:
+            if not beyond:
+                break   # nothing beyond: the end is already right
+            continue
+        if sum(w for d, w in beyond) <= max_share * inside_total:
+            concrete = ob if (ob.kind in ("column", "beam") or _concrete_name(ob, cfg)) else None
+            return far + margin, concrete, ("concrete" if concrete is not None else "wall")
+    return None
+
+
+def _concrete_name(ob, cfg):
+    keys = cfg["concrete"]["wall_keywords"]
+    excl = cfg["concrete"]["wall_exclude_keywords"]
+    name = (ob.name or u"").lower()
+    return any(k.lower() in name for k in keys) and not any(k.lower() in name for k in excl)
 
 
 def _along_wall(line, wall, cfg):
@@ -488,11 +558,15 @@ def choose(lines, fl, cfg, count, covered):
     factors = {2: factor["both"], 1: factor["one"], 0: factor["none"]}
     spacing = mm_to_ft(cfg["min_spacing_mm"])
     chosen = []
+    chosen_mids = []
+    spread_r2 = mm_to_ft(cfg.get("spread_radius_mm", 8000)) ** 2
+    spread_k = cfg.get("spread_factor", 0.3)
+    min_networks = cfg.get("min_networks_in_cut", 3)
     pool = list(lines)
     while pool and len(chosen) < count:
         best, best_score = None, 0.0
         for line in pool:
-            if line.lengthwise_main or line.in_wall:
+            if line.lengthwise_main or line.in_wall or len(line.runs) < min_networks:
                 continue
             gain = sum(run_w[i] for i in line.runs - covered_runs)
             gain += sum(ev_w[i] for i in line.events - covered_events)
@@ -500,7 +574,11 @@ def choose(lines, fl, cfg, count, covered):
             if gain <= 0:
                 continue
             gain += cfg.get("network_in_cut_bonus", 0.3) * len(line.runs)   # many networks together
-            score = (gain * factors[line.concrete_sides]
+            # spread over the floor: each chosen section nearby makes one more there worth less
+            mid = line.point((line.t_min + line.t_max) / 2.0)
+            near = len([m for m in chosen_mids
+                        if (m[0] - mid[0]) ** 2 + (m[1] - mid[1]) ** 2 <= spread_r2])
+            score = (gain * factors[line.concrete_sides] / (1.0 + spread_k * near)
                      - cfg["small_cut_penalty"] * line.small_cuts
                      - cfg["fitting_cut_penalty"] * line.fitting_cuts)
             if score > best_score:
@@ -520,6 +598,7 @@ def choose(lines, fl, cfg, count, covered):
         covered_events |= best.events
         covered_ends |= best.ends_shown
         chosen.append(best)
+        chosen_mids.append(best.point((best.t_min + best.t_max) / 2.0))
         pool = [ln for ln in pool if ln is not best and not _too_close(ln, best, spacing)]
     return chosen
 
