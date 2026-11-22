@@ -142,7 +142,9 @@ section **cuts** (pipes, ducts, cable trays, conduits through the cut plane), no
 A sloped pipe (cut at an angle) gets a cross of detail lines (`<Thin Lines>`, arms 1.2 × diameter) at its centre and the
 dimensions use it; cable trays and rectangular ducts get an outline of detail lines. Dimension type `Diagonal - 2.5mm Arial RED`.
 Tags (1:50): pipes `M_Pipe Size Inch_Type : 1.5 1 decimal`, trays `M_Cable Tray Size+Type Tag : 1.5+Service Type`,
-ducts `M_Duct Size_Type Tag : 1.5`; free leader end at the centre of the object, text straight below it.
+ducts `M_Duct Size_Type Tag : 1.5`; free leader end at the centre of the object, the leader straight down to the middle
+of the text (each tag is measured: pipe tags start their text at the insertion point). Sloped pipes: their tag families turn
+the text along the pipe, so (as the team did on 00-01) the leader goes down-right to an elbow and the tag stands next to it.
 Placing dimensions and tags neatly (no overlaps) is the next step. Code: `lib/coordination/sections/annotate.py`.
 
 ## Repository layout

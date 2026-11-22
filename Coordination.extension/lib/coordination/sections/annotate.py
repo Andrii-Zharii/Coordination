@@ -202,6 +202,8 @@ def linked_faces(doc, frame, settings):
         for bic, kind in cats:
             for e in (DB.FilteredElementCollector(ldoc).OfCategory(bic)
                       .WhereElementIsNotElementType().WherePasses(bbf)):
+                if kind == "wall" and not isinstance(e, DB.Wall):
+                    continue   # wall-category family instances (panels, in-place pieces)
                 name = _name(e.WallType) if isinstance(e, DB.Wall) else _name(e)
                 if kind == "wall":
                     if C._has(name, ccfg["wall_keywords"]) and not C._has(name, ccfg["wall_exclude_keywords"]):
@@ -436,36 +438,178 @@ def _tag_type(doc, category_name, family, type_name):
     return None
 
 
+_TEXT_OFFSET = {}
+
+
+def text_offset(doc, frame, symbol, element):
+    """Horizontal distance (feet, along the section) from a tag's insertion point to the
+    middle of its text, for this tag type at this view's scale. Pipe tags put the text to
+    the right of the point (+3.9 mm on paper), duct and tray tags centre it. Measured once
+    with a temporary tag."""
+    key = (symbol.Id.IntegerValue, frame.view.Scale)
+    if key not in _TEXT_OFFSET:
+        head = frame.point(frame.t_min, frame.z_bottom)
+        tmp = DB.IndependentTag.Create(doc, symbol.Id, frame.view.Id, DB.Reference(element), False,
+                                       DB.TagOrientation.Horizontal, head)
+        doc.Regenerate()
+        box = tmp.get_BoundingBox(frame.view)
+        t0, t1 = frame.t_of(box.Min), frame.t_of(box.Max)
+        _TEXT_OFFSET[key] = (t0 + t1) / 2.0 - frame.t_of(head)
+        doc.Delete(tmp.Id)
+    return _TEXT_OFFSET[key]
+
+
+def _free_leader(tag, ref, end):
+    tag.LeaderEndCondition = DB.LeaderEndCondition.Free
+    try:
+        tag.SetLeaderEnd(ref, end)
+    except Exception:
+        tag.LeaderEnd = end
+
+
+def align_tag(doc, frame, tag, ref, end):
+    """Put the tag's text centred straight under the leader end: measure the text alone
+    (leader off), then shift the head by the difference. The middle of the text depends on
+    the text itself (pipe tags start the text at the insertion point)."""
+    tag.HasLeader = False
+    doc.Regenerate()
+    box = tag.get_BoundingBox(frame.view)
+    centre = (frame.t_of(box.Min) + frame.t_of(box.Max)) / 2.0
+    tag.HasLeader = True
+    _free_leader(tag, ref, end)
+    along = DB.XYZ(frame.along[0], frame.along[1], 0)
+    tag.TagHeadPosition = tag.TagHeadPosition + along * (frame.t_of(end) - centre)
+    return frame.t_of(end) - centre
+
+
 def tag_cuts(doc, frame, cuts, settings):
+    """One tag per cut object.
+
+    Straight: the leader goes straight down from the centre of the object to the middle of
+    the text (the head is shifted by the tag type's text offset).
+    Sloped pipe (tag families turn their text along the pipe, so the text is vertical): the
+    leader goes from the centre down-right to an elbow and the tag stands just right of the
+    elbow (as the team did on 00-01)."""
     cfg = settings["sections"]["annotation"]
     types = {}
     for cat, spec in cfg["tag_types"].items():
         types[cat] = _tag_type(doc, spec[0], spec[1], spec[2])
     offset = mm_to_ft(cfg.get("tag_offset_mm", 400))
+    elbow_dx = mm_to_ft(cfg.get("sloped_elbow_dx_mm", 150))
+    elbow_dz = mm_to_ft(cfg.get("sloped_elbow_dz_mm", 400))
+    head_dx = mm_to_ft(cfg.get("sloped_head_dx_mm", 110))
+    head_dz = mm_to_ft(cfg.get("sloped_head_dz_mm", 60))
     tags = []
     for c in cuts:
         cat = mep.category_name(c.element)
         symbol = types.get(cat)
         if symbol is None:
             continue
-        centre = frame.point(c.t, c.z)
-        head = frame.point(c.t, c.z - c.height / 2.0 - offset)
+        end = frame.point(c.t, c.z)
         ref = DB.Reference(c.element)
-        tag = DB.IndependentTag.Create(doc, symbol.Id, frame.view.Id, ref, True,
-                                       DB.TagOrientation.Horizontal, head)
-        tag.LeaderEndCondition = DB.LeaderEndCondition.Free
-        try:
-            tag.SetLeaderEnd(ref, centre)
-        except Exception:
-            tag.LeaderEnd = centre
-        tag.TagHeadPosition = head
-        try:
-            if tag.HasLeaderElbow(ref):
-                tag.SetLeaderElbow(ref, frame.point(c.t, (centre.Z + head.Z) / 2.0))
-        except Exception:
-            pass
+        if c.kind == "round" and c.oblique:
+            elbow = frame.point(c.t + elbow_dx, c.z - elbow_dz)
+            head = frame.point(c.t + elbow_dx + head_dx, c.z - elbow_dz + head_dz)
+            tag = DB.IndependentTag.Create(doc, symbol.Id, frame.view.Id, ref, True,
+                                           DB.TagOrientation.Horizontal, head)
+            _free_leader(tag, ref, end)
+            tag.TagHeadPosition = head
+            try:
+                tag.SetLeaderElbow(ref, elbow)
+            except Exception:
+                pass
+        else:
+            head = frame.point(c.t, c.z - c.height / 2.0 - offset)
+            tag = DB.IndependentTag.Create(doc, symbol.Id, frame.view.Id, ref, True,
+                                           DB.TagOrientation.Horizontal, head)
+            _free_leader(tag, ref, end)
+            tag.TagHeadPosition = head
+            align_tag(doc, frame, tag, ref, end)
         tags.append(tag)
     return tags
+
+
+def realign_straight_tags(doc, frame, max_shift_mm=400):
+    """Re-centre every straight tag of the view (free leader end, no elbow) under its leader
+    end. Tags whose text is far from the end (moved by hand) are left alone."""
+    moved = 0
+    for tag in DB.FilteredElementCollector(doc, frame.view.Id).OfClass(DB.IndependentTag):
+        if not tag.HasLeader or tag.LeaderEndCondition != DB.LeaderEndCondition.Free:
+            continue
+        refs = list(tag.GetTaggedReferences())
+        if not refs:
+            continue
+        ref = refs[0]
+        try:
+            if tag.HasLeaderElbow(ref):
+                continue
+            end = tag.GetLeaderEnd(ref)
+        except Exception:
+            continue
+        if abs(frame.t_of(end) - frame.t_of(tag.TagHeadPosition)) > mm_to_ft(max_shift_mm):
+            continue
+        shift = align_tag(doc, frame, tag, ref, end)
+        if abs(shift) > mm_to_ft(1):
+            moved += 1
+    return moved
+
+
+def _is_oblique(element, frame, settings):
+    line = mep.location_line(element)
+    if not isinstance(line, DB.Line) or mep.category_name(element) not in ("Pipes", "Conduits", "Ducts"):
+        return False
+    d = line.GetEndPoint(1) - line.GetEndPoint(0)
+    length = d.GetLength()
+    if not length:
+        return False
+    facing = abs(d.X * frame.look[0] + d.Y * frame.look[1]) / length
+    return facing < math.cos(math.radians(settings["sections"]["annotation"].get("oblique_deg", 0.5)))
+
+
+def straighten_tags(doc, frame, settings):
+    """Fix tags made by an earlier version (no elbow, leader end right above the head):
+    straight ones are shifted so the leader meets the middle of the text, tags of sloped
+    pipes get the elbow layout. Tags moved by hand are left alone. Returns (shifted, sloped)."""
+    cfg = settings["sections"]["annotation"]
+    moved = 0
+    sloped = 0
+    along = DB.XYZ(frame.along[0], frame.along[1], 0)
+    for tag in DB.FilteredElementCollector(doc, frame.view.Id).OfClass(DB.IndependentTag):
+        if not tag.HasLeader or tag.LeaderEndCondition != DB.LeaderEndCondition.Free:
+            continue
+        refs = list(tag.GetTaggedReferences())
+        if not refs:
+            continue
+        ref = refs[0]
+        try:
+            if tag.HasLeaderElbow(ref):
+                continue
+            end = tag.GetLeaderEnd(ref)
+        except Exception:
+            continue
+        head = tag.TagHeadPosition
+        if abs(frame.t_of(end) - frame.t_of(head)) > mm_to_ft(2):
+            continue   # already moved (by hand or before)
+        element = doc.GetElement(ref.ElementId)
+        if _is_oblique(element, frame, settings):
+            t, z = frame.t_of(end), end.Z
+            elbow = frame.point(t + mm_to_ft(cfg.get("sloped_elbow_dx_mm", 150)),
+                                z - mm_to_ft(cfg.get("sloped_elbow_dz_mm", 400)))
+            new_head = frame.point(frame.t_of(elbow) + mm_to_ft(cfg.get("sloped_head_dx_mm", 110)),
+                                   elbow.Z + mm_to_ft(cfg.get("sloped_head_dz_mm", 60)))
+            tag.TagHeadPosition = new_head
+            try:
+                tag.SetLeaderElbow(ref, elbow)
+            except Exception:
+                pass
+            sloped += 1
+            continue
+        dx = text_offset(doc, frame, doc.GetElement(tag.GetTypeId()), element)
+        if abs(dx) < mm_to_ft(2):
+            continue
+        tag.TagHeadPosition = head - along * dx
+        moved += 1
+    return moved, sloped
 
 
 def annotate(doc, view, level, settings):

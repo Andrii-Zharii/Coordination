@@ -107,6 +107,11 @@
       "max_pipe_chains": 3,
       "dimension_gap_mm": 400,
       "tag_offset_mm": 400,
+      "_sloped": "Sloped pipes: tag text turns along the pipe (vertical); leader goes to an elbow down-right, tag just right of it.",
+      "sloped_elbow_dx_mm": 150,
+      "sloped_elbow_dz_mm": 400,
+      "sloped_head_dx_mm": 110,
+      "sloped_head_dz_mm": 60,
       "tag_types": {
         "Pipes": ["Pipe Tags", "M_Pipe Size Inch_Type", "1.5 1 decimal"],
         "Cable Trays": ["Cable Tray Tags", "M_Cable Tray Size+Type Tag", "1.5+Service Type"],
