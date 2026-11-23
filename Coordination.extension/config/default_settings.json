@@ -33,6 +33,13 @@
   "skip_vertical_elements": true,
   "vertical_angle_deg": 45,
 
+  "move_set": {
+    "_comment": "Move Set (Pipes panel): what moves together with the selected pipe. Angles in degrees, distances in mm.",
+    "angle_tolerance_deg": 0.1,
+    "drop_max_elements": 8,
+    "section_box_margin_mm": 500
+  },
+
   "sections": {
     "_comment": "Place Sections (vision section 4). Distances in mm.",
     "count": 30,
