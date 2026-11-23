@@ -54,6 +54,14 @@ Notes can be recorded by **voice** in any language (button *Record voice*); they
 
 Clash settings and the last results are kept in `%APPDATA%\pyRevit\GRHL Clash\`. Code: `lib/coordination/clash/core.py`.
 
+**Оновити групу** (Refresh): re-checks only the group open in the navigator (clash check with the last settings in
+its area, +300 mm). Resolved clashes and their Clash Region boxes disappear; an empty group is marked *resolved* and
+Next / Previous skip it. Other clashes found in that spot are reported, not added.
+
+**Панель** (Palette): a small floating window over Revit — Previous / Next group, Refresh the group and a Zone Note
+field. Drag it anywhere; it stays open until closed. Alternatives without it: right-click any button →
+*Add to Quick Access Toolbar*, or assign keyboard shortcuts (View → User Interface → Keyboard Shortcuts).
+
 **Three kinds of clashes**, reported in this order: **networks** (MEP × MEP — coordination),
 **through structure** (an MEP element crosses a wall / slab / column / beam — an opening is needed) and
 **inside structure** (it runs along inside a slab / wall — usually intended). Through vs inside is decided by the angle

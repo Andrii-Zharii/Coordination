@@ -816,6 +816,8 @@ def current_item(results):
 
 def clash_label(index, clash):
     kind = KIND_TITLES.get(clash.get("kind", u"mep"), u"")
+    if clash.get("resolved"):
+        return u"%d. [%s] %s  —  вирішено" % (index + 1, kind, short_systems(clash))
     if clash.get("members") and clash.get("count", 1) > 1:
         return u"%d. [%s] %s  —  %d колізій" % (index + 1, kind, short_systems(clash), clash["count"])
     return u"%d. [%s] %s  x  %s  (%d мм)" % (index + 1, kind, short_side(clash["a"]), short_side(clash["b"]),
@@ -969,6 +971,27 @@ def is_arc_clash(clash):
     return any(side["link_id"] is not None and side["category"] in ARC_CATEGORIES for side in (clash["a"], clash["b"]))
 
 
+def _new_region(doc, symbol, levels, workset_id, margin, name, clash, comment):
+    """One Clash Region box around a clash (inside an open transaction); stores its id in clash["region"]."""
+    box = Box(DB.XYZ(*clash["min"]), DB.XYZ(*clash["max"])).expanded(margin)
+    centre = box.center()
+    size = box.hi - box.lo
+    level = _level_below(levels, centre.Z)
+    instance = doc.Create.NewFamilyInstance(DB.XYZ(centre.X, centre.Y, level.ProjectElevation), symbol, level,
+                                            DB.Structure.StructuralType.NonStructural)
+    instance.get_Parameter(DB.BuiltInParameter.ELEM_PARTITION_PARAM).Set(workset_id.IntegerValue)
+    instance.get_Parameter(DB.BuiltInParameter.INSTANCE_ELEVATION_PARAM).Set(centre.Z - level.ProjectElevation)
+    instance.LookupParameter(u"Width").Set(size.X)
+    instance.LookupParameter(u"Length").Set(size.Y)
+    instance.LookupParameter(u"Height").Set(size.Z)
+    instance.get_Parameter(DB.BuiltInParameter.ALL_MODEL_MARK).Set(name)
+    instance.get_Parameter(DB.BuiltInParameter.ALL_MODEL_INSTANCE_COMMENTS).Set(comment[:250])
+    arc = instance.LookupParameter(REGION_ARC_PARAM)
+    if arc is not None:
+        arc.Set(1 if is_arc_clash(clash) else 0)
+    clash["region"] = id_int(instance.Id)
+
+
 def place_regions(doc, clashes, zone=None, margin_mm=REGION_MARGIN_MM):
     """Puts one Clash Region box around each clash, on the workset Clash (created when missing).
 
@@ -1005,28 +1028,94 @@ def place_regions(doc, clashes, zone=None, margin_mm=REGION_MARGIN_MM):
             for member_index, member in enumerate(members):
                 boxes.append((clash_name(index, member_index, group), member, group, index))
         for name, clash, group, index in boxes:
-            box = Box(DB.XYZ(*clash["min"]), DB.XYZ(*clash["max"])).expanded(margin)
-            centre = box.center()
-            size = box.hi - box.lo
-            level = _level_below(levels, centre.Z)
-            instance = doc.Create.NewFamilyInstance(DB.XYZ(centre.X, centre.Y, level.ProjectElevation), symbol, level,
-                                                    DB.Structure.StructuralType.NonStructural)
-            instance.get_Parameter(DB.BuiltInParameter.ELEM_PARTITION_PARAM).Set(workset_id.IntegerValue)
-            instance.get_Parameter(DB.BuiltInParameter.INSTANCE_ELEVATION_PARAM).Set(centre.Z - level.ProjectElevation)
-            instance.LookupParameter(u"Width").Set(size.X)
-            instance.LookupParameter(u"Length").Set(size.Y)
-            instance.LookupParameter(u"Height").Set(size.Z)
-            instance.get_Parameter(DB.BuiltInParameter.ALL_MODEL_MARK).Set(name)
-            instance.get_Parameter(DB.BuiltInParameter.ALL_MODEL_INSTANCE_COMMENTS).Set(clash_label(index, group)[:250])
-            arc = instance.LookupParameter(REGION_ARC_PARAM)
-            if arc is not None:
-                arc.Set(1 if is_arc_clash(clash) else 0)
-            clash["region"] = id_int(instance.Id)
+            _new_region(doc, symbol, levels, workset_id, margin, name, clash, clash_label(index, group))
         transaction.Commit()
     except Exception:
         transaction.RollBack()
         raise
     return len(boxes), old.Count
+
+
+REFRESH_MARGIN_MM = 300.0
+
+
+def _check_area(doc, settings, area):
+    """The clash check of 'Clash у зоні' (its last settings) inside a small box. Returns all clashes."""
+    worksets = set(settings.get("worksets", []))
+    focus = set(settings.get("focus", DEFAULT_FOCUS_CATEGORIES))
+    link_names = set(settings.get("links", []))
+    link_categories = settings.get("link_categories")
+    link_categories = set(link_categories if link_categories is not None else DEFAULT_LINK_CATEGORIES)
+    host = Source(doc)
+    items = collect(host, area, worksets=worksets) if worksets else []
+    for link in loaded_links(doc):
+        if link_display_name(link) in link_names:
+            items += collect(Source(doc, link), area, categories=link_categories)
+    return find_clashes(items, area, min_depth_mm=settings.get("min_depth", 10), focus=focus,
+                        openings=opening_boxes(host, area), stats={})
+
+
+def _set_members(group, members):
+    group["members"] = members
+    group["count"] = len(members)
+    group["also"] = max(len(members) - 1, 0)
+    group["resolved"] = not members
+    if members:
+        members.sort(key=lambda c: -c["volume_cm3"])
+        group["a"], group["b"] = members[0]["a"], members[0]["b"]
+        group["min"] = [min(c["min"][k] for c in members) for k in range(3)]
+        group["max"] = [max(c["max"][k] for c in members) for k in range(3)]
+        group["depth_mm"] = max(c["depth_mm"] for c in members)
+        group["volume_cm3"] = round(sum(c["volume_cm3"] for c in members), 1)
+
+
+def refresh_group(uidoc):
+    """Re-checks the group shown by the navigator: clash check (last settings) in the group's area,
+    keeps the clashes of the same kind and pair of networks, replaces the group's Clash Region boxes
+    (resolved ones disappear). Changes the model (one undo step).
+    Returns (name, before, after, other) - other: different clashes found in the same area (not added)."""
+    doc = uidoc.Document
+    results = load_results()
+    if not results or not results.get("clashes") or results.get("document") != doc.Title:
+        raise ValueError(u"Немає результатів перевірки для цієї моделі. Спершу запустіть «Clash у зоні».")
+    index = results.get("current", -1)
+    groups = results["clashes"]
+    if not 0 <= index < len(groups):
+        raise ValueError(u"Спершу відкрийте групу кнопками Наступна / Список.")
+    group = groups[index]
+    old_members = group.get("members") or [group]
+    area = Box(DB.XYZ(*group["min"]), DB.XYZ(*group["max"])).expanded(to_ft(REFRESH_MARGIN_MM))
+    found = _check_area(doc, load_settings(), area)
+    key = (group.get("kind", u"mep"), _pair_key(group))
+    same = [c for c in found if (c.get("kind", u"mep"), _pair_key(c)) == key]
+    other = len(found) - len(same)
+
+    symbol = _region_symbol(doc)
+    levels = list(DB.FilteredElementCollector(doc).OfClass(DB.Level))
+    transaction = DB.Transaction(doc, u"Refresh clash group")
+    transaction.Start()
+    try:
+        old = List[DB.ElementId]()
+        for member in old_members:
+            if member.get("region") and doc.GetElement(make_id(member["region"])) is not None:
+                old.Add(make_id(member["region"]))
+        if old.Count:
+            doc.Delete(old)
+        _set_members(group, same)
+        if same:
+            if not symbol.IsActive:
+                symbol.Activate()
+            workset_id = _region_workset(doc)
+            for member_index, member in enumerate(same):
+                _new_region(doc, symbol, levels, workset_id, to_ft(REGION_MARGIN_MM),
+                            clash_name(index, member_index, group), member, clash_label(index, group))
+        transaction.Commit()
+    except Exception:
+        transaction.RollBack()
+        raise
+    results["current_member"] = -1
+    save_results(results)
+    return clash_name(index), len(old_members), len(same), other
 
 
 def navigate(uidoc, step=None, index=None, member=None):
@@ -1042,7 +1131,13 @@ def navigate(uidoc, step=None, index=None, member=None):
         raise ValueError(u"Останню перевірку робили в моделі «%s»." % results.get("document"))
     clashes = results["clashes"]
     if index is None:
-        index = (results.get("current", -1) + (step or 1)) % len(clashes)
+        index = results.get("current", -1)
+        for _ in range(len(clashes)):
+            index = (index + (step or 1)) % len(clashes)
+            if not clashes[index].get("resolved"):
+                break
+        else:
+            raise ValueError(u"Усі групи вирішено.")
     results["current"] = index
     results["current_member"] = member if member is not None else -1
     name, target, label = current_item(results)
