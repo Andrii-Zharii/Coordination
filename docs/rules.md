@@ -69,6 +69,13 @@ tray through `INT-25 (Cn25)`: tray split by height + "opening needed in the wall
 - "Not a clash, a bad connection" (11-58 #6: condensate 50 × kitchen hood duct bend) — a modelling defect.
 - Just move it out of the wall (11-58 #7: sprinkler 32 × column 100/100).
 
+## R12. Three kinds of clashes — team decision 2026-11-23, in tool
+- **networks** (MEP × MEP) — coordination, first in the report;
+- **through structure** — MEP crosses a wall / slab / column / beam: an opening is needed (→ openings list, R9);
+- **inside structure** — MEP runs along inside a slab / wall: usually intended (R10), last in the report, still shown.
+Rule: angle MEP ↔ structure — perpendicular = through, parallel = inside; elbows/tees by the shape of the intersection.
+Known limit: a pipe entering a wall perpendicular and bending inside it.
+
 ## Next tools (paused 2026-11-20, back to them later)
 Proposed from R6–R9, order to be decided:
 1. **Openings list (R9)** — all places where MEP passes a concrete wall/floor without an opening:

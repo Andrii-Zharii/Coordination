@@ -178,6 +178,8 @@ gc.save_results({
 output = script.get_output()
 output.set_title(u"Clash у зоні")
 output.print_md(u"## Групи колізій: %d (колізій усього: %d)" % (len(clashes), len(found)))
+output.print_md(u"**Мережі:** %d  ·  **крізь конструкцію:** %d  ·  **всередині конструкції:** %d" % tuple(
+    sum(1 for c in found if c.get("kind", u"mep") == k) for k in gc.KIND_ORDER))
 output.print_md(u"*Версія коду: %s*" % gc.code_version())
 output.print_md(u"**Зона:** %s  \n**Перевіряється:** %s  \n**Воркcети:** %s  \n**Лінки:** %s  \n**Мінімальне заходження:** %g мм  \n**Перевірено елементів:** %d  \n**Усього перетинів:** %d, зібрано в групи: та сама пара мереж поруч (до %g мм, або до %g мм уздовж тієї самої мережі)  \n**Проходи крізь шрулі й отвори (не колізії):** %d" % (
     zone_text, u", ".join(sorted(focus)), u", ".join(sorted(picked_ws)) or u"-",
@@ -200,16 +202,18 @@ def cell(side):
     return u"%s<br>%s %s" % (side["source"], text, ident)
 
 
-def table_rows():
-    """A row per group, then (for groups of several clashes) a row per clash: 1.1, 1.2 ..."""
+def table_rows(kind):
+    """A row per group of this kind, then (for groups of several clashes) a row per clash: 1.1, 1.2 ..."""
     rows = []
     for i, group in enumerate(clashes):
+        if group.get("kind", u"mep") != kind:
+            continue
         members = group.get("members") or [group]
         if len(members) == 1:
-            rows.append([u"<b>%d</b>" % (i + 1), group["systems"], 1, cell(group["a"]), cell(group["b"]),
+            rows.append([u"<b>%d</b>" % (i + 1), gc.short_systems(group), 1, cell(group["a"]), cell(group["b"]),
                          group["depth_mm"], region_link(members[0], gc.clash_name(i))])
             continue
-        rows.append([u"<b>%d</b>" % (i + 1), u"<b>%s</b>" % group["systems"], u"<b>%d</b>" % group["count"],
+        rows.append([u"<b>%d</b>" % (i + 1), u"<b>%s</b>" % gc.short_systems(group), u"<b>%d</b>" % group["count"],
                      u"<i>група</i>", u"", group["depth_mm"], u""])
         for j, member in enumerate(members):
             rows.append([u"&nbsp;&nbsp;%d.%d" % (i + 1, j + 1), u"", u"", cell(member["a"]), cell(member["b"]),
@@ -217,9 +221,20 @@ def table_rows():
     return rows
 
 
+KIND_HEADERS = {
+    u"mep": u"Мережі × мережі — колізії координації",
+    u"through": u"Крізь конструкцію — мережа перетинає стіну / плиту / колону / балку (потрібен отвір)",
+    u"inside": u"Всередині конструкції — мережа йде вздовж у плиті / стіні (зазвичай так задумано)",
+}
 if clashes:
-    output.print_table(table_rows(),
-                       columns=[u"№", u"Мережі", u"Колізій", u"Елемент A", u"Елемент B", u"Заходження, мм", u"Бокс"])
+    for kind in gc.KIND_ORDER:
+        kind_groups = [g for g in clashes if g.get("kind", u"mep") == kind]
+        if not kind_groups:
+            continue
+        output.print_md(u"### %s: %d груп, %d колізій" % (
+            KIND_HEADERS[kind], len(kind_groups), sum(g.get("count", 1) for g in kind_groups)))
+        output.print_table(table_rows(kind),
+                           columns=[u"№", u"Мережі", u"Колізій", u"Елемент A", u"Елемент B", u"Заходження, мм", u"Бокс"])
     output.print_md(u"**Наступна / Попередня** — по групах. **Список** — оберіть групу, потім усю групу або одну її колізію.")
     forms.alert(u"Знайдено груп: %d (колізій: %d)." % (len(clashes), len(found)),
                 sub_msg=u"Таблиця відкрита у вікні pyRevit. Перейти до колізій можна кнопками Наступна / Попередня / Список.")

@@ -54,7 +54,13 @@ Notes can be recorded by **voice** in any language (button *Record voice*); they
 
 Clash settings and the last results are kept in `%APPDATA%\pyRevit\GRHL Clash\`. Code: `lib/coordination/clash/core.py`.
 
-**Clash groups.** The check no longer hides repeated clashes; it groups them. Clashes join one group when
+**Three kinds of clashes**, reported in this order: **networks** (MEP × MEP — coordination),
+**through structure** (an MEP element crosses a wall / slab / column / beam — an opening is needed) and
+**inside structure** (it runs along inside a slab / wall — usually intended). Through vs inside is decided by the angle
+between the MEP element and the structure (perpendicular → through, parallel → inside); for elbows and tees by the
+shape of the intersection. First iteration — a pipe entering a wall and bending inside it may be misjudged.
+
+**Clash groups.** The check no longer hides repeated clashes; it groups them (a group never mixes kinds). Clashes join one group when
 they are between the same pair of networks (System Type; insulation counts as its pipe/duct; all cable trays
 are one network; linked elements by category) and their centres are within **1 m** — or within **4 m** when
 one side is the same linked element or the same connected MEP network (a pipe through three trays side by

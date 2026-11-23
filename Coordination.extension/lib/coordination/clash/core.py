@@ -49,6 +49,11 @@ REGION_MARGIN_MM = 100.0
 REGION_ARC_PARAM = u"ARC clash"
 ARC_CATEGORIES = (u"Walls", u"Floors", u"Structural Framing", u"Structural Columns", u"Columns")
 TRAY_CATEGORIES = (u"Cable Trays", u"Cable Tray Fittings")
+# Building structure: an MEP element in it either passes THROUGH (needs an opening) or runs INSIDE it.
+PLANE_STRUCTURE = (u"Floors", u"Walls", u"Structural Foundations", u"Roofs")
+LINE_STRUCTURE = (u"Structural Columns", u"Columns", u"Structural Framing")
+KIND_ORDER = (u"mep", u"through", u"inside")
+KIND_TITLES = {u"mep": u"мережі", u"through": u"крізь конструкцію", u"inside": u"всередині конструкції"}
 GROUP_NEAR_MM = 1000.0   # same pair of networks this close -> one group
 GROUP_FAR_MM = 4000.0    # ... up to this far when one side is the same element / MEP network
 
@@ -530,6 +535,77 @@ def _describe(item):
     }
 
 
+def _mep_direction(item):
+    """Unit direction of a straight MEP element (segment or in-line fitting), or None (elbow, tee...)."""
+    element = _host_of(item.source, item.element)
+    location = element.Location
+    if isinstance(location, DB.LocationCurve) and isinstance(location.Curve, DB.Line):
+        return location.Curve.Direction
+    manager = _connector_manager(element)
+    if manager is None:
+        return None
+    axes = []
+    for connector in manager.Connectors:
+        if connector.ConnectorType == DB.ConnectorType.Logical:
+            continue
+        try:
+            axes.append(connector.CoordinateSystem.BasisZ)
+        except Exception:
+            pass
+    if len(axes) == 2 and abs(axes[0].DotProduct(axes[1])) > 0.99:
+        return axes[0]
+    return None
+
+
+def _structure_axis(item):
+    """("plane", normal) for floors/walls, ("line", axis) for columns/beams, (None, None) otherwise.
+    Host model coordinates."""
+    element = item.element
+    category = element.Category.Name
+    transform = item.source.transform
+
+    def host(vector):
+        return transform.OfVector(vector) if transform is not None else vector
+
+    if category in PLANE_STRUCTURE:
+        if isinstance(element, DB.Wall):
+            return u"plane", host(element.Orientation)
+        return u"plane", DB.XYZ.BasisZ
+    if category in LINE_STRUCTURE:
+        location = element.Location
+        if isinstance(location, DB.LocationCurve):
+            curve = location.Curve
+            vector = curve.GetEndPoint(1) - curve.GetEndPoint(0)
+            if vector.GetLength() > 1e-6:
+                return u"line", host(vector.Normalize())
+        return u"line", DB.XYZ.BasisZ
+    return None, None
+
+
+def clash_kind(a, b, box):
+    """"mep" for MEP x MEP; for MEP x structure "through" (crosses it: an opening is needed) or "inside"
+    (runs along inside the slab/wall/column/beam). By the angle between the MEP element and the structure;
+    elbows and tees (no single direction): by the shape of the intersection box."""
+    for structure, mep in ((a, b), (b, a)):
+        shape, axis = _structure_axis(structure)
+        if shape is None or _structure_axis(mep)[0] is not None:
+            continue
+        direction = _mep_direction(mep)
+        if direction is not None:
+            dot = abs(direction.Normalize().DotProduct(axis.Normalize()))
+            if shape == u"plane":
+                return u"through" if dot > 0.7 else u"inside"
+            return u"inside" if dot > 0.7 else u"through"
+        if shape == u"line":
+            return u"through"
+        size = box.hi - box.lo
+        n = axis.Normalize()
+        across = abs(size.X * n.X) + abs(size.Y * n.Y) + abs(size.Z * n.Z)
+        along = max(size.X, size.Y, size.Z)
+        return u"inside" if along > 1.5 * across else u"through"
+    return u"mep"
+
+
 def find_clashes(items, zone, min_depth_mm=0.0, progress=None, focus=None, openings=(), stats=None):
     """Clashes between items as JSON-ready dicts, deepest first.
 
@@ -579,6 +655,7 @@ def find_clashes(items, zone, min_depth_mm=0.0, progress=None, focus=None, openi
                 "b": _describe(b),
                 "volume_cm3": round(DB.UnitUtils.ConvertFromInternalUnits(volume, DB.UnitTypeId.CubicCentimeters), 1),
                 "depth_mm": int(round(to_mm(depth))),
+                "kind": clash_kind(a, b, box),
                 "min": [box.lo.X, box.lo.Y, box.lo.Z],
                 "max": [box.hi.X, box.hi.Y, box.hi.Z],
             })
@@ -645,7 +722,7 @@ def group_clashes(clashes, near_mm=GROUP_NEAR_MM, far_mm=GROUP_FAR_MM):
             i = parent[i]
         return i
 
-    keys = [_pair_key(c) for c in clashes]
+    keys = [(c.get("kind", u"mep"), _pair_key(c)) for c in clashes]
     centers = [_center(c) for c in clashes]
     ids = [set([_side_identity(c["a"]), _side_identity(c["b"])]) for c in clashes]
     for i in range(count):
@@ -673,9 +750,11 @@ def group_clashes(clashes, near_mm=GROUP_NEAR_MM, far_mm=GROUP_FAR_MM):
             "count": len(members),
             "also": len(members) - 1,
             "systems": u" x ".join(_pair_key(top)),
+            "kind": top.get("kind", u"mep"),
             "members": members,
         })
-    groups.sort(key=lambda g: (-g["count"], -g["volume_cm3"]))
+    groups.sort(key=lambda g: (KIND_ORDER.index(g["kind"]) if g["kind"] in KIND_ORDER else 0,
+                               -g["count"], -g["volume_cm3"]))
     return groups
 
 
@@ -704,9 +783,20 @@ def clash_name(group_index, member_index=None, group=None):
     return name
 
 
+def short_side(side):
+    """Short text of one side: "Pipes 160 mmר #9316374" or "Floors Str-25 (Cn) [GRHL-A-MAIN]"."""
+    if side["link_id"] is None:
+        return u"%s %s #%d" % (side["category"], side["size"] or side["type"], side["id"])
+    return u"%s %s [%s]" % (side["category"], side["type"], side["source"].replace(u".rvt", u""))
+
+
+def short_systems(clash):
+    return u" x ".join(p.replace(u"LINK:", u"") for p in _pair_key(clash))
+
+
 def member_label(group_index, member_index, member):
-    return u"%d.%d  %s  x  %s  (%d мм)" % (group_index + 1, member_index + 1, side_label(member["a"]),
-                                         side_label(member["b"]), member["depth_mm"])
+    return u"%d.%d  %s  x  %s  (%d мм)" % (group_index + 1, member_index + 1, short_side(member["a"]),
+                                         short_side(member["b"]), member["depth_mm"])
 
 
 def current_item(results):
@@ -725,12 +815,11 @@ def current_item(results):
 
 
 def clash_label(index, clash):
-    if clash.get("members"):
-        return u"%d. [%s] %d колізій: %s  x  %s  (%d мм)" % (
-            index + 1, clash["systems"], clash["count"], side_label(clash["a"]), side_label(clash["b"]), clash["depth_mm"])
-    also = clash.get("also", 0)
-    return u"%d. %s  x  %s  (%d мм)%s" % (index + 1, side_label(clash["a"]), side_label(clash["b"]), clash["depth_mm"],
-                                          u"  +ще %d" % also if also else u"")
+    kind = KIND_TITLES.get(clash.get("kind", u"mep"), u"")
+    if clash.get("members") and clash.get("count", 1) > 1:
+        return u"%d. [%s] %s  —  %d колізій" % (index + 1, kind, short_systems(clash), clash["count"])
+    return u"%d. [%s] %s  x  %s  (%d мм)" % (index + 1, kind, short_side(clash["a"]), short_side(clash["b"]),
+                                           clash["depth_mm"])
 
 
 def _read_json(path, default):
