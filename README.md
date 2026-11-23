@@ -58,8 +58,13 @@ Clash settings and the last results are kept in `%APPDATA%\pyRevit\GRHL Clash\`.
 its area, +300 mm). Resolved clashes and their Clash Region boxes disappear; an empty group is marked *resolved* and
 Next / Previous skip it. Other clashes found in that spot are reported, not added.
 
-**Панель** (Palette): a small floating window over Revit — Previous / Next group, Refresh the group and a Zone Note
-field. Drag it anywhere; it stays open until closed. Alternatives without it: right-click any button →
+**Не колізія** (Not a clash): marks the group open in the navigator (or the clash picked in the List) with a reason —
+not a clash / connection or modelling problem (someone else's question) / intended / other — and a comment. Its boxes
+are removed, Next / Previous skip it, and later checks (Clash у зоні, Refresh, Start/Finish Zone) do not show it.
+The list is shared with the team: `cases/<model>/ignored.json` (commit and push it). **Shift+Click**: restore clashes.
+
+**Панель** (Palette): a small floating window over Revit — Previous / Next group, Refresh the group, a Zone Note
+field and Not a clash with a reason. Drag it anywhere; it stays open until closed. Alternatives without it: right-click any button →
 *Add to Quick Access Toolbar*, or assign keyboard shortcuts (View → User Interface → Keyboard Shortcuts).
 
 **Three kinds of clashes**, reported in this order: **networks** (MEP × MEP — coordination),

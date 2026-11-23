@@ -156,6 +156,7 @@ with forms.ProgressBar(title=u"Пошук колізій... ({value} з {max_val
     stats = {}
     found = gc.find_clashes(items, zone, min_depth_mm=min_depth, progress=bar.update_progress, focus=focus,
                             openings=gc.opening_boxes(host, zone), stats=stats)
+    found, ignored_count = gc.drop_ignored(doc, found)
     clashes = gc.group_clashes(found, settings.get("group_near_mm", gc.GROUP_NEAR_MM),
                                settings.get("group_far_mm", gc.GROUP_FAR_MM))
 
@@ -181,6 +182,8 @@ output.print_md(u"## Групи колізій: %d (колізій усього:
 output.print_md(u"**Мережі:** %d  ·  **крізь конструкцію:** %d  ·  **всередині конструкції:** %d" % tuple(
     sum(1 for c in found if c.get("kind", u"mep") == k) for k in gc.KIND_ORDER))
 output.print_md(u"*Версія коду: %s*" % gc.code_version())
+if ignored_count:
+    output.print_md(u"Не показано **%d** колізій зі списку «не колізія» (%s)." % (ignored_count, gc.ignore_file(doc)))
 output.print_md(u"**Зона:** %s  \n**Перевіряється:** %s  \n**Воркcети:** %s  \n**Лінки:** %s  \n**Мінімальне заходження:** %g мм  \n**Перевірено елементів:** %d  \n**Усього перетинів:** %d, зібрано в групи: та сама пара мереж поруч (до %g мм, або до %g мм уздовж тієї самої мережі)  \n**Проходи крізь шрулі й отвори (не колізії):** %d" % (
     zone_text, u", ".join(sorted(focus)), u", ".join(sorted(picked_ws)) or u"-",
     u", ".join(l.name for l in picked_links) or u"-", min_depth, len(items), len(found),

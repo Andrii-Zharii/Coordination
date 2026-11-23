@@ -21,8 +21,13 @@ XAML = u"""
     </StackPanel>
     <TextBlock x:Name="status" Margin="2,4" MaxWidth="420" TextWrapping="Wrap" Text="Готово"/>
     <StackPanel Orientation="Horizontal">
-      <TextBox x:Name="note_box" Width="300" Margin="2" Padding="2" ToolTip="Zone Note: що зробили і чому"/>
+      <TextBox x:Name="note_box" Width="300" Margin="2" Padding="2"
+               ToolTip="Zone Note: що зробили і чому. Також коментар для «Не колізія»"/>
       <Button x:Name="note_button" Content="Zone Note" Padding="8,4" Margin="2" Click="on_note"/>
+    </StackPanel>
+    <StackPanel Orientation="Horizontal">
+      <ComboBox x:Name="reason_box" Width="300" Margin="2"/>
+      <Button x:Name="ignore_button" Content="Не колізія" Padding="8,4" Margin="2" Click="on_ignore"/>
     </StackPanel>
   </StackPanel>
 </Window>
@@ -80,9 +85,19 @@ def do_note(text):
     return run
 
 
+def do_ignore(reason, note):
+    def run(uidoc):
+        name, count = gc.ignore_current(uidoc, reason, note)
+        return u"{}: {} колізій позначено «не колізія».".format(name, count)
+    return run
+
+
 class Palette(forms.WPFWindow):
     def __init__(self):
         forms.WPFWindow.__init__(self, XAML, literal_string=True)
+        for _, title in gc.IGNORE_REASONS:
+            self.reason_box.Items.Add(title)
+        self.reason_box.SelectedIndex = 0
         self.handler = Handler()
         self.handler.window = self
         self.event = ExternalEvent.Create(self.handler)
@@ -111,6 +126,14 @@ class Palette(forms.WPFWindow):
             return
         self.note_box.Text = u""
         self.request(do_note(text), u"Зберігаю нотатку...")
+
+
+    def on_ignore(self, sender, args):
+        index = self.reason_box.SelectedIndex
+        reason = gc.IGNORE_REASONS[index if index >= 0 else 0][0]
+        note = (self.note_box.Text or u"").strip()
+        self.note_box.Text = u""
+        self.request(do_ignore(reason, note), u"Позначаю «не колізія»...")
 
 
 Palette().show()

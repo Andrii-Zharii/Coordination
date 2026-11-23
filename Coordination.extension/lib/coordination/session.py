@@ -58,7 +58,7 @@ def run_check(doc, settings, zone, progress=None):
             items += gc.collect(gc.Source(doc, link), zone, categories=link_categories)
     found = gc.find_clashes(items, zone, min_depth_mm=settings.get("min_depth", 10), progress=progress,
                             focus=focus, openings=gc.opening_boxes(host, zone), stats={})
-    return found
+    return gc.drop_ignored(doc, found)[0]
 
 
 def clash_key(clash):

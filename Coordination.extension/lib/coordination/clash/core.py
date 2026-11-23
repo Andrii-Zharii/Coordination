@@ -816,6 +816,8 @@ def current_item(results):
 
 def clash_label(index, clash):
     kind = KIND_TITLES.get(clash.get("kind", u"mep"), u"")
+    if clash.get("ignored"):
+        return u"%d. [%s] %s  —  не колізія" % (index + 1, kind, short_systems(clash))
     if clash.get("resolved"):
         return u"%d. [%s] %s  —  вирішено" % (index + 1, kind, short_systems(clash))
     if clash.get("members") and clash.get("count", 1) > 1:
@@ -1084,6 +1086,116 @@ def place_regions(doc, clashes, zone=None, margin_mm=REGION_MARGIN_MM):
 
 REFRESH_MARGIN_MM = 300.0
 
+# ---------------------------------------------------------------- "not a clash" list
+IGNORE_REASONS = [
+    (u"not_a_clash", u"Не колізія"),
+    (u"connection", u"Проблема з'єднання / моделювання (питання до іншого)"),
+    (u"intended", u"Так задумано (наприклад, всередині конструкції)"),
+    (u"other", u"Інше"),
+]
+
+
+def clash_key(clash):
+    """Stable identity of a single clash: its two elements (link id, element id)."""
+    sides = sorted(((s["link_id"] or 0), s["id"]) for s in (clash["a"], clash["b"]))
+    return u"%d:%d|%d:%d" % (sides[0][0], sides[0][1], sides[1][0], sides[1][1])
+
+
+def _repo_dir():
+    return os.path.dirname(os.path.dirname(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))))
+
+
+def ignore_file(doc):
+    """<repo>/cases/<model>/ignored.json - shared with the team through GitHub."""
+    import re
+    name = re.sub(u"[\\\\/:*?\"<>|]+", u"_", doc.Title or u"model").strip(u" ._") or u"model"
+    return os.path.join(_repo_dir(), u"cases", name, u"ignored.json")
+
+
+def load_ignored(doc):
+    return _read_json(ignore_file(doc), [])
+
+
+def ignored_keys(doc):
+    return set(entry["key"] for entry in load_ignored(doc))
+
+
+def drop_ignored(doc, clashes):
+    """(clashes without the ones on the 'not a clash' list, number dropped)."""
+    keys = ignored_keys(doc)
+    kept = [c for c in clashes if clash_key(c) not in keys]
+    return kept, len(clashes) - len(kept)
+
+
+def _save_ignored(doc, entries):
+    path = ignore_file(doc)
+    folder = os.path.dirname(path)
+    if not os.path.isdir(folder):
+        os.makedirs(folder)
+    text = json.dumps(entries, ensure_ascii=False, indent=1)
+    with io.open(path, "w", encoding="utf-8") as f:
+        f.write(u"%s" % text)
+
+
+def ignore_current(uidoc, reason, note):
+    """Marks what the navigator shows (a group, or one clash of it) as not a clash: adds its clashes to the
+    'not a clash' list, removes their Clash Region boxes, and Next / Previous skip it from now on.
+    Changes the model (one undo step). Returns (name, number of clashes)."""
+    doc = uidoc.Document
+    results = load_results()
+    if not results or not results.get("clashes") or results.get("document") != doc.Title:
+        raise ValueError(u"Немає результатів перевірки для цієї моделі. Спершу запустіть «Clash у зоні».")
+    name, target, label = current_item(results)
+    if target is None:
+        raise ValueError(u"Спершу відкрийте групу кнопками Наступна / Список.")
+    index = results["current"]
+    group = results["clashes"][index]
+    clashes = target.get("members") or [target]
+    entries = load_ignored(doc)
+    known = set(e["key"] for e in entries)
+    from datetime import datetime
+    now = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    for clash in clashes:
+        key = clash_key(clash)
+        if key in known:
+            continue
+        entries.append({"key": key, "reason": reason, "note": note or u"", "time": now,
+                        "user": doc.Application.Username, "name": name, "label": label,
+                        "kind": clash.get("kind", u"mep"), "a": clash["a"], "b": clash["b"],
+                        "min": clash["min"], "max": clash["max"]})
+    _save_ignored(doc, entries)
+
+    transaction = DB.Transaction(doc, u"Not a clash")
+    transaction.Start()
+    try:
+        old = List[DB.ElementId]()
+        for clash in clashes:
+            if clash.get("region") and doc.GetElement(make_id(clash["region"])) is not None:
+                old.Add(make_id(clash["region"]))
+        if old.Count:
+            doc.Delete(old)
+        transaction.Commit()
+    except Exception:
+        transaction.RollBack()
+        raise
+    keys = set(clash_key(c) for c in clashes)
+    remaining = [m for m in (group.get("members") or []) if clash_key(m) not in keys]
+    if group.get("members"):
+        _set_members(group, remaining)
+    else:
+        group["resolved"] = True
+    if group.get("resolved"):
+        group["ignored"] = True
+    results["current_member"] = -1
+    save_results(results)
+    return name, len(clashes)
+
+
+def unignore(doc, keys):
+    """Removes entries from the 'not a clash' list (they come back at the next check)."""
+    keys = set(keys)
+    _save_ignored(doc, [e for e in load_ignored(doc) if e["key"] not in keys])
+
 
 def _check_area(doc, settings, area):
     """The clash check of 'Clash у зоні' (its last settings) inside a small box. Returns all clashes."""
@@ -1097,8 +1209,9 @@ def _check_area(doc, settings, area):
     for link in loaded_links(doc):
         if link_display_name(link) in link_names:
             items += collect(Source(doc, link), area, categories=link_categories)
-    return find_clashes(items, area, min_depth_mm=settings.get("min_depth", 10), focus=focus,
-                        openings=opening_boxes(host, area), stats={})
+    found = find_clashes(items, area, min_depth_mm=settings.get("min_depth", 10), focus=focus,
+                         openings=opening_boxes(host, area), stats={})
+    return drop_ignored(doc, found)[0]
 
 
 def _set_members(group, members):
