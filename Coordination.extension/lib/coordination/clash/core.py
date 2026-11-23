@@ -867,17 +867,58 @@ def _nav_view(doc):
     return view
 
 
-def _red_override(doc):
-    red = DB.Color(255, 0, 0)
-    solid = [p for p in DB.FilteredElementCollector(doc).OfClass(DB.FillPatternElement)
-             if p.GetFillPattern().IsSolidFill][0]
+CLASH_COLOR = (255, 140, 0)        # orange: elements of the clash
+NEUTRAL_SURFACE = (225, 225, 225)  # light grey: everything else
+NEUTRAL_LINE = (160, 160, 160)
+NEUTRAL_FILTER = u"CLASH Navigator - neutral"
+
+
+def _solid_fill(doc):
+    return [p for p in DB.FilteredElementCollector(doc).OfClass(DB.FillPatternElement)
+            if p.GetFillPattern().IsSolidFill][0]
+
+
+def _colour_override(doc, surface, line):
+    solid = _solid_fill(doc)
     override = DB.OverrideGraphicSettings()
     override.SetSurfaceForegroundPatternId(solid.Id)
-    override.SetSurfaceForegroundPatternColor(red)
-    override.SetProjectionLineColor(red)
+    override.SetSurfaceForegroundPatternColor(DB.Color(*surface))
+    override.SetProjectionLineColor(DB.Color(*line))
     override.SetCutForegroundPatternId(solid.Id)
-    override.SetCutForegroundPatternColor(red)
+    override.SetCutForegroundPatternColor(DB.Color(*surface))
+    override.SetCutLineColor(DB.Color(*line))
     return override
+
+
+def _red_override(doc):
+    """Override of the clash elements (orange; the name is kept for older callers)."""
+    return _colour_override(doc, CLASH_COLOR, CLASH_COLOR)
+
+
+def _neutral_filter(doc):
+    """View filter without rules that catches every filterable model category except Generic Models
+    (Clash Region boxes) - used to paint everything light grey. Needs an open transaction."""
+    for existing in DB.FilteredElementCollector(doc).OfClass(DB.ParameterFilterElement):
+        if existing.Name == NEUTRAL_FILTER:
+            return existing
+    skip = set([int(DB.BuiltInCategory.OST_GenericModel)])
+    categories = List[DB.ElementId]()
+    for category_id in DB.ParameterFilterUtilities.GetAllFilterableCategories():
+        category = DB.Category.GetCategory(doc, category_id)
+        if category is None or category.CategoryType != DB.CategoryType.Model or id_int(category_id) in skip:
+            continue
+        categories.Add(category_id)
+    return DB.ParameterFilterElement.Create(doc, NEUTRAL_FILTER, categories)
+
+
+def _neutral_view(doc, view):
+    """Everything in the view light grey (host and linked models), through the neutral filter.
+    Element overrides (the clash) win over filters."""
+    neutral = _neutral_filter(doc)
+    if not view.IsFilterApplied(neutral.Id):
+        view.AddFilter(neutral.Id)
+    view.SetFilterVisibility(neutral.Id, True)
+    view.SetFilterOverrides(neutral.Id, _colour_override(doc, NEUTRAL_SURFACE, NEUTRAL_LINE))
 
 
 def _show_only_links(doc, view, link_ids):
@@ -898,7 +939,8 @@ def _show_only_links(doc, view, link_ids):
 
 def show_clash(uidoc, clash, previous_ids=(), link_ids=(), margin_mm=1000.0):
     """Frames the clash in the user's own 'CLASH Navigator' 3D view with a section box,
-    selects the host model's elements of the clash and paints them red in that view.
+    selects the host model's elements of the clash and paints them orange in that view;
+    everything else is painted light grey through the view filter "CLASH Navigator - neutral".
 
     previous_ids are host element ids painted by the previous call; their overrides are cleared.
     link_ids are the link instances that stay visible; every other link and all scope boxes
@@ -925,6 +967,10 @@ def show_clash(uidoc, clash, previous_ids=(), link_ids=(), margin_mm=1000.0):
         if view.CanCategoryBeHidden(scope_boxes):
             view.SetCategoryHidden(scope_boxes, True)
         _show_only_links(doc, view, link_ids)
+        try:
+            _neutral_view(doc, view)
+        except Exception:
+            pass  # grey background is a convenience; never block navigation
         for value in previous_ids:
             element_id = make_id(value)
             if doc.GetElement(element_id) is not None:
