@@ -1,0 +1,8696 @@
+[
+ {
+  "max": [
+   62.339156687057454, 
+   -133.12668321392715, 
+   -4.2207819612147173
+  ], 
+  "time": "2026-11-23 11:40:20", 
+  "name": "CLASH-001", 
+  "label": "1. [мережі] Plumbing Fixtures x צ.מ.ג.  —  9 колізій", 
+  "key": "0:8406147|0:8406291", 
+  "kind": "mep", 
+  "min": [
+   61.919032709311551, 
+   -134.17061544644628, 
+   -5.2680467053375732
+  ], 
+  "a": {
+   "id": 8406147, 
+   "system": "Plumbing Fixtures", 
+   "source": "Модель", 
+   "type": "Shuha(2019)", 
+   "network": 8406147, 
+   "workset": "PL", 
+   "size": "", 
+   "link_id": null, 
+   "category": "Plumbing Fixtures"
+  }, 
+  "b": {
+   "id": 8406291, 
+   "system": "צ.מ.ג.", 
+   "source": "Модель", 
+   "type": "HDPE", 
+   "network": 8406291, 
+   "workset": "PL", 
+   "size": "315ø", 
+   "link_id": null, 
+   "category": "Pipes"
+  }, 
+  "note": "", 
+  "reason": "connection", 
+  "user": "coordinator89T4H"
+ }, 
+ {
+  "max": [
+   60.887385033509780, 
+   -127.78871096344199, 
+   -4.0149999746435832
+  ], 
+  "time": "2026-11-23 11:40:20", 
+  "name": "CLASH-001", 
+  "label": "1. [мережі] Plumbing Fixtures x צ.מ.ג.  —  9 колізій", 
+  "key": "0:8406144|0:8406288", 
+  "kind": "mep", 
+  "min": [
+   59.843452800990626, 
+   -128.16714705466691, 
+   -5.0622647189942995
+  ], 
+  "a": {
+   "id": 8406144, 
+   "system": "Plumbing Fixtures", 
+   "source": "Модель", 
+   "type": "Shuha(2019)", 
+   "network": 8406144, 
+   "workset": "PL", 
+   "size": "", 
+   "link_id": null, 
+   "category": "Plumbing Fixtures"
+  }, 
+  "b": {
+   "id": 8406288, 
+   "system": "צ.מ.ג.", 
+   "source": "Модель", 
+   "type": "HDPE", 
+   "network": 8406288, 
+   "workset": "PL", 
+   "size": "315ø", 
+   "link_id": null, 
+   "category": "Pipes"
+  }, 
+  "note": "", 
+  "reason": "connection", 
+  "user": "coordinator89T4H"
+ }, 
+ {
+  "max": [
+   58.766220264361536, 
+   -133.12671626404972, 
+   -1.9580938347395285
+  ], 
+  "time": "2026-11-23 11:40:20", 
+  "name": "CLASH-001", 
+  "label": "1. [мережі] Plumbing Fixtures x צ.מ.ג.  —  9 колізій", 
+  "key": "0:8406147|0:8406297", 
+  "kind": "mep", 
+  "min": [
+   58.391681147451706, 
+   -134.17064849867143, 
+   -3.0053585781364798
+  ], 
+  "a": {
+   "id": 8406147, 
+   "system": "Plumbing Fixtures", 
+   "source": "Модель", 
+   "type": "Shuha(2019)", 
+   "network": 8406147, 
+   "workset": "PL", 
+   "size": "", 
+   "link_id": null, 
+   "category": "Plumbing Fixtures"
+  }, 
+  "b": {
+   "id": 8406297, 
+   "system": "צ.מ.ג.", 
+   "source": "Модель", 
+   "type": "HDPE", 
+   "network": 8406297, 
+   "workset": "PL", 
+   "size": "315ø", 
+   "link_id": null, 
+   "category": "Pipes"
+  }, 
+  "note": "", 
+  "reason": "connection", 
+  "user": "coordinator89T4H"
+ }, 
+ {
+  "max": [
+   48.579367891124100, 
+   -128.66630467628940, 
+   -1.8725142866488240
+  ], 
+  "time": "2026-11-23 11:40:20", 
+  "name": "CLASH-001", 
+  "label": "1. [мережі] Plumbing Fixtures x צ.מ.ג.  —  9 колізій", 
+  "key": "0:8406145|0:8406307", 
+  "kind": "mep", 
+  "min": [
+   47.535435658604946, 
+   -128.99675249107756, 
+   -2.9164465191679585
+  ], 
+  "a": {
+   "id": 8406145, 
+   "system": "Plumbing Fixtures", 
+   "source": "Модель", 
+   "type": "Shuha(2019)", 
+   "network": 8406145, 
+   "workset": "PL", 
+   "size": "", 
+   "link_id": null, 
+   "category": "Plumbing Fixtures"
+  }, 
+  "b": {
+   "id": 8406307, 
+   "system": "צ.מ.ג.", 
+   "source": "Модель", 
+   "type": "HDPE", 
+   "network": 8406307, 
+   "workset": "PL", 
+   "size": "315ø", 
+   "link_id": null, 
+   "category": "Pipes"
+  }, 
+  "note": "", 
+  "reason": "connection", 
+  "user": "coordinator89T4H"
+ }, 
+ {
+  "max": [
+   46.393420294352296, 
+   -133.12672479542400, 
+   -1.7028747977789509
+  ], 
+  "time": "2026-11-23 11:40:20", 
+  "name": "CLASH-001", 
+  "label": "1. [мережі] Plumbing Fixtures x צ.מ.ג.  —  9 колізій", 
+  "key": "0:8406146|0:8406299", 
+  "kind": "mep", 
+  "min": [
+   46.083664005066026, 
+   -134.17065755453652, 
+   -2.7497482471678243
+  ], 
+  "a": {
+   "id": 8406146, 
+   "system": "Plumbing Fixtures", 
+   "source": "Модель", 
+   "type": "Shuha(2019)", 
+   "network": 8406146, 
+   "workset": "PL", 
+   "size": "", 
+   "link_id": null, 
+   "category": "Plumbing Fixtures"
+  }, 
+  "b": {
+   "id": 8406299, 
+   "system": "צ.מ.ג.", 
+   "source": "Модель", 
+   "type": "HDPE", 
+   "network": 8406299, 
+   "workset": "PL", 
+   "size": "315ø", 
+   "link_id": null, 
+   "category": "Pipes"
+  }, 
+  "note": "", 
+  "reason": "connection", 
+  "user": "coordinator89T4H"
+ }, 
+ {
+  "max": [
+   50.031139544671781, 
+   -133.12671626404972, 
+   -1.8718569401137350
+  ], 
+  "time": "2026-11-23 11:40:20", 
+  "name": "CLASH-001", 
+  "label": "1. [мережі] Plumbing Fixtures x צ.מ.ג.  —  9 колізій", 
+  "key": "0:8406146|0:8406297", 
+  "kind": "mep", 
+  "min": [
+   49.757657603561221, 
+   -134.17064849656884, 
+   -2.9183676460064150
+  ], 
+  "a": {
+   "id": 8406146, 
+   "system": "Plumbing Fixtures", 
+   "source": "Модель", 
+   "type": "Shuha(2019)", 
+   "network": 8406146, 
+   "workset": "PL", 
+   "size": "", 
+   "link_id": null, 
+   "category": "Plumbing Fixtures"
+  }, 
+  "b": {
+   "id": 8406297, 
+   "system": "צ.מ.ג.", 
+   "source": "Модель", 
+   "type": "HDPE", 
+   "network": 8406297, 
+   "workset": "PL", 
+   "size": "315ø", 
+   "link_id": null, 
+   "category": "Pipes"
+  }, 
+  "note": "", 
+  "reason": "connection", 
+  "user": "coordinator89T4H"
+ }, 
+ {
+  "max": [
+   60.887385033509780, 
+   -131.67492241106248, 
+   -4.0534632447583467
+  ], 
+  "time": "2026-11-23 11:40:20", 
+  "name": "CLASH-001", 
+  "label": "1. [мережі] Plumbing Fixtures x צ.מ.ג.  —  9 колізій", 
+  "key": "0:8406147|0:8406288", 
+  "kind": "mep", 
+  "min": [
+   59.843452800990640, 
+   -131.94170854773625, 
+   -5.0999069926351330
+  ], 
+  "a": {
+   "id": 8406147, 
+   "system": "Plumbing Fixtures", 
+   "source": "Модель", 
+   "type": "Shuha(2019)", 
+   "network": 8406147, 
+   "workset": "PL", 
+   "size": "", 
+   "link_id": null, 
+   "category": "Plumbing Fixtures"
+  }, 
+  "b": {
+   "id": 8406288, 
+   "system": "צ.מ.ג.", 
+   "source": "Модель", 
+   "type": "HDPE", 
+   "network": 8406288, 
+   "workset": "PL", 
+   "size": "315ø", 
+   "link_id": null, 
+   "category": "Pipes"
+  }, 
+  "note": "", 
+  "reason": "connection", 
+  "user": "coordinator89T4H"
+ }, 
+ {
+  "max": [
+   62.339156687057468, 
+   -125.67129018317021, 
+   -3.8968669019202498
+  ], 
+  "time": "2026-11-23 11:40:20", 
+  "name": "CLASH-001", 
+  "label": "1. [мережі] Plumbing Fixtures x צ.מ.ג.  —  9 колізій", 
+  "key": "0:8406144|0:8406286", 
+  "kind": "mep", 
+  "min": [
+   62.243839996641867, 
+   -126.71522243034744, 
+   -4.9415959326908609
+  ], 
+  "a": {
+   "id": 8406144, 
+   "system": "Plumbing Fixtures", 
+   "source": "Модель", 
+   "type": "Shuha(2019)", 
+   "network": 8406144, 
+   "workset": "PL", 
+   "size": "", 
+   "link_id": null, 
+   "category": "Plumbing Fixtures"
+  }, 
+  "b": {
+   "id": 8406286, 
+   "system": "צ.מ.ג.", 
+   "source": "Модель", 
+   "type": "HDPE", 
+   "network": 8406286, 
+   "workset": "PL", 
+   "size": "315ø", 
+   "link_id": null, 
+   "category": "Pipes"
+  }, 
+  "note": "", 
+  "reason": "connection", 
+  "user": "coordinator89T4H"
+ }, 
+ {
+  "max": [
+   48.579367891124107, 
+   -131.67495003512508, 
+   -1.8725142866488143
+  ], 
+  "time": "2026-11-23 11:40:20", 
+  "name": "CLASH-001", 
+  "label": "1. [мережі] Plumbing Fixtures x צ.מ.ג.  —  9 колізій", 
+  "key": "0:8406146|0:8406307", 
+  "kind": "mep", 
+  "min": [
+   47.535435658604953, 
+   -131.75444921169608, 
+   -2.9164465191679585
+  ], 
+  "a": {
+   "id": 8406146, 
+   "system": "Plumbing Fixtures", 
+   "source": "Модель", 
+   "type": "Shuha(2019)", 
+   "network": 8406146, 
+   "workset": "PL", 
+   "size": "", 
+   "link_id": null, 
+   "category": "Plumbing Fixtures"
+  }, 
+  "b": {
+   "id": 8406307, 
+   "system": "צ.מ.ג.", 
+   "source": "Модель", 
+   "type": "HDPE", 
+   "network": 8406307, 
+   "workset": "PL", 
+   "size": "315ø", 
+   "link_id": null, 
+   "category": "Pipes"
+  }, 
+  "note": "", 
+  "reason": "connection", 
+  "user": "coordinator89T4H"
+ }, 
+ {
+  "max": [
+   47.320748725578390, 
+   -22.289976105177125, 
+   3.8044464312201969
+  ], 
+  "time": "2026-11-23 11:56:03", 
+  "name": "CLASH-003", 
+  "label": "3. [мережі] Pipe Fittings 25ø-25ø-16ø #8458053  x  Pipe Accessories 16ø-16ø #8458057  (10 мм)", 
+  "key": "0:8458053|0:8458057", 
+  "kind": "mep", 
+  "min": [
+   47.257787621668179, 
+   -22.359956267101396, 
+   3.7414853273099871
+  ], 
+  "a": {
+   "id": 8458053, 
+   "system": "מים חמים", 
+   "source": "Модель", 
+   "type": "Standard", 
+   "network": 8458024, 
+   "workset": "PL", 
+   "size": "25ø-25ø-16ø", 
+   "link_id": null, 
+   "category": "Pipe Fittings"
+  }, 
+  "b": {
+   "id": 8458057, 
+   "system": "מים חמים", 
+   "source": "Модель", 
+   "type": "16mm", 
+   "network": 8458051, 
+   "workset": "PL", 
+   "size": "16ø-16ø", 
+   "link_id": null, 
+   "category": "Pipe Accessories"
+  }, 
+  "note": "", 
+  "reason": "not_a_clash", 
+  "user": "coordinator89T4H"
+ }, 
+ {
+  "max": [
+   111.31427185864713, 
+   41.356585401198174, 
+   1.9194354677729950
+  ], 
+  "time": "2026-11-23 11:59:57", 
+  "name": "CLASH-004", 
+  "label": "4. [мережі] Exhaust Kitchen x Generic Models  —  6 колізій", 
+  "key": "0:8707011|0:11752802", 
+  "kind": "mep", 
+  "min": [
+   110.33001989014316, 
+   37.747661516677709, 
+   0.44305751501708779
+  ], 
+  "a": {
+   "id": 8707011, 
+   "system": "Generic Models", 
+   "source": "Модель", 
+   "type": "Rectangular Face Opening", 
+   "network": 8707011, 
+   "workset": "ME", 
+   "size": "", 
+   "link_id": null, 
+   "category": "Generic Models"
+  }, 
+  "b": {
+   "id": 11752802, 
+   "system": "Exhaust Kitchen", 
+   "source": "Модель", 
+   "type": "Fire insulation", 
+   "network": 8698109, 
+   "workset": "ME", 
+   "size": "", 
+   "link_id": null, 
+   "category": "Duct Insulations"
+  }, 
+  "note": "", 
+  "reason": "not_a_clash", 
+  "user": "coordinator89T4H"
+ }, 
+ {
+  "max": [
+   111.31427185864713, 
+   41.070332120679517, 
+   3.8541925702820974
+  ], 
+  "time": "2026-11-23 11:59:57", 
+  "name": "CLASH-004", 
+  "label": "4. [мережі] Exhaust Kitchen x Generic Models  —  6 колізій", 
+  "key": "0:8707012|0:11752827", 
+  "kind": "mep", 
+  "min": [
+   110.33001989014316, 
+   37.953534220417048, 
+   2.2965879265086118
+  ], 
+  "a": {
+   "id": 8707012, 
+   "system": "Generic Models", 
+   "source": "Модель", 
+   "type": "Rectangular Face Opening", 
+   "network": 8707012, 
+   "workset": "ME", 
+   "size": "", 
+   "link_id": null, 
+   "category": "Generic Models"
+  }, 
+  "b": {
+   "id": 11752827, 
+   "system": "Exhaust Kitchen", 
+   "source": "Модель", 
+   "type": "Fire insulation", 
+   "network": 8698681, 
+   "workset": "ME", 
+   "size": "", 
+   "link_id": null, 
+   "category": "Duct Insulations"
+  }, 
+  "note": "", 
+  "reason": "not_a_clash", 
+  "user": "coordinator89T4H"
+ }, 
+ {
+  "max": [
+   111.31427185864713, 
+   41.192543406447513, 
+   1.7553934730223348
+  ], 
+  "time": "2026-11-23 11:59:57", 
+  "name": "CLASH-004", 
+  "label": "4. [мережі] Exhaust Kitchen x Generic Models  —  6 колізій", 
+  "key": "0:8698109|0:8707011", 
+  "kind": "mep", 
+  "min": [
+   110.33001989014316, 
+   37.911703511428371, 
+   0.60709950976774152
+  ], 
+  "a": {
+   "id": 8698109, 
+   "system": "Exhaust Kitchen", 
+   "source": "Модель", 
+   "type": "Radius Elbows 10cm / Taps", 
+   "network": 8698109, 
+   "workset": "ME", 
+   "size": "100x35", 
+   "link_id": null, 
+   "category": "Ducts"
+  }, 
+  "b": {
+   "id": 8707011, 
+   "system": "Generic Models", 
+   "source": "Модель", 
+   "type": "Rectangular Face Opening", 
+   "network": 8707011, 
+   "workset": "ME", 
+   "size": "", 
+   "link_id": null, 
+   "category": "Generic Models"
+  }, 
+  "note": "", 
+  "reason": "not_a_clash", 
+  "user": "coordinator89T4H"
+ }, 
+ {
+  "max": [
+   111.31427185864713, 
+   40.906290125928862, 
+   3.7729658792645182
+  ], 
+  "time": "2026-11-23 11:59:57", 
+  "name": "CLASH-004", 
+  "label": "4. [мережі] Exhaust Kitchen x Generic Models  —  6 колізій", 
+  "key": "0:8698681|0:8707012", 
+  "kind": "mep", 
+  "min": [
+   110.33001989014316, 
+   38.117576215167702, 
+   2.4606299212592688
+  ], 
+  "a": {
+   "id": 8698681, 
+   "system": "Exhaust Kitchen", 
+   "source": "Модель", 
+   "type": "Radius Elbows 10cm / Taps", 
+   "network": 8698681, 
+   "workset": "ME", 
+   "size": "85x40", 
+   "link_id": null, 
+   "category": "Ducts"
+  }, 
+  "b": {
+   "id": 8707012, 
+   "system": "Generic Models", 
+   "source": "Модель", 
+   "type": "Rectangular Face Opening", 
+   "network": 8707012, 
+   "workset": "ME", 
+   "size": "", 
+   "link_id": null, 
+   "category": "Generic Models"
+  }, 
+  "note": "", 
+  "reason": "not_a_clash", 
+  "user": "coordinator89T4H"
+ }, 
+ {
+  "max": [
+   111.31427185864715, 
+   41.234374054533440, 
+   1.9194354677729948
+  ], 
+  "time": "2026-11-23 11:59:57", 
+  "name": "CLASH-004", 
+  "label": "4. [мережі] Exhaust Kitchen x Generic Models  —  6 колізій", 
+  "key": "0:8707012|0:11752802", 
+  "kind": "mep", 
+  "min": [
+   110.33001989014315, 
+   37.789492164769634, 
+   1.8856886332742182
+  ], 
+  "a": {
+   "id": 8707012, 
+   "system": "Generic Models", 
+   "source": "Модель", 
+   "type": "Rectangular Face Opening", 
+   "network": 8707012, 
+   "workset": "ME", 
+   "size": "", 
+   "link_id": null, 
+   "category": "Generic Models"
+  }, 
+  "b": {
+   "id": 11752802, 
+   "system": "Exhaust Kitchen", 
+   "source": "Модель", 
+   "type": "Fire insulation", 
+   "network": 8698109, 
+   "workset": "ME", 
+   "size": "", 
+   "link_id": null, 
+   "category": "Duct Insulations"
+  }, 
+  "note": "", 
+  "reason": "not_a_clash", 
+  "user": "coordinator89T4H"
+ }, 
+ {
+  "max": [
+   111.31427185864715, 
+   41.356585401198174, 
+   1.8451425997916844
+  ], 
+  "time": "2026-11-23 11:59:57", 
+  "name": "CLASH-004", 
+  "label": "4. [мережі] Exhaust Kitchen x Generic Models  —  6 колізій", 
+  "key": "0:8707005|0:11752802", 
+  "kind": "mep", 
+  "min": [
+   110.33001989014321, 
+   41.341428046537033, 
+   1.0249326260383982
+  ], 
+  "a": {
+   "id": 8707005, 
+   "system": "Generic Models", 
+   "source": "Модель", 
+   "type": "Rectangular Face Opening", 
+   "network": 8707005, 
+   "workset": "ME", 
+   "size": "", 
+   "link_id": null, 
+   "category": "Generic Models"
+  }, 
+  "b": {
+   "id": 11752802, 
+   "system": "Exhaust Kitchen", 
+   "source": "Модель", 
+   "type": "Fire insulation", 
+   "network": 8698109, 
+   "workset": "ME", 
+   "size": "", 
+   "link_id": null, 
+   "category": "Duct Insulations"
+  }, 
+  "note": "", 
+  "reason": "not_a_clash", 
+  "user": "coordinator89T4H"
+ }, 
+ {
+  "max": [
+   36.478313852696417, 
+   -69.711233527993727, 
+   3.7300037121644865
+  ], 
+  "time": "2026-11-23 12:03:38", 
+  "name": "CLASH-005", 
+  "label": "5. [мережі] Exhaust Kitchen x Generic Models  —  6 колізій", 
+  "key": "0:8707031|0:11752834", 
+  "kind": "mep", 
+  "min": [
+   36.018996267394542, 
+   -73.156115417757519, 
+   2.2536257594085809
+  ], 
+  "a": {
+   "id": 8707031, 
+   "system": "Generic Models", 
+   "source": "Модель", 
+   "type": "Rectangular Face Opening", 
+   "network": 8707031, 
+   "workset": "ME", 
+   "size": "", 
+   "link_id": null, 
+   "category": "Generic Models"
+  }, 
+  "b": {
+   "id": 11752834, 
+   "system": "Exhaust Kitchen", 
+   "source": "Модель", 
+   "type": "Fire insulation", 
+   "network": 8698681, 
+   "workset": "ME", 
+   "size": "", 
+   "link_id": null, 
+   "category": "Duct Insulations"
+  }, 
+  "note": "", 
+  "reason": "not_a_clash", 
+  "user": "coordinator89T4H"
+ }, 
+ {
+  "max": [
+   36.478313852696409, 
+   -69.875275522744388, 
+   3.5659617174138303
+  ], 
+  "time": "2026-11-23 12:03:38", 
+  "name": "CLASH-005", 
+  "label": "5. [мережі] Exhaust Kitchen x Generic Models  —  6 колізій", 
+  "key": "0:8706107|0:8707031", 
+  "kind": "mep", 
+  "min": [
+   36.018996267394535, 
+   -72.992073423006858, 
+   2.4176677541592371
+  ], 
+  "a": {
+   "id": 8706107, 
+   "system": "Exhaust Kitchen", 
+   "source": "Модель", 
+   "type": "Radius Elbows 10cm / Taps", 
+   "network": 8698681, 
+   "workset": "ME", 
+   "size": "95x35", 
+   "link_id": null, 
+   "category": "Ducts"
+  }, 
+  "b": {
+   "id": 8707031, 
+   "system": "Generic Models", 
+   "source": "Модель", 
+   "type": "Rectangular Face Opening", 
+   "network": 8707031, 
+   "workset": "ME", 
+   "size": "", 
+   "link_id": null, 
+   "category": "Generic Models"
+  }, 
+  "note": "", 
+  "reason": "not_a_clash", 
+  "user": "coordinator89T4H"
+ }, 
+ {
+  "max": [
+   42.443794485198168, 
+   -69.711233527993727, 
+   3.7300037121644865
+  ], 
+  "time": "2026-11-23 12:03:38", 
+  "name": "CLASH-005", 
+  "label": "5. [мережі] Exhaust Kitchen x Generic Models  —  6 колізій", 
+  "key": "0:8707032|0:11752834", 
+  "kind": "mep", 
+  "min": [
+   42.055741674218723, 
+   -70.710941882233243, 
+   2.2536257594085809
+  ], 
+  "a": {
+   "id": 8707032, 
+   "system": "Generic Models", 
+   "source": "Модель", 
+   "type": "Rectangular Face Opening", 
+   "network": 8707032, 
+   "workset": "ME", 
+   "size": "", 
+   "link_id": null, 
+   "category": "Generic Models"
+  }, 
+  "b": {
+   "id": 11752834, 
+   "system": "Exhaust Kitchen", 
+   "source": "Модель", 
+   "type": "Fire insulation", 
+   "network": 8698681, 
+   "workset": "ME", 
+   "size": "", 
+   "link_id": null, 
+   "category": "Duct Insulations"
+  }, 
+  "note": "", 
+  "reason": "not_a_clash", 
+  "user": "coordinator89T4H"
+ }, 
+ {
+  "max": [
+   42.443794485198168, 
+   -69.875275522744374, 
+   3.5659617174138303
+  ], 
+  "time": "2026-11-23 12:03:38", 
+  "name": "CLASH-005", 
+  "label": "5. [мережі] Exhaust Kitchen x Generic Models  —  6 колізій", 
+  "key": "0:8706107|0:8707032", 
+  "kind": "mep", 
+  "min": [
+   42.055741674218723, 
+   -70.710941882233243, 
+   2.4176677541592371
+  ], 
+  "a": {
+   "id": 8706107, 
+   "system": "Exhaust Kitchen", 
+   "source": "Модель", 
+   "type": "Radius Elbows 10cm / Taps", 
+   "network": 8698681, 
+   "workset": "ME", 
+   "size": "95x35", 
+   "link_id": null, 
+   "category": "Ducts"
+  }, 
+  "b": {
+   "id": 8707032, 
+   "system": "Generic Models", 
+   "source": "Модель", 
+   "type": "Rectangular Face Opening", 
+   "network": 8707032, 
+   "workset": "ME", 
+   "size": "", 
+   "link_id": null, 
+   "category": "Generic Models"
+  }, 
+  "note": "", 
+  "reason": "not_a_clash", 
+  "user": "coordinator89T4H"
+ }, 
+ {
+  "max": [
+   42.516427159229977, 
+   -69.711233527993699, 
+   3.7300037121644865
+  ], 
+  "time": "2026-11-23 12:03:38", 
+  "name": "CLASH-005", 
+  "label": "5. [мережі] Exhaust Kitchen x Generic Models  —  6 колізій", 
+  "key": "0:8707032|0:11752841", 
+  "kind": "mep", 
+  "min": [
+   42.443794485198140, 
+   -70.710941882233243, 
+   2.2536257594085809
+  ], 
+  "a": {
+   "id": 8707032, 
+   "system": "Generic Models", 
+   "source": "Модель", 
+   "type": "Rectangular Face Opening", 
+   "network": 8707032, 
+   "workset": "ME", 
+   "size": "", 
+   "link_id": null, 
+   "category": "Generic Models"
+  }, 
+  "b": {
+   "id": 11752841, 
+   "system": "Exhaust Kitchen", 
+   "source": "Модель", 
+   "type": "Fire insulation", 
+   "network": 8698681, 
+   "workset": "ME", 
+   "size": "", 
+   "link_id": null, 
+   "category": "Duct Insulations"
+  }, 
+  "note": "", 
+  "reason": "not_a_clash", 
+  "user": "coordinator89T4H"
+ }, 
+ {
+  "max": [
+   42.516427159229977, 
+   -69.638600853961918, 
+   3.7300037121644865
+  ], 
+  "time": "2026-11-23 12:03:38", 
+  "name": "CLASH-005", 
+  "label": "5. [мережі] Exhaust Kitchen x Generic Models  —  6 колізій", 
+  "key": "0:8707032|0:11752835", 
+  "kind": "mep", 
+  "min": [
+   42.443794485198168, 
+   -69.783866202025536, 
+   2.2536257594085809
+  ], 
+  "a": {
+   "id": 8707032, 
+   "system": "Generic Models", 
+   "source": "Модель", 
+   "type": "Rectangular Face Opening", 
+   "network": 8707032, 
+   "workset": "ME", 
+   "size": "", 
+   "link_id": null, 
+   "category": "Generic Models"
+  }, 
+  "b": {
+   "id": 11752835, 
+   "system": "Exhaust Kitchen", 
+   "source": "Модель", 
+   "type": "Fire insulation", 
+   "network": 8698681, 
+   "workset": "ME", 
+   "size": "", 
+   "link_id": null, 
+   "category": "Duct Insulations"
+  }, 
+  "note": "", 
+  "reason": "not_a_clash", 
+  "user": "coordinator89T4H"
+ }, 
+ {
+  "max": [
+   29.744366157371978, 
+   -134.52716960787157, 
+   2.4701756682371951
+  ], 
+  "time": "2026-11-23 12:03:53", 
+  "name": "CLASH-006", 
+  "label": "6. [мережі] Plumbing Fixtures x ביוב  —  6 колізій", 
+  "key": "0:8406149|0:8459800", 
+  "kind": "mep", 
+  "min": [
+   28.817145334000926, 
+   -135.01525846439225, 
+   1.7371075544290684
+  ], 
+  "a": {
+   "id": 8406149, 
+   "system": "Plumbing Fixtures", 
+   "source": "Модель", 
+   "type": "Shuha(2019)", 
+   "network": 8406149, 
+   "workset": "PL", 
+   "size": "", 
+   "link_id": null, 
+   "category": "Plumbing Fixtures"
+  }, 
+  "b": {
+   "id": 8459800, 
+   "system": "ביוב", 
+   "source": "Модель", 
+   "type": "HDPE", 
+   "network": 8459774, 
+   "workset": "PL", 
+   "size": "200ø", 
+   "link_id": null, 
+   "category": "Pipes"
+  }, 
+  "note": "", 
+  "reason": "not_a_clash", 
+  "user": "coordinator89T4H"
+ }, 
+ {
+  "max": [
+   37.319124566876908, 
+   -127.47884343795553, 
+   -0.23042172671386585
+  ], 
+  "time": "2026-11-23 12:03:53", 
+  "name": "CLASH-006", 
+  "label": "6. [мережі] Plumbing Fixtures x ביוב  —  6 колізій", 
+  "key": "0:8406148|0:8406301", 
+  "kind": "mep", 
+  "min": [
+   36.591852676313536, 
+   -128.24768745596214, 
+   -0.96293117251941707
+  ], 
+  "a": {
+   "id": 8406148, 
+   "system": "Plumbing Fixtures", 
+   "source": "Модель", 
+   "type": "Shuha(2019)", 
+   "network": 8406148, 
+   "workset": "PL", 
+   "size": "", 
+   "link_id": null, 
+   "category": "Plumbing Fixtures"
+  }, 
+  "b": {
+   "id": 8406301, 
+   "system": "ביוב", 
+   "source": "Модель", 
+   "type": "HDPE", 
+   "network": 8406301, 
+   "workset": "PL", 
+   "size": "200ø", 
+   "link_id": null, 
+   "category": "Pipes"
+  }, 
+  "note": "", 
+  "reason": "not_a_clash", 
+  "user": "coordinator89T4H"
+ }, 
+ {
+  "max": [
+   39.972699903233590, 
+   -125.13971345765610, 
+   0.16319210201390189
+  ], 
+  "time": "2026-11-23 12:03:53", 
+  "name": "CLASH-006", 
+  "label": "6. [мережі] Plumbing Fixtures x ביוב  —  6 колізій", 
+  "key": "0:8406148|0:11739161", 
+  "kind": "mep", 
+  "min": [
+   39.272748907424187, 
+   -125.90525291924455, 
+   -0.56602556357609812
+  ], 
+  "a": {
+   "id": 8406148, 
+   "system": "Plumbing Fixtures", 
+   "source": "Модель", 
+   "type": "Shuha(2019)", 
+   "network": 8406148, 
+   "workset": "PL", 
+   "size": "", 
+   "link_id": null, 
+   "category": "Plumbing Fixtures"
+  }, 
+  "b": {
+   "id": 11739161, 
+   "system": "ביוב", 
+   "source": "Модель", 
+   "type": "HDPE", 
+   "network": 8463354, 
+   "workset": "PL", 
+   "size": "200ø", 
+   "link_id": null, 
+   "category": "Pipes"
+  }, 
+  "note": "", 
+  "reason": "not_a_clash", 
+  "user": "coordinator89T4H"
+ }, 
+ {
+  "max": [
+   31.458946352394968, 
+   -134.93188877640395, 
+   -0.32326743724895007
+  ], 
+  "time": "2026-11-23 12:03:53", 
+  "name": "CLASH-006", 
+  "label": "6. [мережі] Plumbing Fixtures x ביוב  —  6 колізій", 
+  "key": "0:8406149|0:8406301", 
+  "kind": "mep", 
+  "min": [
+   30.761369144110212, 
+   -135.68736346920750, 
+   -1.0558138127373728
+  ], 
+  "a": {
+   "id": 8406149, 
+   "system": "Plumbing Fixtures", 
+   "source": "Модель", 
+   "type": "Shuha(2019)", 
+   "network": 8406149, 
+   "workset": "PL", 
+   "size": "", 
+   "link_id": null, 
+   "category": "Plumbing Fixtures"
+  }, 
+  "b": {
+   "id": 8406301, 
+   "system": "ביוב", 
+   "source": "Модель", 
+   "type": "HDPE", 
+   "network": 8406301, 
+   "workset": "PL", 
+   "size": "200ø", 
+   "link_id": null, 
+   "category": "Pipes"
+  }, 
+  "note": "", 
+  "reason": "not_a_clash", 
+  "user": "coordinator89T4H"
+ }, 
+ {
+  "max": [
+   28.018699058915487, 
+   -136.29779963523254, 
+   -0.44320422910333529
+  ], 
+  "time": "2026-11-23 12:03:53", 
+  "name": "CLASH-006", 
+  "label": "6. [мережі] Plumbing Fixtures x ביוב  —  6 колізій", 
+  "key": "0:8406149|0:8406303", 
+  "kind": "mep", 
+  "min": [
+   27.790807305036232, 
+   -137.02701730082254, 
+   -1.1820374114262442
+  ], 
+  "a": {
+   "id": 8406149, 
+   "system": "Plumbing Fixtures", 
+   "source": "Модель", 
+   "type": "Shuha(2019)", 
+   "network": 8406149, 
+   "workset": "PL", 
+   "size": "", 
+   "link_id": null, 
+   "category": "Plumbing Fixtures"
+  }, 
+  "b": {
+   "id": 8406303, 
+   "system": "ביוב", 
+   "source": "Модель", 
+   "type": "HDPE", 
+   "network": 8406303, 
+   "workset": "PL", 
+   "size": "200ø", 
+   "link_id": null, 
+   "category": "Pipes"
+  }, 
+  "note": "", 
+  "reason": "not_a_clash", 
+  "user": "coordinator89T4H"
+ }, 
+ {
+  "max": [
+   30.627326432894407, 
+   -138.20714181516811, 
+   -0.82773225029928921
+  ], 
+  "time": "2026-11-23 12:03:53", 
+  "name": "CLASH-006", 
+  "label": "6. [мережі] Plumbing Fixtures x ביוב  —  6 колізій", 
+  "key": "0:8406149|0:8406305", 
+  "kind": "mep", 
+  "min": [
+   29.908491452939550, 
+   -138.46131843051214, 
+   -1.5614262437026618
+  ], 
+  "a": {
+   "id": 8406149, 
+   "system": "Plumbing Fixtures", 
+   "source": "Модель", 
+   "type": "Shuha(2019)", 
+   "network": 8406149, 
+   "workset": "PL", 
+   "size": "", 
+   "link_id": null, 
+   "category": "Plumbing Fixtures"
+  }, 
+  "b": {
+   "id": 8406305, 
+   "system": "ביוב", 
+   "source": "Модель", 
+   "type": "HDPE", 
+   "network": 8406305, 
+   "workset": "PL", 
+   "size": "200ø", 
+   "link_id": null, 
+   "category": "Pipes"
+  }, 
+  "note": "", 
+  "reason": "not_a_clash", 
+  "user": "coordinator89T4H"
+ }, 
+ {
+  "max": [
+   112.89825938894421, 
+   41.070332120679517, 
+   3.9370078740151739
+  ], 
+  "time": "2026-11-23 12:25:00", 
+  "name": "CLASH-008", 
+  "label": "8. [мережі] Exhaust Kitchen x Exhaust Kitchen  —  5 колізій", 
+  "key": "0:11752803|0:11752827", 
+  "kind": "mep", 
+  "min": [
+   111.42188137941531, 
+   37.953534220417048, 
+   2.2965879027376057
+  ], 
+  "a": {
+   "id": 11752803, 
+   "system": "Exhaust Kitchen", 
+   "source": "Модель", 
+   "type": "Fire insulation", 
+   "network": 8698109, 
+   "workset": "ME", 
+   "size": "", 
+   "link_id": null, 
+   "category": "Duct Insulations"
+  }, 
+  "b": {
+   "id": 11752827, 
+   "system": "Exhaust Kitchen", 
+   "source": "Модель", 
+   "type": "Fire insulation", 
+   "network": 8698681, 
+   "workset": "ME", 
+   "size": "", 
+   "link_id": null, 
+   "category": "Duct Insulations"
+  }, 
+  "note": "", 
+  "reason": "not_a_clash", 
+  "user": "coordinator89T4H"
+ }, 
+ {
+  "max": [
+   112.73421739419356, 
+   41.070332120679517, 
+   3.9370078740151748
+  ], 
+  "time": "2026-11-23 12:25:00", 
+  "name": "CLASH-008", 
+  "label": "8. [мережі] Exhaust Kitchen x Exhaust Kitchen  —  5 колізій", 
+  "key": "0:8698682|0:11752827", 
+  "kind": "mep", 
+  "min": [
+   111.58592337416596, 
+   37.953534220417048, 
+   2.2965879027377540
+  ], 
+  "a": {
+   "id": 8698682, 
+   "system": "Exhaust Kitchen", 
+   "source": "Модель", 
+   "type": "Radius Elbows 10cm / Taps", 
+   "network": 8698109, 
+   "workset": "ME", 
+   "size": "100x35", 
+   "link_id": null, 
+   "category": "Ducts"
+  }, 
+  "b": {
+   "id": 11752827, 
+   "system": "Exhaust Kitchen", 
+   "source": "Модель", 
+   "type": "Fire insulation", 
+   "network": 8698681, 
+   "workset": "ME", 
+   "size": "", 
+   "link_id": null, 
+   "category": "Duct Insulations"
+  }, 
+  "note": "", 
+  "reason": "not_a_clash", 
+  "user": "coordinator89T4H"
+ }, 
+ {
+  "max": [
+   112.89825938326692, 
+   40.906290125928862, 
+   3.7729658792645164
+  ], 
+  "time": "2026-11-23 12:25:00", 
+  "name": "CLASH-008", 
+  "label": "8. [мережі] Exhaust Kitchen x Exhaust Kitchen  —  5 колізій", 
+  "key": "0:8698681|0:11752803", 
+  "kind": "mep", 
+  "min": [
+   111.42188138509260, 
+   38.117576215167702, 
+   2.4606299212592671
+  ], 
+  "a": {
+   "id": 8698681, 
+   "system": "Exhaust Kitchen", 
+   "source": "Модель", 
+   "type": "Radius Elbows 10cm / Taps", 
+   "network": 8698681, 
+   "workset": "ME", 
+   "size": "85x40", 
+   "link_id": null, 
+   "category": "Ducts"
+  }, 
+  "b": {
+   "id": 11752803, 
+   "system": "Exhaust Kitchen", 
+   "source": "Модель", 
+   "type": "Fire insulation", 
+   "network": 8698109, 
+   "workset": "ME", 
+   "size": "", 
+   "link_id": null, 
+   "category": "Duct Insulations"
+  }, 
+  "note": "", 
+  "reason": "not_a_clash", 
+  "user": "coordinator89T4H"
+ }, 
+ {
+  "max": [
+   112.73421738851627, 
+   40.906290125928862, 
+   3.7729658792645164
+  ], 
+  "time": "2026-11-23 12:25:00", 
+  "name": "CLASH-008", 
+  "label": "8. [мережі] Exhaust Kitchen x Exhaust Kitchen  —  5 колізій", 
+  "key": "0:8698681|0:8698682", 
+  "kind": "mep", 
+  "min": [
+   111.58592337984325, 
+   38.117576215167702, 
+   2.4606299212592671
+  ], 
+  "a": {
+   "id": 8698681, 
+   "system": "Exhaust Kitchen", 
+   "source": "Модель", 
+   "type": "Radius Elbows 10cm / Taps", 
+   "network": 8698681, 
+   "workset": "ME", 
+   "size": "85x40", 
+   "link_id": null, 
+   "category": "Ducts"
+  }, 
+  "b": {
+   "id": 8698682, 
+   "system": "Exhaust Kitchen", 
+   "source": "Модель", 
+   "type": "Radius Elbows 10cm / Taps", 
+   "network": 8698109, 
+   "workset": "ME", 
+   "size": "100x35", 
+   "link_id": null, 
+   "category": "Ducts"
+  }, 
+  "note": "", 
+  "reason": "not_a_clash", 
+  "user": "coordinator89T4H"
+ }, 
+ {
+  "max": [
+   104.68641707657233, 
+   38.076876965909264, 
+   3.7729658792645147
+  ], 
+  "time": "2026-11-23 12:25:00", 
+  "name": "CLASH-008", 
+  "label": "8. [мережі] Exhaust Kitchen x Exhaust Kitchen  —  5 колізій", 
+  "key": "0:8707197|0:11752827", 
+  "kind": "mep", 
+  "min": [
+   101.89761099778045, 
+   38.007664367484054, 
+   2.4606299212592653
+  ], 
+  "a": {
+   "id": 8707197, 
+   "system": "Exhaust Kitchen", 
+   "source": "Модель", 
+   "type": "Standard", 
+   "network": 8707197, 
+   "workset": "ME", 
+   "size": "85x40", 
+   "link_id": null, 
+   "category": "Duct Fittings"
+  }, 
+  "b": {
+   "id": 11752827, 
+   "system": "Exhaust Kitchen", 
+   "source": "Модель", 
+   "type": "Fire insulation", 
+   "network": 8698681, 
+   "workset": "ME", 
+   "size": "", 
+   "link_id": null, 
+   "category": "Duct Insulations"
+  }, 
+  "note": "", 
+  "reason": "not_a_clash", 
+  "user": "coordinator89T4H"
+ }, 
+ {
+  "max": [
+   33.974792072788738, 
+   -60.814756941087055, 
+   3.9355287971146158
+  ], 
+  "time": "2026-11-23 12:43:00", 
+  "name": "CLASH-012.3", 
+  "label": "12.3  Ducts 75x35 #8698735  x  Generic Models Rectangular Face Opening #8707021  (140 мм)", 
+  "key": "0:8698735|0:8707021", 
+  "kind": "mep", 
+  "min": [
+   31.514162151528900, 
+   -61.274074526388915, 
+   2.9365129889456698
+  ], 
+  "a": {
+   "id": 8698735, 
+   "system": "Fresh Air", 
+   "source": "Модель", 
+   "type": "Radius Elbows 10cm / Taps", 
+   "network": 8698699, 
+   "workset": "ME", 
+   "size": "75x35", 
+   "link_id": null, 
+   "category": "Ducts"
+  }, 
+  "b": {
+   "id": 8707021, 
+   "system": "Generic Models", 
+   "source": "Модель", 
+   "type": "Rectangular Face Opening", 
+   "network": 8707021, 
+   "workset": "ME", 
+   "size": "", 
+   "link_id": null, 
+   "category": "Generic Models"
+  }, 
+  "note": "", 
+  "reason": "not_a_clash", 
+  "user": "coordinator89T4H"
+ }, 
+ {
+  "max": [
+   37.881240738473714, 
+   27.620282432018850, 
+   4.1010498687664096
+  ], 
+  "time": "2026-11-23 12:43:13", 
+  "name": "CLASH-013", 
+  "label": "13. [мережі] Generic Models x Smoke  —  4 колізій", 
+  "key": "0:8706508|0:8707023", 
+  "kind": "mep", 
+  "min": [
+   36.568904780468465, 
+   26.964114453016204, 
+   3.1167979002624726
+  ], 
+  "a": {
+   "id": 8706508, 
+   "system": "Smoke", 
+   "source": "Модель", 
+   "type": "Fire insulation", 
+   "network": 8698756, 
+   "workset": "ME", 
+   "size": "", 
+   "link_id": null, 
+   "category": "Duct Insulations"
+  }, 
+  "b": {
+   "id": 8707023, 
+   "system": "Generic Models", 
+   "source": "Модель", 
+   "type": "Rectangular Face Opening", 
+   "network": 8707023, 
+   "workset": "ME", 
+   "size": "", 
+   "link_id": null, 
+   "category": "Generic Models"
+  }, 
+  "note": "", 
+  "reason": "not_a_clash", 
+  "user": "coordinator89T4H"
+ }, 
+ {
+  "max": [
+   42.876543889384578, 
+   27.620282432018833, 
+   4.1010498687664043
+  ], 
+  "time": "2026-11-23 12:43:13", 
+  "name": "CLASH-013", 
+  "label": "13. [мережі] Generic Models x Smoke  —  4 колізій", 
+  "key": "0:8706509|0:8707025", 
+  "kind": "mep", 
+  "min": [
+   41.564207931379329, 
+   26.964114453016187, 
+   3.1167979002624673
+  ], 
+  "a": {
+   "id": 8706509, 
+   "system": "Smoke", 
+   "source": "Модель", 
+   "type": "Fire insulation", 
+   "network": 8698756, 
+   "workset": "ME", 
+   "size": "", 
+   "link_id": null, 
+   "category": "Duct Insulations"
+  }, 
+  "b": {
+   "id": 8707025, 
+   "system": "Generic Models", 
+   "source": "Модель", 
+   "type": "Rectangular Face Opening", 
+   "network": 8707025, 
+   "workset": "ME", 
+   "size": "", 
+   "link_id": null, 
+   "category": "Generic Models"
+  }, 
+  "note": "", 
+  "reason": "not_a_clash", 
+  "user": "coordinator89T4H"
+ }, 
+ {
+  "max": [
+   37.717198743723060, 
+   27.620282432018847, 
+   3.9370078740157535
+  ], 
+  "time": "2026-11-23 12:43:13", 
+  "name": "CLASH-013", 
+  "label": "13. [мережі] Generic Models x Smoke  —  4 колізій", 
+  "key": "0:8698756|0:8707023", 
+  "kind": "mep", 
+  "min": [
+   36.732946775219119, 
+   26.964114453016208, 
+   3.2808398950131288
+  ], 
+  "a": {
+   "id": 8698756, 
+   "system": "Smoke", 
+   "source": "Модель", 
+   "type": "Radius Elbows 15cm /  short Taps", 
+   "network": 8698756, 
+   "workset": "ME", 
+   "size": "30x20", 
+   "link_id": null, 
+   "category": "Ducts"
+  }, 
+  "b": {
+   "id": 8707023, 
+   "system": "Generic Models", 
+   "source": "Модель", 
+   "type": "Rectangular Face Opening", 
+   "network": 8707023, 
+   "workset": "ME", 
+   "size": "", 
+   "link_id": null, 
+   "category": "Generic Models"
+  }, 
+  "note": "", 
+  "reason": "not_a_clash", 
+  "user": "coordinator89T4H"
+ }, 
+ {
+  "max": [
+   42.712501894633924, 
+   27.620282432018829, 
+   3.9370078740157481
+  ], 
+  "time": "2026-11-23 12:43:13", 
+  "name": "CLASH-013", 
+  "label": "13. [мережі] Generic Models x Smoke  —  4 колізій", 
+  "key": "0:8698757|0:8707025", 
+  "kind": "mep", 
+  "min": [
+   41.728249926129983, 
+   26.964114453016190, 
+   3.2808398950131235
+  ], 
+  "a": {
+   "id": 8698757, 
+   "system": "Smoke", 
+   "source": "Модель", 
+   "type": "Radius Elbows 15cm /  short Taps", 
+   "network": 8698756, 
+   "workset": "ME", 
+   "size": "30x20", 
+   "link_id": null, 
+   "category": "Ducts"
+  }, 
+  "b": {
+   "id": 8707025, 
+   "system": "Generic Models", 
+   "source": "Модель", 
+   "type": "Rectangular Face Opening", 
+   "network": 8707025, 
+   "workset": "ME", 
+   "size": "", 
+   "link_id": null, 
+   "category": "Generic Models"
+  }, 
+  "note": "", 
+  "reason": "not_a_clash", 
+  "user": "coordinator89T4H"
+ }, 
+ {
+  "max": [
+   58.869058876851255, 
+   -31.770144060969695, 
+   3.2860737278080947
+  ], 
+  "time": "2026-11-23 12:47:09", 
+  "name": "CLASH-014", 
+  "label": "14. [мережі] Fresh Air x Smoke  —  вирішено", 
+  "key": "0:8706366|0:11847284", 
+  "kind": "mep", 
+  "min": [
+   58.760164222743072, 
+   -34.623804339322604, 
+   -10.417338650698115
+  ], 
+  "a": {
+   "id": 8706366, 
+   "system": "Fresh Air", 
+   "source": "Модель", 
+   "type": "Fire insulation", 
+   "network": 8706613, 
+   "workset": "ME", 
+   "size": "", 
+   "link_id": null, 
+   "category": "Duct Insulations"
+  }, 
+  "b": {
+   "id": 11847284, 
+   "system": "Smoke", 
+   "source": "Модель", 
+   "type": "Fire insulation", 
+   "network": 8706420, 
+   "workset": "ME", 
+   "size": "", 
+   "link_id": null, 
+   "category": "Duct Insulations"
+  }, 
+  "note": "", 
+  "reason": "not_a_clash", 
+  "user": "coordinator89T4H"
+ }, 
+ {
+  "max": [
+   -2.0223423018218516, 
+   39.534875604092079, 
+   4.6134797091128465
+  ], 
+  "time": "2026-11-23 12:48:38", 
+  "name": "CLASH-015", 
+  "label": "15. [мережі] Generic Models x Smoke  —  4 колізій", 
+  "key": "0:8706959|0:8707061", 
+  "kind": "mep", 
+  "min": [
+   -2.6785102808244967, 
+   38.550623635588138, 
+   3.7932697353595515
+  ], 
+  "a": {
+   "id": 8706959, 
+   "system": "Smoke", 
+   "source": "Модель", 
+   "type": "Fire insulation", 
+   "network": 8706542, 
+   "workset": "ME", 
+   "size": "", 
+   "link_id": null, 
+   "category": "Duct Insulations"
+  }, 
+  "b": {
+   "id": 8707061, 
+   "system": "Generic Models", 
+   "source": "Модель", 
+   "type": "Rectangular Face Opening", 
+   "network": 8707061, 
+   "workset": "ME", 
+   "size": "", 
+   "link_id": null, 
+   "category": "Generic Models"
+  }, 
+  "note": "", 
+  "reason": "not_a_clash", 
+  "user": "coordinator89T4H"
+ }, 
+ {
+  "max": [
+   -2.0223423018218547, 
+   39.370833609341418, 
+   4.4494377143621922
+  ], 
+  "time": "2026-11-23 12:48:38", 
+  "name": "CLASH-015", 
+  "label": "15. [мережі] Generic Models x Smoke  —  4 колізій", 
+  "key": "0:8706543|0:8707061", 
+  "kind": "mep", 
+  "min": [
+   -2.6785102808244945, 
+   38.714665630338800, 
+   3.9573117301102236
+  ], 
+  "a": {
+   "id": 8706543, 
+   "system": "Smoke", 
+   "source": "Модель", 
+   "type": "Radius Elbows 15cm /  short Taps", 
+   "network": 8706542, 
+   "workset": "ME", 
+   "size": "20x15", 
+   "link_id": null, 
+   "category": "Ducts"
+  }, 
+  "b": {
+   "id": 8707061, 
+   "system": "Generic Models", 
+   "source": "Модель", 
+   "type": "Rectangular Face Opening", 
+   "network": 8707061, 
+   "workset": "ME", 
+   "size": "", 
+   "link_id": null, 
+   "category": "Generic Models"
+  }, 
+  "note": "", 
+  "reason": "not_a_clash", 
+  "user": "coordinator89T4H"
+ }, 
+ {
+  "max": [
+   2.8573699893868705, 
+   37.183930724119158, 
+   5.6594488188976380
+  ], 
+  "time": "2026-11-23 12:48:38", 
+  "name": "CLASH-015", 
+  "label": "15. [мережі] Generic Models x Smoke  —  4 колізій", 
+  "key": "0:8706548|0:8707063", 
+  "kind": "mep", 
+  "min": [
+   2.2012020103841374, 
+   36.527762745116512, 
+   5.1673228346456694
+  ], 
+  "a": {
+   "id": 8706548, 
+   "system": "Smoke", 
+   "source": "Модель", 
+   "type": "Radius Elbows 15cm /  short Taps", 
+   "network": 8706542, 
+   "workset": "ME", 
+   "size": "20x15", 
+   "link_id": null, 
+   "category": "Ducts"
+  }, 
+  "b": {
+   "id": 8707063, 
+   "system": "Generic Models", 
+   "source": "Модель", 
+   "type": "Rectangular Face Opening", 
+   "network": 8707063, 
+   "workset": "ME", 
+   "size": "", 
+   "link_id": null, 
+   "category": "Generic Models"
+  }, 
+  "note": "", 
+  "reason": "not_a_clash", 
+  "user": "coordinator89T4H"
+ }, 
+ {
+  "max": [
+   -0.17997936721297841, 
+   37.183930724119158, 
+   4.4494377143621495
+  ], 
+  "time": "2026-11-23 12:48:38", 
+  "name": "CLASH-015", 
+  "label": "15. [мережі] Generic Models x Smoke  —  4 колізій", 
+  "key": "0:8706955|0:8707075", 
+  "kind": "mep", 
+  "min": [
+   -0.83614734621561038, 
+   36.527762745116512, 
+   3.957311730110181
+  ], 
+  "a": {
+   "id": 8706955, 
+   "system": "Smoke", 
+   "source": "Модель", 
+   "type": "Radius Elbows 15cm /  short Taps", 
+   "network": 8706542, 
+   "workset": "ME", 
+   "size": "20x15", 
+   "link_id": null, 
+   "category": "Ducts"
+  }, 
+  "b": {
+   "id": 8707075, 
+   "system": "Generic Models", 
+   "source": "Модель", 
+   "type": "Rectangular Face Opening", 
+   "network": 8707075, 
+   "workset": "ME", 
+   "size": "", 
+   "link_id": null, 
+   "category": "Generic Models"
+  }, 
+  "note": "", 
+  "reason": "not_a_clash", 
+  "user": "coordinator89T4H"
+ }, 
+ {
+  "max": [
+   49.191568446337953, 
+   -16.621843554100394, 
+   2.0585245843514963
+  ], 
+  "time": "2026-11-23 13:03:06", 
+  "name": "CLASH-017", 
+  "label": "17. [мережі] Exhaust Air x Generic Models  —  4 колізій", 
+  "key": "0:8698692|0:8707013", 
+  "kind": "mep", 
+  "min": [
+   48.699442462085983, 
+   -17.015544341501979, 
+   1.5663986000995278
+  ], 
+  "a": {
+   "id": 8698692, 
+   "system": "Exhaust Air", 
+   "source": "Модель", 
+   "type": "Radius Elbows 10cm / Taps", 
+   "network": 8698692, 
+   "workset": "ME", 
+   "size": "15x15", 
+   "link_id": null, 
+   "category": "Ducts"
+  }, 
+  "b": {
+   "id": 8707013, 
+   "system": "Generic Models", 
+   "source": "Модель", 
+   "type": "Rectangular Face Opening", 
+   "network": 8707013, 
+   "workset": "ME", 
+   "size": "", 
+   "link_id": null, 
+   "category": "Generic Models"
+  }, 
+  "note": "", 
+  "reason": "not_a_clash", 
+  "user": "coordinator89T4H"
+ }, 
+ {
+  "max": [
+   54.851017265468471, 
+   -13.866345343717075, 
+   2.0585245843514963
+  ], 
+  "time": "2026-11-23 13:03:06", 
+  "name": "CLASH-017", 
+  "label": "17. [мережі] Exhaust Air x Generic Models  —  4 колізій", 
+  "key": "0:8706310|0:8707036", 
+  "kind": "mep", 
+  "min": [
+   54.457316478066872, 
+   -14.358471327969045, 
+   1.5663986000995278
+  ], 
+  "a": {
+   "id": 8706310, 
+   "system": "Exhaust Air", 
+   "source": "Модель", 
+   "type": "Radius Elbows 10cm / Taps", 
+   "network": 8698692, 
+   "workset": "ME", 
+   "size": "15x15", 
+   "link_id": null, 
+   "category": "Ducts"
+  }, 
+  "b": {
+   "id": 8707036, 
+   "system": "Generic Models", 
+   "source": "Модель", 
+   "type": "Rectangular Face Opening", 
+   "network": 8707036, 
+   "workset": "ME", 
+   "size": "", 
+   "link_id": null, 
+   "category": "Generic Models"
+  }, 
+  "note": "", 
+  "reason": "not_a_clash", 
+  "user": "coordinator89T4H"
+ }, 
+ {
+  "max": [
+   58.082093980439069, 
+   -15.585041460759399, 
+   1.9732354174674582
+  ], 
+  "time": "2026-11-23 13:03:06", 
+  "name": "CLASH-017", 
+  "label": "17. [мережі] Exhaust Air x Generic Models  —  4 колізій", 
+  "key": "0:8706311|0:8707038", 
+  "kind": "mep", 
+  "min": [
+   57.589908543076021, 
+   -15.932867176166077, 
+   1.4808463400499634
+  ], 
+  "a": {
+   "id": 8706311, 
+   "system": "Exhaust Air", 
+   "source": "Модель", 
+   "type": "Radius Elbows 10cm / Taps", 
+   "network": 8698692, 
+   "workset": "ME", 
+   "size": "15x15", 
+   "link_id": null, 
+   "category": "Ducts"
+  }, 
+  "b": {
+   "id": 8707038, 
+   "system": "Generic Models", 
+   "source": "Модель", 
+   "type": "Rectangular Face Opening", 
+   "network": 8707038, 
+   "workset": "ME", 
+   "size": "", 
+   "link_id": null, 
+   "category": "Generic Models"
+  }, 
+  "note": "", 
+  "reason": "not_a_clash", 
+  "user": "coordinator89T4H"
+ }, 
+ {
+  "max": [
+   58.082030047382233, 
+   -15.539166388746086, 
+   1.9775638902695305
+  ], 
+  "time": "2026-11-23 13:03:06", 
+  "name": "CLASH-017", 
+  "label": "17. [мережі] Exhaust Air x Generic Models  —  4 колізій", 
+  "key": "0:8707038|0:11726302", 
+  "kind": "mep", 
+  "min": [
+   57.589904063130248, 
+   -15.564259327477753, 
+   1.7800195812371951
+  ], 
+  "a": {
+   "id": 8707038, 
+   "system": "Generic Models", 
+   "source": "Модель", 
+   "type": "Rectangular Face Opening", 
+   "network": 8707038, 
+   "workset": "ME", 
+   "size": "", 
+   "link_id": null, 
+   "category": "Generic Models"
+  }, 
+  "b": {
+   "id": 11726302, 
+   "system": "Exhaust Air", 
+   "source": "Модель", 
+   "type": "Radius Elbows 10cm / Taps", 
+   "network": 8698692, 
+   "workset": "ME", 
+   "size": "15x15", 
+   "link_id": null, 
+   "category": "Ducts"
+  }, 
+  "note": "", 
+  "reason": "not_a_clash", 
+  "user": "coordinator89T4H"
+ }, 
+ {
+  "max": [
+   35.352744828694568, 
+   -41.240755313759131, 
+   3.0782649600654564
+  ], 
+  "time": "2026-11-23 13:05:42", 
+  "name": "CLASH-019", 
+  "label": "19. [мережі] Fresh Air x Fresh Air  —  4 колізій", 
+  "key": "0:8698699|0:8698719", 
+  "kind": "mep", 
+  "min": [
+   34.860618844442570, 
+   -41.896923292761791, 
+   2.9363517060367395
+  ], 
+  "a": {
+   "id": 8698699, 
+   "system": "Fresh Air", 
+   "source": "Модель", 
+   "type": "Radius Elbows 10cm / Taps", 
+   "network": 8698699, 
+   "workset": "ME", 
+   "size": "75x45", 
+   "link_id": null, 
+   "category": "Ducts"
+  }, 
+  "b": {
+   "id": 8698719, 
+   "system": "Fresh Air", 
+   "source": "Модель", 
+   "type": "Radius Elbows 10cm / Taps", 
+   "network": 8698718, 
+   "workset": "ME", 
+   "size": "20x15", 
+   "link_id": null, 
+   "category": "Ducts"
+  }, 
+  "note": "", 
+  "reason": "not_a_clash", 
+  "user": "coordinator89T4H"
+ }, 
+ {
+  "max": [
+   33.000623566476605, 
+   -46.575983432287785, 
+   3.0462740120031446
+  ], 
+  "time": "2026-11-23 13:05:42", 
+  "name": "CLASH-019", 
+  "label": "19. [мережі] Fresh Air x Fresh Air  —  4 колізій", 
+  "key": "0:8698722|0:8698732", 
+  "kind": "mep", 
+  "min": [
+   32.508497582224621, 
+   -47.232151411290459, 
+   2.9363517060367395
+  ], 
+  "a": {
+   "id": 8698722, 
+   "system": "Fresh Air", 
+   "source": "Модель", 
+   "type": "Radius Elbows 10cm / Taps", 
+   "network": 8698721, 
+   "workset": "ME", 
+   "size": "20x15", 
+   "link_id": null, 
+   "category": "Ducts"
+  }, 
+  "b": {
+   "id": 8698732, 
+   "system": "Fresh Air", 
+   "source": "Модель", 
+   "type": "Radius Elbows 10cm / Taps", 
+   "network": 8698699, 
+   "workset": "ME", 
+   "size": "75x45", 
+   "link_id": null, 
+   "category": "Ducts"
+  }, 
+  "note": "", 
+  "reason": "not_a_clash", 
+  "user": "coordinator89T4H"
+ }, 
+ {
+  "max": [
+   35.352744828694568, 
+   -41.240755313759138, 
+   3.0782649600654564
+  ], 
+  "time": "2026-11-23 13:05:42", 
+  "name": "CLASH-019", 
+  "label": "19. [мережі] Fresh Air x Fresh Air  —  4 колізій", 
+  "key": "0:8698702|0:8698719", 
+  "kind": "mep", 
+  "min": [
+   34.860618844442570, 
+   -41.896923292761784, 
+   3.0183727034120684
+  ], 
+  "a": {
+   "id": 8698702, 
+   "system": "Fresh Air", 
+   "source": "Модель", 
+   "type": "Fiberglass Board", 
+   "network": 8698699, 
+   "workset": "ME", 
+   "size": "", 
+   "link_id": null, 
+   "category": "Duct Linings"
+  }, 
+  "b": {
+   "id": 8698719, 
+   "system": "Fresh Air", 
+   "source": "Модель", 
+   "type": "Radius Elbows 10cm / Taps", 
+   "network": 8698718, 
+   "workset": "ME", 
+   "size": "20x15", 
+   "link_id": null, 
+   "category": "Ducts"
+  }, 
+  "note": "", 
+  "reason": "not_a_clash", 
+  "user": "coordinator89T4H"
+ }, 
+ {
+  "max": [
+   33.000623566476591, 
+   -46.575983432287813, 
+   3.0462740120031437
+  ], 
+  "time": "2026-11-23 13:05:42", 
+  "name": "CLASH-019", 
+  "label": "19. [мережі] Fresh Air x Fresh Air  —  4 колізій", 
+  "key": "0:8698703|0:8698722", 
+  "kind": "mep", 
+  "min": [
+   32.508497582224621, 
+   -47.232151411290459, 
+   3.0183727034120675
+  ], 
+  "a": {
+   "id": 8698703, 
+   "system": "Fresh Air", 
+   "source": "Модель", 
+   "type": "Fiberglass Board", 
+   "network": 8698699, 
+   "workset": "ME", 
+   "size": "", 
+   "link_id": null, 
+   "category": "Duct Linings"
+  }, 
+  "b": {
+   "id": 8698722, 
+   "system": "Fresh Air", 
+   "source": "Модель", 
+   "type": "Radius Elbows 10cm / Taps", 
+   "network": 8698721, 
+   "workset": "ME", 
+   "size": "20x15", 
+   "link_id": null, 
+   "category": "Ducts"
+  }, 
+  "note": "", 
+  "reason": "not_a_clash", 
+  "user": "coordinator89T4H"
+ }, 
+ {
+  "max": [
+   30.539547554197483, 
+   -41.048439427811594, 
+   1.4622239396763330
+  ], 
+  "time": "2026-11-23 15:10:46", 
+  "name": "CLASH-022", 
+  "label": "22. [мережі] Mechanical Equipment x ניקוז מזגנים  —  4 колізій", 
+  "key": "0:8460274|0:8698982", 
+  "kind": "mep", 
+  "min": [
+   30.080422459719713, 
+   -41.647588738818705, 
+   1.2521686867529072
+  ], 
+  "a": {
+   "id": 8460274, 
+   "system": "ניקוז מזגנים", 
+   "source": "Модель", 
+   "type": "Standard", 
+   "network": 8457726, 
+   "workset": "PL", 
+   "size": "50ø-50ø-50ø", 
+   "link_id": null, 
+   "category": "Pipe Fittings"
+  }, 
+  "b": {
+   "id": 8698982, 
+   "system": "Mechanical Equipment", 
+   "source": "Модель", 
+   "type": "PLFY-P_25", 
+   "network": 8698982, 
+   "workset": "ME", 
+   "size": "", 
+   "link_id": null, 
+   "category": "Mechanical Equipment"
+  }, 
+  "note": "", 
+  "reason": "not_a_clash", 
+  "user": "coordinator89T4H"
+ }, 
+ {
+  "max": [
+   30.490977020136313, 
+   -47.282035228336525, 
+   1.5233947771004419
+  ], 
+  "time": "2026-11-23 15:10:46", 
+  "name": "CLASH-022", 
+  "label": "22. [мережі] Mechanical Equipment x ניקוז מזגנים  —  4 колізій", 
+  "key": "0:8457742|0:8698983", 
+  "kind": "mep", 
+  "min": [
+   30.331696941832206, 
+   -47.711724329128401, 
+   1.3107757872550123
+  ], 
+  "a": {
+   "id": 8457742, 
+   "system": "ניקוז מזגנים", 
+   "source": "Модель", 
+   "type": "HDPE", 
+   "network": 8457726, 
+   "workset": "PL", 
+   "size": "50ø", 
+   "link_id": null, 
+   "category": "Pipes"
+  }, 
+  "b": {
+   "id": 8698983, 
+   "system": "Mechanical Equipment", 
+   "source": "Модель", 
+   "type": "PLFY-P_25", 
+   "network": 8698983, 
+   "workset": "ME", 
+   "size": "", 
+   "link_id": null, 
+   "category": "Mechanical Equipment"
+  }, 
+  "note": "", 
+  "reason": "not_a_clash", 
+  "user": "coordinator89T4H"
+ }, 
+ {
+  "max": [
+   30.246432096234553, 
+   -41.481739693927921, 
+   1.4639061482870663
+  ], 
+  "time": "2026-11-23 15:10:46", 
+  "name": "CLASH-022", 
+  "label": "22. [мережі] Mechanical Equipment x ניקוז מזגנים  —  4 колізій", 
+  "key": "0:8460272|0:8698982", 
+  "kind": "mep", 
+  "min": [
+   30.009294300227833, 
+   -41.704561275360859, 
+   1.2543831957182663
+  ], 
+  "a": {
+   "id": 8460272, 
+   "system": "ניקוז מזגנים", 
+   "source": "Модель", 
+   "type": "HDPE", 
+   "network": 8457726, 
+   "workset": "PL", 
+   "size": "50ø", 
+   "link_id": null, 
+   "category": "Pipes"
+  }, 
+  "b": {
+   "id": 8698982, 
+   "system": "Mechanical Equipment", 
+   "source": "Модель", 
+   "type": "PLFY-P_25", 
+   "network": 8698982, 
+   "workset": "ME", 
+   "size": "", 
+   "link_id": null, 
+   "category": "Mechanical Equipment"
+  }, 
+  "note": "", 
+  "reason": "not_a_clash", 
+  "user": "coordinator89T4H"
+ }, 
+ {
+  "max": [
+   30.540081274088870, 
+   -41.635975160433091, 
+   1.4343320966269328
+  ], 
+  "time": "2026-11-23 15:10:46", 
+  "name": "CLASH-022", 
+  "label": "22. [мережі] Mechanical Equipment x ניקוז מזגנים  —  4 колізій", 
+  "key": "0:8457742|0:8698982", 
+  "kind": "mep", 
+  "min": [
+   30.331696941832206, 
+   -42.918518167969083, 
+   1.2955818237224632
+  ], 
+  "a": {
+   "id": 8457742, 
+   "system": "ניקוז מזגנים", 
+   "source": "Модель", 
+   "type": "HDPE", 
+   "network": 8457726, 
+   "workset": "PL", 
+   "size": "50ø", 
+   "link_id": null, 
+   "category": "Pipes"
+  }, 
+  "b": {
+   "id": 8698982, 
+   "system": "Mechanical Equipment", 
+   "source": "Модель", 
+   "type": "PLFY-P_25", 
+   "network": 8698982, 
+   "workset": "ME", 
+   "size": "", 
+   "link_id": null, 
+   "category": "Mechanical Equipment"
+  }, 
+  "note": "", 
+  "reason": "not_a_clash", 
+  "user": "coordinator89T4H"
+ }, 
+ {
+  "max": [
+   38.065547786994109, 
+   -11.531435994284465, 
+   3.9206036745406765
+  ], 
+  "time": "2026-11-23 17:19:39", 
+  "name": "CLASH-025", 
+  "label": "25. [мережі] Fresh Air x Generic Models  —  3 колізій", 
+  "key": "0:8706408|0:8707176", 
+  "kind": "mep", 
+  "min": [
+   33.964497912094167, 
+   -12.028667771261631, 
+   2.1161417322834586
+  ], 
+  "a": {
+   "id": 8706408, 
+   "system": "Fresh Air", 
+   "source": "Модель", 
+   "type": "Radius Elbows 10cm / Taps", 
+   "network": 8698699, 
+   "workset": "ME", 
+   "size": "125x55", 
+   "link_id": null, 
+   "category": "Ducts"
+  }, 
+  "b": {
+   "id": 8707176, 
+   "system": "Generic Models", 
+   "source": "Модель", 
+   "type": "Rectangular Face Opening", 
+   "network": 8707176, 
+   "workset": "ME", 
+   "size": "", 
+   "link_id": null, 
+   "category": "Generic Models"
+  }, 
+  "note": "", 
+  "reason": "not_a_clash", 
+  "user": "coordinator89T4H"
+ }, 
+ {
+  "max": [
+   36.478313852696473, 
+   -24.896028573087499, 
+   3.3628608923884515
+  ], 
+  "time": "2026-11-23 17:19:39", 
+  "name": "CLASH-025", 
+  "label": "25. [мережі] Fresh Air x Generic Models  —  3 колізій", 
+  "key": "0:8706692|0:8707034", 
+  "kind": "mep", 
+  "min": [
+   36.018996267394627, 
+   -25.338942046480732, 
+   2.8707349081364830
+  ], 
+  "a": {
+   "id": 8706692, 
+   "system": "Fresh Air", 
+   "source": "Модель", 
+   "type": "Radius Elbows 10cm / Taps", 
+   "network": 8698699, 
+   "workset": "ME", 
+   "size": "15x15", 
+   "link_id": null, 
+   "category": "Ducts"
+  }, 
+  "b": {
+   "id": 8707034, 
+   "system": "Generic Models", 
+   "source": "Модель", 
+   "type": "Rectangular Face Opening", 
+   "network": 8707034, 
+   "workset": "ME", 
+   "size": "", 
+   "link_id": null, 
+   "category": "Generic Models"
+  }, 
+  "note": "", 
+  "reason": "not_a_clash", 
+  "user": "coordinator89T4H"
+ }, 
+ {
+  "max": [
+   32.475689181478948, 
+   -17.670987555151314, 
+   3.5269028871391077
+  ], 
+  "time": "2026-11-23 17:19:39", 
+  "name": "CLASH-025", 
+  "label": "25. [мережі] Fresh Air x Generic Models  —  3 колізій", 
+  "key": "0:8706680|0:8707015", 
+  "kind": "mep", 
+  "min": [
+   32.081988394077349, 
+   -18.163113539403284, 
+   3.0347769028871392
+  ], 
+  "a": {
+   "id": 8706680, 
+   "system": "Fresh Air", 
+   "source": "Модель", 
+   "type": "Radius Elbows 10cm / Taps", 
+   "network": 8698699, 
+   "workset": "ME", 
+   "size": "15x15", 
+   "link_id": null, 
+   "category": "Ducts"
+  }, 
+  "b": {
+   "id": 8707015, 
+   "system": "Generic Models", 
+   "source": "Модель", 
+   "type": "Rectangular Face Opening", 
+   "network": 8707015, 
+   "workset": "ME", 
+   "size": "", 
+   "link_id": null, 
+   "category": "Generic Models"
+  }, 
+  "note": "", 
+  "reason": "not_a_clash", 
+  "user": "coordinator89T4H"
+ }, 
+ {
+  "max": [
+   58.863823353965401, 
+   -32.843956414290119, 
+   3.4545442409607983
+  ], 
+  "time": "2026-11-23 17:20:57", 
+  "name": "CLASH-026", 
+  "label": "26. [мережі] Fresh Air x Generic Models  —  3 колізій", 
+  "key": "0:8706384|0:8707047", 
+  "kind": "mep", 
+  "min": [
+   58.174318395171468, 
+   -33.500124393324612, 
+   2.4702906026675358
+  ], 
+  "a": {
+   "id": 8706384, 
+   "system": "Fresh Air", 
+   "source": "Модель", 
+   "type": "Fire insulation", 
+   "network": 8706613, 
+   "workset": "ME", 
+   "size": "", 
+   "link_id": null, 
+   "category": "Duct Insulations"
+  }, 
+  "b": {
+   "id": 8707047, 
+   "system": "Generic Models", 
+   "source": "Модель", 
+   "type": "Rectangular Face Opening", 
+   "network": 8707047, 
+   "workset": "ME", 
+   "size": "", 
+   "link_id": null, 
+   "category": "Generic Models"
+  }, 
+  "note": "", 
+  "reason": "not_a_clash", 
+  "user": "coordinator89T4H"
+ }, 
+ {
+  "max": [
+   61.783242131801487, 
+   -32.843956414290105, 
+   3.3471503775113458
+  ], 
+  "time": "2026-11-23 17:20:57", 
+  "name": "CLASH-026", 
+  "label": "26. [мережі] Fresh Air x Generic Models  —  3 колізій", 
+  "key": "0:8707047|0:8707807", 
+  "kind": "mep", 
+  "min": [
+   60.865135588347016, 
+   -33.500124393292751, 
+   2.6909774497954597
+  ], 
+  "a": {
+   "id": 8707047, 
+   "system": "Generic Models", 
+   "source": "Модель", 
+   "type": "Rectangular Face Opening", 
+   "network": 8707047, 
+   "workset": "ME", 
+   "size": "", 
+   "link_id": null, 
+   "category": "Generic Models"
+  }, 
+  "b": {
+   "id": 8707807, 
+   "system": "Fresh Air", 
+   "source": "Модель", 
+   "type": "Radius Elbows 15cm /  short Taps", 
+   "network": 8707807, 
+   "workset": "ME", 
+   "size": "30x20", 
+   "link_id": null, 
+   "category": "Ducts"
+  }, 
+  "note": "", 
+  "reason": "not_a_clash", 
+  "user": "coordinator89T4H"
+ }, 
+ {
+  "max": [
+   58.699781359214747, 
+   -32.843956414290119, 
+   3.2905024740330155
+  ], 
+  "time": "2026-11-23 17:20:57", 
+  "name": "CLASH-026", 
+  "label": "26. [мережі] Fresh Air x Generic Models  —  3 колізій", 
+  "key": "0:8707047|0:11846729", 
+  "kind": "mep", 
+  "min": [
+   58.174318395171476, 
+   -33.500124393292765, 
+   2.6343344950303909
+  ], 
+  "a": {
+   "id": 8707047, 
+   "system": "Generic Models", 
+   "source": "Модель", 
+   "type": "Rectangular Face Opening", 
+   "network": 8707047, 
+   "workset": "ME", 
+   "size": "", 
+   "link_id": null, 
+   "category": "Generic Models"
+  }, 
+  "b": {
+   "id": 11846729, 
+   "system": "Fresh Air", 
+   "source": "Модель", 
+   "type": "Radius Elbows 15cm /  short Taps", 
+   "network": 8706613, 
+   "workset": "ME", 
+   "size": "45x20", 
+   "link_id": null, 
+   "category": "Ducts"
+  }, 
+  "note": "", 
+  "reason": "not_a_clash", 
+  "user": "coordinator89T4H"
+ }, 
+ {
+  "max": [
+   -11.817288341543033, 
+   -36.609132334600886, 
+   4.6281923304144730
+  ], 
+  "time": "2026-11-23 17:58:34", 
+  "name": "CLASH-030", 
+  "label": "30. [мережі] Fresh Air x Return Air  —  3 колізій", 
+  "key": "0:8689970|0:8698854", 
+  "kind": "mep", 
+  "min": [
+   -12.014138735243840, 
+   -37.101258318852857, 
+   4.1502624671913200
+  ], 
+  "a": {
+   "id": 8689970, 
+   "system": "Fresh Air", 
+   "source": "Модель", 
+   "type": "Radius Elbows 10cm / Taps", 
+   "network": 8689969, 
+   "workset": "ME", 
+   "size": "15x15", 
+   "link_id": null, 
+   "category": "Ducts"
+  }, 
+  "b": {
+   "id": 8698854, 
+   "system": "Return Air", 
+   "source": "Модель", 
+   "type": "Radius Elbows 15cm /  short Taps", 
+   "network": 8698808, 
+   "workset": "ME", 
+   "size": "81x20", 
+   "link_id": null, 
+   "category": "Ducts"
+  }, 
+  "note": "", 
+  "reason": "not_a_clash", 
+  "user": "coordinator89T4H"
+ }, 
+ {
+  "max": [
+   -11.735267344167724, 
+   -36.609132334600886, 
+   4.6281923304144748
+  ], 
+  "time": "2026-11-23 17:58:34", 
+  "name": "CLASH-030", 
+  "label": "30. [мережі] Fresh Air x Return Air  —  3 колізій", 
+  "key": "0:8689970|0:8698858", 
+  "kind": "mep", 
+  "min": [
+   -11.817288341543055, 
+   -37.101258318852857, 
+   4.1502624671913182
+  ], 
+  "a": {
+   "id": 8689970, 
+   "system": "Fresh Air", 
+   "source": "Модель", 
+   "type": "Radius Elbows 10cm / Taps", 
+   "network": 8689969, 
+   "workset": "ME", 
+   "size": "15x15", 
+   "link_id": null, 
+   "category": "Ducts"
+  }, 
+  "b": {
+   "id": 8698858, 
+   "system": "Return Air", 
+   "source": "Модель", 
+   "type": "Standard", 
+   "network": 8698808, 
+   "workset": "ME", 
+   "size": "81x20", 
+   "link_id": null, 
+   "category": "Duct Fittings"
+  }, 
+  "note": "", 
+  "reason": "not_a_clash", 
+  "user": "coordinator89T4H"
+ }, 
+ {
+  "max": [
+   -11.865441279965719, 
+   -36.609132334600886, 
+   4.1702624671913631
+  ], 
+  "time": "2026-11-23 17:58:34", 
+  "name": "CLASH-030", 
+  "label": "30. [мережі] Fresh Air x Return Air  —  3 колізій", 
+  "key": "0:8689970|0:8698857", 
+  "kind": "mep", 
+  "min": [
+   -12.014138735243840, 
+   -37.101258318852857, 
+   4.1360663461625053
+  ], 
+  "a": {
+   "id": 8689970, 
+   "system": "Fresh Air", 
+   "source": "Модель", 
+   "type": "Radius Elbows 10cm / Taps", 
+   "network": 8689969, 
+   "workset": "ME", 
+   "size": "15x15", 
+   "link_id": null, 
+   "category": "Ducts"
+  }, 
+  "b": {
+   "id": 8698857, 
+   "system": "Return Air", 
+   "source": "Модель", 
+   "type": "Standard", 
+   "network": 8698808, 
+   "workset": "ME", 
+   "size": "60x60-60x60", 
+   "link_id": null, 
+   "category": "Duct Fittings"
+  }, 
+  "note": "", 
+  "reason": "not_a_clash", 
+  "user": "coordinator89T4H"
+ }, 
+ {
+  "max": [
+   0.99825786892012236, 
+   -38.271323278614176, 
+   6.4170650245630672
+  ], 
+  "time": "2026-11-23 18:15:29", 
+  "name": "CLASH-032", 
+  "label": "32. [мережі] ביוב x ביוב  —  3 колізій", 
+  "key": "0:8396286|0:8456718", 
+  "kind": "mep", 
+  "min": [
+   0.68943972417421373, 
+   -38.635639576301145, 
+   5.9229316035338684
+  ], 
+  "a": {
+   "id": 8396286, 
+   "system": "ביוב", 
+   "source": "Модель", 
+   "type": "Standard", 
+   "network": 8396286, 
+   "workset": "PL", 
+   "size": "110ø-110ø-50ø", 
+   "link_id": null, 
+   "category": "Pipe Fittings"
+  }, 
+  "b": {
+   "id": 8456718, 
+   "system": "ביוב", 
+   "source": "Модель", 
+   "type": "HDPE", 
+   "network": 8377410, 
+   "workset": "PL", 
+   "size": "110ø", 
+   "link_id": null, 
+   "category": "Pipes"
+  }, 
+  "note": "", 
+  "reason": "not_a_clash", 
+  "user": "coordinator89T4H"
+ }, 
+ {
+  "max": [
+   0.99825786892012236, 
+   -38.271323278614176, 
+   5.9229316035338631
+  ], 
+  "time": "2026-11-23 18:15:29", 
+  "name": "CLASH-032", 
+  "label": "32. [мережі] ביוב x ביוב  —  3 колізій", 
+  "key": "0:8396286|0:8456717", 
+  "kind": "mep", 
+  "min": [
+   0.68944012508387253, 
+   -38.635639576301145, 
+   5.6903589878176586
+  ], 
+  "a": {
+   "id": 8396286, 
+   "system": "ביוב", 
+   "source": "Модель", 
+   "type": "Standard", 
+   "network": 8396286, 
+   "workset": "PL", 
+   "size": "110ø-110ø-50ø", 
+   "link_id": null, 
+   "category": "Pipe Fittings"
+  }, 
+  "b": {
+   "id": 8456717, 
+   "system": "ביוב", 
+   "source": "Модель", 
+   "type": "Standard", 
+   "network": 8377410, 
+   "workset": "PL", 
+   "size": "110ø-110ø-50ø", 
+   "link_id": null, 
+   "category": "Pipe Fittings"
+  }, 
+  "note": "", 
+  "reason": "not_a_clash", 
+  "user": "coordinator89T4H"
+ }, 
+ {
+  "max": [
+   1.0641206427223200, 
+   -44.020200169184520, 
+   6.477926445994445
+  ], 
+  "time": "2026-11-23 18:15:29", 
+  "name": "CLASH-032", 
+  "label": "32. [мережі] ביוב x ביוב  —  3 колізій", 
+  "key": "0:8456637|0:8456675", 
+  "kind": "mep", 
+  "min": [
+   0.63767476790038669, 
+   -44.425904600627391, 
+   6.4517547939992497
+  ], 
+  "a": {
+   "id": 8456637, 
+   "system": "ביוב", 
+   "source": "Модель", 
+   "type": "Standard", 
+   "network": 8456637, 
+   "workset": "PL", 
+   "size": "125ø-125ø-110ø", 
+   "link_id": null, 
+   "category": "Pipe Fittings"
+  }, 
+  "b": {
+   "id": 8456675, 
+   "system": "ביוב", 
+   "source": "Модель", 
+   "type": "Standard", 
+   "network": 8377410, 
+   "workset": "PL", 
+   "size": "125ø-125ø-50ø", 
+   "link_id": null, 
+   "category": "Pipe Fittings"
+  }, 
+  "note": "", 
+  "reason": "not_a_clash", 
+  "user": "coordinator89T4H"
+ }, 
+ {
+  "max": [
+   64.299836163106193, 
+   -66.641816282532531, 
+   3.4183239221382298
+  ], 
+  "time": "2026-11-23 18:39:40", 
+  "name": "CLASH-037", 
+  "label": "37. [мережі] Exhaust Kitchen x Generic Models  —  2 колізій", 
+  "key": "0:8707102|0:11752840", 
+  "kind": "mep", 
+  "min": [
+   63.315584194602224, 
+   -69.758614182795000, 
+   1.8044619422572177
+  ], 
+  "a": {
+   "id": 8707102, 
+   "system": "Generic Models", 
+   "source": "Модель", 
+   "type": "Rectangular Face Opening", 
+   "network": 8707102, 
+   "workset": "ME", 
+   "size": "", 
+   "link_id": null, 
+   "category": "Generic Models"
+  }, 
+  "b": {
+   "id": 11752840, 
+   "system": "Exhaust Kitchen", 
+   "source": "Модель", 
+   "type": "Fire insulation", 
+   "network": 8706716, 
+   "workset": "ME", 
+   "size": "", 
+   "link_id": null, 
+   "category": "Duct Insulations"
+  }, 
+  "note": "", 
+  "reason": "not_a_clash", 
+  "user": "coordinator89T4H"
+ }, 
+ {
+  "max": [
+   64.299836163106193, 
+   -66.805858277283193, 
+   3.2542819273875736
+  ], 
+  "time": "2026-11-23 18:39:40", 
+  "name": "CLASH-037", 
+  "label": "37. [мережі] Exhaust Kitchen x Generic Models  —  2 колізій", 
+  "key": "0:8706716|0:8707102", 
+  "kind": "mep", 
+  "min": [
+   63.315584194602224, 
+   -69.594572188044339, 
+   1.9419459693823242
+  ], 
+  "a": {
+   "id": 8706716, 
+   "system": "Exhaust Kitchen", 
+   "source": "Модель", 
+   "type": "Radius Elbows 10cm / Taps", 
+   "network": 8706716, 
+   "workset": "ME", 
+   "size": "85x40", 
+   "link_id": null, 
+   "category": "Ducts"
+  }, 
+  "b": {
+   "id": 8707102, 
+   "system": "Generic Models", 
+   "source": "Модель", 
+   "type": "Rectangular Face Opening", 
+   "network": 8707102, 
+   "workset": "ME", 
+   "size": "", 
+   "link_id": null, 
+   "category": "Generic Models"
+  }, 
+  "note": "", 
+  "reason": "not_a_clash", 
+  "user": "coordinator89T4H"
+ }, 
+ {
+  "max": [
+   64.299836163106207, 
+   -55.014165859205924, 
+   3.5275590551180729
+  ], 
+  "time": "2026-11-23 18:59:39", 
+  "name": "CLASH-038", 
+  "label": "38. [мережі] Exhaust Kitchen x Generic Models  —  2 колізій", 
+  "key": "0:8706735|0:8707100", 
+  "kind": "mep", 
+  "min": [
+   63.479626189352885, 
+   -58.623089743720364, 
+   2.1059028497706569
+  ], 
+  "a": {
+   "id": 8706735, 
+   "system": "Exhaust Kitchen", 
+   "source": "Модель", 
+   "type": "Fire insulation", 
+   "network": 8706718, 
+   "workset": "ME", 
+   "size": "", 
+   "link_id": null, 
+   "category": "Duct Insulations"
+  }, 
+  "b": {
+   "id": 8707100, 
+   "system": "Generic Models", 
+   "source": "Модель", 
+   "type": "Rectangular Face Opening", 
+   "network": 8707100, 
+   "workset": "ME", 
+   "size": "", 
+   "link_id": null, 
+   "category": "Generic Models"
+  }, 
+  "note": "", 
+  "reason": "not_a_clash", 
+  "user": "coordinator89T4H"
+ }, 
+ {
+  "max": [
+   64.299836163106207, 
+   -55.178207853956579, 
+   3.527559055118072
+  ], 
+  "time": "2026-11-23 18:59:39", 
+  "name": "CLASH-038", 
+  "label": "38. [мережі] Exhaust Kitchen x Generic Models  —  2 колізій", 
+  "key": "0:8706718|0:8707100", 
+  "kind": "mep", 
+  "min": [
+   63.479626189352885, 
+   -58.459047748969709, 
+   2.2699686496203562
+  ], 
+  "a": {
+   "id": 8706718, 
+   "system": "Exhaust Kitchen", 
+   "source": "Модель", 
+   "type": "Radius Elbows 10cm / Taps", 
+   "network": 8706718, 
+   "workset": "ME", 
+   "size": "100x40", 
+   "link_id": null, 
+   "category": "Ducts"
+  }, 
+  "b": {
+   "id": 8707100, 
+   "system": "Generic Models", 
+   "source": "Модель", 
+   "type": "Rectangular Face Opening", 
+   "network": 8707100, 
+   "workset": "ME", 
+   "size": "", 
+   "link_id": null, 
+   "category": "Generic Models"
+  }, 
+  "note": "", 
+  "reason": "not_a_clash", 
+  "user": "coordinator89T4H"
+ }, 
+ {
+  "max": [
+   108.37910843150452, 
+   -76.404048397157169, 
+   2.8923729404065512
+  ], 
+  "time": "2026-11-23 18:59:56", 
+  "name": "CLASH-039", 
+  "label": "39. [мережі] Fresh Air x Generic Models  —  2 колізій", 
+  "key": "0:8706249|0:8707200", 
+  "kind": "mep", 
+  "min": [
+   105.41588486040270, 
+   -76.978195378784505, 
+   -0.070850630695260097
+  ], 
+  "a": {
+   "id": 8706249, 
+   "system": "Fresh Air", 
+   "source": "Модель", 
+   "type": "Taps", 
+   "network": 8706248, 
+   "workset": "ME", 
+   "size": "90ø", 
+   "link_id": null, 
+   "category": "Ducts"
+  }, 
+  "b": {
+   "id": 8707200, 
+   "system": "Generic Models", 
+   "source": "Модель", 
+   "type": "Round Face Opening", 
+   "network": 8707200, 
+   "workset": "ME", 
+   "size": "", 
+   "link_id": null, 
+   "category": "Generic Models"
+  }, 
+  "note": "", 
+  "reason": "not_a_clash", 
+  "user": "coordinator89T4H"
+ }, 
+ {
+  "max": [
+   108.45306653509306, 
+   -76.169087645557511, 
+   2.9907929500070272
+  ], 
+  "time": "2026-11-23 18:59:56", 
+  "name": "CLASH-039", 
+  "label": "39. [мережі] Fresh Air x Generic Models  —  2 колізій", 
+  "key": "0:8706248|0:8707200", 
+  "kind": "mep", 
+  "min": [
+   105.32580096924059, 
+   -76.404048397157169, 
+   -0.13646742859551653
+  ], 
+  "a": {
+   "id": 8706248, 
+   "system": "Fresh Air", 
+   "source": "Модель", 
+   "type": "Dia 900", 
+   "network": 8706248, 
+   "workset": "ME", 
+   "size": "", 
+   "link_id": null, 
+   "category": "Mechanical Equipment"
+  }, 
+  "b": {
+   "id": 8707200, 
+   "system": "Generic Models", 
+   "source": "Модель", 
+   "type": "Round Face Opening", 
+   "network": 8707200, 
+   "workset": "ME", 
+   "size": "", 
+   "link_id": null, 
+   "category": "Generic Models"
+  }, 
+  "note": "", 
+  "reason": "not_a_clash", 
+  "user": "coordinator89T4H"
+ }, 
+ {
+  "max": [
+   107.79972170703583, 
+   -80.926305493326581, 
+   3.0354765004814173
+  ], 
+  "time": "2026-11-23 19:15:21", 
+  "name": "CLASH-041", 
+  "label": "41. [мережі] Fresh Air x Generic Models  —  2 колізій", 
+  "key": "0:8706585|0:8707064", 
+  "kind": "mep", 
+  "min": [
+   105.99525976477862, 
+   -81.582473472329227, 
+   2.2152283241742534
+  ], 
+  "a": {
+   "id": 8706585, 
+   "system": "Fresh Air", 
+   "source": "Модель", 
+   "type": "Fire insulation", 
+   "network": 8706582, 
+   "workset": "ME", 
+   "size": "", 
+   "link_id": null, 
+   "category": "Duct Insulations"
+  }, 
+  "b": {
+   "id": 8707064, 
+   "system": "Generic Models", 
+   "source": "Модель", 
+   "type": "Rectangular Face Opening", 
+   "network": 8707064, 
+   "workset": "ME", 
+   "size": "", 
+   "link_id": null, 
+   "category": "Generic Models"
+  }, 
+  "note": "", 
+  "reason": "not_a_clash", 
+  "user": "coordinator89T4H"
+ }, 
+ {
+  "max": [
+   107.63567971228518, 
+   -80.926305493326581, 
+   2.8714345057307611
+  ], 
+  "time": "2026-11-23 19:15:21", 
+  "name": "CLASH-041", 
+  "label": "41. [мережі] Fresh Air x Generic Models  —  2 колізій", 
+  "key": "0:8706582|0:8707064", 
+  "kind": "mep", 
+  "min": [
+   106.15930175952927, 
+   -81.582473472329227, 
+   2.2152665267281364
+  ], 
+  "a": {
+   "id": 8706582, 
+   "system": "Fresh Air", 
+   "source": "Модель", 
+   "type": "Radius Elbows 15cm /  short Taps", 
+   "network": 8706582, 
+   "workset": "ME", 
+   "size": "45x20", 
+   "link_id": null, 
+   "category": "Ducts"
+  }, 
+  "b": {
+   "id": 8707064, 
+   "system": "Generic Models", 
+   "source": "Модель", 
+   "type": "Rectangular Face Opening", 
+   "network": 8707064, 
+   "workset": "ME", 
+   "size": "", 
+   "link_id": null, 
+   "category": "Generic Models"
+  }, 
+  "note": "", 
+  "reason": "not_a_clash", 
+  "user": "coordinator89T4H"
+ }, 
+ {
+  "max": [
+   60.569859997796307, 
+   -32.843956414290112, 
+   3.2808398950131235
+  ], 
+  "time": "2026-11-23 19:16:31", 
+  "name": "CLASH-042", 
+  "label": "42. [мережі] Generic Models x Smoke  —  2 колізій", 
+  "key": "0:8707047|0:11847299", 
+  "kind": "mep", 
+  "min": [
+   58.765398055539073, 
+   -33.500124393292758, 
+   2.2965879265091864
+  ], 
+  "a": {
+   "id": 8707047, 
+   "system": "Generic Models", 
+   "source": "Модель", 
+   "type": "Rectangular Face Opening", 
+   "network": 8707047, 
+   "workset": "ME", 
+   "size": "", 
+   "link_id": null, 
+   "category": "Generic Models"
+  }, 
+  "b": {
+   "id": 11847299, 
+   "system": "Smoke", 
+   "source": "Модель", 
+   "type": "Fire insulation", 
+   "network": 8706420, 
+   "workset": "ME", 
+   "size": "", 
+   "link_id": null, 
+   "category": "Duct Insulations"
+  }, 
+  "note": "", 
+  "reason": "not_a_clash", 
+  "user": "coordinator89T4H"
+ }, 
+ {
+  "max": [
+   60.405818003045638, 
+   -32.843956414290112, 
+   3.1167979002624664
+  ], 
+  "time": "2026-11-23 19:16:31", 
+  "name": "CLASH-042", 
+  "label": "42. [мережі] Generic Models x Smoke  —  2 колізій", 
+  "key": "0:8707047|0:11846254", 
+  "kind": "mep", 
+  "min": [
+   58.929440050289728, 
+   -33.500124393292758, 
+   2.4606299212598417
+  ], 
+  "a": {
+   "id": 8707047, 
+   "system": "Generic Models", 
+   "source": "Модель", 
+   "type": "Rectangular Face Opening", 
+   "network": 8707047, 
+   "workset": "ME", 
+   "size": "", 
+   "link_id": null, 
+   "category": "Generic Models"
+  }, 
+  "b": {
+   "id": 11846254, 
+   "system": "Smoke", 
+   "source": "Модель", 
+   "type": "Radius Elbows 15cm /  short Taps", 
+   "network": 8706420, 
+   "workset": "ME", 
+   "size": "45x20", 
+   "link_id": null, 
+   "category": "Ducts"
+  }, 
+  "note": "", 
+  "reason": "not_a_clash", 
+  "user": "coordinator89T4H"
+ }, 
+ {
+  "max": [
+   -21.808812533545350, 
+   -98.478798917073107, 
+   1.6404199475063210
+  ], 
+  "time": "2026-11-23 19:29:42", 
+  "name": "CLASH-043", 
+  "label": "43. [мережі] Generic Models x Smoke  —  2 колізій", 
+  "key": "0:8698794|0:8707789", 
+  "kind": "mep", 
+  "min": [
+   -22.949652424558792, 
+   -99.134966896075753, 
+   0.93659771731208352
+  ], 
+  "a": {
+   "id": 8698794, 
+   "system": "Smoke", 
+   "source": "Модель", 
+   "type": "Fire insulation", 
+   "network": 8698777, 
+   "workset": "ME", 
+   "size": "", 
+   "link_id": null, 
+   "category": "Duct Insulations"
+  }, 
+  "b": {
+   "id": 8707789, 
+   "system": "Generic Models", 
+   "source": "Модель", 
+   "type": "Rectangular Face Opening", 
+   "network": 8707789, 
+   "workset": "ME", 
+   "size": "", 
+   "link_id": null, 
+   "category": "Generic Models"
+  }, 
+  "note": "", 
+  "reason": "not_a_clash", 
+  "user": "coordinator89T4H"
+ }, 
+ {
+  "max": [
+   -21.965400456054855, 
+   -98.478798917073107, 
+   1.4763779527556646
+  ], 
+  "time": "2026-11-23 19:29:42", 
+  "name": "CLASH-043", 
+  "label": "43. [мережі] Generic Models x Smoke  —  2 колізій", 
+  "key": "0:8706258|0:8707789", 
+  "kind": "mep", 
+  "min": [
+   -22.785610429808134, 
+   -99.134966896075753, 
+   0.98425196850369612
+  ], 
+  "a": {
+   "id": 8706258, 
+   "system": "Smoke", 
+   "source": "Модель", 
+   "type": "Radius Elbows 15cm /  short Taps", 
+   "network": 8698777, 
+   "workset": "ME", 
+   "size": "25x15", 
+   "link_id": null, 
+   "category": "Ducts"
+  }, 
+  "b": {
+   "id": 8707789, 
+   "system": "Generic Models", 
+   "source": "Модель", 
+   "type": "Rectangular Face Opening", 
+   "network": 8707789, 
+   "workset": "ME", 
+   "size": "", 
+   "link_id": null, 
+   "category": "Generic Models"
+  }, 
+  "note": "", 
+  "reason": "not_a_clash", 
+  "user": "coordinator89T4H"
+ }, 
+ {
+  "max": [
+   127.21160398878541, 
+   -22.128225193214771, 
+   -2.2690044896507455
+  ], 
+  "time": "2026-11-23 19:30:01", 
+  "name": "CLASH-044", 
+  "label": "44. [мережі] Plumbing Fixtures x צ.מ.ג.  —  2 колізій", 
+  "key": "0:8406140|0:8406280", 
+  "kind": "mep", 
+  "min": [
+   126.16767175626629, 
+   -22.570144224801073, 
+   -3.3162708918055692
+  ], 
+  "a": {
+   "id": 8406140, 
+   "system": "Plumbing Fixtures", 
+   "source": "Модель", 
+   "type": "Shuha(2019)", 
+   "network": 8406140, 
+   "workset": "PL", 
+   "size": "", 
+   "link_id": null, 
+   "category": "Plumbing Fixtures"
+  }, 
+  "b": {
+   "id": 8406280, 
+   "system": "צ.מ.ג.", 
+   "source": "Модель", 
+   "type": "HDPE", 
+   "network": 8406280, 
+   "workset": "PL", 
+   "size": "315ø", 
+   "link_id": null, 
+   "category": "Pipes"
+  }, 
+  "note": "", 
+  "reason": "not_a_clash", 
+  "user": "coordinator89T4H"
+ }, 
+ {
+  "max": [
+   127.21160398878528, 
+   -25.633234266318965, 
+   -2.3440610825612960
+  ], 
+  "time": "2026-11-23 19:30:01", 
+  "name": "CLASH-044", 
+  "label": "44. [мережі] Plumbing Fixtures x צ.מ.ג.  —  2 колізій", 
+  "key": "0:8406140|0:8406282", 
+  "kind": "mep", 
+  "min": [
+   126.16767175626616, 
+   -26.075153193756719, 
+   -3.3913274847161197
+  ], 
+  "a": {
+   "id": 8406140, 
+   "system": "Plumbing Fixtures", 
+   "source": "Модель", 
+   "type": "Shuha(2019)", 
+   "network": 8406140, 
+   "workset": "PL", 
+   "size": "", 
+   "link_id": null, 
+   "category": "Plumbing Fixtures"
+  }, 
+  "b": {
+   "id": 8406282, 
+   "system": "צ.מ.ג.", 
+   "source": "Модель", 
+   "type": "HDPE", 
+   "network": 8406282, 
+   "workset": "PL", 
+   "size": "315ø", 
+   "link_id": null, 
+   "category": "Pipes"
+  }, 
+  "note": "", 
+  "reason": "not_a_clash", 
+  "user": "coordinator89T4H"
+ }, 
+ {
+  "max": [
+   127.26870362774568, 
+   -72.298729068158679, 
+   -2.7480705223731010
+  ], 
+  "time": "2026-11-23 19:30:09", 
+  "name": "CLASH-045", 
+  "label": "45. [мережі] Plumbing Fixtures x צ.מ.ג.  —  2 колізій", 
+  "key": "0:8406141|0:8406284", 
+  "kind": "mep", 
+  "min": [
+   126.22477139522655, 
+   -72.712525386513306, 
+   -3.7953352667238298
+  ], 
+  "a": {
+   "id": 8406141, 
+   "system": "Plumbing Fixtures", 
+   "source": "Модель", 
+   "type": "Shuha(2019)", 
+   "network": 8406141, 
+   "workset": "PL", 
+   "size": "", 
+   "link_id": null, 
+   "category": "Plumbing Fixtures"
+  }, 
+  "b": {
+   "id": 8406284, 
+   "system": "צ.מ.ג.", 
+   "source": "Модель", 
+   "type": "HDPE", 
+   "network": 8406284, 
+   "workset": "PL", 
+   "size": "315ø", 
+   "link_id": null, 
+   "category": "Pipes"
+  }, 
+  "note": "", 
+  "reason": "not_a_clash", 
+  "user": "coordinator89T4H"
+ }, 
+ {
+  "max": [
+   127.21160398878530, 
+   -68.765323564370547, 
+   -2.7743610540628687
+  ], 
+  "time": "2026-11-23 19:30:09", 
+  "name": "CLASH-045", 
+  "label": "45. [мережі] Plumbing Fixtures x צ.מ.ג.  —  2 колізій", 
+  "key": "0:8406141|0:8406282", 
+  "kind": "mep", 
+  "min": [
+   126.16767175626617, 
+   -69.174661581691780, 
+   -3.8216274562176924
+  ], 
+  "a": {
+   "id": 8406141, 
+   "system": "Plumbing Fixtures", 
+   "source": "Модель", 
+   "type": "Shuha(2019)", 
+   "network": 8406141, 
+   "workset": "PL", 
+   "size": "", 
+   "link_id": null, 
+   "category": "Plumbing Fixtures"
+  }, 
+  "b": {
+   "id": 8406282, 
+   "system": "צ.מ.ג.", 
+   "source": "Модель", 
+   "type": "HDPE", 
+   "network": 8406282, 
+   "workset": "PL", 
+   "size": "315ø", 
+   "link_id": null, 
+   "category": "Pipes"
+  }, 
+  "note": "", 
+  "reason": "not_a_clash", 
+  "user": "coordinator89T4H"
+ }, 
+ {
+  "max": [
+   125.19506880303332, 
+   -133.12654046611630, 
+   -4.4241525757331210
+  ], 
+  "time": "2026-11-23 19:30:18", 
+  "name": "CLASH-046", 
+  "label": "46. [мережі] Plumbing Fixtures x צ.מ.ג.  —  2 колізій", 
+  "key": "0:8406143|0:8406293", 
+  "kind": "mep", 
+  "min": [
+   124.77300490095176, 
+   -134.17047349988997, 
+   -5.4714173200838552
+  ], 
+  "a": {
+   "id": 8406143, 
+   "system": "Plumbing Fixtures", 
+   "source": "Модель", 
+   "type": "Shuha(2019)", 
+   "network": 8406143, 
+   "workset": "PL", 
+   "size": "", 
+   "link_id": null, 
+   "category": "Plumbing Fixtures"
+  }, 
+  "b": {
+   "id": 8406293, 
+   "system": "צ.מ.ג.", 
+   "source": "Модель", 
+   "type": "HDPE", 
+   "network": 8406293, 
+   "workset": "PL", 
+   "size": "315ø", 
+   "link_id": null, 
+   "category": "Pipes"
+  }, 
+  "note": "", 
+  "reason": "not_a_clash", 
+  "user": "coordinator89T4H"
+ }, 
+ {
+  "max": [
+   128.52048683367815, 
+   -134.33683718889785, 
+   -4.2137057518653780
+  ], 
+  "time": "2026-11-23 19:30:18", 
+  "name": "CLASH-046", 
+  "label": "46. [мережі] Plumbing Fixtures x צ.מ.ג.  —  2 колізій", 
+  "key": "0:8406143|0:8406295", 
+  "kind": "mep", 
+  "min": [
+   127.59635706342846, 
+   -135.29790148050108, 
+   -5.2609884230345454
+  ], 
+  "a": {
+   "id": 8406143, 
+   "system": "Plumbing Fixtures", 
+   "source": "Модель", 
+   "type": "Shuha(2019)", 
+   "network": 8406143, 
+   "workset": "PL", 
+   "size": "", 
+   "link_id": null, 
+   "category": "Plumbing Fixtures"
+  }, 
+  "b": {
+   "id": 8406295, 
+   "system": "צ.מ.ג.", 
+   "source": "Модель", 
+   "type": "HDPE", 
+   "network": 8406295, 
+   "workset": "PL", 
+   "size": "315ø", 
+   "link_id": null, 
+   "category": "Pipes"
+  }, 
+  "note": "", 
+  "reason": "not_a_clash", 
+  "user": "coordinator89T4H"
+ }, 
+ {
+  "max": [
+   25.877626336647687, 
+   -133.12677291270944, 
+   -1.4974289045351497
+  ], 
+  "time": "2026-11-23 19:30:28", 
+  "name": "CLASH-047", 
+  "label": "47. [мережі] Plumbing Fixtures x צ.מ.ג.  —  2 колізій", 
+  "key": "0:8406150|0:8406299", 
+  "kind": "mep", 
+  "min": [
+   25.508889913349556, 
+   -134.17070584161235, 
+   -2.5446936488752168
+  ], 
+  "a": {
+   "id": 8406150, 
+   "system": "Plumbing Fixtures", 
+   "source": "Модель", 
+   "type": "Shuha(2019)", 
+   "network": 8406150, 
+   "workset": "PL", 
+   "size": "", 
+   "link_id": null, 
+   "category": "Plumbing Fixtures"
+  }, 
+  "b": {
+   "id": 8406299, 
+   "system": "צ.מ.ג.", 
+   "source": "Модель", 
+   "type": "HDPE", 
+   "network": 8406299, 
+   "workset": "PL", 
+   "size": "315ø", 
+   "link_id": null, 
+   "category": "Pipes"
+  }, 
+  "note": "", 
+  "reason": "not_a_clash", 
+  "user": "coordinator89T4H"
+ }, 
+ {
+  "max": [
+   21.342614640729625, 
+   -133.12678337839543, 
+   0.6093257144535057
+  ], 
+  "time": "2026-11-23 19:30:28", 
+  "name": "CLASH-047", 
+  "label": "47. [мережі] Plumbing Fixtures x צ.מ.ג.  —  2 колізій", 
+  "key": "0:8406150|0:8459722", 
+  "kind": "mep", 
+  "min": [
+   21.109940823288657, 
+   -134.17071598577343, 
+   -0.43677691016227194
+  ], 
+  "a": {
+   "id": 8406150, 
+   "system": "Plumbing Fixtures", 
+   "source": "Модель", 
+   "type": "Shuha(2019)", 
+   "network": 8406150, 
+   "workset": "PL", 
+   "size": "", 
+   "link_id": null, 
+   "category": "Plumbing Fixtures"
+  }, 
+  "b": {
+   "id": 8459722, 
+   "system": "צ.מ.ג.", 
+   "source": "Модель", 
+   "type": "HDPE", 
+   "network": 8459722, 
+   "workset": "PL", 
+   "size": "315ø", 
+   "link_id": null, 
+   "category": "Pipes"
+  }, 
+  "note": "", 
+  "reason": "not_a_clash", 
+  "user": "coordinator89T4H"
+ }, 
+ {
+  "max": [
+   24.881897208216792, 
+   50.674434913851336, 
+   -0.43902203064305967
+  ], 
+  "time": "2026-11-23 19:30:38", 
+  "name": "CLASH-048", 
+  "label": "48. [мережі] Plumbing Fixtures x צ.מ.ג.  —  2 колізій", 
+  "key": "0:8406130|0:8406218", 
+  "kind": "mep", 
+  "min": [
+   24.594932155746143, 
+   49.630502681332182, 
+   -1.4856675676778228
+  ], 
+  "a": {
+   "id": 8406130, 
+   "system": "Plumbing Fixtures", 
+   "source": "Модель", 
+   "type": "Shuha(2019)", 
+   "network": 8406130, 
+   "workset": "PL", 
+   "size": "", 
+   "link_id": null, 
+   "category": "Plumbing Fixtures"
+  }, 
+  "b": {
+   "id": 8406218, 
+   "system": "צ.מ.ג.", 
+   "source": "Модель", 
+   "type": "HDPE", 
+   "network": 8406218, 
+   "workset": "PL", 
+   "size": "315ø", 
+   "link_id": null, 
+   "category": "Pipes"
+  }, 
+  "note": "", 
+  "reason": "not_a_clash", 
+  "user": "coordinator89T4H"
+ }, 
+ {
+  "max": [
+   21.207470879690341, 
+   50.674434913851506, 
+   -0.36747495711718936
+  ], 
+  "time": "2026-11-23 19:30:38", 
+  "name": "CLASH-048", 
+  "label": "48. [мережі] Plumbing Fixtures x צ.מ.ג.  —  2 колізій", 
+  "key": "0:8406130|0:8406192", 
+  "kind": "mep", 
+  "min": [
+   20.934421668611044, 
+   49.630502681332366, 
+   -1.4139813357380027
+  ], 
+  "a": {
+   "id": 8406130, 
+   "system": "Plumbing Fixtures", 
+   "source": "Модель", 
+   "type": "Shuha(2019)", 
+   "network": 8406130, 
+   "workset": "PL", 
+   "size": "", 
+   "link_id": null, 
+   "category": "Plumbing Fixtures"
+  }, 
+  "b": {
+   "id": 8406192, 
+   "system": "צ.מ.ג.", 
+   "source": "Модель", 
+   "type": "HDPE", 
+   "network": 8406192, 
+   "workset": "PL", 
+   "size": "315ø", 
+   "link_id": null, 
+   "category": "Pipes"
+  }, 
+  "note": "", 
+  "reason": "not_a_clash", 
+  "user": "coordinator89T4H"
+ }, 
+ {
+  "max": [
+   127.26870362774568, 
+   -124.21951427491530, 
+   -3.2665259278066268
+  ], 
+  "time": "2026-11-23 19:30:57", 
+  "name": "CLASH-049", 
+  "label": "49. [мережі] Plumbing Fixtures x צ.מ.ג.  —  2 колізій", 
+  "key": "0:8406142|0:8406284", 
+  "kind": "mep", 
+  "min": [
+   126.22477139522655, 
+   -124.64157898576434, 
+   -4.3137906721573627
+  ], 
+  "a": {
+   "id": 8406142, 
+   "system": "Plumbing Fixtures", 
+   "source": "Модель", 
+   "type": "Shuha(2019)", 
+   "network": 8406142, 
+   "workset": "PL", 
+   "size": "", 
+   "link_id": null, 
+   "category": "Plumbing Fixtures"
+  }, 
+  "b": {
+   "id": 8406284, 
+   "system": "צ.מ.ג.", 
+   "source": "Модель", 
+   "type": "HDPE", 
+   "network": 8406284, 
+   "workset": "PL", 
+   "size": "315ø", 
+   "link_id": null, 
+   "category": "Pipes"
+  }, 
+  "note": "", 
+  "reason": "not_a_clash", 
+  "user": "coordinator89T4H"
+ }, 
+ {
+  "max": [
+   124.93184641668034, 
+   -125.67129019782830, 
+   -3.2710433232718898
+  ], 
+  "time": "2026-11-23 19:30:57", 
+  "name": "CLASH-049", 
+  "label": "49. [мережі] Plumbing Fixtures x צ.מ.ג.  —  2 колізій", 
+  "key": "0:8406142|0:8406286", 
+  "kind": "mep", 
+  "min": [
+   124.77300582009755, 
+   -126.71522243034742, 
+   -4.3164076157476643
+  ], 
+  "a": {
+   "id": 8406142, 
+   "system": "Plumbing Fixtures", 
+   "source": "Модель", 
+   "type": "Shuha(2019)", 
+   "network": 8406142, 
+   "workset": "PL", 
+   "size": "", 
+   "link_id": null, 
+   "category": "Plumbing Fixtures"
+  }, 
+  "b": {
+   "id": 8406286, 
+   "system": "צ.מ.ג.", 
+   "source": "Модель", 
+   "type": "HDPE", 
+   "network": 8406286, 
+   "workset": "PL", 
+   "size": "315ø", 
+   "link_id": null, 
+   "category": "Pipes"
+  }, 
+  "note": "", 
+  "reason": "not_a_clash", 
+  "user": "coordinator89T4H"
+ }, 
+ {
+  "max": [
+   111.69897955621923, 
+   50.674434913851044, 
+   -1.4337729820644856
+  ], 
+  "time": "2026-11-23 19:31:08", 
+  "name": "CLASH-050", 
+  "label": "50. [мережі] Plumbing Fixtures x צ.מ.ג.  —  2 колізій", 
+  "key": "0:8406139|0:8406262", 
+  "kind": "mep", 
+  "min": [
+   111.44975880939830, 
+   49.630502681331890, 
+   -2.4800321295326033
+  ], 
+  "a": {
+   "id": 8406139, 
+   "system": "Plumbing Fixtures", 
+   "source": "Модель", 
+   "type": "Shuha(2019)", 
+   "network": 8406139, 
+   "workset": "PL", 
+   "size": "", 
+   "link_id": null, 
+   "category": "Plumbing Fixtures"
+  }, 
+  "b": {
+   "id": 8406262, 
+   "system": "צ.מ.ג.", 
+   "source": "Модель", 
+   "type": "HDPE", 
+   "network": 8406262, 
+   "workset": "PL", 
+   "size": "315ø", 
+   "link_id": null, 
+   "category": "Pipes"
+  }, 
+  "note": "", 
+  "reason": "not_a_clash", 
+  "user": "coordinator89T4H"
+ }, 
+ {
+  "max": [
+   107.99717521702587, 
+   50.674434913851194, 
+   -1.3986214286644034
+  ], 
+  "time": "2026-11-23 19:31:08", 
+  "name": "CLASH-050", 
+  "label": "50. [мережі] Plumbing Fixtures x צ.מ.ג.  —  2 колізій", 
+  "key": "0:8406139|0:8406260", 
+  "kind": "mep", 
+  "min": [
+   107.75150401661347, 
+   49.630502681332054, 
+   -2.4448450806684350
+  ], 
+  "a": {
+   "id": 8406139, 
+   "system": "Plumbing Fixtures", 
+   "source": "Модель", 
+   "type": "Shuha(2019)", 
+   "network": 8406139, 
+   "workset": "PL", 
+   "size": "", 
+   "link_id": null, 
+   "category": "Plumbing Fixtures"
+  }, 
+  "b": {
+   "id": 8406260, 
+   "system": "צ.מ.ג.", 
+   "source": "Модель", 
+   "type": "HDPE", 
+   "network": 8406260, 
+   "workset": "PL", 
+   "size": "315ø", 
+   "link_id": null, 
+   "category": "Pipes"
+  }, 
+  "note": "", 
+  "reason": "not_a_clash", 
+  "user": "coordinator89T4H"
+ }, 
+ {
+  "max": [
+   125.05255868639088, 
+   50.674434913851044, 
+   -1.5669044484809747
+  ], 
+  "time": "2026-11-23 19:31:18", 
+  "name": "CLASH-051", 
+  "label": "51. [мережі] Plumbing Fixtures x צ.מ.ג.  —  2 колізій", 
+  "key": "0:8406138|0:8406262", 
+  "kind": "mep", 
+  "min": [
+   124.77300434602100, 
+   49.630502681331905, 
+   -2.6134735260547122
+  ], 
+  "a": {
+   "id": 8406138, 
+   "system": "Plumbing Fixtures", 
+   "source": "Модель", 
+   "type": "Shuha(2019)", 
+   "network": 8406138, 
+   "workset": "PL", 
+   "size": "", 
+   "link_id": null, 
+   "category": "Plumbing Fixtures"
+  }, 
+  "b": {
+   "id": 8406262, 
+   "system": "צ.מ.ג.", 
+   "source": "Модель", 
+   "type": "HDPE", 
+   "network": 8406262, 
+   "workset": "PL", 
+   "size": "315ø", 
+   "link_id": null, 
+   "category": "Pipes"
+  }, 
+  "note": "", 
+  "reason": "not_a_clash", 
+  "user": "coordinator89T4H"
+ }, 
+ {
+  "max": [
+   127.21160398878541, 
+   48.281345390238798, 
+   -1.5650065778650109
+  ], 
+  "time": "2026-11-23 19:31:18", 
+  "name": "CLASH-051", 
+  "label": "51. [мережі] Plumbing Fixtures x צ.מ.ג.  —  2 колізій", 
+  "key": "0:8406138|0:8406280", 
+  "kind": "mep", 
+  "min": [
+   126.16767175626629, 
+   48.148573569723325, 
+   -2.6101046363807527
+  ], 
+  "a": {
+   "id": 8406138, 
+   "system": "Plumbing Fixtures", 
+   "source": "Модель", 
+   "type": "Shuha(2019)", 
+   "network": 8406138, 
+   "workset": "PL", 
+   "size": "", 
+   "link_id": null, 
+   "category": "Plumbing Fixtures"
+  }, 
+  "b": {
+   "id": 8406280, 
+   "system": "צ.מ.ג.", 
+   "source": "Модель", 
+   "type": "HDPE", 
+   "network": 8406280, 
+   "workset": "PL", 
+   "size": "315ø", 
+   "link_id": null, 
+   "category": "Pipes"
+  }, 
+  "note": "", 
+  "reason": "not_a_clash", 
+  "user": "coordinator89T4H"
+ }, 
+ {
+  "max": [
+   111.31427185864715, 
+   42.325680439730313, 
+   1.8451425997916846
+  ], 
+  "time": "2026-11-23 19:32:34", 
+  "name": "CLASH-052", 
+  "label": "52. [мережі] Exhaust Air x Generic Models  —  2 колізій", 
+  "key": "0:8688519|0:8707005", 
+  "kind": "mep", 
+  "min": [
+   110.33001989014321, 
+   41.505470465977034, 
+   1.5582777564045436
+  ], 
+  "a": {
+   "id": 8688519, 
+   "system": "Exhaust Air", 
+   "source": "Модель", 
+   "type": "Radius Elbows / Taps", 
+   "network": 8688519, 
+   "workset": "ME", 
+   "size": "25x15", 
+   "link_id": null, 
+   "category": "Ducts"
+  }, 
+  "b": {
+   "id": 8707005, 
+   "system": "Generic Models", 
+   "source": "Модель", 
+   "type": "Rectangular Face Opening", 
+   "network": 8707005, 
+   "workset": "ME", 
+   "size": "", 
+   "link_id": null, 
+   "category": "Generic Models"
+  }, 
+  "note": "", 
+  "reason": "not_a_clash", 
+  "user": "coordinator89T4H"
+ }, 
+ {
+  "max": [
+   111.31427185864710, 
+   41.520681366905606, 
+   2.0504037406565123
+  ], 
+  "time": "2026-11-23 19:32:34", 
+  "name": "CLASH-052", 
+  "label": "52. [мережі] Exhaust Air x Generic Models  —  2 колізій", 
+  "key": "0:8688519|0:8707011", 
+  "kind": "mep", 
+  "min": [
+   110.33001989014316, 
+   41.505470465977041, 
+   1.5582777564045438
+  ], 
+  "a": {
+   "id": 8688519, 
+   "system": "Exhaust Air", 
+   "source": "Модель", 
+   "type": "Radius Elbows / Taps", 
+   "network": 8688519, 
+   "workset": "ME", 
+   "size": "25x15", 
+   "link_id": null, 
+   "category": "Ducts"
+  }, 
+  "b": {
+   "id": 8707011, 
+   "system": "Generic Models", 
+   "source": "Модель", 
+   "type": "Rectangular Face Opening", 
+   "network": 8707011, 
+   "workset": "ME", 
+   "size": "", 
+   "link_id": null, 
+   "category": "Generic Models"
+  }, 
+  "note": "", 
+  "reason": "not_a_clash", 
+  "user": "coordinator89T4H"
+ }, 
+ {
+  "max": [
+   -0.16383638513994836, 
+   -65.234585699232014, 
+   4.1010498687664558
+  ], 
+  "time": "2026-11-23 19:35:49", 
+  "name": "CLASH-053", 
+  "label": "53. [мережі] Smoke x Smoke  —  2 колізій", 
+  "key": "0:8698796|0:11744721", 
+  "kind": "mep", 
+  "min": [
+   -0.65596236939193653, 
+   -66.218837667735954, 
+   3.7729658792648877
+  ], 
+  "a": {
+   "id": 8698796, 
+   "system": "Smoke", 
+   "source": "Модель", 
+   "type": "Fire insulation", 
+   "network": 8688688, 
+   "workset": "ME", 
+   "size": "", 
+   "link_id": null, 
+   "category": "Duct Insulations"
+  }, 
+  "b": {
+   "id": 11744721, 
+   "system": "Smoke", 
+   "source": "Модель", 
+   "type": "Radius Elbows 15cm /  short Taps", 
+   "network": 8698778, 
+   "workset": "ME", 
+   "size": "30x15", 
+   "link_id": null, 
+   "category": "Ducts"
+  }, 
+  "note": "", 
+  "reason": "not_a_clash", 
+  "user": "coordinator89T4H"
+ }, 
+ {
+  "max": [
+   -0.16383638513995602, 
+   -65.234585699232014, 
+   4.1010498687664558
+  ], 
+  "time": "2026-11-23 19:35:49", 
+  "name": "CLASH-053", 
+  "label": "53. [мережі] Smoke x Smoke  —  2 колізій", 
+  "key": "0:8698795|0:11744721", 
+  "kind": "mep", 
+  "min": [
+   -0.65596236939193653, 
+   -66.218837667735954, 
+   3.9370078740155581
+  ], 
+  "a": {
+   "id": 8698795, 
+   "system": "Smoke", 
+   "source": "Модель", 
+   "type": "Radius Elbows 15cm /  short Taps", 
+   "network": 8688688, 
+   "workset": "ME", 
+   "size": "40x25", 
+   "link_id": null, 
+   "category": "Ducts"
+  }, 
+  "b": {
+   "id": 11744721, 
+   "system": "Smoke", 
+   "source": "Модель", 
+   "type": "Radius Elbows 15cm /  short Taps", 
+   "network": 8698778, 
+   "workset": "ME", 
+   "size": "30x15", 
+   "link_id": null, 
+   "category": "Ducts"
+  }, 
+  "note": "", 
+  "reason": "not_a_clash", 
+  "user": "coordinator89T4H"
+ }, 
+ {
+  "max": [
+   3.2798090214387039, 
+   -136.29779963523254, 
+   0.7996321990811136
+  ], 
+  "time": "2026-11-23 19:36:03", 
+  "name": "CLASH-054", 
+  "label": "54. [мережі] Plumbing Fixtures x ביוב  —  2 колізій", 
+  "key": "0:8406151|0:8406303", 
+  "kind": "mep", 
+  "min": [
+   2.9014083212229775, 
+   -137.02701730082254, 
+   0.053112457338674202
+  ], 
+  "a": {
+   "id": 8406151, 
+   "system": "Plumbing Fixtures", 
+   "source": "Модель", 
+   "type": "Shuha(2019)", 
+   "network": 8406151, 
+   "workset": "PL", 
+   "size": "", 
+   "link_id": null, 
+   "category": "Plumbing Fixtures"
+  }, 
+  "b": {
+   "id": 8406303, 
+   "system": "ביוב", 
+   "source": "Модель", 
+   "type": "HDPE", 
+   "network": 8406303, 
+   "workset": "PL", 
+   "size": "200ø", 
+   "link_id": null, 
+   "category": "Pipes"
+  }, 
+  "note": "", 
+  "reason": "not_a_clash", 
+  "user": "coordinator89T4H"
+ }, 
+ {
+  "max": [
+   1.5931874327235367, 
+   -134.68871626100224, 
+   2.7785347799636799
+  ], 
+  "time": "2026-11-23 19:36:03", 
+  "name": "CLASH-054", 
+  "label": "54. [мережі] Plumbing Fixtures x ביוב  —  2 колізій", 
+  "key": "0:8406151|0:8460486", 
+  "kind": "mep", 
+  "min": [
+   0.99216858603117486, 
+   -134.99448945934830, 
+   2.1745924032884298
+  ], 
+  "a": {
+   "id": 8406151, 
+   "system": "Plumbing Fixtures", 
+   "source": "Модель", 
+   "type": "Shuha(2019)", 
+   "network": 8406151, 
+   "workset": "PL", 
+   "size": "", 
+   "link_id": null, 
+   "category": "Plumbing Fixtures"
+  }, 
+  "b": {
+   "id": 8460486, 
+   "system": "ביוב", 
+   "source": "Модель", 
+   "type": "HDPE", 
+   "network": 8460476, 
+   "workset": "PL", 
+   "size": "160ø", 
+   "link_id": null, 
+   "category": "Pipes"
+  }, 
+  "note": "", 
+  "reason": "not_a_clash", 
+  "user": "coordinator89T4H"
+ }, 
+ {
+  "max": [
+   46.392150321057670, 
+   -60.683289677482918, 
+   3.4215284916891777
+  ], 
+  "time": "2026-11-23 19:36:29", 
+  "name": "CLASH-055", 
+  "label": "55. [мережі] Fresh Air x Fresh Air  —  2 колізій", 
+  "key": "0:8698739|0:11757632", 
+  "kind": "mep", 
+  "min": [
+   44.095562394548466, 
+   -62.651793614490813, 
+   3.3947288235129429
+  ], 
+  "a": {
+   "id": 8698739, 
+   "system": "Fresh Air", 
+   "source": "Модель", 
+   "type": "Standard", 
+   "network": 8698707, 
+   "workset": "ME", 
+   "size": "60x60-60x60", 
+   "link_id": null, 
+   "category": "Duct Fittings"
+  }, 
+  "b": {
+   "id": 11757632, 
+   "system": "Fresh Air", 
+   "source": "Модель", 
+   "type": "Radius Elbows 10cm / Taps", 
+   "network": 8698699, 
+   "workset": "ME", 
+   "size": "80x30", 
+   "link_id": null, 
+   "category": "Ducts"
+  }, 
+  "note": "", 
+  "reason": "not_a_clash", 
+  "user": "coordinator89T4H"
+ }, 
+ {
+  "max": [
+   54.964515569005101, 
+   -60.683289677482847, 
+   3.3751719852441662
+  ], 
+  "time": "2026-11-23 19:36:29", 
+  "name": "CLASH-055", 
+  "label": "55. [мережі] Fresh Air x Fresh Air  —  2 колізій", 
+  "key": "0:8698741|0:11757632", 
+  "kind": "mep", 
+  "min": [
+   52.667927642495897, 
+   -62.651793614490742, 
+   3.3500456729081654
+  ], 
+  "a": {
+   "id": 8698741, 
+   "system": "Fresh Air", 
+   "source": "Модель", 
+   "type": "Standard", 
+   "network": 8698708, 
+   "workset": "ME", 
+   "size": "60x60-60x60", 
+   "link_id": null, 
+   "category": "Duct Fittings"
+  }, 
+  "b": {
+   "id": 11757632, 
+   "system": "Fresh Air", 
+   "source": "Модель", 
+   "type": "Radius Elbows 10cm / Taps", 
+   "network": 8698699, 
+   "workset": "ME", 
+   "size": "80x30", 
+   "link_id": null, 
+   "category": "Ducts"
+  }, 
+  "note": "", 
+  "reason": "not_a_clash", 
+  "user": "coordinator89T4H"
+ }, 
+ {
+  "max": [
+   -30.692472735032592, 
+   50.184645342139476, 
+   0.83834059293774599
+  ], 
+  "time": "2026-11-24 09:12:12", 
+  "name": "CLASH-058", 
+  "label": "58. [мережі] Plumbing Fixtures x צ.מ.ג. גג  —  2 колізій", 
+  "key": "0:8406129|0:8406188", 
+  "kind": "mep", 
+  "min": [
+   -31.133757290330148, 
+   49.403668942133493, 
+   0.23387073754127774
+  ], 
+  "a": {
+   "id": 8406129, 
+   "system": "Plumbing Fixtures", 
+   "source": "Модель", 
+   "type": "Shuha(2019)", 
+   "network": 8406129, 
+   "workset": "PL", 
+   "size": "", 
+   "link_id": null, 
+   "category": "Plumbing Fixtures"
+  }, 
+  "b": {
+   "id": 8406188, 
+   "system": "צ.מ.ג. גג", 
+   "source": "Модель", 
+   "type": "HDPE", 
+   "network": 8406182, 
+   "workset": "PL", 
+   "size": "160ø", 
+   "link_id": null, 
+   "category": "Pipes"
+  }, 
+  "note": "", 
+  "reason": "not_a_clash", 
+  "user": "coordinator89T4H"
+ }, 
+ {
+  "max": [
+   -28.956453149962091, 
+   48.428318982825346, 
+   -0.28698272267646308
+  ], 
+  "time": "2026-11-24 09:12:12", 
+  "name": "CLASH-058", 
+  "label": "58. [мережі] Plumbing Fixtures x צ.מ.ג. גג  —  2 колізій", 
+  "key": "0:8406129|0:8406156", 
+  "kind": "mep", 
+  "min": [
+   -29.557471996654467, 
+   48.178754377375071, 
+   -0.89034202647879102
+  ], 
+  "a": {
+   "id": 8406129, 
+   "system": "Plumbing Fixtures", 
+   "source": "Модель", 
+   "type": "Shuha(2019)", 
+   "network": 8406129, 
+   "workset": "PL", 
+   "size": "", 
+   "link_id": null, 
+   "category": "Plumbing Fixtures"
+  }, 
+  "b": {
+   "id": 8406156, 
+   "system": "צ.מ.ג. גג", 
+   "source": "Модель", 
+   "type": "HDPE", 
+   "network": 8377474, 
+   "workset": "PL", 
+   "size": "160ø", 
+   "link_id": null, 
+   "category": "Pipes"
+  }, 
+  "note": "", 
+  "reason": "not_a_clash", 
+  "user": "coordinator89T4H"
+ }, 
+ {
+  "max": [
+   24.303150377636747, 
+   48.995568953567876, 
+   -0.47985341443215263
+  ], 
+  "time": "2026-11-24 10:48:14", 
+  "name": "CLASH-062", 
+  "label": "62. [мережі] Plumbing Fixtures x ניקוז מזגנים  —  2 колізій", 
+  "key": "0:8406130|0:8406256", 
+  "kind": "mep", 
+  "min": [
+   23.776590894911863, 
+   48.521920709796824, 
+   -0.85452960102450715
+  ], 
+  "a": {
+   "id": 8406130, 
+   "system": "Plumbing Fixtures", 
+   "source": "Модель", 
+   "type": "Shuha(2019)", 
+   "network": 8406130, 
+   "workset": "PL", 
+   "size": "", 
+   "link_id": null, 
+   "category": "Plumbing Fixtures"
+  }, 
+  "b": {
+   "id": 8406256, 
+   "system": "ניקוז מזגנים", 
+   "source": "Модель", 
+   "type": "HDPE", 
+   "network": 8406232, 
+   "workset": "PL", 
+   "size": "110ø", 
+   "link_id": null, 
+   "category": "Pipes"
+  }, 
+  "note": "", 
+  "reason": "not_a_clash", 
+  "user": "coordinator89T4H"
+ }, 
+ {
+  "max": [
+   22.600284149885688, 
+   48.583045803215853, 
+   0.10378407895462016
+  ], 
+  "time": "2026-11-24 10:48:14", 
+  "name": "CLASH-062", 
+  "label": "62. [мережі] Plumbing Fixtures x ניקוז מזגנים  —  2 колізій", 
+  "key": "0:8406130|0:8406214", 
+  "kind": "mep", 
+  "min": [
+   22.125419190039644, 
+   48.222582769324731, 
+   -0.26996972610985509
+  ], 
+  "a": {
+   "id": 8406130, 
+   "system": "Plumbing Fixtures", 
+   "source": "Модель", 
+   "type": "Shuha(2019)", 
+   "network": 8406130, 
+   "workset": "PL", 
+   "size": "", 
+   "link_id": null, 
+   "category": "Plumbing Fixtures"
+  }, 
+  "b": {
+   "id": 8406214, 
+   "system": "ניקוז מזגנים", 
+   "source": "Модель", 
+   "type": "HDPE", 
+   "network": 8406125, 
+   "workset": "PL", 
+   "size": "110ø", 
+   "link_id": null, 
+   "category": "Pipes"
+  }, 
+  "note": "", 
+  "reason": "not_a_clash", 
+  "user": "coordinator89T4H"
+ }, 
+ {
+  "max": [
+   -5.6993453984816940, 
+   -90.756367063998397, 
+   6.5616797900260071
+  ], 
+  "time": "2026-11-24 10:49:37", 
+  "name": "CLASH-063", 
+  "label": "63. [мережі] Stairs x כיבוי אש F  —  2 колізій", 
+  "key": "0:8439678|8369585:10531937", 
+  "kind": "mep", 
+  "min": [
+   -5.9598130640716933, 
+   -91.016834729588396, 
+   5.5774278215220701
+  ], 
+  "a": {
+   "id": 8439678, 
+   "system": "כיבוי אש F", 
+   "source": "Модель", 
+   "type": "iron", 
+   "network": 8439677, 
+   "workset": "PL", 
+   "size": "76ø", 
+   "link_id": null, 
+   "category": "Pipes"
+  }, 
+  "b": {
+   "id": 10531937, 
+   "system": "LINK:Stairs", 
+   "source": "A-GCN-MAIN.rvt", 
+   "type": "עם ריצוף", 
+   "network": null, 
+   "workset": "A_090_FLOOR", 
+   "size": "", 
+   "link_id": 8369585, 
+   "category": "Stairs"
+  }, 
+  "note": "", 
+  "reason": "not_a_clash", 
+  "user": "coordinator89T4H"
+ }, 
+ {
+  "max": [
+   -5.6993453984816966, 
+   -90.756367063998425, 
+   -5.9973753280840185
+  ], 
+  "time": "2026-11-24 10:49:37", 
+  "name": "CLASH-063", 
+  "label": "63. [мережі] Stairs x כיבוי אש F  —  2 колізій", 
+  "key": "0:8463007|8369585:10531937", 
+  "kind": "mep", 
+  "min": [
+   -5.9598130640716960, 
+   -91.016834729588425, 
+   -6.1614173228346747
+  ], 
+  "a": {
+   "id": 8463007, 
+   "system": "כיבוי אש F", 
+   "source": "Модель", 
+   "type": "iron", 
+   "network": 8439677, 
+   "workset": "PL", 
+   "size": "76ø", 
+   "link_id": null, 
+   "category": "Pipes"
+  }, 
+  "b": {
+   "id": 10531937, 
+   "system": "LINK:Stairs", 
+   "source": "A-GCN-MAIN.rvt", 
+   "type": "עם ריצוף", 
+   "network": null, 
+   "workset": "A_090_FLOOR", 
+   "size": "", 
+   "link_id": 8369585, 
+   "category": "Stairs"
+  }, 
+  "note": "", 
+  "reason": "not_a_clash", 
+  "user": "coordinator89T4H"
+ }, 
+ {
+  "max": [
+   -5.6993453984816940, 
+   -90.756367063998397, 
+   6.5616797900260071
+  ], 
+  "time": "2026-11-24 10:49:50", 
+  "name": "CLASH-064", 
+  "label": "64. [мережі] Landings x כיבוי אש F  —  2 колізій", 
+  "key": "0:8439678|8369585:13438479", 
+  "kind": "mep", 
+  "min": [
+   -5.9598130640716933, 
+   -91.016834729588396, 
+   5.5774278215220701
+  ], 
+  "a": {
+   "id": 8439678, 
+   "system": "כיבוי אש F", 
+   "source": "Модель", 
+   "type": "iron", 
+   "network": 8439677, 
+   "workset": "PL", 
+   "size": "76ø", 
+   "link_id": null, 
+   "category": "Pipes"
+  }, 
+  "b": {
+   "id": 13438479, 
+   "system": "LINK:Landings", 
+   "source": "A-GCN-MAIN.rvt", 
+   "type": "25cm", 
+   "network": null, 
+   "workset": "A_090_FLOOR", 
+   "size": "", 
+   "link_id": 8369585, 
+   "category": "Landings"
+  }, 
+  "note": "", 
+  "reason": "not_a_clash", 
+  "user": "coordinator89T4H"
+ }, 
+ {
+  "max": [
+   -5.6993453984816966, 
+   -90.756367063998425, 
+   -5.9973753280840185
+  ], 
+  "time": "2026-11-24 10:49:50", 
+  "name": "CLASH-064", 
+  "label": "64. [мережі] Landings x כיבוי אש F  —  2 колізій", 
+  "key": "0:8463007|8369585:10533316", 
+  "kind": "mep", 
+  "min": [
+   -5.9598130640716960, 
+   -91.016834729588425, 
+   -6.1614173228346747
+  ], 
+  "a": {
+   "id": 8463007, 
+   "system": "כיבוי אש F", 
+   "source": "Модель", 
+   "type": "iron", 
+   "network": 8439677, 
+   "workset": "PL", 
+   "size": "76ø", 
+   "link_id": null, 
+   "category": "Pipes"
+  }, 
+  "b": {
+   "id": 10533316, 
+   "system": "LINK:Landings", 
+   "source": "A-GCN-MAIN.rvt", 
+   "type": "25cm", 
+   "network": null, 
+   "workset": "A_090_FLOOR", 
+   "size": "", 
+   "link_id": 8369585, 
+   "category": "Landings"
+  }, 
+  "note": "", 
+  "reason": "not_a_clash", 
+  "user": "coordinator89T4H"
+ }, 
+ {
+  "max": [
+   -13.638787220296354, 
+   -26.932660391928017, 
+   2.6246719160105032
+  ], 
+  "time": "2026-11-24 10:54:27", 
+  "name": "CLASH-066", 
+  "label": "66. [мережі] Cable Trays 10x10 #11315684  x  Cable Trays 20x10 #11324969  (2 мм)", 
+  "key": "0:11315684|0:11324969", 
+  "kind": "mep", 
+  "min": [
+   -13.644717642175085, 
+   -27.260744381429326, 
+   2.2965879265091909
+  ], 
+  "a": {
+   "id": 11315684, 
+   "system": "Cable Trays", 
+   "source": "Модель", 
+   "type": "חשמל חירום", 
+   "network": 11315684, 
+   "workset": "EL", 
+   "size": "10x10", 
+   "link_id": null, 
+   "category": "Cable Trays"
+  }, 
+  "b": {
+   "id": 11324969, 
+   "system": "Cable Trays", 
+   "source": "Модель", 
+   "type": "Electric Trays", 
+   "network": 11324969, 
+   "workset": "EL", 
+   "size": "20x10", 
+   "link_id": null, 
+   "category": "Cable Trays"
+  }, 
+  "note": "", 
+  "reason": "not_a_clash", 
+  "user": "coordinator89T4H"
+ }, 
+ {
+  "max": [
+   37.047139911806049, 
+   -125.10286997644791, 
+   1.5289446270733329
+  ], 
+  "time": "2026-11-24 10:56:41", 
+  "name": "CLASH-068", 
+  "label": "68. [мережі] Plumbing Fixtures x סניקה לניקוז חניון  —  2 колізій", 
+  "key": "0:8406148|0:8460031", 
+  "kind": "mep", 
+  "min": [
+   36.705675356919976, 
+   -125.44433372736312, 
+   1.1851436281499952
+  ], 
+  "a": {
+   "id": 8406148, 
+   "system": "Plumbing Fixtures", 
+   "source": "Модель", 
+   "type": "Shuha(2019)", 
+   "network": 8406148, 
+   "workset": "PL", 
+   "size": "", 
+   "link_id": null, 
+   "category": "Plumbing Fixtures"
+  }, 
+  "b": {
+   "id": 8460031, 
+   "system": "סניקה לניקוז חניון", 
+   "source": "Модель", 
+   "type": "פלדה", 
+   "network": 8457423, 
+   "workset": "PL", 
+   "size": "102ø", 
+   "link_id": null, 
+   "category": "Pipes"
+  }, 
+  "note": "", 
+  "reason": "not_a_clash", 
+  "user": "coordinator89T4H"
+ }, 
+ {
+  "max": [
+   37.104551779380607, 
+   -125.05153719761492, 
+   1.0204781694540801
+  ], 
+  "time": "2026-11-24 10:56:41", 
+  "name": "CLASH-068", 
+  "label": "68. [мережі] Plumbing Fixtures x סניקה לניקוז חניון  —  2 колізій", 
+  "key": "0:8406148|0:8460035", 
+  "kind": "mep", 
+  "min": [
+   36.759403734909803, 
+   -125.38691902927016, 
+   0.67667717053073506
+  ], 
+  "a": {
+   "id": 8406148, 
+   "system": "Plumbing Fixtures", 
+   "source": "Модель", 
+   "type": "Shuha(2019)", 
+   "network": 8406148, 
+   "workset": "PL", 
+   "size": "", 
+   "link_id": null, 
+   "category": "Plumbing Fixtures"
+  }, 
+  "b": {
+   "id": 8460035, 
+   "system": "סניקה לניקוז חניון", 
+   "source": "Модель", 
+   "type": "פלדה", 
+   "network": 8460035, 
+   "workset": "PL", 
+   "size": "102ø", 
+   "link_id": null, 
+   "category": "Pipes"
+  }, 
+  "note": "", 
+  "reason": "not_a_clash", 
+  "user": "coordinator89T4H"
+ }, 
+ {
+  "max": [
+   89.646790773708332, 
+   -55.178207853956629, 
+   3.3148962715658721
+  ], 
+  "time": "2026-11-24 10:57:08", 
+  "name": "CLASH-069", 
+  "label": "69. [мережі] Exhaust Kitchen x Exhaust Kitchen  —  2 колізій", 
+  "key": "0:8706718|0:11789196", 
+  "kind": "mep", 
+  "min": [
+   89.635613387863614, 
+   -58.459047748969759, 
+   2.6586330721650215
+  ], 
+  "a": {
+   "id": 8706718, 
+   "system": "Exhaust Kitchen", 
+   "source": "Модель", 
+   "type": "Radius Elbows 10cm / Taps", 
+   "network": 8706717, 
+   "workset": "ME", 
+   "size": "100x40", 
+   "link_id": null, 
+   "category": "Ducts"
+  }, 
+  "b": {
+   "id": 11789196, 
+   "system": "Exhaust Kitchen", 
+   "source": "Модель", 
+   "type": "Fire insulation", 
+   "network": 8698109, 
+   "workset": "ME", 
+   "size": "", 
+   "link_id": null, 
+   "category": "Duct Insulations"
+  }, 
+  "note": "", 
+  "reason": "not_a_clash", 
+  "user": "coordinator89T4H"
+ }, 
+ {
+  "max": [
+   89.652032741803751, 
+   -55.172047141169990, 
+   3.3204171905674715
+  ], 
+  "time": "2026-11-24 10:57:08", 
+  "name": "CLASH-069", 
+  "label": "69. [мережі] Exhaust Kitchen x Exhaust Kitchen  —  2 колізій", 
+  "key": "0:8706735|0:11789147", 
+  "kind": "mep", 
+  "min": [
+   89.630379555068615, 
+   -58.464281327900444, 
+   2.6533992393702266
+  ], 
+  "a": {
+   "id": 8706735, 
+   "system": "Exhaust Kitchen", 
+   "source": "Модель", 
+   "type": "Fire insulation", 
+   "network": 8706717, 
+   "workset": "ME", 
+   "size": "", 
+   "link_id": null, 
+   "category": "Duct Insulations"
+  }, 
+  "b": {
+   "id": 11789147, 
+   "system": "Exhaust Kitchen", 
+   "source": "Модель", 
+   "type": "100 mm", 
+   "network": 8698109, 
+   "workset": "ME", 
+   "size": "100x40-100x40", 
+   "link_id": null, 
+   "category": "Duct Fittings"
+  }, 
+  "note": "", 
+  "reason": "not_a_clash", 
+  "user": "coordinator89T4H"
+ }, 
+ {
+  "max": [
+   97.477420070591563, 
+   -66.108729420522963, 
+   1.6576443569553962
+  ], 
+  "time": "2026-11-24 11:01:34", 
+  "name": "CLASH-073", 
+  "label": "73. [мережі] Cable Trays x Lighting Fixtures  —  2 колізій", 
+  "key": "0:11318473|0:11319813", 
+  "kind": "mep", 
+  "min": [
+   97.138868415500383, 
+   -66.447281075614143, 
+   1.4763779527559056
+  ], 
+  "a": {
+   "id": 11318473, 
+   "system": "Cable Trays", 
+   "source": "Модель", 
+   "type": "תְאוּרָה", 
+   "network": 11318473, 
+   "workset": "EL", 
+   "size": "20x10", 
+   "link_id": null, 
+   "category": "Cable Trays"
+  }, 
+  "b": {
+   "id": 11319813, 
+   "system": "Lighting Fixtures", 
+   "source": "Модель", 
+   "type": "D10 תאורת חירום", 
+   "network": 11319813, 
+   "workset": "EL", 
+   "size": "", 
+   "link_id": null, 
+   "category": "Lighting Fixtures"
+  }, 
+  "note": "", 
+  "reason": "not_a_clash", 
+  "user": "coordinator89T4H"
+ }, 
+ {
+  "max": [
+   97.477420070591549, 
+   -54.953873777478350, 
+   1.6576443569554380
+  ], 
+  "time": "2026-11-24 11:01:34", 
+  "name": "CLASH-073", 
+  "label": "73. [мережі] Cable Trays x Lighting Fixtures  —  2 колізій", 
+  "key": "0:11318473|0:11319815", 
+  "kind": "mep", 
+  "min": [
+   97.138868415500369, 
+   -55.292425432569530, 
+   1.4763779527559056
+  ], 
+  "a": {
+   "id": 11318473, 
+   "system": "Cable Trays", 
+   "source": "Модель", 
+   "type": "תְאוּרָה", 
+   "network": 11318473, 
+   "workset": "EL", 
+   "size": "20x10", 
+   "link_id": null, 
+   "category": "Cable Trays"
+  }, 
+  "b": {
+   "id": 11319815, 
+   "system": "Lighting Fixtures", 
+   "source": "Модель", 
+   "type": "D10 תאורת חירום", 
+   "network": 11319815, 
+   "workset": "EL", 
+   "size": "", 
+   "link_id": null, 
+   "category": "Lighting Fixtures"
+  }, 
+  "note": "", 
+  "reason": "not_a_clash", 
+  "user": "coordinator89T4H"
+ }, 
+ {
+  "max": [
+   47.664062962561296, 
+   -35.830544072068335, 
+   3.5137640165220363
+  ], 
+  "time": "2026-11-24 11:03:03", 
+  "name": "CLASH-078", 
+  "label": "78. [мережі] AC Gas x Mechanical Equipment  —  2 колізій", 
+  "key": "0:8688725|0:8706852", 
+  "kind": "mep", 
+  "min": [
+   47.607096867364099, 
+   -36.007678404325006, 
+   3.3366296842653691
+  ], 
+  "a": {
+   "id": 8688725, 
+   "system": "Mechanical Equipment", 
+   "source": "Модель", 
+   "type": "LDX-16", 
+   "network": 8688725, 
+   "workset": "ME", 
+   "size": "", 
+   "link_id": null, 
+   "category": "Mechanical Equipment"
+  }, 
+  "b": {
+   "id": 8706852, 
+   "system": "AC Gas", 
+   "source": "Модель", 
+   "type": "Standard", 
+   "network": 8706844, 
+   "workset": "ME", 
+   "size": "76ø", 
+   "link_id": null, 
+   "category": "Pipes"
+  }, 
+  "note": "", 
+  "reason": "not_a_clash", 
+  "user": "coordinator89T4H"
+ }, 
+ {
+  "max": [
+   47.664062962561282, 
+   -42.688389511157368, 
+   3.5137640165220363
+  ], 
+  "time": "2026-11-24 11:03:03", 
+  "name": "CLASH-078", 
+  "label": "78. [мережі] AC Gas x Mechanical Equipment  —  2 колізій", 
+  "key": "0:8688726|0:8706844", 
+  "kind": "mep", 
+  "min": [
+   47.619891194480481, 
+   -42.865523843414039, 
+   3.3366296842653691
+  ], 
+  "a": {
+   "id": 8688726, 
+   "system": "Mechanical Equipment", 
+   "source": "Модель", 
+   "type": "LDX-16", 
+   "network": 8688726, 
+   "workset": "ME", 
+   "size": "", 
+   "link_id": null, 
+   "category": "Mechanical Equipment"
+  }, 
+  "b": {
+   "id": 8706844, 
+   "system": "AC Gas", 
+   "source": "Модель", 
+   "type": "Standard", 
+   "network": 8706844, 
+   "workset": "ME", 
+   "size": "76ø", 
+   "link_id": null, 
+   "category": "Pipes"
+  }, 
+  "note": "", 
+  "reason": "not_a_clash", 
+  "user": "coordinator89T4H"
+ }, 
+ {
+  "max": [
+   0.99990753477526151, 
+   -27.274833202387335, 
+   6.3875936301986531
+  ], 
+  "time": "2026-11-24 11:03:12", 
+  "name": "CLASH-079", 
+  "label": "79. [мережі] Plumbing Fixtures x ביוב  —  2 колізій", 
+  "key": "0:8396299|0:8396300", 
+  "kind": "mep", 
+  "min": [
+   0.82043280252524498, 
+   -27.399891514008850, 
+   6.1783370715814581
+  ], 
+  "a": {
+   "id": 8396299, 
+   "system": "Plumbing Fixtures", 
+   "source": "Модель", 
+   "type": "MahsonRizpa", 
+   "network": 8396299, 
+   "workset": "PL", 
+   "size": "", 
+   "link_id": null, 
+   "category": "Plumbing Fixtures"
+  }, 
+  "b": {
+   "id": 8396300, 
+   "system": "ביוב", 
+   "source": "Модель", 
+   "type": "HDPE", 
+   "network": 8396300, 
+   "workset": "PL", 
+   "size": "50ø", 
+   "link_id": null, 
+   "category": "Pipes"
+  }, 
+  "note": "", 
+  "reason": "not_a_clash", 
+  "user": "coordinator89T4H"
+ }, 
+ {
+  "max": [
+   0.93664169876127534, 
+   -27.573536471905349, 
+   6.3193387841714674
+  ], 
+  "time": "2026-11-24 11:03:12", 
+  "name": "CLASH-079", 
+  "label": "79. [мережі] Plumbing Fixtures x ביוב  —  2 колізій", 
+  "key": "0:8396299|0:8456701", 
+  "kind": "mep", 
+  "min": [
+   0.76982264009250922, 
+   -27.613223450772537, 
+   6.1104853547987261
+  ], 
+  "a": {
+   "id": 8396299, 
+   "system": "Plumbing Fixtures", 
+   "source": "Модель", 
+   "type": "MahsonRizpa", 
+   "network": 8396299, 
+   "workset": "PL", 
+   "size": "", 
+   "link_id": null, 
+   "category": "Plumbing Fixtures"
+  }, 
+  "b": {
+   "id": 8456701, 
+   "system": "ביוב", 
+   "source": "Модель", 
+   "type": "HDPE", 
+   "network": 8377410, 
+   "workset": "PL", 
+   "size": "50ø", 
+   "link_id": null, 
+   "category": "Pipes"
+  }, 
+  "note": "", 
+  "reason": "not_a_clash", 
+  "user": "coordinator89T4H"
+ }, 
+ {
+  "max": [
+   -2.8975137313868751, 
+   -42.425347490122434, 
+   6.2913714893822750
+  ], 
+  "time": "2026-11-24 11:03:17", 
+  "name": "CLASH-080", 
+  "label": "80. [мережі] Plumbing Fixtures x ביוב  —  2 колізій", 
+  "key": "0:8396296|0:8396298", 
+  "kind": "mep", 
+  "min": [
+   -3.0519662551204880, 
+   -42.558130353116866, 
+   6.0822968437736886
+  ], 
+  "a": {
+   "id": 8396296, 
+   "system": "ביוב", 
+   "source": "Модель", 
+   "type": "HDPE", 
+   "network": 8396286, 
+   "workset": "PL", 
+   "size": "50ø", 
+   "link_id": null, 
+   "category": "Pipes"
+  }, 
+  "b": {
+   "id": 8396298, 
+   "system": "Plumbing Fixtures", 
+   "source": "Модель", 
+   "type": "MahsonRizpa", 
+   "network": 8396298, 
+   "workset": "PL", 
+   "size": "", 
+   "link_id": null, 
+   "category": "Plumbing Fixtures"
+  }, 
+  "note": "", 
+  "reason": "not_a_clash", 
+  "user": "coordinator89T4H"
+ }, 
+ {
+  "max": [
+   -2.9599849889927263, 
+   -42.723167678662890, 
+   6.4035140700858690
+  ], 
+  "time": "2026-11-24 11:03:17", 
+  "name": "CLASH-080", 
+  "label": "80. [мережі] Plumbing Fixtures x ביוב  —  2 колізій", 
+  "key": "0:8396284|0:8396298", 
+  "kind": "mep", 
+  "min": [
+   -3.1555354783953540, 
+   -42.763493653841635, 
+   6.1945721441507615
+  ], 
+  "a": {
+   "id": 8396284, 
+   "system": "ביוב", 
+   "source": "Модель", 
+   "type": "HDPE", 
+   "network": 8396284, 
+   "workset": "PL", 
+   "size": "50ø", 
+   "link_id": null, 
+   "category": "Pipes"
+  }, 
+  "b": {
+   "id": 8396298, 
+   "system": "Plumbing Fixtures", 
+   "source": "Модель", 
+   "type": "MahsonRizpa", 
+   "network": 8396298, 
+   "workset": "PL", 
+   "size": "", 
+   "link_id": null, 
+   "category": "Plumbing Fixtures"
+  }, 
+  "note": "", 
+  "reason": "not_a_clash", 
+  "user": "coordinator89T4H"
+ }, 
+ {
+  "max": [
+   -22.035465673200857, 
+   -85.158588960919829, 
+   -4.1010498687664221
+  ], 
+  "time": "2026-11-24 11:04:50", 
+  "name": "CLASH-082", 
+  "label": "82. [мережі] Ducts 60x40 #8690685  x  Generic Models Rectangular Face Opening #8707009  (250 мм)", 
+  "key": "0:8690685|0:8707009", 
+  "kind": "mep", 
+  "min": [
+   -22.855675646954165, 
+   -87.127092897927710, 
+   -5.4133858267716715
+  ], 
+  "a": {
+   "id": 8690685, 
+   "system": "Fresh Air", 
+   "source": "Модель", 
+   "type": "Radius Elbows 15cm /  short Taps", 
+   "network": 8690685, 
+   "workset": "ME", 
+   "size": "60x40", 
+   "link_id": null, 
+   "category": "Ducts"
+  }, 
+  "b": {
+   "id": 8707009, 
+   "system": "Generic Models", 
+   "source": "Модель", 
+   "type": "Rectangular Face Opening", 
+   "network": 8707009, 
+   "workset": "ME", 
+   "size": "", 
+   "link_id": null, 
+   "category": "Generic Models"
+  }, 
+  "note": "", 
+  "reason": "not_a_clash", 
+  "user": "coordinator89T4H"
+ }, 
+ {
+  "max": [
+   -21.757373481599927, 
+   -85.158588960919829, 
+   -4.1010498687664132
+  ], 
+  "time": "2026-11-24 11:04:54", 
+  "name": "CLASH-083", 
+  "label": "83. [мережі] Air Terminals 60x40 #8690684  x  Ducts 60x40 #8690685  (78 мм)", 
+  "key": "0:8690684|0:8690685", 
+  "kind": "mep", 
+  "min": [
+   -22.022998481599927, 
+   -87.127092897927710, 
+   -5.4133858267716715
+  ], 
+  "a": {
+   "id": 8690684, 
+   "system": "Fresh Air", 
+   "source": "Модель", 
+   "type": "60x40", 
+   "network": 8690684, 
+   "workset": "ME", 
+   "size": "60x40", 
+   "link_id": null, 
+   "category": "Air Terminals"
+  }, 
+  "b": {
+   "id": 8690685, 
+   "system": "Fresh Air", 
+   "source": "Модель", 
+   "type": "Radius Elbows 15cm /  short Taps", 
+   "network": 8690685, 
+   "workset": "ME", 
+   "size": "60x40", 
+   "link_id": null, 
+   "category": "Ducts"
+  }, 
+  "note": "", 
+  "reason": "not_a_clash", 
+  "user": "coordinator89T4H"
+ }, 
+ {
+  "max": [
+   20.702711384564850, 
+   -89.784573201021260, 
+   3.7729658792650920
+  ], 
+  "time": "2026-11-24 11:30:08", 
+  "name": "CLASH-084", 
+  "label": "84. [мережі] Ducts 30x20 #8706990  x  Generic Models Rectangular Face Opening #8707077  (200 мм)", 
+  "key": "0:8706990|0:8707077", 
+  "kind": "mep", 
+  "min": [
+   19.718459416060867, 
+   -90.440741180023906, 
+   3.1167979002624673
+  ], 
+  "a": {
+   "id": 8706990, 
+   "system": "Smoke", 
+   "source": "Модель", 
+   "type": "Radius Elbows 15cm /  short Taps", 
+   "network": 8706990, 
+   "workset": "ME", 
+   "size": "30x20", 
+   "link_id": null, 
+   "category": "Ducts"
+  }, 
+  "b": {
+   "id": 8707077, 
+   "system": "Generic Models", 
+   "source": "Модель", 
+   "type": "Rectangular Face Opening", 
+   "network": 8707077, 
+   "workset": "ME", 
+   "size": "", 
+   "link_id": null, 
+   "category": "Generic Models"
+  }, 
+  "note": "", 
+  "reason": "not_a_clash", 
+  "user": "coordinator89T4H"
+ }, 
+ {
+  "max": [
+   -4.8149376724956916, 
+   -65.234585699232198, 
+   3.4940944881889577
+  ], 
+  "time": "2026-11-24 11:30:18", 
+  "name": "CLASH-085", 
+  "label": "85. [мережі] Ducts 30x15 #8698780  x  Generic Models Rectangular Face Opening #8707027  (150 мм)", 
+  "key": "0:8698780|0:8707027", 
+  "kind": "mep", 
+  "min": [
+   -5.4711056514983341, 
+   -66.218837667736167, 
+   3.0019685039369892
+  ], 
+  "a": {
+   "id": 8698780, 
+   "system": "Smoke", 
+   "source": "Модель", 
+   "type": "Radius Elbows 15cm /  short Taps", 
+   "network": 8698778, 
+   "workset": "ME", 
+   "size": "30x15", 
+   "link_id": null, 
+   "category": "Ducts"
+  }, 
+  "b": {
+   "id": 8707027, 
+   "system": "Generic Models", 
+   "source": "Модель", 
+   "type": "Rectangular Face Opening", 
+   "network": 8707027, 
+   "workset": "ME", 
+   "size": "", 
+   "link_id": null, 
+   "category": "Generic Models"
+  }, 
+  "note": "", 
+  "reason": "not_a_clash", 
+  "user": "coordinator89T4H"
+ }, 
+ {
+  "max": [
+   27.559725390591211, 
+   -89.784573201021288, 
+   3.2298520182485531
+  ], 
+  "time": "2026-11-24 11:30:25", 
+  "name": "CLASH-086", 
+  "label": "86. [мережі] Ducts 30x15 #8706988  x  Generic Models Rectangular Face Opening #8707076  (150 мм)", 
+  "key": "0:8706988|0:8707076", 
+  "kind": "mep", 
+  "min": [
+   26.575473422087242, 
+   -90.440741180023906, 
+   2.7377260339965845
+  ], 
+  "a": {
+   "id": 8706988, 
+   "system": "Smoke", 
+   "source": "Модель", 
+   "type": "Radius Elbows 15cm /  short Taps", 
+   "network": 8688697, 
+   "workset": "ME", 
+   "size": "30x15", 
+   "link_id": null, 
+   "category": "Ducts"
+  }, 
+  "b": {
+   "id": 8707076, 
+   "system": "Generic Models", 
+   "source": "Модель", 
+   "type": "Rectangular Face Opening", 
+   "network": 8707076, 
+   "workset": "ME", 
+   "size": "", 
+   "link_id": null, 
+   "category": "Generic Models"
+  }, 
+  "note": "", 
+  "reason": "not_a_clash", 
+  "user": "coordinator89T4H"
+ }, 
+ {
+  "max": [
+   -27.191846464740991, 
+   50.674434913851506, 
+   0.1171732407672802
+  ], 
+  "time": "2026-11-24 11:30:29", 
+  "name": "CLASH-087", 
+  "label": "87. [мережі] Plumbing Fixtures Shuha(2019) #8406129  x  Pipes 315ø #8406192  (78 мм)", 
+  "key": "0:8406129|0:8406192", 
+  "kind": "mep", 
+  "min": [
+   -27.613909158184939, 
+   49.630502681332352, 
+   -0.93009150358344683
+  ], 
+  "a": {
+   "id": 8406129, 
+   "system": "Plumbing Fixtures", 
+   "source": "Модель", 
+   "type": "Shuha(2019)", 
+   "network": 8406129, 
+   "workset": "PL", 
+   "size": "", 
+   "link_id": null, 
+   "category": "Plumbing Fixtures"
+  }, 
+  "b": {
+   "id": 8406192, 
+   "system": "צ.מ.ג.", 
+   "source": "Модель", 
+   "type": "HDPE", 
+   "network": 8406192, 
+   "workset": "PL", 
+   "size": "315ø", 
+   "link_id": null, 
+   "category": "Pipes"
+  }, 
+  "note": "", 
+  "reason": "not_a_clash", 
+  "user": "coordinator89T4H"
+ }, 
+ {
+  "max": [
+   -4.1139483911420633, 
+   -133.12684308315562, 
+   0.86495012321149856
+  ], 
+  "time": "2026-11-24 11:30:35", 
+  "name": "CLASH-088", 
+  "label": "88. [мережі] Plumbing Fixtures Shuha(2019) #8459505  x  Pipes 315ø #8459722  (78 мм)", 
+  "key": "0:8459505|0:8459722", 
+  "kind": "mep", 
+  "min": [
+   -4.5360117939415936, 
+   -134.17077611710369, 
+   -0.18231462113419783
+  ], 
+  "a": {
+   "id": 8459505, 
+   "system": "Plumbing Fixtures", 
+   "source": "Модель", 
+   "type": "Shuha(2019)", 
+   "network": 8459505, 
+   "workset": "PL", 
+   "size": "", 
+   "link_id": null, 
+   "category": "Plumbing Fixtures"
+  }, 
+  "b": {
+   "id": 8459722, 
+   "system": "צ.מ.ג.", 
+   "source": "Модель", 
+   "type": "HDPE", 
+   "network": 8459722, 
+   "workset": "PL", 
+   "size": "315ø", 
+   "link_id": null, 
+   "category": "Pipes"
+  }, 
+  "note": "", 
+  "reason": "not_a_clash", 
+  "user": "coordinator89T4H"
+ }, 
+ {
+  "max": [
+   64.170690138065098, 
+   -133.12668321392715, 
+   -4.2397303153654802
+  ], 
+  "time": "2026-11-24 11:30:50", 
+  "name": "CLASH-090", 
+  "label": "90. [мережі] Mechanical Equipment Basis1 #8406290  x  Pipes 315ø #8406291  (61 мм)", 
+  "key": "0:8406290|0:8406291", 
+  "kind": "mep", 
+  "min": [
+   63.900673082596867, 
+   -134.17061544644628, 
+   -5.2862586986717739
+  ], 
+  "a": {
+   "id": 8406290, 
+   "system": "Mechanical Equipment", 
+   "source": "Модель", 
+   "type": "Basis1", 
+   "network": 8406290, 
+   "workset": "PL", 
+   "size": "", 
+   "link_id": null, 
+   "category": "Mechanical Equipment"
+  }, 
+  "b": {
+   "id": 8406291, 
+   "system": "צ.מ.ג.", 
+   "source": "Модель", 
+   "type": "HDPE", 
+   "network": 8406291, 
+   "workset": "PL", 
+   "size": "315ø", 
+   "link_id": null, 
+   "category": "Pipes"
+  }, 
+  "note": "", 
+  "reason": "not_a_clash", 
+  "user": "coordinator89T4H"
+ }, 
+ {
+  "max": [
+   103.96256293291319, 
+   -133.12659011678539, 
+   -4.2135067444296483
+  ], 
+  "time": "2026-11-24 11:30:55", 
+  "name": "CLASH-091", 
+  "label": "91. [мережі] Mechanical Equipment Basis1 #8406290  x  Pipes 315ø #8406293  (59 мм)", 
+  "key": "0:8406290|0:8406293", 
+  "kind": "mep", 
+  "min": [
+   103.69808764168494, 
+   -134.17052294357978, 
+   -5.2599797100935559
+  ], 
+  "a": {
+   "id": 8406290, 
+   "system": "Mechanical Equipment", 
+   "source": "Модель", 
+   "type": "Basis1", 
+   "network": 8406290, 
+   "workset": "PL", 
+   "size": "", 
+   "link_id": null, 
+   "category": "Mechanical Equipment"
+  }, 
+  "b": {
+   "id": 8406293, 
+   "system": "צ.מ.ג.", 
+   "source": "Модель", 
+   "type": "HDPE", 
+   "network": 8406293, 
+   "workset": "PL", 
+   "size": "315ø", 
+   "link_id": null, 
+   "category": "Pipes"
+  }, 
+  "note": "", 
+  "reason": "not_a_clash", 
+  "user": "coordinator89T4H"
+ }, 
+ {
+  "max": [
+   -3.2417028805633059, 
+   -36.682951232238608, 
+   4.5881330041958508
+  ], 
+  "time": "2026-11-24 11:31:22", 
+  "name": "CLASH-093", 
+  "label": "93. [мережі] Ducts 15x15 #8706334  x  Duct Linings Fiberglass Board #11744679  (98 мм)", 
+  "key": "0:8706334|0:11744679", 
+  "kind": "mep", 
+  "min": [
+   -4.5083883100825828, 
+   -37.011035221739931, 
+   4.2531072780891668
+  ], 
+  "a": {
+   "id": 8706334, 
+   "system": "Fresh Air", 
+   "source": "Модель", 
+   "type": "Radius Elbows 15cm /  short Taps", 
+   "network": 8706334, 
+   "workset": "ME", 
+   "size": "15x15", 
+   "link_id": null, 
+   "category": "Ducts"
+  }, 
+  "b": {
+   "id": 11744679, 
+   "system": "Fresh Air", 
+   "source": "Модель", 
+   "type": "Fiberglass Board", 
+   "network": 8688618, 
+   "workset": "ME", 
+   "size": "", 
+   "link_id": null, 
+   "category": "Duct Linings"
+  }, 
+  "note": "", 
+  "reason": "not_a_clash", 
+  "user": "coordinator89T4H"
+ }, 
+ {
+  "max": [
+   -18.728283429504874, 
+   -98.667695843868273, 
+   1.5190288713905833
+  ], 
+  "time": "2026-11-24 11:32:14", 
+  "name": "CLASH-094", 
+  "label": "94. [мережі] Ducts 20x20 #8707736  x  Generic Models Rectangular Face Opening #8707786  (142 мм)", 
+  "key": "0:8707736|0:8707786", 
+  "kind": "mep", 
+  "min": [
+   -19.384451408507498, 
+   -99.134966896075781, 
+   0.8628608923879586
+  ], 
+  "a": {
+   "id": 8707736, 
+   "system": "Fresh Air", 
+   "source": "Модель", 
+   "type": "Radius Elbows 15cm /  short Taps", 
+   "network": 8707734, 
+   "workset": "ME", 
+   "size": "20x20", 
+   "link_id": null, 
+   "category": "Ducts"
+  }, 
+  "b": {
+   "id": 8707786, 
+   "system": "Generic Models", 
+   "source": "Модель", 
+   "type": "Rectangular Face Opening", 
+   "network": 8707786, 
+   "workset": "ME", 
+   "size": "", 
+   "link_id": null, 
+   "category": "Generic Models"
+  }, 
+  "note": "", 
+  "reason": "not_a_clash", 
+  "user": "coordinator89T4H"
+ }, 
+ {
+  "max": [
+   21.880059046611741, 
+   -132.23857613178888, 
+   2.1391964879776446
+  ], 
+  "time": "2026-11-24 11:32:27", 
+  "name": "CLASH-095", 
+  "label": "95. [мережі] Plumbing Fixtures Shuha(2019) #8406150  x  Pipes 160ø #8459694  (68 мм)", 
+  "key": "0:8406150|0:8459694", 
+  "kind": "mep", 
+  "min": [
+   21.281913495043725, 
+   -132.91022034928886, 
+   1.5348529967299087
+  ], 
+  "a": {
+   "id": 8406150, 
+   "system": "Plumbing Fixtures", 
+   "source": "Модель", 
+   "type": "Shuha(2019)", 
+   "network": 8406150, 
+   "workset": "PL", 
+   "size": "", 
+   "link_id": null, 
+   "category": "Plumbing Fixtures"
+  }, 
+  "b": {
+   "id": 8459694, 
+   "system": "צ.מ.ג. גג", 
+   "source": "Модель", 
+   "type": "HDPE", 
+   "network": 8397415, 
+   "workset": "PL", 
+   "size": "160ø", 
+   "link_id": null, 
+   "category": "Pipes"
+  }, 
+  "note": "", 
+  "reason": "not_a_clash", 
+  "user": "coordinator89T4H"
+ }, 
+ {
+  "max": [
+   60.665928340596402, 
+   -124.21967151506118, 
+   0.61470388770932638
+  ], 
+  "time": "2026-11-24 11:32:31", 
+  "name": "CLASH-096", 
+  "label": "96. [мережі] Plumbing Fixtures Shuha(2019) #8406144  x  Pipes 160ø #8459734  (76 мм)", 
+  "key": "0:8406144|0:8459734", 
+  "kind": "mep", 
+  "min": [
+   60.064909493904047, 
+   -124.58501678861023, 
+   0.01037467430104988
+  ], 
+  "a": {
+   "id": 8406144, 
+   "system": "Plumbing Fixtures", 
+   "source": "Модель", 
+   "type": "Shuha(2019)", 
+   "network": 8406144, 
+   "workset": "PL", 
+   "size": "", 
+   "link_id": null, 
+   "category": "Plumbing Fixtures"
+  }, 
+  "b": {
+   "id": 8459734, 
+   "system": "ניקוז מי גשם", 
+   "source": "Модель", 
+   "type": "HDPE", 
+   "network": 8377562, 
+   "workset": "PL", 
+   "size": "160ø", 
+   "link_id": null, 
+   "category": "Pipes"
+  }, 
+  "note": "", 
+  "reason": "not_a_clash", 
+  "user": "coordinator89T4H"
+ }, 
+ {
+  "max": [
+   30.493545747376910, 
+   -89.784573201021288, 
+   2.2637795275588424
+  ], 
+  "time": "2026-11-24 11:32:38", 
+  "name": "CLASH-097", 
+  "label": "97. [мережі] Ducts 20x20 #8706346  x  Generic Models Rectangular Face Opening #8707045  (63 мм)", 
+  "key": "0:8706346|0:8707045", 
+  "kind": "mep", 
+  "min": [
+   29.837377768374285, 
+   -89.991596558400573, 
+   1.6076115485562177
+  ], 
+  "a": {
+   "id": 8706346, 
+   "system": "Fresh Air", 
+   "source": "Модель", 
+   "type": "Radius Elbows 15cm /  short Taps", 
+   "network": 8689950, 
+   "workset": "ME", 
+   "size": "20x20", 
+   "link_id": null, 
+   "category": "Ducts"
+  }, 
+  "b": {
+   "id": 8707045, 
+   "system": "Generic Models", 
+   "source": "Модель", 
+   "type": "Rectangular Face Opening", 
+   "network": 8707045, 
+   "workset": "ME", 
+   "size": "", 
+   "link_id": null, 
+   "category": "Generic Models"
+  }, 
+  "note": "", 
+  "reason": "not_a_clash", 
+  "user": "coordinator89T4H"
+ }, 
+ {
+  "max": [
+   89.655613387863639, 
+   36.378813856592295, 
+   3.7822925611078690
+  ], 
+  "time": "2026-11-24 11:32:53", 
+  "name": "CLASH-099", 
+  "label": "99. [мережі] Duct Fittings 85x40 #8707237  x  Duct Insulations Fire insulation #11752819  (6 мм)", 
+  "key": "0:8707237|0:11752819", 
+  "kind": "mep", 
+  "min": [
+   89.635613387863629, 
+   33.590007777800444, 
+   2.4699566031026197
+  ], 
+  "a": {
+   "id": 8707237, 
+   "system": "Exhaust Kitchen", 
+   "source": "Модель", 
+   "type": "Standard", 
+   "network": 8707237, 
+   "workset": "ME", 
+   "size": "85x40", 
+   "link_id": null, 
+   "category": "Duct Fittings"
+  }, 
+  "b": {
+   "id": 11752819, 
+   "system": "Exhaust Kitchen", 
+   "source": "Модель", 
+   "type": "Fire insulation", 
+   "network": 8698109, 
+   "workset": "ME", 
+   "size": "", 
+   "link_id": null, 
+   "category": "Duct Insulations"
+  }, 
+  "note": "", 
+  "reason": "not_a_clash", 
+  "user": "coordinator89T4H"
+ }, 
+ {
+  "max": [
+   27.559725390591232, 
+   -89.473999960846058, 
+   3.2298520182485531
+  ], 
+  "time": "2026-11-24 11:33:38", 
+  "name": "CLASH-100", 
+  "label": "100. [мережі] Duct Insulations Fire insulation #8698802  x  Ducts 30x15 #8706988  (45 мм)", 
+  "key": "0:8698802|0:8706988", 
+  "kind": "mep", 
+  "min": [
+   26.575473422087285, 
+   -89.621637756121643, 
+   2.7377260339965845
+  ], 
+  "a": {
+   "id": 8698802, 
+   "system": "Smoke", 
+   "source": "Модель", 
+   "type": "Fire insulation", 
+   "network": 8688688, 
+   "workset": "ME", 
+   "size": "", 
+   "link_id": null, 
+   "category": "Duct Insulations"
+  }, 
+  "b": {
+   "id": 8706988, 
+   "system": "Smoke", 
+   "source": "Модель", 
+   "type": "Radius Elbows 15cm /  short Taps", 
+   "network": 8688697, 
+   "workset": "ME", 
+   "size": "30x15", 
+   "link_id": null, 
+   "category": "Ducts"
+  }, 
+  "note": "", 
+  "reason": "not_a_clash", 
+  "user": "coordinator89T4H"
+ }, 
+ {
+  "max": [
+   -2.0756555428606855, 
+   -88.145259803365633, 
+   3.4448818897654663
+  ], 
+  "time": "2026-11-24 11:33:51", 
+  "name": "CLASH-101", 
+  "label": "101. [мережі] Ducts 40x20 #11760256  x  Ducts 40x20 #11765856  (25 мм)", 
+  "key": "0:11760256|0:11765856", 
+  "kind": "mep", 
+  "min": [
+   -2.7318235218637561, 
+   -89.457595761370897, 
+   3.3628608923884507
+  ], 
+  "a": {
+   "id": 11760256, 
+   "system": "Fresh Air", 
+   "source": "Модель", 
+   "type": "Radius Elbows 15cm /  short Taps", 
+   "network": 8688618, 
+   "workset": "ME", 
+   "size": "40x20", 
+   "link_id": null, 
+   "category": "Ducts"
+  }, 
+  "b": {
+   "id": 11765856, 
+   "system": "Fresh Air", 
+   "source": "Модель", 
+   "type": "Radius Elbows / Tees", 
+   "network": 8698839, 
+   "workset": "ME", 
+   "size": "40x20", 
+   "link_id": null, 
+   "category": "Ducts"
+  }, 
+  "note": "", 
+  "reason": "not_a_clash", 
+  "user": "coordinator89T4H"
+ }, 
+ {
+  "max": [
+   23.406401866327815, 
+   48.427273124362536, 
+   -0.84315447239953278
+  ], 
+  "time": "2026-11-24 11:54:35", 
+  "name": "CLASH-102", 
+  "label": "102. [мережі] Plumbing Fixtures Shuha(2019) #8406130  x  Pipes 160ø #8406198  (51 мм)", 
+  "key": "0:8406130|0:8406198", 
+  "kind": "mep", 
+  "min": [
+   22.805383019635439, 
+   48.178747389230516, 
+   -1.4464249764930439
+  ], 
+  "a": {
+   "id": 8406130, 
+   "system": "Plumbing Fixtures", 
+   "source": "Модель", 
+   "type": "Shuha(2019)", 
+   "network": 8406130, 
+   "workset": "PL", 
+   "size": "", 
+   "link_id": null, 
+   "category": "Plumbing Fixtures"
+  }, 
+  "b": {
+   "id": 8406198, 
+   "system": "צ.מ.ג. גג", 
+   "source": "Модель", 
+   "type": "HDPE", 
+   "network": 8377458, 
+   "workset": "PL", 
+   "size": "160ø", 
+   "link_id": null, 
+   "category": "Pipes"
+  }, 
+  "note": "", 
+  "reason": "not_a_clash", 
+  "user": "coordinator89T4H"
+ }, 
+ {
+  "max": [
+   0.28210412731390588, 
+   -30.401371113152244, 
+   1.9763624417189858
+  ], 
+  "time": "2026-11-24 11:54:45", 
+  "name": "CLASH-103", 
+  "label": "103. [мережі] Generic Models Rectangular Face Opening #8707043  x  Pipes 102ø #11761777  (77 мм)", 
+  "key": "0:8707043|0:11761777", 
+  "kind": "mep", 
+  "min": [
+   -0.061696871609436377, 
+   -31.057539092154883, 
+   1.6414197647976292
+  ], 
+  "a": {
+   "id": 8707043, 
+   "system": "Generic Models", 
+   "source": "Модель", 
+   "type": "Rectangular Face Opening", 
+   "network": 8707043, 
+   "workset": "ME", 
+   "size": "", 
+   "link_id": null, 
+   "category": "Generic Models"
+  }, 
+  "b": {
+   "id": 11761777, 
+   "system": "סניקה ניקוז מי גשם", 
+   "source": "Модель", 
+   "type": "פלדה", 
+   "network": 8462002, 
+   "workset": "PL", 
+   "size": "102ø", 
+   "link_id": null, 
+   "category": "Pipes"
+  }, 
+  "note": "", 
+  "reason": "not_a_clash", 
+  "user": "coordinator89T4H"
+ }, 
+ {
+  "max": [
+   -10.663034784821084, 
+   -108.99854079521376, 
+   1.9160104986874429
+  ], 
+  "time": "2026-11-24 11:55:24", 
+  "name": "CLASH-104", 
+  "label": "104. [мережі] Mechanical Equipment PLFY-P_40 #8698979  x  Lighting Fixtures IP-55 גוף תאורה לד מוגן מים #11324711  (12 мм)", 
+  "key": "0:8698979|0:11324711", 
+  "kind": "mep", 
+  "min": [
+   -12.533113524978569, 
+   -109.58297398418370, 
+   1.2286564401102424
+  ], 
+  "a": {
+   "id": 8698979, 
+   "system": "Mechanical Equipment", 
+   "source": "Модель", 
+   "type": "PLFY-P_40", 
+   "network": 8698979, 
+   "workset": "ME", 
+   "size": "", 
+   "link_id": null, 
+   "category": "Mechanical Equipment"
+  }, 
+  "b": {
+   "id": 11324711, 
+   "system": "Lighting Fixtures", 
+   "source": "Модель", 
+   "type": "IP-55 גוף תאורה לד מוגן מים", 
+   "network": 11324711, 
+   "workset": "EL", 
+   "size": "", 
+   "link_id": null, 
+   "category": "Lighting Fixtures"
+  }, 
+  "note": "", 
+  "reason": "not_a_clash", 
+  "user": "coordinator89T4H"
+ }, 
+ {
+  "max": [
+   108.27250489038943, 
+   7.5478904975570185, 
+   5.2493438320207542
+  ], 
+  "time": "2026-11-24 11:55:31", 
+  "name": "CLASH-105", 
+  "label": "105. [мережі] Pipes 8 cmø #8457954  x  Stairs עם ריצוף [A-GCN-MAIN]  (57 мм)", 
+  "key": "0:8457954|8369585:18865591", 
+  "kind": "mep", 
+  "min": [
+   108.01203722479943, 
+   7.2871786085513630, 
+   4.2650918635168154
+  ], 
+  "a": {
+   "id": 8457954, 
+   "system": "כיבוי אש F", 
+   "source": "Модель", 
+   "type": "iron", 
+   "network": 8439680, 
+   "workset": "PL", 
+   "size": "8 cmø", 
+   "link_id": null, 
+   "category": "Pipes"
+  }, 
+  "b": {
+   "id": 18865591, 
+   "system": "LINK:Stairs", 
+   "source": "A-GCN-MAIN.rvt", 
+   "type": "עם ריצוף", 
+   "network": null, 
+   "workset": "A_150_STAIRS", 
+   "size": "", 
+   "link_id": 8369585, 
+   "category": "Stairs"
+  }, 
+  "note": "", 
+  "reason": "not_a_clash", 
+  "user": "coordinator89T4H"
+ }, 
+ {
+  "max": [
+   108.27250489038943, 
+   7.5478904975570185, 
+   5.2493438320207542
+  ], 
+  "time": "2026-11-24 11:55:34", 
+  "name": "CLASH-106", 
+  "label": "106. [мережі] Pipes 8 cmø #8457954  x  Landings 25cm [A-GCN-MAIN]  (57 мм)", 
+  "key": "0:8457954|8369585:18865600", 
+  "kind": "mep", 
+  "min": [
+   108.01203722479943, 
+   7.2871786085513630, 
+   4.2650918635168154
+  ], 
+  "a": {
+   "id": 8457954, 
+   "system": "כיבוי אש F", 
+   "source": "Модель", 
+   "type": "iron", 
+   "network": 8439680, 
+   "workset": "PL", 
+   "size": "8 cmø", 
+   "link_id": null, 
+   "category": "Pipes"
+  }, 
+  "b": {
+   "id": 18865600, 
+   "system": "LINK:Landings", 
+   "source": "A-GCN-MAIN.rvt", 
+   "type": "25cm", 
+   "network": null, 
+   "workset": "A_150_STAIRS", 
+   "size": "", 
+   "link_id": 8369585, 
+   "category": "Landings"
+  }, 
+  "note": "", 
+  "reason": "not_a_clash", 
+  "user": "coordinator89T4H"
+ }, 
+ {
+  "max": [
+   23.435791873438301, 
+   -131.28037342277227, 
+   1.6954725761475002
+  ], 
+  "time": "2026-11-24 11:55:38", 
+  "name": "CLASH-107", 
+  "label": "107. [мережі] Plumbing Fixtures Shuha(2019) #8406150  x  Pipes 110ø #8460860  (50 мм)", 
+  "key": "0:8406150|0:8460860", 
+  "kind": "mep", 
+  "min": [
+   22.795132353652253, 
+   -131.64782441530539, 
+   1.3200345150576538
+  ], 
+  "a": {
+   "id": 8406150, 
+   "system": "Plumbing Fixtures", 
+   "source": "Модель", 
+   "type": "Shuha(2019)", 
+   "network": 8406150, 
+   "workset": "PL", 
+   "size": "", 
+   "link_id": null, 
+   "category": "Plumbing Fixtures"
+  }, 
+  "b": {
+   "id": 8460860, 
+   "system": "ניקוז  ארון", 
+   "source": "Модель", 
+   "type": "HDPE", 
+   "network": 8459301, 
+   "workset": "PL", 
+   "size": "110ø", 
+   "link_id": null, 
+   "category": "Pipes"
+  }, 
+  "note": "", 
+  "reason": "not_a_clash", 
+  "user": "coordinator89T4H"
+ }, 
+ {
+  "max": [
+   112.77036416458787, 
+   23.649317345497263, 
+   1.8096957750522167
+  ], 
+  "time": "2026-11-24 11:58:18", 
+  "name": "CLASH-109", 
+  "label": "109. [мережі] Pipes 100ø #8463052  x  Cable Trays 20x10 #11319302  (44 мм)", 
+  "key": "0:8463052|0:11319302", 
+  "kind": "mep", 
+  "min": [
+   112.11419618558526, 
+   23.263849679907263, 
+   1.6117281094622165
+  ], 
+  "a": {
+   "id": 8463052, 
+   "system": "קו מים להידרנט חוץ", 
+   "source": "Модель", 
+   "type": "HDPE", 
+   "network": 8460424, 
+   "workset": "PL", 
+   "size": "100ø", 
+   "link_id": null, 
+   "category": "Pipes"
+  }, 
+  "b": {
+   "id": 11319302, 
+   "system": "Cable Trays", 
+   "source": "Модель", 
+   "type": "תְאוּרָה", 
+   "network": 11319302, 
+   "workset": "EL", 
+   "size": "20x10", 
+   "link_id": null, 
+   "category": "Cable Trays"
+  }, 
+  "note": "", 
+  "reason": "not_a_clash", 
+  "user": "coordinator89T4H"
+ }, 
+ {
+  "max": [
+   24.564394535580888, 
+   49.323953323481476, 
+   -0.98698519223852665
+  ], 
+  "time": "2026-11-24 11:58:23", 
+  "name": "CLASH-110", 
+  "label": "110. [мережі] Plumbing Fixtures Shuha(2019) #8406130  x  Pipes 110ø #8406248  (41 мм)", 
+  "key": "0:8406130|0:8406248", 
+  "kind": "mep", 
+  "min": [
+   24.096677077534032, 
+   48.790022167507317, 
+   -1.3650330252935827
+  ], 
+  "a": {
+   "id": 8406130, 
+   "system": "Plumbing Fixtures", 
+   "source": "Модель", 
+   "type": "Shuha(2019)", 
+   "network": 8406130, 
+   "workset": "PL", 
+   "size": "", 
+   "link_id": null, 
+   "category": "Plumbing Fixtures"
+  }, 
+  "b": {
+   "id": 8406248, 
+   "system": "ניקוז  ארון כ''א", 
+   "source": "Модель", 
+   "type": "HDPE", 
+   "network": 8406242, 
+   "workset": "PL", 
+   "size": "110ø", 
+   "link_id": null, 
+   "category": "Pipes"
+  }, 
+  "note": "", 
+  "reason": "not_a_clash", 
+  "user": "coordinator89T4H"
+ }, 
+ {
+  "max": [
+   -30.390467927484448, 
+   49.369823183874104, 
+   -0.52208230952708135
+  ], 
+  "time": "2026-11-24 11:58:27", 
+  "name": "CLASH-111", 
+  "label": "111. [мережі] Plumbing Fixtures Shuha(2019) #8406129  x  Pipes 110ø #8406178  (43 мм)", 
+  "key": "0:8406129|0:8406178", 
+  "kind": "mep", 
+  "min": [
+   -30.898116195370800, 
+   48.902300540154300, 
+   -0.9001123458171888
+  ], 
+  "a": {
+   "id": 8406129, 
+   "system": "Plumbing Fixtures", 
+   "source": "Модель", 
+   "type": "Shuha(2019)", 
+   "network": 8406129, 
+   "workset": "PL", 
+   "size": "", 
+   "link_id": null, 
+   "category": "Plumbing Fixtures"
+  }, 
+  "b": {
+   "id": 8406178, 
+   "system": "ניקוז  ארון כ''א", 
+   "source": "Модель", 
+   "type": "HDPE", 
+   "network": 8406172, 
+   "workset": "PL", 
+   "size": "110ø", 
+   "link_id": null, 
+   "category": "Pipes"
+  }, 
+  "note": "", 
+  "reason": "not_a_clash", 
+  "user": "coordinator89T4H"
+ }, 
+ {
+  "max": [
+   109.91092181343274, 
+   48.467895641270736, 
+   -2.120528526231094
+  ], 
+  "time": "2026-11-24 11:58:31", 
+  "name": "CLASH-112", 
+  "label": "112. [мережі] Plumbing Fixtures Shuha(2019) #8406139  x  Pipes 110ø #8406276  (73 мм)", 
+  "key": "0:8406139|0:8406276", 
+  "kind": "mep", 
+  "min": [
+   109.53956175939129, 
+   48.119389240744134, 
+   -2.4985224313238450
+  ], 
+  "a": {
+   "id": 8406139, 
+   "system": "Plumbing Fixtures", 
+   "source": "Модель", 
+   "type": "Shuha(2019)", 
+   "network": 8406139, 
+   "workset": "PL", 
+   "size": "", 
+   "link_id": null, 
+   "category": "Plumbing Fixtures"
+  }, 
+  "b": {
+   "id": 8406276, 
+   "system": "ניקוז  ארון כ''א", 
+   "source": "Модель", 
+   "type": "HDPE", 
+   "network": 8396360, 
+   "workset": "PL", 
+   "size": "110ø", 
+   "link_id": null, 
+   "category": "Pipes"
+  }, 
+  "note": "", 
+  "reason": "not_a_clash", 
+  "user": "coordinator89T4H"
+ }, 
+ {
+  "max": [
+   -0.29062028003732066, 
+   -30.401371113152237, 
+   1.9346957750522178
+  ], 
+  "time": "2026-11-24 11:58:38", 
+  "name": "CLASH-113", 
+  "label": "113. [мережі] Pipes 76ø #8462796  x  Generic Models Rectangular Face Opening #8707043  (57 мм)", 
+  "key": "0:8462796|0:8707043", 
+  "kind": "mep", 
+  "min": [
+   -0.55108794562732066, 
+   -31.057539092154876, 
+   1.6742281094622180
+  ], 
+  "a": {
+   "id": 8462796, 
+   "system": "כיבוי אש F", 
+   "source": "Модель", 
+   "type": "iron", 
+   "network": 8457940, 
+   "workset": "PL", 
+   "size": "76ø", 
+   "link_id": null, 
+   "category": "Pipes"
+  }, 
+  "b": {
+   "id": 8707043, 
+   "system": "Generic Models", 
+   "source": "Модель", 
+   "type": "Rectangular Face Opening", 
+   "network": 8707043, 
+   "workset": "ME", 
+   "size": "", 
+   "link_id": null, 
+   "category": "Generic Models"
+  }, 
+  "note": "", 
+  "reason": "not_a_clash", 
+  "user": "coordinator89T4H"
+ }, 
+ {
+  "max": [
+   48.229407244378308, 
+   -124.22906698003473, 
+   0.60079287523106861
+  ], 
+  "time": "2026-11-24 12:16:50", 
+  "name": "CLASH-115", 
+  "label": "115. [мережі] Plumbing Fixtures Shuha(2019) #8406145  x  Pipes 102ø #8459738  (73 мм)", 
+  "key": "0:8406145|0:8459738", 
+  "kind": "mep", 
+  "min": [
+   47.885606245454980, 
+   -124.57441175315412, 
+   0.25369437015899765
+  ], 
+  "a": {
+   "id": 8406145, 
+   "system": "Plumbing Fixtures", 
+   "source": "Модель", 
+   "type": "Shuha(2019)", 
+   "network": 8406145, 
+   "workset": "PL", 
+   "size": "", 
+   "link_id": null, 
+   "category": "Plumbing Fixtures"
+  }, 
+  "b": {
+   "id": 8459738, 
+   "system": "סניקה ניקוז מי גשם", 
+   "source": "Модель", 
+   "type": "פלדה", 
+   "network": 8457447, 
+   "workset": "PL", 
+   "size": "102ø", 
+   "link_id": null, 
+   "category": "Pipes"
+  }, 
+  "note": "", 
+  "reason": "not_a_clash", 
+  "user": "coordinator89T4H"
+ }, 
+ {
+  "max": [
+   112.77036416458787, 
+   24.138147496544679, 
+   1.8096957750522167
+  ], 
+  "time": "2026-11-24 12:17:20", 
+  "name": "CLASH-116", 
+  "label": "116. [мережі] Pipes 10 cmø #8457920  x  Cable Trays 20x10 #11319302  (39 мм)", 
+  "key": "0:8457920|0:11319302", 
+  "kind": "mep", 
+  "min": [
+   112.11419618558526, 
+   23.794346497621344, 
+   1.6325614427955495
+  ], 
+  "a": {
+   "id": 8457920, 
+   "system": "הסנקה לכיבוי אש הדרנטים", 
+   "source": "Модель", 
+   "type": "iron", 
+   "network": 8446113, 
+   "workset": "PL", 
+   "size": "10 cmø", 
+   "link_id": null, 
+   "category": "Pipes"
+  }, 
+  "b": {
+   "id": 11319302, 
+   "system": "Cable Trays", 
+   "source": "Модель", 
+   "type": "תְאוּרָה", 
+   "network": 11319302, 
+   "workset": "EL", 
+   "size": "20x10", 
+   "link_id": null, 
+   "category": "Cable Trays"
+  }, 
+  "note": "", 
+  "reason": "not_a_clash", 
+  "user": "coordinator89T4H"
+ }, 
+ {
+  "max": [
+   32.475689181478941, 
+   -18.262263502305366, 
+   3.5269028871390677
+  ], 
+  "time": "2026-11-24 12:17:37", 
+  "name": "CLASH-118", 
+  "label": "118. [мережі] Ducts 30x15 #8706635  x  Generic Models Rectangular Face Opening #8707015  (45 мм)", 
+  "key": "0:8706635|0:8707015", 
+  "kind": "mep", 
+  "min": [
+   32.081988394077342, 
+   -18.409176345186786, 
+   3.0347769028870992
+  ], 
+  "a": {
+   "id": 8706635, 
+   "system": "Smoke", 
+   "source": "Модель", 
+   "type": "Radius Elbows 15cm /  short Taps", 
+   "network": 8698805, 
+   "workset": "ME", 
+   "size": "30x15", 
+   "link_id": null, 
+   "category": "Ducts"
+  }, 
+  "b": {
+   "id": 8707015, 
+   "system": "Generic Models", 
+   "source": "Модель", 
+   "type": "Rectangular Face Opening", 
+   "network": 8707015, 
+   "workset": "ME", 
+   "size": "", 
+   "link_id": null, 
+   "category": "Generic Models"
+  }, 
+  "note": "", 
+  "reason": "not_a_clash", 
+  "user": "coordinator89T4H"
+ }, 
+ {
+  "max": [
+   64.311911920689909, 
+   50.673439607106793, 
+   -0.83544157458069912
+  ], 
+  "time": "2026-11-24 12:17:42", 
+  "name": "CLASH-119", 
+  "label": "119. [мережі] Plumbing Fixtures Shuha(2019) #8406137  x  Pipes 315ø #8406218  (9 мм)", 
+  "key": "0:8406137|0:8406218", 
+  "kind": "mep", 
+  "min": [
+   64.245907458680904, 
+   49.761996510860122, 
+   -1.8798643735127964
+  ], 
+  "a": {
+   "id": 8406137, 
+   "system": "Plumbing Fixtures", 
+   "source": "Модель", 
+   "type": "Shuha(2019)", 
+   "network": 8406137, 
+   "workset": "PL", 
+   "size": "", 
+   "link_id": null, 
+   "category": "Plumbing Fixtures"
+  }, 
+  "b": {
+   "id": 8406218, 
+   "system": "צ.מ.ג.", 
+   "source": "Модель", 
+   "type": "HDPE", 
+   "network": 8406218, 
+   "workset": "PL", 
+   "size": "315ø", 
+   "link_id": null, 
+   "category": "Pipes"
+  }, 
+  "note": "", 
+  "reason": "not_a_clash", 
+  "user": "coordinator89T4H"
+ }, 
+ {
+  "max": [
+   -7.3525264021121846, 
+   -132.31302455974543, 
+   0.4439176913293873
+  ], 
+  "time": "2026-11-24 12:17:46", 
+  "name": "CLASH-120", 
+  "label": "120. [мережі] Plumbing Fixtures Shuha(2019) #8459505  x  Pipes 100ø #8459600  (42 мм)", 
+  "key": "0:8459505|0:8459600", 
+  "kind": "mep", 
+  "min": [
+   -7.7715861007819012, 
+   -132.76932031363077, 
+   0.056066205328291652
+  ], 
+  "a": {
+   "id": 8459505, 
+   "system": "Plumbing Fixtures", 
+   "source": "Модель", 
+   "type": "Shuha(2019)", 
+   "network": 8459505, 
+   "workset": "PL", 
+   "size": "", 
+   "link_id": null, 
+   "category": "Plumbing Fixtures"
+  }, 
+  "b": {
+   "id": 8459600, 
+   "system": "ניקוז מזגנים", 
+   "source": "Модель", 
+   "type": "HDPE", 
+   "network": 8406067, 
+   "workset": "PL", 
+   "size": "100ø", 
+   "link_id": null, 
+   "category": "Pipes"
+  }, 
+  "note": "", 
+  "reason": "not_a_clash", 
+  "user": "coordinator89T4H"
+ }, 
+ {
+  "max": [
+   41.497571597231200, 
+   -74.482508643045918, 
+   1.0436359224595635
+  ], 
+  "time": "2026-11-24 12:19:12", 
+  "name": "CLASH-121", 
+  "label": "121. [мережі] Ducts 23x23 #8706650  x  Duct Fittings 23x23-23x23 #8706653  (12 мм)", 
+  "key": "0:8706650|0:8706653", 
+  "kind": "mep", 
+  "min": [
+   40.742978421378126, 
+   -75.233264087449527, 
+   1.0028249156352511
+  ], 
+  "a": {
+   "id": 8706650, 
+   "system": "Fresh Air", 
+   "source": "Модель", 
+   "type": "Radius Elbows 10cm / Taps", 
+   "network": 8706650, 
+   "workset": "ME", 
+   "size": "23x23", 
+   "link_id": null, 
+   "category": "Ducts"
+  }, 
+  "b": {
+   "id": 8706653, 
+   "system": "Fresh Air", 
+   "source": "Модель", 
+   "type": "Standard", 
+   "network": 8698699, 
+   "workset": "ME", 
+   "size": "23x23-23x23", 
+   "link_id": null, 
+   "category": "Duct Fittings"
+  }, 
+  "note": "", 
+  "reason": "not_a_clash", 
+  "user": "coordinator89T4H"
+ }, 
+ {
+  "max": [
+   41.478640973170030, 
+   -74.481991403759707, 
+   1.0436359003968232
+  ], 
+  "time": "2026-11-24 12:19:23", 
+  "name": "CLASH-122", 
+  "label": "122. [мережі] Air Terminals 23x23 #8698709  x  Ducts 23x23 #8706650  (12 мм)", 
+  "key": "0:8698709|0:8706650", 
+  "kind": "mep", 
+  "min": [
+   40.742978421378069, 
+   -75.233264087449527, 
+   1.0028249156353073
+  ], 
+  "a": {
+   "id": 8698709, 
+   "system": "Air Terminals", 
+   "source": "Модель", 
+   "type": "23X23", 
+   "network": 8698709, 
+   "workset": "ME", 
+   "size": "23x23", 
+   "link_id": null, 
+   "category": "Air Terminals"
+  }, 
+  "b": {
+   "id": 8706650, 
+   "system": "Fresh Air", 
+   "source": "Модель", 
+   "type": "Radius Elbows 10cm / Taps", 
+   "network": 8706650, 
+   "workset": "ME", 
+   "size": "23x23", 
+   "link_id": null, 
+   "category": "Ducts"
+  }, 
+  "note": "", 
+  "reason": "not_a_clash", 
+  "user": "coordinator89T4H"
+ }, 
+ {
+  "max": [
+   12.371034347964166, 
+   -89.784573201021246, 
+   2.2637795275591177
+  ], 
+  "time": "2026-11-24 12:56:16", 
+  "name": "CLASH-129", 
+  "label": "129. [мережі] Ducts 25x20 #8698840  x  Generic Models Rectangular Face Opening #8707029  (9 мм)", 
+  "key": "0:8698840|0:8707029", 
+  "kind": "mep", 
+  "min": [
+   11.550824374210865, 
+   -89.814808531574457, 
+   1.6076115485564930
+  ], 
+  "a": {
+   "id": 8698840, 
+   "system": "Fresh Air", 
+   "source": "Модель", 
+   "type": "Radius Elbows 15cm /  short Taps", 
+   "network": 8698840, 
+   "workset": "ME", 
+   "size": "25x20", 
+   "link_id": null, 
+   "category": "Ducts"
+  }, 
+  "b": {
+   "id": 8707029, 
+   "system": "Generic Models", 
+   "source": "Модель", 
+   "type": "Rectangular Face Opening", 
+   "network": 8707029, 
+   "workset": "ME", 
+   "size": "", 
+   "link_id": null, 
+   "category": "Generic Models"
+  }, 
+  "note": "", 
+  "reason": "not_a_clash", 
+  "user": "coordinator89T4H"
+ }, 
+ {
+  "max": [
+   23.621511720071041, 
+   -131.26489889383740, 
+   1.4182885386087245
+  ], 
+  "time": "2026-11-24 12:56:21", 
+  "name": "CLASH-130", 
+  "label": "130. [мережі] Plumbing Fixtures Shuha(2019) #8406150  x  Pipes 75ø #8460112  (54 мм)", 
+  "key": "0:8406150|0:8460112", 
+  "kind": "mep", 
+  "min": [
+   23.364981062355056, 
+   -131.60717712124099, 
+   1.1586636777608061
+  ], 
+  "a": {
+   "id": 8406150, 
+   "system": "Plumbing Fixtures", 
+   "source": "Модель", 
+   "type": "Shuha(2019)", 
+   "network": 8406150, 
+   "workset": "PL", 
+   "size": "", 
+   "link_id": null, 
+   "category": "Plumbing Fixtures"
+  }, 
+  "b": {
+   "id": 8460112, 
+   "system": "ניקוז מזגנים", 
+   "source": "Модель", 
+   "type": "HDPE", 
+   "network": 8459518, 
+   "workset": "PL", 
+   "size": "75ø", 
+   "link_id": null, 
+   "category": "Pipes"
+  }, 
+  "note": "", 
+  "reason": "not_a_clash", 
+  "user": "coordinator89T4H"
+ }, 
+ {
+  "max": [
+   32.644807736348397, 
+   -76.743040325992979, 
+   1.1655183727035001
+  ], 
+  "time": "2026-11-24 12:57:05", 
+  "name": "CLASH-132", 
+  "label": "132. [мережі] Mechanical Equipment PLFY-P_25 #8698984  x  Lighting Fixtures D20 #11316476  (10 мм)", 
+  "key": "0:8698984|0:11316476", 
+  "kind": "mep", 
+  "min": [
+   32.008463552573730, 
+   -77.409675970585454, 
+   0.98097112860903035
+  ], 
+  "a": {
+   "id": 8698984, 
+   "system": "Mechanical Equipment", 
+   "source": "Модель", 
+   "type": "PLFY-P_25", 
+   "network": 8698984, 
+   "workset": "ME", 
+   "size": "", 
+   "link_id": null, 
+   "category": "Mechanical Equipment"
+  }, 
+  "b": {
+   "id": 11316476, 
+   "system": "Lighting Fixtures", 
+   "source": "Модель", 
+   "type": "D20", 
+   "network": 11316476, 
+   "workset": "EL", 
+   "size": "", 
+   "link_id": null, 
+   "category": "Lighting Fixtures"
+  }, 
+  "note": "", 
+  "reason": "not_a_clash", 
+  "user": "coordinator89T4H"
+ }, 
+ {
+  "max": [
+   36.478313852696445, 
+   -42.356461007785590, 
+   2.8929060768894868
+  ], 
+  "time": "2026-11-24 12:57:22", 
+  "name": "CLASH-133", 
+  "label": "133. [мережі] Pipes 5 cmø #8458110  x  Generic Models Rectangular Face Opening #8707017  (45 мм)", 
+  "key": "0:8458110|0:8707017", 
+  "kind": "mep", 
+  "min": [
+   36.018996267394598, 
+   -42.564845340042261, 
+   2.6845217446328196
+  ], 
+  "a": {
+   "id": 8458110, 
+   "system": "מים קרים לצריכה M2", 
+   "source": "Модель", 
+   "type": "POLEROL", 
+   "network": 8458095, 
+   "workset": "PL", 
+   "size": "5 cmø", 
+   "link_id": null, 
+   "category": "Pipes"
+  }, 
+  "b": {
+   "id": 8707017, 
+   "system": "Generic Models", 
+   "source": "Модель", 
+   "type": "Rectangular Face Opening", 
+   "network": 8707017, 
+   "workset": "ME", 
+   "size": "", 
+   "link_id": null, 
+   "category": "Generic Models"
+  }, 
+  "note": "", 
+  "reason": "not_a_clash", 
+  "user": "coordinator89T4H"
+ }, 
+ {
+  "max": [
+   48.479338153793151, 
+   -26.176469538001097, 
+   1.1876640419947568
+  ], 
+  "time": "2026-11-24 12:57:39", 
+  "name": "CLASH-134", 
+  "label": "134. [мережі] Mechanical Equipment PLFY-P_25 #8698980  x  Lighting Fixtures STAR_EL Recessed Rectangular fixture - facebased #11316274  (4 мм)", 
+  "key": "0:8698980|0:11316274", 
+  "kind": "mep", 
+  "min": [
+   47.928445087689084, 
+   -27.986985523378287, 
+   0.95144356955380549
+  ], 
+  "a": {
+   "id": 8698980, 
+   "system": "Mechanical Equipment", 
+   "source": "Модель", 
+   "type": "PLFY-P_25", 
+   "network": 8698980, 
+   "workset": "ME", 
+   "size": "", 
+   "link_id": null, 
+   "category": "Mechanical Equipment"
+  }, 
+  "b": {
+   "id": 11316274, 
+   "system": "Lighting Fixtures", 
+   "source": "Модель", 
+   "type": "STAR_EL Recessed Rectangular fixture - facebased", 
+   "network": 11316274, 
+   "workset": "EL", 
+   "size": "", 
+   "link_id": null, 
+   "category": "Lighting Fixtures"
+  }, 
+  "note": "", 
+  "reason": "not_a_clash", 
+  "user": "coordinator89T4H"
+ }, 
+ {
+  "max": [
+   77.231234809478465, 
+   -16.748939811020918, 
+   -3.2708209622521238
+  ], 
+  "time": "2026-11-24 12:57:51", 
+  "name": "CLASH-135", 
+  "label": "135. [мережі] Plumbing Fixtures מפריד שומן 3800 #8458933  x  Pipes 110ø #8462028  (28 мм)", 
+  "key": "0:8458933|0:8462028", 
+  "kind": "mep", 
+  "min": [
+   77.095611121139498, 
+   -17.120299865062364, 
+   -3.6447165663538303
+  ], 
+  "a": {
+   "id": 8458933, 
+   "system": "Plumbing Fixtures", 
+   "source": "Модель", 
+   "type": "מפריד שומן 3800", 
+   "network": 8458933, 
+   "workset": "PL", 
+   "size": "", 
+   "link_id": null, 
+   "category": "Plumbing Fixtures"
+  }, 
+  "b": {
+   "id": 8462028, 
+   "system": "ביוב שומני", 
+   "source": "Модель", 
+   "type": "HDPE", 
+   "network": 8462028, 
+   "workset": "PL", 
+   "size": "110ø", 
+   "link_id": null, 
+   "category": "Pipes"
+  }, 
+  "note": "", 
+  "reason": "not_a_clash", 
+  "user": "coordinator89T4H"
+ }, 
+ {
+  "max": [
+   97.477420070591577, 
+   -108.86026856762679, 
+   1.6576443569552364
+  ], 
+  "time": "2026-11-24 13:01:57", 
+  "name": "CLASH-138", 
+  "label": "138. [мережі] Cable Trays 20x10 #11318473  x  Lighting Fixtures D10 תאורת חירום #11318522  (23 мм)", 
+  "key": "0:11318473|0:11318522", 
+  "kind": "mep", 
+  "min": [
+   97.138868415500397, 
+   -109.19882022271797, 
+   1.4763779527559056
+  ], 
+  "a": {
+   "id": 11318473, 
+   "system": "Cable Trays", 
+   "source": "Модель", 
+   "type": "תְאוּרָה", 
+   "network": 11318473, 
+   "workset": "EL", 
+   "size": "20x10", 
+   "link_id": null, 
+   "category": "Cable Trays"
+  }, 
+  "b": {
+   "id": 11318522, 
+   "system": "Lighting Fixtures", 
+   "source": "Модель", 
+   "type": "D10 תאורת חירום", 
+   "network": 11318522, 
+   "workset": "EL", 
+   "size": "", 
+   "link_id": null, 
+   "category": "Lighting Fixtures"
+  }, 
+  "note": "", 
+  "reason": "not_a_clash", 
+  "user": "coordinator89T4H"
+ }, 
+ {
+  "max": [
+   43.215692007174383, 
+   20.238877672301793, 
+   3.1340223097089450
+  ], 
+  "time": "2026-11-24 13:02:01", 
+  "name": "CLASH-139", 
+  "label": "139. [мережі] Lighting Fixtures D10 תאורת חירום #11316184  x  Cable Trays 20x10 #11860876  (23 мм)", 
+  "key": "0:11316184|0:11860876", 
+  "kind": "mep", 
+  "min": [
+   42.877140352083202, 
+   19.900326017210620, 
+   2.9527559055113204
+  ], 
+  "a": {
+   "id": 11316184, 
+   "system": "Lighting Fixtures", 
+   "source": "Модель", 
+   "type": "D10 תאורת חירום", 
+   "network": 11316184, 
+   "workset": "EL", 
+   "size": "", 
+   "link_id": null, 
+   "category": "Lighting Fixtures"
+  }, 
+  "b": {
+   "id": 11860876, 
+   "system": "Cable Trays", 
+   "source": "Модель", 
+   "type": "תְאוּרָה", 
+   "network": 11860876, 
+   "workset": "EL", 
+   "size": "20x10", 
+   "link_id": null, 
+   "category": "Cable Trays"
+  }, 
+  "note": "", 
+  "reason": "not_a_clash", 
+  "user": "coordinator89T4H"
+ }, 
+ {
+  "max": [
+   97.477420070591535, 
+   -41.830472500827398, 
+   1.6576443569554868
+  ], 
+  "time": "2026-11-24 13:02:05", 
+  "name": "CLASH-140", 
+  "label": "140. [мережі] Cable Trays 20x10 #11318473  x  Lighting Fixtures D10 תאורת חירום #11319817  (21 мм)", 
+  "key": "0:11318473|0:11319817", 
+  "kind": "mep", 
+  "min": [
+   97.138868415500355, 
+   -42.169024155918578, 
+   1.4763779527559056
+  ], 
+  "a": {
+   "id": 11318473, 
+   "system": "Cable Trays", 
+   "source": "Модель", 
+   "type": "תְאוּרָה", 
+   "network": 11318473, 
+   "workset": "EL", 
+   "size": "20x10", 
+   "link_id": null, 
+   "category": "Cable Trays"
+  }, 
+  "b": {
+   "id": 11319817, 
+   "system": "Lighting Fixtures", 
+   "source": "Модель", 
+   "type": "D10 תאורת חירום", 
+   "network": 11319817, 
+   "workset": "EL", 
+   "size": "", 
+   "link_id": null, 
+   "category": "Lighting Fixtures"
+  }, 
+  "note": "", 
+  "reason": "not_a_clash", 
+  "user": "coordinator89T4H"
+ }, 
+ {
+  "max": [
+   -14.488181530805051, 
+   -47.571334132772790, 
+   1.6576443569554697
+  ], 
+  "time": "2026-11-24 13:02:08", 
+  "name": "CLASH-141", 
+  "label": "141. [мережі] Mechanical Equipment PLFY-P_25 #8706324  x  Lighting Fixtures D10 תאורת חירום #11316238  (20 мм)", 
+  "key": "0:8706324|0:11316238", 
+  "kind": "mep", 
+  "min": [
+   -14.826733185896227, 
+   -47.909885787863971, 
+   1.4665354330708702
+  ], 
+  "a": {
+   "id": 8706324, 
+   "system": "Mechanical Equipment", 
+   "source": "Модель", 
+   "type": "PLFY-P_25", 
+   "network": 8706324, 
+   "workset": "ME", 
+   "size": "", 
+   "link_id": null, 
+   "category": "Mechanical Equipment"
+  }, 
+  "b": {
+   "id": 11316238, 
+   "system": "Lighting Fixtures", 
+   "source": "Модель", 
+   "type": "D10 תאורת חירום", 
+   "network": 11316238, 
+   "workset": "EL", 
+   "size": "", 
+   "link_id": null, 
+   "category": "Lighting Fixtures"
+  }, 
+  "note": "", 
+  "reason": "not_a_clash", 
+  "user": "coordinator89T4H"
+ }, 
+ {
+  "max": [
+   36.478313852696445, 
+   -41.916935089143820, 
+   2.5450305492928864
+  ], 
+  "time": "2026-11-24 13:02:35", 
+  "name": "CLASH-144", 
+  "label": "144. [мережі] Pipes 4 cmø #8458234  x  Generic Models Rectangular Face Opening #8707017  (36 мм)", 
+  "key": "0:8458234|0:8707017", 
+  "kind": "mep", 
+  "min": [
+   36.018996267394598, 
+   -42.085736088067151, 
+   2.3762295503695530
+  ], 
+  "a": {
+   "id": 8458234, 
+   "system": "מים חמים", 
+   "source": "Модель", 
+   "type": "POLEROL", 
+   "network": 8458217, 
+   "workset": "PL", 
+   "size": "4 cmø", 
+   "link_id": null, 
+   "category": "Pipes"
+  }, 
+  "b": {
+   "id": 8707017, 
+   "system": "Generic Models", 
+   "source": "Модель", 
+   "type": "Rectangular Face Opening", 
+   "network": 8707017, 
+   "workset": "ME", 
+   "size": "", 
+   "link_id": null, 
+   "category": "Generic Models"
+  }, 
+  "note": "", 
+  "reason": "not_a_clash", 
+  "user": "coordinator89T4H"
+ }, 
+ {
+  "max": [
+   -6.05777538521476, 
+   -106.18353883825746, 
+   2.3018217593042030
+  ], 
+  "time": "2026-11-24 13:02:50", 
+  "name": "CLASH-145", 
+  "label": "145. [мережі] Cable Trays 10x10 #11769572  x  Windows Ø8\" מיזוג אויר [A-GCN-MAIN]  (3 мм)", 
+  "key": "0:11769572|8369585:21451597", 
+  "kind": "mep", 
+  "min": [
+   -7.3373029442698776, 
+   -106.52209049334880, 
+   2.2040837525584078
+  ], 
+  "a": {
+   "id": 11769572, 
+   "system": "Cable Trays", 
+   "source": "Модель", 
+   "type": "חשמל חירום", 
+   "network": 11318250, 
+   "workset": "EL", 
+   "size": "10x10", 
+   "link_id": null, 
+   "category": "Cable Trays"
+  }, 
+  "b": {
+   "id": 21451597, 
+   "system": "LINK:Windows", 
+   "source": "A-GCN-MAIN.rvt", 
+   "type": "Ø8\" מיזוג אויר", 
+   "network": null, 
+   "workset": "A_001_Workset1", 
+   "size": "", 
+   "link_id": 8369585, 
+   "category": "Windows"
+  }, 
+  "note": "", 
+  "reason": "not_a_clash", 
+  "user": "coordinator89T4H"
+ }, 
+ {
+  "max": [
+   23.219399000416232, 
+   -49.846071622418378, 
+   6.4644895219054757
+  ], 
+  "time": "2026-11-24 13:03:35", 
+  "name": "CLASH-147", 
+  "label": "147. [мережі] Plumbing Fixtures MahsonRizpa #8394904  x  Pipes 50ø #8459712  (22 мм)", 
+  "key": "0:8394904|0:8459712", 
+  "kind": "mep", 
+  "min": [
+   23.093593741292636, 
+   -50.054455954675049, 
+   6.2549617088046823
+  ], 
+  "a": {
+   "id": 8394904, 
+   "system": "Plumbing Fixtures", 
+   "source": "Модель", 
+   "type": "MahsonRizpa", 
+   "network": 8394904, 
+   "workset": "PL", 
+   "size": "", 
+   "link_id": null, 
+   "category": "Plumbing Fixtures"
+  }, 
+  "b": {
+   "id": 8459712, 
+   "system": "ניקוז  ארון כ''א", 
+   "source": "Модель", 
+   "type": "HDPE", 
+   "network": 8397398, 
+   "workset": "PL", 
+   "size": "50ø", 
+   "link_id": null, 
+   "category": "Pipes"
+  }, 
+  "note": "", 
+  "reason": "not_a_clash", 
+  "user": "coordinator89T4H"
+ }, 
+ {
+  "max": [
+   28.877004125791423, 
+   -48.994750524793467, 
+   1.1655183727035001
+  ], 
+  "time": "2026-11-24 13:05:07", 
+  "name": "CLASH-150", 
+  "label": "150. [мережі] Mechanical Equipment PLFY-P_25 #8698983  x  Lighting Fixtures D20 #11316296  (7 мм)", 
+  "key": "0:8698983|0:11316296", 
+  "kind": "mep", 
+  "min": [
+   28.520207517275963, 
+   -49.247570898401868, 
+   0.98097112860903035
+  ], 
+  "a": {
+   "id": 8698983, 
+   "system": "Mechanical Equipment", 
+   "source": "Модель", 
+   "type": "PLFY-P_25", 
+   "network": 8698983, 
+   "workset": "ME", 
+   "size": "", 
+   "link_id": null, 
+   "category": "Mechanical Equipment"
+  }, 
+  "b": {
+   "id": 11316296, 
+   "system": "Lighting Fixtures", 
+   "source": "Модель", 
+   "type": "D20", 
+   "network": 11316296, 
+   "workset": "EL", 
+   "size": "", 
+   "link_id": null, 
+   "category": "Lighting Fixtures"
+  }, 
+  "note": "", 
+  "reason": "not_a_clash", 
+  "user": "coordinator89T4H"
+ }, 
+ {
+  "max": [
+   31.399439620476400, 
+   -60.814756941087069, 
+   2.6736557488054986
+  ], 
+  "time": "2026-11-24 13:08:09", 
+  "name": "CLASH-154", 
+  "label": "154. [мережі] Pipes 2 cmø #8458269  x  Generic Models Rectangular Face Opening #8707021  (19 мм)", 
+  "key": "0:8458269|0:8707021", 
+  "kind": "mep", 
+  "min": [
+   31.301471954886402, 
+   -61.274074526388915, 
+   2.5756880832154989
+  ], 
+  "a": {
+   "id": 8458269, 
+   "system": "מים חמים", 
+   "source": "Модель", 
+   "type": "POLEROL", 
+   "network": 8458269, 
+   "workset": "PL", 
+   "size": "2 cmø", 
+   "link_id": null, 
+   "category": "Pipes"
+  }, 
+  "b": {
+   "id": 8707021, 
+   "system": "Generic Models", 
+   "source": "Модель", 
+   "type": "Rectangular Face Opening", 
+   "network": 8707021, 
+   "workset": "ME", 
+   "size": "", 
+   "link_id": null, 
+   "category": "Generic Models"
+  }, 
+  "note": "", 
+  "reason": "not_a_clash", 
+  "user": "coordinator89T4H"
+ }, 
+ {
+  "max": [
+   60.441097916966712, 
+   -70.815691025580350, 
+   1.4199952797820139
+  ], 
+  "time": "2026-11-24 13:09:00", 
+  "name": "CLASH-156", 
+  "label": "156. [мережі] Pipes 50ø #8457798  x  Mechanical Equipment PLFY-P_25 #8698987  (10 мм)", 
+  "key": "0:8457798|0:8698987", 
+  "kind": "mep", 
+  "min": [
+   60.313699390720231, 
+   -71.071240958809199, 
+   1.3111024173416206
+  ], 
+  "a": {
+   "id": 8457798, 
+   "system": "ניקוז מזגנים", 
+   "source": "Модель", 
+   "type": "HDPE", 
+   "network": 8457798, 
+   "workset": "PL", 
+   "size": "50ø", 
+   "link_id": null, 
+   "category": "Pipes"
+  }, 
+  "b": {
+   "id": 8698987, 
+   "system": "Mechanical Equipment", 
+   "source": "Модель", 
+   "type": "PLFY-P_25", 
+   "network": 8698987, 
+   "workset": "ME", 
+   "size": "", 
+   "link_id": null, 
+   "category": "Mechanical Equipment"
+  }, 
+  "note": "", 
+  "reason": "not_a_clash", 
+  "user": "coordinator89T4H"
+ }, 
+ {
+  "max": [
+   -19.474331202292817, 
+   -110.01168624808446, 
+   0.67818724334159541
+  ], 
+  "time": "2026-11-24 13:09:58", 
+  "name": "CLASH-157", 
+  "label": "157. [мережі] Pipes 50ø #8459642  x  Cable Trays 20x10 #11318593  (2 мм)", 
+  "key": "0:8459642|0:11318593", 
+  "kind": "mep", 
+  "min": [
+   -20.140966846885796, 
+   -110.13243045700489, 
+   0.6509341462124314
+  ], 
+  "a": {
+   "id": 8459642, 
+   "system": "ניקוז מזגנים", 
+   "source": "Модель", 
+   "type": "HDPE", 
+   "network": 8406067, 
+   "workset": "PL", 
+   "size": "50ø", 
+   "link_id": null, 
+   "category": "Pipes"
+  }, 
+  "b": {
+   "id": 11318593, 
+   "system": "Cable Trays", 
+   "source": "Модель", 
+   "type": "תְאוּרָה", 
+   "network": 11318593, 
+   "workset": "EL", 
+   "size": "20x10", 
+   "link_id": null, 
+   "category": "Cable Trays"
+  }, 
+  "note": "", 
+  "reason": "not_a_clash", 
+  "user": "coordinator89T4H"
+ }, 
+ {
+  "max": [
+   19.751264222021625, 
+   -109.85663339742786, 
+   1.6168456734827990
+  ], 
+  "time": "2026-11-24 13:10:05", 
+  "name": "CLASH-158", 
+  "label": "158. [мережі] Pipes 50ø #8459534  x  Mechanical Equipment PLFY-P_40 #8698972  (4 мм)", 
+  "key": "0:8459534|0:8698972", 
+  "kind": "mep", 
+  "min": [
+   19.691558535697560, 
+   -110.17878085304412, 
+   1.5237595477552155
+  ], 
+  "a": {
+   "id": 8459534, 
+   "system": "ניקוז מזגנים", 
+   "source": "Модель", 
+   "type": "HDPE", 
+   "network": 8459518, 
+   "workset": "PL", 
+   "size": "50ø", 
+   "link_id": null, 
+   "category": "Pipes"
+  }, 
+  "b": {
+   "id": 8698972, 
+   "system": "Mechanical Equipment", 
+   "source": "Модель", 
+   "type": "PLFY-P_40", 
+   "network": 8698972, 
+   "workset": "ME", 
+   "size": "", 
+   "link_id": null, 
+   "category": "Mechanical Equipment"
+  }, 
+  "note": "", 
+  "reason": "not_a_clash", 
+  "user": "coordinator89T4H"
+ }, 
+ {
+  "max": [
+   -3.0827041822773826, 
+   -42.723918058074567, 
+   6.3653958410059097
+  ], 
+  "time": "2026-11-24 13:12:23", 
+  "name": "CLASH-160", 
+  "label": "160. [мережі] Pipes 50ø #8396284  x  Pipes 50ø #8397286  (6 мм)", 
+  "key": "0:8396284|0:8397286", 
+  "kind": "mep", 
+  "min": [
+   -3.1659121257655172, 
+   -42.846345157477039, 
+   6.2040350026009445
+  ], 
+  "a": {
+   "id": 8396284, 
+   "system": "ביוב", 
+   "source": "Модель", 
+   "type": "HDPE", 
+   "network": 8396284, 
+   "workset": "PL", 
+   "size": "50ø", 
+   "link_id": null, 
+   "category": "Pipes"
+  }, 
+  "b": {
+   "id": 8397286, 
+   "system": "ניקוז מזגנים", 
+   "source": "Модель", 
+   "type": "HDPE", 
+   "network": 8397278, 
+   "workset": "PL", 
+   "size": "50ø", 
+   "link_id": null, 
+   "category": "Pipes"
+  }, 
+  "note": "", 
+  "reason": "not_a_clash", 
+  "user": "coordinator89T4H"
+ }, 
+ {
+  "max": [
+   56.677066774083009, 
+   -21.851945842253421, 
+   2.2339121034733509
+  ], 
+  "time": "2026-11-24 13:14:49", 
+  "name": "CLASH-164", 
+  "label": "164. [мережі] Electrical Equipment EHS  100 white #8460531  x  Pipes 25ø #8460573  (8 мм)", 
+  "key": "0:8460531|0:8460573", 
+  "kind": "mep", 
+  "min": [
+   56.557015775159677, 
+   -21.971996841176754, 
+   2.1842348640516906
+  ], 
+  "a": {
+   "id": 8460531, 
+   "system": "Electrical Equipment", 
+   "source": "Модель", 
+   "type": "EHS  100 white", 
+   "network": 8460531, 
+   "workset": "PL", 
+   "size": "", 
+   "link_id": null, 
+   "category": "Electrical Equipment"
+  }, 
+  "b": {
+   "id": 8460573, 
+   "system": "מים קרים לצריכה M2", 
+   "source": "Модель", 
+   "type": "POLEROL", 
+   "network": 8458076, 
+   "workset": "PL", 
+   "size": "25ø", 
+   "link_id": null, 
+   "category": "Pipes"
+  }, 
+  "note": "", 
+  "reason": "not_a_clash", 
+  "user": "coordinator89T4H"
+ }, 
+ {
+  "max": [
+   -3.0926231929177566, 
+   -42.646827271102509, 
+   6.3731705593734178
+  ], 
+  "time": "2026-11-24 13:14:56", 
+  "name": "CLASH-165", 
+  "label": "165. [мережі] Plumbing Fixtures MahsonRizpa #8396298  x  Pipes 50ø #8397286  (4 мм)", 
+  "key": "0:8396298|0:8397286", 
+  "kind": "mep", 
+  "min": [
+   -3.2161957149485381, 
+   -42.758491466465770, 
+   6.1646093972484985
+  ], 
+  "a": {
+   "id": 8396298, 
+   "system": "Plumbing Fixtures", 
+   "source": "Модель", 
+   "type": "MahsonRizpa", 
+   "network": 8396298, 
+   "workset": "PL", 
+   "size": "", 
+   "link_id": null, 
+   "category": "Plumbing Fixtures"
+  }, 
+  "b": {
+   "id": 8397286, 
+   "system": "ניקוז מזגנים", 
+   "source": "Модель", 
+   "type": "HDPE", 
+   "network": 8397278, 
+   "workset": "PL", 
+   "size": "50ø", 
+   "link_id": null, 
+   "category": "Pipes"
+  }, 
+  "note": "", 
+  "reason": "not_a_clash", 
+  "user": "coordinator89T4H"
+ }, 
+ {
+  "max": [
+   56.677066774082924, 
+   -22.096127182293639, 
+   2.2339121034735134
+  ], 
+  "time": "2026-11-24 13:15:07", 
+  "name": "CLASH-166", 
+  "label": "166. [мережі] Electrical Equipment EHS  100 white #8460531  x  Pipes 25ø #8460596  (7 мм)", 
+  "key": "0:8460531|0:8460596", 
+  "kind": "mep", 
+  "min": [
+   56.557015775159591, 
+   -22.216178181216971, 
+   2.1867217381175790
+  ], 
+  "a": {
+   "id": 8460531, 
+   "system": "Electrical Equipment", 
+   "source": "Модель", 
+   "type": "EHS  100 white", 
+   "network": 8460531, 
+   "workset": "PL", 
+   "size": "", 
+   "link_id": null, 
+   "category": "Electrical Equipment"
+  }, 
+  "b": {
+   "id": 8460596, 
+   "system": "מים חמים", 
+   "source": "Модель", 
+   "type": "POLEROL", 
+   "network": 8458082, 
+   "workset": "PL", 
+   "size": "25ø", 
+   "link_id": null, 
+   "category": "Pipes"
+  }, 
+  "note": "", 
+  "reason": "not_a_clash", 
+  "user": "coordinator89T4H"
+ }, 
+ {
+  "max": [
+   112.61315509052287, 
+   26.158499316136378, 
+   1.1107913296640470
+  ], 
+  "time": "2026-11-24 13:15:14", 
+  "name": "CLASH-167", 
+  "label": "167. [мережі] Pipes 5 cmø #8461653  x  Lighting Fixtures Lighting fixture 65W IP #11316163  (2 мм)", 
+  "key": "0:8461653|0:11316163", 
+  "kind": "mep", 
+  "min": [
+   112.27140525965063, 
+   26.013571757720406, 
+   1.0652875399639488
+  ], 
+  "a": {
+   "id": 8461653, 
+   "system": "מים קרים לצריכה M2", 
+   "source": "Модель", 
+   "type": "SP", 
+   "network": 8460319, 
+   "workset": "PL", 
+   "size": "5 cmø", 
+   "link_id": null, 
+   "category": "Pipes"
+  }, 
+  "b": {
+   "id": 11316163, 
+   "system": "Lighting Fixtures", 
+   "source": "Модель", 
+   "type": "Lighting fixture 65W IP", 
+   "network": 11316163, 
+   "workset": "EL", 
+   "size": "", 
+   "link_id": null, 
+   "category": "Lighting Fixtures"
+  }, 
+  "note": "", 
+  "reason": "not_a_clash", 
+  "user": "coordinator89T4H"
+ }, 
+ {
+  "max": [
+   55.447750382981297, 
+   -17.682939928791427, 
+   1.0170603674540715
+  ], 
+  "time": "2026-11-24 13:16:13", 
+  "name": "CLASH-168", 
+  "label": "168. [мережі] Mechanical Equipment PLFY-P_25 #8706323  x  Lighting Fixtures D20 #11316603  (3 мм)", 
+  "key": "0:8706323|0:11316603", 
+  "kind": "mep", 
+  "min": [
+   55.383240589077111, 
+   -18.054185500005218, 
+   0.98097112860903724
+  ], 
+  "a": {
+   "id": 8706323, 
+   "system": "Mechanical Equipment", 
+   "source": "Модель", 
+   "type": "PLFY-P_25", 
+   "network": 8706323, 
+   "workset": "ME", 
+   "size": "", 
+   "link_id": null, 
+   "category": "Mechanical Equipment"
+  }, 
+  "b": {
+   "id": 11316603, 
+   "system": "Lighting Fixtures", 
+   "source": "Модель", 
+   "type": "D20", 
+   "network": 11316603, 
+   "workset": "EL", 
+   "size": "", 
+   "link_id": null, 
+   "category": "Lighting Fixtures"
+  }, 
+  "note": "", 
+  "reason": "not_a_clash", 
+  "user": "coordinator89T4H"
+ }, 
+ {
+  "max": [
+   19.751264222021625, 
+   -96.278939635580485, 
+   1.6168456734827992
+  ], 
+  "time": "2026-11-24 13:16:30", 
+  "name": "CLASH-170", 
+  "label": "170. [мережі] Pipes 50ø #8459564  x  Mechanical Equipment PLFY-P_40 #8698975  (4 мм)", 
+  "key": "0:8459564|0:8698975", 
+  "kind": "mep", 
+  "min": [
+   19.698406154729724, 
+   -96.387832498020884, 
+   1.5562612108507368
+  ], 
+  "a": {
+   "id": 8459564, 
+   "system": "ניקוז מזגנים", 
+   "source": "Модель", 
+   "type": "HDPE", 
+   "network": 8459518, 
+   "workset": "PL", 
+   "size": "50ø", 
+   "link_id": null, 
+   "category": "Pipes"
+  }, 
+  "b": {
+   "id": 8698975, 
+   "system": "Mechanical Equipment", 
+   "source": "Модель", 
+   "type": "PLFY-P_40", 
+   "network": 8698975, 
+   "workset": "ME", 
+   "size": "", 
+   "link_id": null, 
+   "category": "Mechanical Equipment"
+  }, 
+  "note": "", 
+  "reason": "not_a_clash", 
+  "user": "coordinator89T4H"
+ }, 
+ {
+  "max": [
+   34.452191653662680, 
+   -110.19351850168638, 
+   1.6168439141577475
+  ], 
+  "time": "2026-11-24 13:16:35", 
+  "name": "CLASH-171", 
+  "label": "171. [мережі] Pipes 50ø #8459081  x  Mechanical Equipment PLFY-P_40 #8698971  (2 мм)", 
+  "key": "0:8459081|0:8698971", 
+  "kind": "mep", 
+  "min": [
+   34.336727688543249, 
+   -110.28423943103584, 
+   1.5852508258967215
+  ], 
+  "a": {
+   "id": 8459081, 
+   "system": "ניקוז מזגנים", 
+   "source": "Модель", 
+   "type": "HDPE", 
+   "network": 8459077, 
+   "workset": "PL", 
+   "size": "50ø", 
+   "link_id": null, 
+   "category": "Pipes"
+  }, 
+  "b": {
+   "id": 8698971, 
+   "system": "Mechanical Equipment", 
+   "source": "Модель", 
+   "type": "PLFY-P_40", 
+   "network": 8698971, 
+   "workset": "ME", 
+   "size": "", 
+   "link_id": null, 
+   "category": "Mechanical Equipment"
+  }, 
+  "note": "", 
+  "reason": "not_a_clash", 
+  "user": "coordinator89T4H"
+ }, 
+ {
+  "max": [
+   97.477420070591606, 
+   -94.323952517635846, 
+   1.6576443569552906
+  ], 
+  "time": "2026-11-25 13:16:35", 
+  "name": "CLASH-072", 
+  "label": "72. [мережі] Cable Trays x Lighting Fixtures  —  2 колізій", 
+  "key": "0:11318473|0:11318516", 
+  "kind": "mep", 
+  "a": {
+   "id": 11318473, 
+   "system": "Cable Trays", 
+   "source": "Модель", 
+   "type": "תְאוּרָה", 
+   "network": 11318473, 
+   "workset": "EL", 
+   "size": "20x10", 
+   "link_id": null, 
+   "category": "Cable Trays"
+  }, 
+  "min": [
+   97.138868415500426, 
+   -94.662504172727026, 
+   1.4763779527559056
+  ], 
+  "b": {
+   "id": 11318516, 
+   "system": "Lighting Fixtures", 
+   "source": "Модель", 
+   "type": "D10 תאורת חירום", 
+   "network": 11318516, 
+   "workset": "EL", 
+   "size": "", 
+   "link_id": null, 
+   "category": "Lighting Fixtures"
+  }, 
+  "note": "", 
+  "reason": "not_a_clash", 
+  "user": "coordinator89T4H"
+ }, 
+ {
+  "max": [
+   97.477420070591577, 
+   -81.200592937583366, 
+   1.6576443569553394
+  ], 
+  "time": "2026-11-25 13:16:35", 
+  "name": "CLASH-072", 
+  "label": "72. [мережі] Cable Trays x Lighting Fixtures  —  2 колізій", 
+  "key": "0:11318473|0:11319811", 
+  "kind": "mep", 
+  "a": {
+   "id": 11318473, 
+   "system": "Cable Trays", 
+   "source": "Модель", 
+   "type": "תְאוּרָה", 
+   "network": 11318473, 
+   "workset": "EL", 
+   "size": "20x10", 
+   "link_id": null, 
+   "category": "Cable Trays"
+  }, 
+  "min": [
+   97.138868415500397, 
+   -81.539144592674546, 
+   1.4763779527559056
+  ], 
+  "b": {
+   "id": 11319811, 
+   "system": "Lighting Fixtures", 
+   "source": "Модель", 
+   "type": "D10 תאורת חירום", 
+   "network": 11319811, 
+   "workset": "EL", 
+   "size": "", 
+   "link_id": null, 
+   "category": "Lighting Fixtures"
+  }, 
+  "note": "", 
+  "reason": "not_a_clash", 
+  "user": "coordinator89T4H"
+ }, 
+ {
+  "max": [
+   22.481396023971548, 
+   28.092714829413378, 
+   -9.3451598679924022
+  ], 
+  "time": "2026-11-26 17:21:07", 
+  "name": "CLASH-001", 
+  "label": "1. [крізь конструкцію] Structural Framing x ניקוז  ארון כ''א  —  14 колізій", 
+  "key": "0:8456877|8369585:24786631", 
+  "kind": "through", 
+  "min": [
+   21.934302319242640, 
+   27.721354775371932, 
+   -9.5587398070556144
+  ], 
+  "a": {
+   "id": 8456877, 
+   "system": "ניקוז  ארון כ''א", 
+   "source": "Модель", 
+   "type": "HDPE", 
+   "network": 8456877, 
+   "workset": "PL", 
+   "size": "110ø", 
+   "link_id": null, 
+   "category": "Pipes"
+  }, 
+  "b": {
+   "id": 24786631, 
+   "system": "LINK:Structural Framing", 
+   "source": "A-GCN-MAIN.rvt", 
+   "type": "Beam", 
+   "network": null, 
+   "workset": "A_001_Workset1", 
+   "size": "", 
+   "link_id": 8369585, 
+   "category": "Structural Framing"
+  }, 
+  "note": "", 
+  "reason": "not_a_clash", 
+  "user": "coordinator89T4H"
+ }, 
+ {
+  "max": [
+   22.481396023971548, 
+   28.092714829413378, 
+   -9.3451598679927166
+  ], 
+  "time": "2026-11-26 17:21:07", 
+  "name": "CLASH-001", 
+  "label": "1. [крізь конструкцію] Structural Framing x ניקוז  ארון כ''א  —  14 колізій", 
+  "key": "0:8456877|8369588:8957193", 
+  "kind": "through", 
+  "min": [
+   21.934302319242640, 
+   27.721354775371932, 
+   -9.5587398070556127
+  ], 
+  "a": {
+   "id": 8456877, 
+   "system": "ניקוז  ארון כ''א", 
+   "source": "Модель", 
+   "type": "HDPE", 
+   "network": 8456877, 
+   "workset": "PL", 
+   "size": "110ø", 
+   "link_id": null, 
+   "category": "Pipes"
+  }, 
+  "b": {
+   "id": 8957193, 
+   "system": "LINK:Structural Framing", 
+   "source": "S-GCN-MAIN.rvt", 
+   "type": "Beam", 
+   "network": null, 
+   "workset": "S_040_Concrete", 
+   "size": "", 
+   "link_id": 8369588, 
+   "category": "Structural Framing"
+  }, 
+  "note": "", 
+  "reason": "not_a_clash", 
+  "user": "coordinator89T4H"
+ }, 
+ {
+  "max": [
+   21.890167981028856, 
+   28.092714829413378, 
+   -9.6126857459604302
+  ], 
+  "time": "2026-11-26 17:21:07", 
+  "name": "CLASH-001", 
+  "label": "1. [крізь конструкцію] Structural Framing x ניקוז  ארון כ''א  —  14 колізій", 
+  "key": "0:8461985|8369585:24786631", 
+  "kind": "through", 
+  "min": [
+   21.518807926987410, 
+   27.721354775371932, 
+   -9.8425196850397008
+  ], 
+  "a": {
+   "id": 8461985, 
+   "system": "ניקוז  ארון כ''א", 
+   "source": "Модель", 
+   "type": "HDPE", 
+   "network": 8456877, 
+   "workset": "PL", 
+   "size": "110ø", 
+   "link_id": null, 
+   "category": "Pipes"
+  }, 
+  "b": {
+   "id": 24786631, 
+   "system": "LINK:Structural Framing", 
+   "source": "A-GCN-MAIN.rvt", 
+   "type": "Beam", 
+   "network": null, 
+   "workset": "A_001_Workset1", 
+   "size": "", 
+   "link_id": 8369585, 
+   "category": "Structural Framing"
+  }, 
+  "note": "", 
+  "reason": "not_a_clash", 
+  "user": "coordinator89T4H"
+ }, 
+ {
+  "max": [
+   21.890167981028856, 
+   28.092714829413378, 
+   -9.6126857459604302
+  ], 
+  "time": "2026-11-26 17:21:07", 
+  "name": "CLASH-001", 
+  "label": "1. [крізь конструкцію] Structural Framing x ניקוז  ארון כ''א  —  14 колізій", 
+  "key": "0:8461985|8369588:8957193", 
+  "kind": "through", 
+  "min": [
+   21.518807926987410, 
+   27.721354775371932, 
+   -9.8425196850396865
+  ], 
+  "a": {
+   "id": 8461985, 
+   "system": "ניקוז  ארון כ''א", 
+   "source": "Модель", 
+   "type": "HDPE", 
+   "network": 8456877, 
+   "workset": "PL", 
+   "size": "110ø", 
+   "link_id": null, 
+   "category": "Pipes"
+  }, 
+  "b": {
+   "id": 8957193, 
+   "system": "LINK:Structural Framing", 
+   "source": "S-GCN-MAIN.rvt", 
+   "type": "Beam", 
+   "network": null, 
+   "workset": "S_040_Concrete", 
+   "size": "", 
+   "link_id": 8369588, 
+   "category": "Structural Framing"
+  }, 
+  "note": "", 
+  "reason": "not_a_clash", 
+  "user": "coordinator89T4H"
+ }, 
+ {
+  "max": [
+   21.901478256420837, 
+   28.097923162746710, 
+   -9.3451598679924039
+  ], 
+  "time": "2026-11-26 17:21:07", 
+  "name": "CLASH-001", 
+  "label": "1. [крізь конструкцію] Structural Framing x ניקוז  ארון כ''א  —  14 колізій", 
+  "key": "0:8461987|8369585:24786631", 
+  "kind": "through", 
+  "min": [
+   21.513599593654114, 
+   27.716146442038600, 
+   -9.6179195787554583
+  ], 
+  "a": {
+   "id": 8461987, 
+   "system": "ניקוז  ארון כ''א", 
+   "source": "Модель", 
+   "type": "Standard 3", 
+   "network": 8456877, 
+   "workset": "PL", 
+   "size": "110ø-110ø", 
+   "link_id": null, 
+   "category": "Pipe Fittings"
+  }, 
+  "b": {
+   "id": 24786631, 
+   "system": "LINK:Structural Framing", 
+   "source": "A-GCN-MAIN.rvt", 
+   "type": "Beam", 
+   "network": null, 
+   "workset": "A_001_Workset1", 
+   "size": "", 
+   "link_id": 8369585, 
+   "category": "Structural Framing"
+  }, 
+  "note": "", 
+  "reason": "not_a_clash", 
+  "user": "coordinator89T4H"
+ }, 
+ {
+  "max": [
+   21.901478256420837, 
+   28.097923162746710, 
+   -9.3451598679927166
+  ], 
+  "time": "2026-11-26 17:21:07", 
+  "name": "CLASH-001", 
+  "label": "1. [крізь конструкцію] Structural Framing x ניקוז  ארון כ''א  —  14 колізій", 
+  "key": "0:8461987|8369588:8957193", 
+  "kind": "through", 
+  "min": [
+   21.513599593654114, 
+   27.716146442038600, 
+   -9.6179195787554583
+  ], 
+  "a": {
+   "id": 8461987, 
+   "system": "ניקוז  ארון כ''א", 
+   "source": "Модель", 
+   "type": "Standard 3", 
+   "network": 8456877, 
+   "workset": "PL", 
+   "size": "110ø-110ø", 
+   "link_id": null, 
+   "category": "Pipe Fittings"
+  }, 
+  "b": {
+   "id": 8957193, 
+   "system": "LINK:Structural Framing", 
+   "source": "S-GCN-MAIN.rvt", 
+   "type": "Beam", 
+   "network": null, 
+   "workset": "S_040_Concrete", 
+   "size": "", 
+   "link_id": 8369588, 
+   "category": "Structural Framing"
+  }, 
+  "note": "", 
+  "reason": "not_a_clash", 
+  "user": "coordinator89T4H"
+ }, 
+ {
+  "max": [
+   22.750345853362703, 
+   28.103364119817670, 
+   -9.3451598679924004
+  ], 
+  "time": "2026-11-26 17:21:07", 
+  "name": "CLASH-001", 
+  "label": "1. [крізь конструкцію] Structural Framing x ניקוז  ארון כ''א  —  14 колізій", 
+  "key": "0:8461467|8369585:24786631", 
+  "kind": "through", 
+  "min": [
+   22.454811452548547, 
+   27.716928814714606, 
+   -9.5532958231612639
+  ], 
+  "a": {
+   "id": 8461467, 
+   "system": "ניקוז  ארון כ''א", 
+   "source": "Модель", 
+   "type": "Standard 3", 
+   "network": 8456877, 
+   "workset": "PL", 
+   "size": "110ø-110ø", 
+   "link_id": null, 
+   "category": "Pipe Fittings"
+  }, 
+  "b": {
+   "id": 24786631, 
+   "system": "LINK:Structural Framing", 
+   "source": "A-GCN-MAIN.rvt", 
+   "type": "Beam", 
+   "network": null, 
+   "workset": "A_001_Workset1", 
+   "size": "", 
+   "link_id": 8369585, 
+   "category": "Structural Framing"
+  }, 
+  "note": "", 
+  "reason": "not_a_clash", 
+  "user": "coordinator89T4H"
+ }, 
+ {
+  "max": [
+   22.750345853362703, 
+   28.103364119817655, 
+   -9.3451598679927166
+  ], 
+  "time": "2026-11-26 17:21:07", 
+  "name": "CLASH-001", 
+  "label": "1. [крізь конструкцію] Structural Framing x ניקוז  ארון כ''א  —  14 колізій", 
+  "key": "0:8461467|8369588:8957193", 
+  "kind": "through", 
+  "min": [
+   22.454811452548554, 
+   27.716928814714578, 
+   -9.5532958231612639
+  ], 
+  "a": {
+   "id": 8461467, 
+   "system": "ניקוז  ארון כ''א", 
+   "source": "Модель", 
+   "type": "Standard 3", 
+   "network": 8456877, 
+   "workset": "PL", 
+   "size": "110ø-110ø", 
+   "link_id": null, 
+   "category": "Pipe Fittings"
+  }, 
+  "b": {
+   "id": 8957193, 
+   "system": "LINK:Structural Framing", 
+   "source": "S-GCN-MAIN.rvt", 
+   "type": "Beam", 
+   "network": null, 
+   "workset": "S_040_Concrete", 
+   "size": "", 
+   "link_id": 8369588, 
+   "category": "Structural Framing"
+  }, 
+  "note": "", 
+  "reason": "not_a_clash", 
+  "user": "coordinator89T4H"
+ }, 
+ {
+  "max": [
+   21.948936376141695, 
+   28.097515300535022, 
+   -9.3451598679924004
+  ], 
+  "time": "2026-11-26 17:21:07", 
+  "name": "CLASH-001", 
+  "label": "1. [крізь конструкцію] Structural Framing x ניקוז  ארון כ''א  —  14 колізій", 
+  "key": "0:8461983|8369585:24786631", 
+  "kind": "through", 
+  "min": [
+   21.709736560541579, 
+   27.716554304250288, 
+   -9.5700448756762313
+  ], 
+  "a": {
+   "id": 8461983, 
+   "system": "ניקוז  ארון כ''א", 
+   "source": "Модель", 
+   "type": "Standard 3", 
+   "network": 8456877, 
+   "workset": "PL", 
+   "size": "110ø-110ø", 
+   "link_id": null, 
+   "category": "Pipe Fittings"
+  }, 
+  "b": {
+   "id": 24786631, 
+   "system": "LINK:Structural Framing", 
+   "source": "A-GCN-MAIN.rvt", 
+   "type": "Beam", 
+   "network": null, 
+   "workset": "A_001_Workset1", 
+   "size": "", 
+   "link_id": 8369585, 
+   "category": "Structural Framing"
+  }, 
+  "note": "", 
+  "reason": "not_a_clash", 
+  "user": "coordinator89T4H"
+ }, 
+ {
+  "max": [
+   21.948936376141695, 
+   28.097515300535001, 
+   -9.3451598679927166
+  ], 
+  "time": "2026-11-26 17:21:07", 
+  "name": "CLASH-001", 
+  "label": "1. [крізь конструкцію] Structural Framing x ניקוז  ארון כ''א  —  14 колізій", 
+  "key": "0:8461983|8369588:8957193", 
+  "kind": "through", 
+  "min": [
+   21.709736560541891, 
+   27.716554304250316, 
+   -9.5700448756762313
+  ], 
+  "a": {
+   "id": 8461983, 
+   "system": "ניקוז  ארון כ''א", 
+   "source": "Модель", 
+   "type": "Standard 3", 
+   "network": 8456877, 
+   "workset": "PL", 
+   "size": "110ø-110ø", 
+   "link_id": null, 
+   "category": "Pipe Fittings"
+  }, 
+  "b": {
+   "id": 8957193, 
+   "system": "LINK:Structural Framing", 
+   "source": "S-GCN-MAIN.rvt", 
+   "type": "Beam", 
+   "network": null, 
+   "workset": "S_040_Concrete", 
+   "size": "", 
+   "link_id": 8369588, 
+   "category": "Structural Framing"
+  }, 
+  "note": "", 
+  "reason": "not_a_clash", 
+  "user": "coordinator89T4H"
+ }, 
+ {
+  "max": [
+   21.930938720406644, 
+   28.092714829413378, 
+   -9.3451598679924022
+  ], 
+  "time": "2026-11-26 17:21:07", 
+  "name": "CLASH-001", 
+  "label": "1. [крізь конструкцію] Structural Framing x ניקוז  ארון כ''א  —  14 колізій", 
+  "key": "0:8461981|8369585:24786631", 
+  "kind": "through", 
+  "min": [
+   21.643449936932470, 
+   27.721354775371932, 
+   -9.5995053396620111
+  ], 
+  "a": {
+   "id": 8461981, 
+   "system": "ניקוז  ארון כ''א", 
+   "source": "Модель", 
+   "type": "HDPE", 
+   "network": 8456877, 
+   "workset": "PL", 
+   "size": "110ø", 
+   "link_id": null, 
+   "category": "Pipes"
+  }, 
+  "b": {
+   "id": 24786631, 
+   "system": "LINK:Structural Framing", 
+   "source": "A-GCN-MAIN.rvt", 
+   "type": "Beam", 
+   "network": null, 
+   "workset": "A_001_Workset1", 
+   "size": "", 
+   "link_id": 8369585, 
+   "category": "Structural Framing"
+  }, 
+  "note": "", 
+  "reason": "not_a_clash", 
+  "user": "coordinator89T4H"
+ }, 
+ {
+  "max": [
+   21.930938720406644, 
+   28.092714829413378, 
+   -9.3451598679927166
+  ], 
+  "time": "2026-11-26 17:21:07", 
+  "name": "CLASH-001", 
+  "label": "1. [крізь конструкцію] Structural Framing x ניקוז  ארון כ''א  —  14 колізій", 
+  "key": "0:8461981|8369588:8957193", 
+  "kind": "through", 
+  "min": [
+   21.643449936932782, 
+   27.721354775371932, 
+   -9.5995053396620129
+  ], 
+  "a": {
+   "id": 8461981, 
+   "system": "ניקוז  ארון כ''א", 
+   "source": "Модель", 
+   "type": "HDPE", 
+   "network": 8456877, 
+   "workset": "PL", 
+   "size": "110ø", 
+   "link_id": null, 
+   "category": "Pipes"
+  }, 
+  "b": {
+   "id": 8957193, 
+   "system": "LINK:Structural Framing", 
+   "source": "S-GCN-MAIN.rvt", 
+   "type": "Beam", 
+   "network": null, 
+   "workset": "S_040_Concrete", 
+   "size": "", 
+   "link_id": 8369588, 
+   "category": "Structural Framing"
+  }, 
+  "note": "", 
+  "reason": "not_a_clash", 
+  "user": "coordinator89T4H"
+ }, 
+ {
+  "max": [
+   22.818576772469626, 
+   28.091469615124879, 
+   -9.3451598679924022
+  ], 
+  "time": "2026-11-26 17:21:07", 
+  "name": "CLASH-001", 
+  "label": "1. [крізь конструкцію] Structural Framing x ניקוז  ארון כ''א  —  14 колізій", 
+  "key": "0:8461465|8369585:24786631", 
+  "kind": "through", 
+  "min": [
+   22.646112571809596, 
+   27.747799144203086, 
+   -9.4348355339129260
+  ], 
+  "a": {
+   "id": 8461465, 
+   "system": "ניקוז  ארון כ''א", 
+   "source": "Модель", 
+   "type": "HDPE", 
+   "network": 8456877, 
+   "workset": "PL", 
+   "size": "110ø", 
+   "link_id": null, 
+   "category": "Pipes"
+  }, 
+  "b": {
+   "id": 24786631, 
+   "system": "LINK:Structural Framing", 
+   "source": "A-GCN-MAIN.rvt", 
+   "type": "Beam", 
+   "network": null, 
+   "workset": "A_001_Workset1", 
+   "size": "", 
+   "link_id": 8369585, 
+   "category": "Structural Framing"
+  }, 
+  "note": "", 
+  "reason": "not_a_clash", 
+  "user": "coordinator89T4H"
+ }, 
+ {
+  "max": [
+   22.818576772469669, 
+   28.091469615124716, 
+   -9.3451598679927166
+  ], 
+  "time": "2026-11-26 17:21:07", 
+  "name": "CLASH-001", 
+  "label": "1. [крізь конструкцію] Structural Framing x ניקוז  ארון כ''א  —  14 колізій", 
+  "key": "0:8461465|8369588:8957193", 
+  "kind": "through", 
+  "min": [
+   22.646112571809923, 
+   27.747799144203285, 
+   -9.4348355339129277
+  ], 
+  "a": {
+   "id": 8461465, 
+   "system": "ניקוז  ארון כ''א", 
+   "source": "Модель", 
+   "type": "HDPE", 
+   "network": 8456877, 
+   "workset": "PL", 
+   "size": "110ø", 
+   "link_id": null, 
+   "category": "Pipes"
+  }, 
+  "b": {
+   "id": 8957193, 
+   "system": "LINK:Structural Framing", 
+   "source": "S-GCN-MAIN.rvt", 
+   "type": "Beam", 
+   "network": null, 
+   "workset": "S_040_Concrete", 
+   "size": "", 
+   "link_id": 8369588, 
+   "category": "Structural Framing"
+  }, 
+  "note": "", 
+  "reason": "not_a_clash", 
+  "user": "coordinator89T4H"
+ }, 
+ {
+  "key": "0:8848659|8369585:5781512", 
+  "note": "", 
+  "user": "coordinator89T4H", 
+  "name": "CLASH-002", 
+  "reason": "not_a_clash", 
+  "max": [
+   -15.640704880970342, 
+   -9.0423406424130839, 
+   -8.2841220059520140
+  ], 
+  "min": [
+   -17.117082833726251, 
+   -10.518718595168988, 
+   -8.9402899849546316
+  ], 
+  "label": "2. [крізь конструкцію] Fresh Air x Floors  —  6 колізій", 
+  "time": "2026-11-26 17:21:27", 
+  "kind": "through", 
+  "a": {
+   "id": 8848659, 
+   "system": "Fresh Air", 
+   "source": "Модель", 
+   "type": "Fire insulation", 
+   "network": 8706216, 
+   "workset": "ME", 
+   "size": "", 
+   "link_id": null, 
+   "category": "Duct Insulations"
+  }, 
+  "b": {
+   "id": 5781512, 
+   "system": "LINK:Floors", 
+   "source": "A-GCN-MAIN.rvt", 
+   "type": "AR_CON.50", 
+   "network": null, 
+   "workset": "A_090_FLOOR", 
+   "size": "", 
+   "link_id": 8369585, 
+   "category": "Floors"
+  }
+ }, 
+ {
+  "key": "0:8848659|8369588:5529788", 
+  "note": "", 
+  "user": "coordinator89T4H", 
+  "name": "CLASH-002", 
+  "reason": "not_a_clash", 
+  "max": [
+   -15.640704880970342, 
+   -9.0423406424130839, 
+   -8.2841220059520140
+  ], 
+  "min": [
+   -17.117082833726251, 
+   -10.518718595168988, 
+   -8.9402899849546316
+  ], 
+  "label": "2. [крізь конструкцію] Fresh Air x Floors  —  6 колізій", 
+  "time": "2026-11-26 17:21:27", 
+  "kind": "through", 
+  "a": {
+   "id": 8848659, 
+   "system": "Fresh Air", 
+   "source": "Модель", 
+   "type": "Fire insulation", 
+   "network": 8706216, 
+   "workset": "ME", 
+   "size": "", 
+   "link_id": null, 
+   "category": "Duct Insulations"
+  }, 
+  "b": {
+   "id": 5529788, 
+   "system": "LINK:Floors", 
+   "source": "S-GCN-MAIN.rvt", 
+   "type": "STR-D=50cm", 
+   "network": null, 
+   "workset": "S_040_Concrete", 
+   "size": "", 
+   "link_id": 8369588, 
+   "category": "Floors"
+  }
+ }, 
+ {
+  "key": "0:8706772|8369585:5781512", 
+  "note": "", 
+  "user": "coordinator89T4H", 
+  "name": "CLASH-002", 
+  "reason": "not_a_clash", 
+  "max": [
+   -15.640704880970343, 
+   -9.2884036345390300, 
+   -7.7099737532808383
+  ], 
+  "min": [
+   -17.117082834294262, 
+   -10.272655603127369, 
+   -8.2841220067546608
+  ], 
+  "label": "2. [крізь конструкцію] Fresh Air x Floors  —  6 колізій", 
+  "time": "2026-11-26 17:21:27", 
+  "kind": "through", 
+  "a": {
+   "id": 8706772, 
+   "system": "Fresh Air", 
+   "source": "Модель", 
+   "type": "Fire insulation", 
+   "network": 8706216, 
+   "workset": "ME", 
+   "size": "", 
+   "link_id": null, 
+   "category": "Duct Insulations"
+  }, 
+  "b": {
+   "id": 5781512, 
+   "system": "LINK:Floors", 
+   "source": "A-GCN-MAIN.rvt", 
+   "type": "AR_CON.50", 
+   "network": null, 
+   "workset": "A_090_FLOOR", 
+   "size": "", 
+   "link_id": 8369585, 
+   "category": "Floors"
+  }
+ }, 
+ {
+  "key": "0:8706772|8369588:5529788", 
+  "note": "", 
+  "user": "coordinator89T4H", 
+  "name": "CLASH-002", 
+  "reason": "not_a_clash", 
+  "max": [
+   -15.640704880970343, 
+   -9.2884036345390300, 
+   -7.7099737532811545
+  ], 
+  "min": [
+   -17.117082834294262, 
+   -10.272655603127369, 
+   -8.2841220067546608
+  ], 
+  "label": "2. [крізь конструкцію] Fresh Air x Floors  —  6 колізій", 
+  "time": "2026-11-26 17:21:27", 
+  "kind": "through", 
+  "a": {
+   "id": 8706772, 
+   "system": "Fresh Air", 
+   "source": "Модель", 
+   "type": "Fire insulation", 
+   "network": 8706216, 
+   "workset": "ME", 
+   "size": "", 
+   "link_id": null, 
+   "category": "Duct Insulations"
+  }, 
+  "b": {
+   "id": 5529788, 
+   "system": "LINK:Floors", 
+   "source": "S-GCN-MAIN.rvt", 
+   "type": "STR-D=50cm", 
+   "network": null, 
+   "workset": "S_040_Concrete", 
+   "size": "", 
+   "link_id": 8369588, 
+   "category": "Floors"
+  }
+ }, 
+ {
+  "key": "0:8706773|8369585:5781512", 
+  "note": "", 
+  "user": "coordinator89T4H", 
+  "name": "CLASH-002", 
+  "reason": "not_a_clash", 
+  "max": [
+   -15.804746875720998, 
+   -9.4524456292896861, 
+   -7.7099737532808383
+  ], 
+  "min": [
+   -16.953040839543608, 
+   -10.108613608376713, 
+   -8.2841220065682570
+  ], 
+  "label": "2. [крізь конструкцію] Fresh Air x Floors  —  6 колізій", 
+  "time": "2026-11-26 17:21:27", 
+  "kind": "through", 
+  "a": {
+   "id": 8706773, 
+   "system": "Fresh Air", 
+   "source": "Модель", 
+   "type": "Radius Elbows / Taps", 
+   "network": 8706216, 
+   "workset": "ME", 
+   "size": "35x20", 
+   "link_id": null, 
+   "category": "Ducts"
+  }, 
+  "b": {
+   "id": 5781512, 
+   "system": "LINK:Floors", 
+   "source": "A-GCN-MAIN.rvt", 
+   "type": "AR_CON.50", 
+   "network": null, 
+   "workset": "A_090_FLOOR", 
+   "size": "", 
+   "link_id": 8369585, 
+   "category": "Floors"
+  }
+ }, 
+ {
+  "key": "0:8706773|8369588:5529788", 
+  "note": "", 
+  "user": "coordinator89T4H", 
+  "name": "CLASH-002", 
+  "reason": "not_a_clash", 
+  "max": [
+   -15.804746875720998, 
+   -9.4524456292896861, 
+   -7.7099737532811545
+  ], 
+  "min": [
+   -16.953040839543608, 
+   -10.108613608376713, 
+   -8.2841220065682570
+  ], 
+  "label": "2. [крізь конструкцію] Fresh Air x Floors  —  6 колізій", 
+  "time": "2026-11-26 17:21:27", 
+  "kind": "through", 
+  "a": {
+   "id": 8706773, 
+   "system": "Fresh Air", 
+   "source": "Модель", 
+   "type": "Radius Elbows / Taps", 
+   "network": 8706216, 
+   "workset": "ME", 
+   "size": "35x20", 
+   "link_id": null, 
+   "category": "Ducts"
+  }, 
+  "b": {
+   "id": 5529788, 
+   "system": "LINK:Floors", 
+   "source": "S-GCN-MAIN.rvt", 
+   "type": "STR-D=50cm", 
+   "network": null, 
+   "workset": "S_040_Concrete", 
+   "size": "", 
+   "link_id": 8369588, 
+   "category": "Floors"
+  }
+ }
+]
