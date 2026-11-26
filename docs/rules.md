@@ -73,8 +73,11 @@ tray through `INT-25 (Cn25)`: tray split by height + "opening needed in the wall
 - **networks** (MEP × MEP) — coordination, first in the report;
 - **through structure** — MEP crosses a wall / slab / column / beam: an opening is needed (→ openings list, R9);
 - **inside structure** — MEP runs along inside a slab / wall: usually intended (R10), last in the report, still shown.
-Rule: angle MEP ↔ structure — perpendicular = through, parallel = inside; elbows/tees by the shape of the intersection.
-Known limit: a pipe entering a wall perpendicular and bending inside it.
+Rule (updated 2026-11-26, team): **through only if the network enters on one side and leaves on the other side,
+with no branch (and no end) inside**. A network with one end outside and the rest inside the slab/wall is *inside*.
+Implemented by following connected elements inside the structure and counting where they leave it.
+Added kind **touch**: cuts into one face and leaves on the same side (needs moving, not an opening).
+Known limits: slabs with drops / variable thickness are measured over their whole thickness.
 
 ## Next tools (paused 2026-11-20, back to them later)
 Proposed from R6–R9, order to be decided:

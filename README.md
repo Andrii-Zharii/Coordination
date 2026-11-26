@@ -73,11 +73,13 @@ opening of your model (`שרוול`, `פתח`, `-OP`) is fine and listed separat
 opening** (grouped, with Clash Region boxes, navigator, Refresh, Not a clash as usual). Openings cut in the linked
 walls/slabs leave no intersection at all, so those passes do not appear.
 
-**Three kinds of clashes**, reported in this order: **networks** (MEP × MEP — coordination),
-**through structure** (an MEP element crosses a wall / slab / column / beam — an opening is needed) and
-**inside structure** (it runs along inside a slab / wall — usually intended). Through vs inside is decided by the angle
-between the MEP element and the structure (perpendicular → through, parallel → inside); for elbows and tees by the
-shape of the intersection. First iteration — a pipe entering a wall and bending inside it may be misjudged.
+**Kinds of clashes**, reported in this order: **networks** (MEP × MEP — coordination), **touches structure**
+(an MEP element cuts into one face of a wall / slab and leaves on the same side — move it), **through structure**
+(needs an opening) and **inside structure** (usually intended). Through vs inside is decided by where the network
+leaves the structure: following the clashing element through connected elements while they are inside the
+structure — *through* only when it leaves on both sides, with no end, terminal or branch inside; otherwise *inside*.
+The thickness of the structure is measured on its solid (slabs: vertically; walls: across; beams/columns: across
+their axis). If it cannot be measured, the angle rule is used (perpendicular → through, parallel → inside).
 
 **Clash groups.** The check no longer hides repeated clashes; it groups them (a group never mixes kinds). Clashes join one group when
 they are between the same pair of networks (System Type; insulation counts as its pipe/duct; all cable trays

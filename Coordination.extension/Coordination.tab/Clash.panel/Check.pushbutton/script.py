@@ -195,8 +195,8 @@ if OPENINGS:
 else:
     output.print_md(u"## Групи колізій: %d (колізій усього: %d)" % (len(clashes), len(found)))
 output.print_md(u"*Аналіз: %s*" % analysis_title)
-output.print_md(u"**Мережі:** %d  ·  **крізь конструкцію:** %d  ·  **всередині конструкції:** %d" % tuple(
-    sum(1 for c in found if c.get("kind", u"mep") == k) for k in gc.KIND_ORDER))
+output.print_md(u"  ·  ".join(u"**%s:** %d" % (gc.KIND_TITLES[k], sum(1 for c in found if c.get("kind", u"mep") == k))
+                               for k in gc.KIND_ORDER))
 output.print_md(u"*Версія коду: %s*" % gc.code_version())
 if ignored_count:
     output.print_md(u"Не показано **%d** колізій зі списку «не колізія» (%s)." % (ignored_count, gc.ignore_file(doc)))
@@ -242,10 +242,11 @@ def table_rows(kind):
 
 KIND_HEADERS = {
     u"mep": u"Мережі × мережі — колізії координації",
+    u"touch": u"Зачіпає конструкцію — мережа врізається в стіну / плиту з одного боку (треба відсунути)",
     u"through": (u"Проходи БЕЗ отвору — мережа перетинає стіну / плиту / балку / колону, отвору чи гільзи немає"
                  if OPENINGS else
                  u"Крізь конструкцію — мережа перетинає стіну / плиту / колону / балку (потрібен отвір)"),
-    u"inside": u"Всередині конструкції — мережа йде вздовж у плиті / стіні (зазвичай так задумано)",
+    u"inside": u"Всередині конструкції — мережа лишається в плиті / стіні: кінець, поворот чи відгалуження всередині (зазвичай так задумано)",
 }
 if clashes:
     for kind in gc.KIND_ORDER:

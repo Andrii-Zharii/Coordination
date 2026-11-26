@@ -52,8 +52,9 @@ TRAY_CATEGORIES = (u"Cable Trays", u"Cable Tray Fittings")
 # Building structure: an MEP element in it either passes THROUGH (needs an opening) or runs INSIDE it.
 PLANE_STRUCTURE = (u"Floors", u"Walls", u"Structural Foundations", u"Roofs")
 LINE_STRUCTURE = (u"Structural Columns", u"Columns", u"Structural Framing")
-KIND_ORDER = (u"mep", u"through", u"inside")
-KIND_TITLES = {u"mep": u"мережі", u"through": u"крізь конструкцію", u"inside": u"всередині конструкції"}
+KIND_ORDER = (u"mep", u"touch", u"through", u"inside")
+KIND_TITLES = {u"mep": u"мережі", u"touch": u"зачіпає конструкцію", u"through": u"крізь конструкцію",
+               u"inside": u"всередині конструкції"}
 GROUP_NEAR_MM = 1000.0   # same pair of networks this close -> one group
 GROUP_FAR_MM = 4000.0    # ... up to this far when one side is the same element / MEP network
 
@@ -582,27 +583,135 @@ def _structure_axis(item):
     return None, None
 
 
+PASS_TOLERANCE_MM = 5.0   # an end this close to the face of the structure counts as outside
+PASS_CHAIN_LIMIT = 60     # elements followed inside one structure
+
+
+def _structure_band(structure, direction):
+    """(normal, low, high): the thickness of the structure across which an MEP element may pass, measured
+    on the vertices of its solids (host coordinates). Floors/roofs/foundations: vertical; walls: across the
+    wall; beams/columns: across their axis, towards the MEP direction. None when unknown."""
+    shape, axis = _structure_axis(structure)
+    if shape is None:
+        return None
+    if shape == u"plane":
+        n = axis.Normalize()
+    else:
+        d = direction if direction is not None else DB.XYZ.BasisX
+        n = d - axis.Normalize().Multiply(d.DotProduct(axis.Normalize()))
+        if n.GetLength() < 1e-6:
+            return None
+        n = n.Normalize()
+    values = []
+    for solid in structure.solids:
+        for edge in solid.Edges:
+            curve = edge.AsCurve()
+            for i in (0, 1):
+                values.append(curve.GetEndPoint(i).DotProduct(n))
+    if not values:
+        return None
+    return n, min(values), max(values)
+
+
+def _connectors_of(element):
+    manager = _connector_manager(element)
+    if manager is None:
+        return []
+    return [c for c in manager.Connectors if c.ConnectorType != DB.ConnectorType.Logical]
+
+
+def _connected_owner(connector, element):
+    try:
+        if not connector.IsConnected:
+            return None
+        for ref in connector.AllRefs:
+            owner = ref.Owner
+            if owner is not None and owner.Id != element.Id and ref.ConnectorType != DB.ConnectorType.Logical \
+                    and isinstance(owner, (DB.MEPCurve, DB.FamilyInstance)):
+                return owner
+    except Exception:
+        pass
+    return None
+
+
+def structure_pass(mep, structure):
+    """How an MEP element meets a structure, by where its network leaves the structure:
+
+    "through" - the network enters on one side and leaves on the other, with no branch and no end inside
+                (an opening is needed);
+    "inside"  - an end, a branch or a turn of the network stays inside (it runs in the slab / wall);
+    "touch"   - it only cuts into one face and leaves on the same side (move it).
+    Followed from the clashing element through connected elements while they are inside the structure.
+    None when the structure's thickness is unknown."""
+    element = _host_of(mep.source, mep.element)
+    band = _structure_band(structure, _mep_direction(mep))
+    if band is None:
+        return None
+    n, low, high = band
+    tol = to_ft(PASS_TOLERANCE_MM)
+
+    def side(point):
+        v = point.DotProduct(n)
+        if v <= low + tol:
+            return -1
+        if v >= high - tol:
+            return 1
+        return 0
+
+    exits, dead_ends = [], 0
+    seen = set([id_int(element.Id)])
+    stack = [element]
+    while stack:
+        current = stack.pop()
+        connectors = _connectors_of(current)
+        if not connectors:
+            dead_ends += 1
+            continue
+        if len(connectors) == 1 and side(connectors[0].Origin) == 0:
+            dead_ends += 1  # a terminal (drain, fixture, cap) inside the structure
+        for connector in connectors:
+            where = side(connector.Origin)
+            if where != 0:
+                exits.append(where)
+                continue
+            owner = _connected_owner(connector, current)
+            if owner is None:
+                dead_ends += 1  # the network ends inside the structure
+                continue
+            key = id_int(owner.Id)
+            if key not in seen:
+                seen.add(key)
+                if len(seen) > PASS_CHAIN_LIMIT:
+                    return u"inside"
+                stack.append(owner)
+    if dead_ends or len(exits) != 2:
+        return u"inside" if (dead_ends or len(exits) > 2 or not exits) else u"touch"
+    if exits[0] != exits[1]:
+        return u"through"
+    return u"touch"
+
+
 def clash_kind(a, b, box):
-    """"mep" for MEP x MEP; for MEP x structure "through" (crosses it: an opening is needed) or "inside"
-    (runs along inside the slab/wall/column/beam). By the angle between the MEP element and the structure;
-    elbows and tees (no single direction): by the shape of the intersection box."""
+    """"mep" for MEP x MEP; for MEP x structure (see structure_pass) "through" (needs an opening),
+    "inside" (runs inside the slab / wall / column / beam) or "touch" (only cuts into its face).
+    When the structure cannot be measured: by the angle between the MEP element and the structure."""
     for structure, mep in ((a, b), (b, a)):
         shape, axis = _structure_axis(structure)
         if shape is None or _structure_axis(mep)[0] is not None:
             continue
+        try:
+            result = structure_pass(mep, structure)
+        except Exception:
+            result = None
+        if result is not None:
+            return result
         direction = _mep_direction(mep)
         if direction is not None:
             dot = abs(direction.Normalize().DotProduct(axis.Normalize()))
             if shape == u"plane":
                 return u"through" if dot > 0.7 else u"inside"
             return u"inside" if dot > 0.7 else u"through"
-        if shape == u"line":
-            return u"through"
-        size = box.hi - box.lo
-        n = axis.Normalize()
-        across = abs(size.X * n.X) + abs(size.Y * n.Y) + abs(size.Z * n.Z)
-        along = max(size.X, size.Y, size.Z)
-        return u"inside" if along > 1.5 * across else u"through"
+        return u"through" if shape == u"line" else u"inside"
     return u"mep"
 
 
