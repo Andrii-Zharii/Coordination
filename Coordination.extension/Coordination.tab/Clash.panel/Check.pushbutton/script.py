@@ -30,6 +30,15 @@ def ask_numbers(default, prompt, count):
     return values
 
 
+analysis_titles = [title for _, title in gc.ANALYSES]
+last_analysis = settings.get("analysis", u"all")
+analysis_titles.sort(key=lambda t: gc.ANALYSES[[x[1] for x in gc.ANALYSES].index(t)][0] != last_analysis)
+analysis_title = forms.CommandSwitchWindow.show(analysis_titles, message=u"Що аналізувати?")
+if not analysis_title:
+    script.exit()
+analysis = [code for code, title in gc.ANALYSES if title == analysis_title][0]
+OPENINGS = analysis == u"openings"
+
 RECT = u"Прямокутник на плані (як рамка виділення)"
 GRIDS = u"4 осі"
 WHOLE = u"Весь поверх"
@@ -137,6 +146,7 @@ min_depth = ask_numbers(unicode(settings.get("min_depth", 10)),
                         u"Мінімальне заходження, мм. Менші перетини (дотики фітингів) ігноруються", 1)[0]
 
 settings.update(zone_settings)
+settings["analysis"] = analysis
 settings.update({
     "level": level.Name,
     "heights": u"%g %g" % (bottom, top),
@@ -155,7 +165,7 @@ with forms.ProgressBar(title=u"Пошук колізій... ({value} з {max_val
         items += gc.collect(source, zone, categories=link_categories)
     stats = {}
     found = gc.find_clashes(items, zone, min_depth_mm=min_depth, progress=bar.update_progress, focus=focus,
-                            openings=gc.opening_boxes(host, zone), stats=stats)
+                            openings=gc.opening_boxes(host, zone), stats=stats, analysis=analysis)
     found, ignored_count = gc.drop_ignored(doc, found)
     clashes = gc.group_clashes(found, settings.get("group_near_mm", gc.GROUP_NEAR_MM),
                                settings.get("group_far_mm", gc.GROUP_FAR_MM))
@@ -177,8 +187,14 @@ gc.save_results({
 })
 
 output = script.get_output()
-output.set_title(u"Clash у зоні")
-output.print_md(u"## Групи колізій: %d (колізій усього: %d)" % (len(clashes), len(found)))
+output.set_title(u"План отворів" if OPENINGS else u"Clash у зоні")
+if OPENINGS:
+    passes = stats.get("opening_passes", [])
+    output.print_md(u"## План отворів: без отвору %d проходів (%d груп), з отвором / гільзою %d" % (
+        len(found), len(clashes), len(passes)))
+else:
+    output.print_md(u"## Групи колізій: %d (колізій усього: %d)" % (len(clashes), len(found)))
+output.print_md(u"*Аналіз: %s*" % analysis_title)
 output.print_md(u"**Мережі:** %d  ·  **крізь конструкцію:** %d  ·  **всередині конструкції:** %d" % tuple(
     sum(1 for c in found if c.get("kind", u"mep") == k) for k in gc.KIND_ORDER))
 output.print_md(u"*Версія коду: %s*" % gc.code_version())
@@ -226,7 +242,9 @@ def table_rows(kind):
 
 KIND_HEADERS = {
     u"mep": u"Мережі × мережі — колізії координації",
-    u"through": u"Крізь конструкцію — мережа перетинає стіну / плиту / колону / балку (потрібен отвір)",
+    u"through": (u"Проходи БЕЗ отвору — мережа перетинає стіну / плиту / балку / колону, отвору чи гільзи немає"
+                 if OPENINGS else
+                 u"Крізь конструкцію — мережа перетинає стіну / плиту / колону / балку (потрібен отвір)"),
     u"inside": u"Всередині конструкції — мережа йде вздовж у плиті / стіні (зазвичай так задумано)",
 }
 if clashes:
@@ -242,5 +260,13 @@ if clashes:
     forms.alert(u"Знайдено груп: %d (колізій: %d)." % (len(clashes), len(found)),
                 sub_msg=u"Таблиця відкрита у вікні pyRevit. Перейти до колізій можна кнопками Наступна / Попередня / Список.")
 else:
-    output.print_md(u"Колізій не знайдено.")
-    forms.alert(u"Колізій не знайдено.")
+    output.print_md(u"Проходів без отвору не знайдено." if OPENINGS else u"Колізій не знайдено.")
+    forms.alert(u"Проходів без отвору не знайдено." if OPENINGS else u"Колізій не знайдено.")
+
+if OPENINGS and stats.get("opening_passes"):
+    passes = stats["opening_passes"]
+    output.print_md(u"### Проходи З отвором / гільзою — в порядку: %d" % len(passes))
+    output.print_table([[cell(p["a"]), cell(p["b"])] for p in passes[:300]],
+                       columns=[u"Елемент A", u"Елемент B"])
+    if len(passes) > 300:
+        output.print_md(u"... і ще %d" % (len(passes) - 300))

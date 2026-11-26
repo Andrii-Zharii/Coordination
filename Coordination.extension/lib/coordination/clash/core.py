@@ -606,8 +606,25 @@ def clash_kind(a, b, box):
     return u"mep"
 
 
-def find_clashes(items, zone, min_depth_mm=0.0, progress=None, focus=None, openings=(), stats=None):
+ANALYSES = [
+    (u"all", u"Усе: мережі × мережі і мережі × конструкції"),
+    (u"mep", u"Тільки мережі × мережі"),
+    (u"openings", u"План отворів: мережі крізь стіни, плити, балки, колони"),
+]
+
+
+def _is_structure(item):
+    category = item.element.Category
+    return category is not None and category.Name in PLANE_STRUCTURE + LINE_STRUCTURE
+
+
+def find_clashes(items, zone, min_depth_mm=0.0, progress=None, focus=None, openings=(), stats=None,
+                 analysis=u"all"):
     """Clashes between items as JSON-ready dicts, deepest first.
+
+    analysis: "all"; "mep" - only pairs without building structure; "openings" - only MEP x structure
+    pairs that pass THROUGH it (each one = an opening is missing); the passes through a sleeve/opening
+    are then listed in stats["opening_passes"] (they are fine).
 
     Pairs from one network of one document and pairs of two linked elements are skipped, and so
     is every pair with a sleeve or opening. focus is a set of category names: a pair counts only
@@ -635,6 +652,12 @@ def find_clashes(items, zone, min_depth_mm=0.0, progress=None, focus=None, openi
                 continue
             if a.is_opening or b.is_opening:
                 continue
+            if analysis != u"all":
+                a_structure, b_structure = _is_structure(a), _is_structure(b)
+                if analysis == u"mep" and (a_structure or b_structure):
+                    continue
+                if analysis == u"openings" and a_structure == b_structure:
+                    continue
             if focus is not None and not (_in_focus(a, focus) or _in_focus(b, focus)):
                 continue
             if not a.box.overlaps(b.box):
@@ -644,18 +667,25 @@ def find_clashes(items, zone, min_depth_mm=0.0, progress=None, focus=None, openi
                 continue
             if a.source.key != b.source.key and any(o.contains(box.center()) for o in openings):
                 in_openings += 1
+                if analysis == u"openings" and stats is not None:
+                    stats.setdefault("opening_passes", []).append(
+                        {"a": _describe(a), "b": _describe(b),
+                         "min": [box.lo.X, box.lo.Y, box.lo.Z], "max": [box.hi.X, box.hi.Y, box.hi.Z]})
                 continue
             size = box.hi - box.lo
             sides = sorted([size.X, size.Y, size.Z])
             depth = volume / (sides[1] * sides[2]) if sides[1] * sides[2] > 0 else 0.0
             if depth < min_depth:
                 continue
+            kind = clash_kind(a, b, box)
+            if analysis == u"openings" and kind != u"through":
+                continue
             clashes.append({
                 "a": _describe(a),
                 "b": _describe(b),
                 "volume_cm3": round(DB.UnitUtils.ConvertFromInternalUnits(volume, DB.UnitTypeId.CubicCentimeters), 1),
                 "depth_mm": int(round(to_mm(depth))),
-                "kind": clash_kind(a, b, box),
+                "kind": kind,
                 "min": [box.lo.X, box.lo.Y, box.lo.Z],
                 "max": [box.hi.X, box.hi.Y, box.hi.Z],
             })
@@ -1210,7 +1240,7 @@ def _check_area(doc, settings, area):
         if link_display_name(link) in link_names:
             items += collect(Source(doc, link), area, categories=link_categories)
     found = find_clashes(items, area, min_depth_mm=settings.get("min_depth", 10), focus=focus,
-                         openings=opening_boxes(host, area), stats={})
+                         openings=opening_boxes(host, area), stats={}, analysis=settings.get("analysis", u"all"))
     return drop_ignored(doc, found)[0]
 
 

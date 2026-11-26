@@ -78,7 +78,7 @@ Known limit: a pipe entering a wall perpendicular and bending inside it.
 
 ## Next tools (paused 2026-11-20, back to them later)
 Proposed from R6–R9, order to be decided:
-1. **Openings list (R9)** — all places where MEP passes a concrete wall/floor without an opening:
+1. **Openings list (R9)** — *first version in tool 2026-11-26: Clash у зоні → "План отворів"* — all places where MEP passes a concrete wall/floor without an opening:
    table for the architect/structure (wall, network, size, elevation).
 2. **Split crossing trays (R7)** — for a "Cable Trays x Cable Trays" group, raise/lower one tray ±100 mm at the crossing.
 3. **Move a sprinkler branch (R8)** — find the branch between its height-change points and move it with the heads.

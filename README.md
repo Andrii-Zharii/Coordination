@@ -67,6 +67,12 @@ The list is shared with the team: `cases/<model>/ignored.json` (commit and push 
 field and Not a clash with a reason. Drag it anywhere; it stays open until closed. Alternatives without it: right-click any button →
 *Add to Quick Access Toolbar*, or assign keyboard shortcuts (View → User Interface → Keyboard Shortcuts).
 
+**What to analyse** (first question of Clash у зоні): *everything*, *only networks × networks*, or
+**openings plan** — only MEP elements passing **through** walls / slabs / beams / columns. A pass inside a sleeve or
+opening of your model (`שרוול`, `פתח`, `-OP`) is fine and listed separately; every remaining pass is a **missing
+opening** (grouped, with Clash Region boxes, navigator, Refresh, Not a clash as usual). Openings cut in the linked
+walls/slabs leave no intersection at all, so those passes do not appear.
+
 **Three kinds of clashes**, reported in this order: **networks** (MEP × MEP — coordination),
 **through structure** (an MEP element crosses a wall / slab / column / beam — an opening is needed) and
 **inside structure** (it runs along inside a slab / wall — usually intended). Through vs inside is decided by the angle
