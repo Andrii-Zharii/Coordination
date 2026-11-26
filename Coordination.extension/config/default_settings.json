@@ -135,5 +135,15 @@
       "steel_keywords": ["hea", "heb", "ipe", "rhs", "shs", "chs", "hss", "upn", "steel", "פלדה"],
       "beam_min_depth_mm": 400
     }
+  },
+
+  "openings": {
+    "_comment": "Place Openings (Openings panel): an opening family on the face of the linked wall / slab where a pipe passes through without an opening.",
+    "workset": "Openings",
+    "pipe_family": "פתח למערכות עגול",
+    "_pipe_family": "Part of the family name. Its types are round, one diameter per type: the smallest type the pipe (outer diameter + clearance) fits in is used.",
+    "clearance_mm": 0,
+    "diameter_parameters": ["Diameter", "diameter", "D", "Nominal Diameter", "Sleeve Diameter", "קוטר"],
+    "depth_parameters": ["Depth", "Length", "Thickness", "עומק", "אורך"]
   }
 }

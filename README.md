@@ -45,6 +45,12 @@ Records how each clash was handled — the examples the rerouting tools are buil
 Cases are saved in `cases/` inside the repository — commit and push them with GitHub Desktop at the end of the day.
 Notes can be recorded by **voice** in any language (button *Record voice*); they are transcribed later.
 
+### Openings panel
+
+| Button | What it does |
+|---|---|
+| **Поставити отвори** | After *Clash у зоні* (best: *План отворів*), for the current group or all groups: every pass of a straight pipe through a linked wall / slab without an opening gets the round opening family `פתח למערכות עגול` (smallest type the pipe fits in: type diameter parameter, else inches in the type name), hosted on the face of the linked wall / slab where the pipe axis crosses it, workset **Openings**, depth = thickness when the family has a depth parameter. Shows the list first; Clash Region boxes stay. Settings: `openings` in the rules file. Electrical / mechanical openings: later. |
+
 ### Clash panel
 
 | Button | What it does |
