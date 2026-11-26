@@ -174,7 +174,7 @@ def _depth_parameter(instance, names):
     by_lower = {}
     for name in _length_parameters(instance):
         by_lower[name.lower()] = name
-    for name in names:
+    for name in list(names) + [u"H"]:  # "H": depth of the team's round opening family
         if name.lower() in by_lower:
             return instance.LookupParameter(by_lower[name.lower()])
     for lower, name in sorted(by_lower.items()):

@@ -144,6 +144,6 @@
     "_pipe_family": "Part of the family name. Its types are round, one diameter per type: the smallest type the pipe (outer diameter + clearance) fits in is used.",
     "clearance_mm": 0,
     "diameter_parameters": ["Diameter", "diameter", "D", "Nominal Diameter", "Sleeve Diameter", "קוטר"],
-    "depth_parameters": ["Depth", "Length", "Thickness", "עומק", "אורך"]
+    "depth_parameters": ["H", "Depth", "Length", "Thickness", "עומק", "אורך"]
   }
 }
