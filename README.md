@@ -106,30 +106,13 @@ Cases record what the navigator shows (a group or one clash). Distances: `group_
 
 Code: `lib/coordination/trays/tees.py` (logic) and `tee_ui.py` (window).
 
-### Pipes panel
+### Links panel
 
 | Button | What it does |
 |---|---|
-| **Match Connection** | Select together the sample connection (its fitting, or both elbows of an offset) **and the two loose pipes**, click — the pipes are connected the same way: elbow, offset with the sample's angle, tee/tap onto the main, or transition/union. New fittings get the sample's family types. One undo step; if Revit refuses, the model is unchanged. Without loose pipes in the selection, you click pairs of pipes one by one (Esc to finish). |
+| **Replace from Link** | Open a floor plan, click. Deletes everything on workset **PL** in this view (MEP categories, in the view range — from the view depth to the top — and inside the crop box when it is on), then copies into the host the elements of the **PL link** that fall into the same view range, on workset PL. Shows the counts and asks before changing anything; one undo step. The first run asks which workset and which link (remembered); **Shift+Click** to choose others (e.g. EL from the electrical link). Elements borrowed by someone else are not deleted (listed). |
 
-| **Move Set** | Select the pipe (duct, cable tray, conduit) you want to move, click and choose *horizontal* or *vertical* move. Everything that moves together with it is selected: pipes, fittings, accessories, branches. In a 3D view the section box is fitted around them (+0.5 m, along the pipe in plan); in other views the view zooms to them. Replaces Box Run. |
-
-**Move Set rules** (team decisions 2026-11-23). From the selected pipe the connected network is followed through connectors in
-all directions, branches of tees and taps included. Every pipe reached is compared with the selected one:
-
-- *vertical move* — its slope must be the same. A riser, a 45° offset or another slope is where the network changes height:
-  that pipe stretches, so it is not selected, but the fitting before it is. A horizontal branch off a tee rises too, with
-  everything behind it, up to its own height changes.
-- *horizontal move* (left, right, forward, back — no matter) — its direction in plan must be the same. Any turn in plan,
-  a perpendicular branch or a riser stops the network there.
-- Any deviation counts, 5° or 90° alike (tolerance `angle_tolerance_deg` 0.1° for modelling noise; slopes 1 % = 0.57°).
-- Fittings and accessories move with the network. Flexible pipes and ducts stretch. Equipment stops it and is not selected.
-- Sprinkler heads, air terminals and the short drops to them (steep pipes / flex, up to `drop_max_elements` 8 elements,
-  ending only in terminals): the button asks every time whether they move too.
-
-Settings: section `move_set` of the rules file.
-
-Code: `lib/coordination/pipes/connect.py`, `move_set.py`.
+Code: `lib/coordination/link_copy.py`.
 
 ### Sections panel
 

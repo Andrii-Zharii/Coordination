@@ -1,0 +1,6 @@
+title: Replace from Link
+tooltip: "Відкрийте план поверху і натисніть. Видаляє з цього виду все, що на ворксеті PL (в межах view range і crop box), і вставляє на це місце копію з лінка PL — те, що потрапляє у view range. Вставлене йде на ворксет PL. Перший раз спитає, який лінк і ворксет; Shift+Click — вибрати інші."
+author: Coordination
+context: doc-project
+engine:
+  clean: true

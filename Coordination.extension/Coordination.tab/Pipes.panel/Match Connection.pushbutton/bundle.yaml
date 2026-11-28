@@ -1,6 +1,0 @@
-title: Match Connection
-tooltip: "Виділіть разом з'єднання-зразок (фітинг або обидва відводи) і дві нез'єднані труби, натисніть кнопку — труби з'єднаються так само, як зразок."
-author: Coordination
-context: doc-project
-engine:
-  clean: true
