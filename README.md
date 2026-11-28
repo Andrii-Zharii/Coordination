@@ -24,6 +24,7 @@ sections and sheets. Product vision and requirements: [docs/vision.md](docs/visi
 | Button | What it does |
 |---|---|
 | **Check Floor** | Open a floor plan of the level, click. Checks pipes, ducts, cable trays and conduits whose reference level is that level: bottom below ceiling height, top too close to the slab/beam above (linked models included), gravity pipes with too low slope. Results are clickable; "Select all" selects the elements in Revit. |
+| **Fix Worksets** | Open a floor plan, click. Every network of the floor (elements joined through connectors: pipes, fittings, accessories, sprinklers, ducts, terminals, trays, conduits) gets its main workset — the one most of its elements are on (at least 60%). Elements on another workset are listed and, after you confirm, moved to the main one, with their insulation. Not touched: `-DC` worksets, equipment and plumbing fixtures (they join different networks), elements borrowed by someone else, networks without a clear majority (listed for a manual check). One undo step. |
 | **Rules Settings** | Opens your rules file (`%APPDATA%\Coordination\settings.json`) in the text editor. Distances are in mm. **Shift+Click** resets it to defaults. |
 
 **Clearance to structure** is detected by casting rays upward in the default 3D view `{3D}`:
