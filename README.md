@@ -110,7 +110,7 @@ Code: `lib/coordination/trays/tees.py` (logic) and `tee_ui.py` (window).
 
 | Button | What it does |
 |---|---|
-| **Replace from Link** | Open a floor plan, click. Deletes everything on workset **PL** in this view (MEP categories, in the view range — from the view depth to the top — and inside the crop box when it is on), then copies into the host the elements of the **PL link** that fall into the same view range, on workset PL. Shows the counts and asks before changing anything; one undo step. The first run asks which workset and which link (remembered); **Shift+Click** to choose others (e.g. EL from the electrical link). Elements borrowed by someone else are not deleted (listed). |
+| **Copy from Link** | Open a view (plan, section or 3D), click. 1) Deletes from the view all old host elements on workset **PL** — exactly what the view shows. 2) Copies from the **PL link** everything of it the view shows (view range, crop box, visibility/graphics) and pastes it on workset PL. Shows both counts and asks first; one undo step; if Revit refuses, nothing is changed. The first run asks the workset and the link (remembered); **Shift+Click** to choose others (e.g. EL from the electrical link). Annotations, links, rooms, levels and grids are not touched; elements borrowed by someone else are not deleted (listed). |
 
 Code: `lib/coordination/link_copy.py`.
 
