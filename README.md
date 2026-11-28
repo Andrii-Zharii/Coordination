@@ -110,7 +110,7 @@ Code: `lib/coordination/trays/tees.py` (logic) and `tee_ui.py` (window).
 
 | Button | What it does |
 |---|---|
-| **Copy from Link** | Open a view (plan, section or 3D), click. 1) Deletes from the view all old host elements on workset **PL** — exactly what the view shows. 2) Copies from the **PL link** everything of it the view shows (view range, crop box, visibility/graphics) and pastes it on workset PL. Shows both counts and asks first; one undo step; if Revit refuses, nothing is changed. The first run asks the workset and the link (remembered); **Shift+Click** to choose others (e.g. EL from the electrical link). Annotations, links, rooms, levels and grids are not touched; elements borrowed by someone else are not deleted (listed). |
+| **Copy from Link** | Open a floor plan, click. 1) Deletes from the view all old host elements on workset **PL** — exactly what the view shows. 2) Copies from the **PL link** everything of it the view shows (view range, crop box, visibility/graphics) and pastes it on workset PL. **Risers through several floors** (vertical pipes on one axis with their inline fittings, reaching beyond the level..next level band) are not deleted and not copied; branches copied from the link are disconnected from the link's risers and connected again to the model's risers where the ends meet. Model and link risers are compared by plan position (moved by N mm, missing in the link, new in the link) — reported, never moved. Shows the counts and asks first; one undo step; if Revit refuses, nothing is changed. The first run asks the workset and the link (remembered); **Shift+Click** to choose others. |
 
 Code: `lib/coordination/link_copy.py`.
 
